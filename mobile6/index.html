@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>시몬스</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            max-width: 375px;
+            max-height: 812px;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+        video {
+            border: 0;
+        }
+    </style>
+    
+    <style>
+        .bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 95px;
+            height: 100%;
+            background-image: url("./images/barBg.png");
+            z-index: 888;
+        }
+        .logo {
+            display: block;
+            width: 62px;
+            height: auto;
+            margin: 10px auto;
+            z-index: 9999;
+        }
+        .menuBtn {
+            display: block;
+            background-image: url("./images/menuBtn.png");
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 12px;
+            position: fixed;
+            top: 80px;
+            right: 55px;
+            z-index: 1000;
+            transition: 0.5s;
+        }
+        .menuBtn.off {
+            background-image: url("./images/xBtn.png");
+            background-size: 100% 100%;
+            width: 18px;
+            height: 12px;
+            background-repeat: no-repeat;
+        }
+        .search {
+            display: block;
+            background-image: url("./images/search.png");
+            width: 15px;
+            height: 16px;
+            position: fixed;
+            top: 80px;
+            right: 15px;
+            z-index: 9999;
+        }
+        .vsCount {
+            position: absolute;
+            top: 150px;
+            left: 40px;
+            transform: rotate(90deg);
+            font-size: 17px;
+            font-family: 'Nanum Myeongjo', serif;
+            color: #fff;
+        }
+        .menu {
+            position: absolute;
+            top: 0px;
+            width: 375px;
+            height: 300px;
+            background-color: #bfada6;
+            z-index: 500;
+            display: none;
+        }
+        .menuBox {
+            width: 200px;
+            height: 250px;
+        }
+        .menuBox li {
+            margin: 20px;
+            margin-left: 50px;
+        }
+        .menuBox li a {
+            display: block;
+            color: #fff;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .menuCopy {
+            display: block;
+            width: 100%;
+            color: #333;
+            font-size: 12px;
+            font-family: 'Anton', sans-serif;
+            text-align: center;
+        }
+    </style>
+    
+    <style>
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        .vs {
+            width: 375px;
+            height: 210.94px;
+            position: relative;
+        }
+        .vs video {
+            display: block;
+            width: 375px;
+            height: auto;
+            position: absolute;
+            top: 0; 
+            left: 0;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        .vsTit {
+            position: absolute;
+            color: #fff;
+            font-size: 15px;
+            text-shadow: 5px 1px 3px #333;
+            left: 15px;
+            top: 15px;
+        }
+        .vsTxt {
+            position: absolute;
+            color: #383838;
+            font-family: 'Anton', sans-serif;
+            text-align: center;
+            font-size: 12px;
+            left: 110px;
+            top: 120px;
+        }
+    </style>
+    
+    <style>
+        .con1 {
+            display: block;
+            height: 750px;
+            width: auto;
+            background-image: url("./images/con1Bg.png");
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .con1Box .con1Line {
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 40px;
+        }
+        .con1Tit {
+            position: absolute;
+            color: #fff;
+            font-size: 12px;
+            font-family: 'Anton', sans-serif;
+            top: 19px;
+            left: 150px;
+        }
+        .con1Show {
+            position: absolute;
+            color: #333;
+            font-family: 'Abril Fatface', cursive;
+            font-size: 40px;
+            font-weight: 100;
+            top: 152px;
+            left: -15px;
+            transform: rotate(270deg);
+        }
+        .more img {
+            display: block;
+            width: 27px;
+            height: 27px;
+            position: absolute;
+            left: -38px;
+            top: -3px;
+        }
+        .more {
+            display: block;
+            color: #333;
+            font-size: 15px;
+            font-family: 'Abril Fatface', cursive;
+            position: absolute;
+            bottom: 460px;
+            left: 70px;
+        }
+        .con1Img {
+            display: block;
+            position: absolute;
+            opacity: 0;
+            transition: 0.7s;
+        }
+        /* 원래는 탑 60 */
+        .conImg1 {
+            top: 30px;
+            left: 105px;
+        }
+        .conImg2 {
+            top: 90px;
+            left: 188px;
+        }
+        .con1conTit {
+            color: #333;
+            font-size: 23px;
+            font-family: 'Jua', sans-serif;
+            font-weight: bold;
+            position: absolute;
+            top: 200px;
+            left: 95px;
+            display: none;
+        }
+        /* 원래 탑 230px */
+        .con1conTxt {
+            position: absolute;
+            left: 140px;
+            top: 370px;
+            color: #333;
+            display: block;
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            transition: 1.5s;
+        }
+        
+        .showTxt {
+            display: block;
+            position: absolute;
+            top: 300px;
+            left: 85px;
+            font-family: 'Jua', sans-serif;
+            font-size: 25px;
+            color: #4b6664;
+            display: none;
+        }
+        .showImg {
+            display: block;
+            position: absolute;
+            top: 340px;
+            left: 155px;
+            display: none;
+        }
+        .showImgTit {
+            font-size: 10px;
+            position: absolute;
+            top: 380px;
+            left: 150px;
+            color: #fff;
+            text-shadow: 1px 1px 1px #333;
+            font-family: 'Great Vibes', cursive;
+            display: none;
+        }
+        .slide {
+            width: 80%;
+            position: relative;
+            top: 440px;
+            left: 50px;
+        }
+        .slide li {
+            position: absolute;
+            opacity: 0;
+        }
+        .slide li img {
+            display: block;
+            width: 90%;
+            height: auto;
+        }
+        .slide li.item1 {
+            opacity: 1;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            width: 100%;
+            height: 200px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            top: -85px;
+            font-size: 13px;
+            font-family: 'Jua', sans-serif;
+            text-align: center;
+            z-index: 9999;
+        }
+        .ftLogo {
+            display: block;
+            width: 62px;
+            height: auto;
+            position: absolute;
+            left: 150px;
+            top: 10px;
+        }
+        .ftBox {
+            position: absolute;
+            top: 40px;
+        }
+        .ftBox li {
+            float: left;
+            margin: 20px;
+            margin-left: 33px;
+        }
+        .ftBox li a {
+            display: block;
+            color: #fff;
+            font-size: 13px;
+        }
+        #ft span {
+            position: absolute;
+            text-align: center;
+        }
+        .ftTxt1 {
+            display: block;
+            top: 100px;
+            left: 75px;
+        }
+        .ftTxt2 {
+            display: block;
+            top: 117px;
+            right: 15px;
+        }
+        .ftTxt3 {
+            display: block;
+            top: 113px;
+            left: 15px;
+        }
+        .address {
+            display: block;
+            top: 145px;
+            left: 100px;
+        }
+        .copyright {
+            display: block;
+            top: 170px;
+            left: 100px;
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".menuBtn").click(function(){
+                $(".menu").slideToggle(1000);
+                $(".menuBtn").toggleClass("off");
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con1Img").css("opacity", "1").fadeIn(500);
+            $(".conImg1").animate({"top" : "60px"}, 500);
+            $(".conImg2").animate({"top" : "60px"}, 500);
+            $(".con1conTit").delay(1200).fadeIn(500);
+            $(".con1conTxt").delay(1800).css("top", "230px");
+            
+            $(".showTxt").delay(2000).fadeIn(500);
+            $(".showImg").delay(2700).fadeIn(1200); // 로고
+            $(".showImgTit").delay(3200).fadeIn(3500); // 마지막 멘트
+            
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var n=0;
+            var cnt = $(".slide li").length;
+        $(".slide li").eq(0).css("z-index", "30").css("opacity", "1");
+        $(".slide li").eq(0).siblings().css("z-index", "25").css("opacity", "0");
+        var intv=setInterval(function(){ 
+            if(n<cnt-1) {
+                n=n+1;
+                nAni(n); 
+            } else {
+                n=0;
+                nAni(n);
+            }
+        }, 3500);
+        
+        function nAni(i){
+            $(".slide li").eq(i).siblings().css("z-index", "25");
+            $(".slide li").eq(i).css("z-index" , "30").not(":animated").animate({"opacity" : "1"}, 800, function() {
+	           $(".slide li").eq(i).siblings().css("opacity", "0");
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+    <div class="main">
+       <div class="vs">
+           <video src="./video.mp4" autoplay loop></video>
+           <h2 class="vsTit">침대, 당신의 인생과<br>함께합니다.</h2>
+           <span class="vsTxt">THE HISTORY OF SIMMONS SIGNIFIES<br>THE HISTORY OF ALL BEDS</span>
+       </div>
+       
+       <div class="bar">
+           <a href="index.html" class="logo">
+               <img src="./images/logo.png" alt="로고">
+            </a>
+            <span class="menuBtn"></span>
+            <a href="" class="search"></a>
+            <!-- <span class="vsCount">/ 04</span> -->
+       </div>
+       
+       <nav class="menu">
+           <ul class="menuBox">
+               <li><a href="">ABOUT US</a></li>
+               <li><a href="">COLLECTION</a></li>
+               <li><a href="">PRODUCT</a></li>
+               <li><a href="">FACTORIUM</a></li>
+               <li><a href="">GALLERY</a></li>
+               <li><a href="">매장찾기</a></li>
+           </ul>
+           <span class="menuCopy">Copyrightⓒ By SIMMONS-K</span>
+       </nav>
+       
+       <div class="con1">
+           <div class="con1Box">
+              <img src="./images/con1Line.png" alt="콘텐츠1라인" class="con1Line">
+               <span class="con1Tit">BED COLLECTION</span>
+               <h2 class="con1Show">SHOW</h2>
+               <a href="" class="more"><img src="./images/moreBtn.png" alt="MORE">MORE</a>
+               <img src="./images/con1Img1.png" alt="" class="conImg1 con1Img">
+               <img src="./images/con1Img2.png" alt="" class="conImg2 con1Img">
+               <h2 class="con1conTit">침대에 혁신을 만든다</h2>
+               <span class="con1conTxt">The beginning of<br>global<br>culture creation</span>
+               <h3 class="showTxt">흔들리지않는 편안함</h3>
+               <img src="./images/showLogo.png" alt="쇼로고" class="showImg">
+               <span class="showImgTit">SIMMONS</span>  
+           </div>
+           
+           <div class="slide">
+               <ul class="slBox">
+                   <li class="item1"><img src="./images/sl1.png" alt="슬라이드1"></li>
+                   <li class="item2"><img src="./images/sl2.png" alt="슬라이드2"></li>
+                   <li class="item3"><img src="./images/sl3.png" alt="슬라이드3"></li>
+               </ul>
+           </div>
+       </div>
+       
+       <footer id="ft">
+           <p class="ftLogo">
+               <img src="./images/logo.png" alt="시몬스">
+            </p>
+            <ul class="ftBox">
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보취급방침</a></li>
+                <li><a href="#">사업자정보확인</a></li>
+            </ul>
+            <span class="ftTxt1">통신판매업신고 : 제2014-경기이천-0135호</span>
+            <span class="ftTxt2">고객센터 : 1899 - 8182</span>
+            <span class="ftTxt3">Contact To : master@simmons.co.kr</span>
+            <span class="address">경기도이천시 대월면대평로 590</span>
+            <span class="copyright">Copyrightⓒ By SIMMONS-K</span>
+            
+            
+       </footer>
+
+
+    </div>
+</body>
+</html>
