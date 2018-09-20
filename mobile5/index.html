@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>:: 카카오뱅크 ::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            max-width: 375px;
+            max-height: 812px;
+        }
+        img {
+            border: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+    
+    <style>
+        #hd {
+            height: 83px;
+            width: auto;
+            background-image: url("./images/headerBg.png");
+        }
+        .logo img {
+            display: block;
+            margin: 0 auto;
+            height: 36px;
+            width: auto;
+            padding-top: 22px;
+        }
+        .menuBtn {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-image: url("./images/menuBtn.png");
+            position: absolute;
+            top: 14px;
+            left: 10px;
+        }
+        .menu {
+            position: absolute;
+            top: 0;
+            height: 270px;
+            width: 100%;
+            background-color: #2c2c35;
+            z-index: 1000;
+            display: none;
+        }
+        .menuLogo img {
+            display: block;
+            width: auto;
+            height: 40px;
+            margin: 10px auto;
+        }
+        .menuClose {
+            color: #fff;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 40px;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+        .menuBox a {
+            display: block;
+            color: #fff;
+            font-size: 30px;
+            font-family: 'Do Hyeon', sans-serif;
+            margin: 25px;
+        }
+        .login {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-image: url("./images/login.png");
+            background-size: 100% 100%;
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            z-index: 9999;
+        }
+        .login.on {
+            background-image: url("./images/logout.png");
+            z-index: 9999;
+        }
+        .my {
+            width: 17px;
+            height: 17px;
+            background-image: url("./images/my.png");
+            background-size: 100% 100%;
+            position: absolute;
+            top: 31px;
+            right: 13px;
+            display: none;
+            z-index: 9999;
+        }
+    </style>
+    
+    <style>
+        #vs {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        .vsBox {
+            width: 400%;
+        }
+        .vsBox li {
+            float: left;
+            width: 25%;
+            position: relative;
+        }
+        .vsBox li.item1 {
+            background-image: url("./images/vs1Bg.png");
+            background-repeat: no-repeat;
+            width: 25%;
+            height: 293px;
+        }
+        .vsBox li.item2 {
+            background-image: url("./images/vs2Bg.png");
+            background-repeat: no-repeat;
+            width: 25%;
+            height: 293px;
+        }
+        .vsBox li.item3 {
+            background-image: url("./images/vs3Bg.png");
+            background-repeat: no-repeat;
+            width: 25%;
+            height: 293px;
+        }
+        .vsBox li.item4 {
+            background-image: url("./images/vs4Bg.png");
+            background-repeat: no-repeat;
+            width: 25%;
+            height: 293px;
+        }
+        .card {
+            display: block;
+            position: absolute;
+            top: 80px;
+            left: 110px;
+        }
+        .vsTop {
+            display: block;
+            position: absolute;
+            top: 80px;
+            right: 0px;
+        }
+        .vsTit {
+            color: #333;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 2em;
+            font-weight: 100;
+            position: absolute;
+            right: 10px;
+            top: 120px;
+            display: none;
+        }
+        .vsBottomTxt {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            right: 90px;
+        }
+        .vsAni {
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            transform: rotateY(0deg);
+        }
+        .vsAni.on {
+            transform: rotateY(180deg);
+        }
+    </style>
+    
+    <style>
+        .content1 {
+            transition: 0.5s;
+        }
+        .contentBg {
+            width: 100%;
+            height: auto;
+        }
+        .con1Tit {
+            display: none;
+        }
+        .con1Tit1 {
+            color: #fff;
+            position: absolute;
+            top: 500px;
+            left: 93px;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            font-weight: 100;
+        }
+        .con1Tit2 {
+            color: #fff;
+            position: absolute;
+            top: 530px;
+            left: 120px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 100;
+        }
+        .con1Card a {
+            display: block;
+            /* border: 1px solid red; */
+            position: absolute;
+        }
+        .con1Item1 {
+            top: 377px;
+            left: 176px;
+            width: 60px;
+            height: 90px;
+        }
+        .con1Item2 {
+            top: 417px;
+            left: 260px;
+            width: 75px;
+            height: 120px;
+        }
+        .con1Item3 {
+            top: 510px;
+            left: 53px;
+            width: 150px;
+            height: 120px;
+        }
+        .con1Item4 {
+            top: 595px;
+            left: 235px;
+            width: 70px;
+            height: 130px;
+        }
+        .con1Card img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .tuch1, .tuch2, .tuch3, .tuch4 {
+            display: none;
+        }
+        .contenton {
+            display: block;
+            position: absolute;
+            top: 376px;
+        }
+        .tuch1 span {
+            position: absolute;
+            top: 380px;
+            left: 15px;
+            color: #fff;
+            font-size: 12px;
+            text-shadow: 1px 2px 5px #333;
+        }
+        .more1 {
+            display: block;
+            width: 80px;
+            height: 28px;
+            position: absolute;
+            bottom: 355px;
+            left: 80px;
+            background-image: url("./images/moreRightBtn.png");
+            background-size: 100% 100%;
+        }
+        
+        .tuch3 span {
+            position: absolute;
+            top: 470px;
+            left: 10px;
+            color: #fff;
+            font-size: 12px;
+            text-shadow: 1px 2px 5px #333;
+        }
+        .more3 {
+            display: block;
+            width: 80px;
+            height: 28px;
+            position: absolute;
+            bottom: 260px;
+            left: 10px;
+            background-image: url("./images/moreRightBtn.png");
+            background-size: 100% 100%;
+        }
+    </style>
+    
+    <style>
+        .ft {
+            width: 100%;
+            height: auto;
+            background-color: #2c2c35;
+            position: absolute;
+            bottom: -40px;
+        }
+        .ftLst {
+            width: 90%;
+            margin: 0px auto;
+        }
+        .ftLst li {
+            float: left;
+        }
+        .ftLst a {
+            display: block;
+            font-size: 10px;
+            color: #fff;
+            margin: 5px;
+        }
+        .copyright {
+            display: block;
+            color: #fff;
+            font-size: 13px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .subFt {
+            width: 100%;
+            height: 50px;
+            background-color: #2c2c35;
+            position: absolute;
+            bottom: 0px;
+        }
+        .subFt .ftLst {
+            width: 90%;
+            margin: 10px auto;
+        }
+        .subFt .ftLst li {
+            float: left;
+        }
+        .subFt .ftLst a {
+            display: block;
+            font-size: 10px;
+            color: #fff;
+            margin: 5px;
+        }
+    </style>
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".vsBox li").width());
+            function rAni(){
+                $(".vsBox").not(":animated").animate({"margin-left" : - wd + "px"}, 800, function(){
+                    $(".vsBox li").eq(0).appendTo($(".vsBox"));
+                    $(".vsBox").css("margin-left", "0px");
+                });
+            };
+            var intv = setInterval(function(){
+                rAni();
+            }, 5000);
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var i=0;
+            var intv = setInterval(function(){ 
+                if(i<2){
+                    i++; 
+                } else {
+                    i=0;
+                }
+                Ani(i);
+            }, 5000);
+            function Ani(n){
+                $(".vsBox li .vsTit").css("display", "none");
+                $(".vsBox li .vsTit").delay(500).fadeIn(1500);
+                
+                $(".vsBox li .card").css("display", "none");
+                $(".vsBox li .card").delay(500).slideDown(1500);
+            };
+            
+            var intv2 = setInterval(function(){ 
+                if(i<2){
+                    i++; 
+                } else {
+                    i=0;
+                }
+                vsAni(i);
+            }, 500);
+            function vsAni(i){
+                $(".vsBox li .vsAni").toggleClass("on");
+            }
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".menuBtn").click(function(){
+                $(".menu").slideDown(500);
+                $(".ft").not(":animated").animate({"bottom" : "500px"}, 500);
+                $("#vs, .content1").css("opacity", "0.2");
+            });
+            $(".menuClose").click(function(){
+                $(".menu").slideUp(500);
+                $(".ft").not(":animated").animate({"bottom" : "-40px"}, 500);
+                $("#vs, .content1").css("opacity", "1");
+            });
+            
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var i=0;
+            var intv = setInterval(function(){ 
+                if(i<2){
+                    i++; 
+                } else {
+                    i=0;
+                }
+                con1Tit(i);
+            }, 1100);
+            function con1Tit(n){
+                $(".con1Tit").fadeToggle(500);
+            }
+            
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con1Item1").removeAttr("href").click(function(){
+                $(".tuch1").fadeIn(600);
+            });
+            $(".contenton").click(function(){
+                $(".tuch1").fadeOut(600);
+            });
+            $(".con1Item2").removeAttr("href").click(function(){
+                $(".tuch2").fadeIn(600);
+            });
+            $(".contenton").click(function(){
+                $(".tuch2").fadeOut(600);
+            });
+            $(".con1Item3").removeAttr("href").click(function(){
+                $(".tuch3").fadeIn(600);
+            });
+            $(".contenton").click(function(){
+                $(".tuch3").fadeOut(600);
+            });
+            $(".con1Item4").removeAttr("href").click(function(){
+                $(".tuch4").fadeIn(600);
+            });
+            $(".contenton").click(function(){
+                $(".tuch4").fadeOut(600);
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".login").removeAttr("href").click(function(){
+                $(".login").toggleClass("on");
+                $(".my").fadeToggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <header id="hd">
+            <a href="index.html" class="logo">
+                <img src="./images/logo.png" alt="로고">
+            </a>
+            <span class="menuBtn"></span>
+            <a href="" class="login"></a>
+            <a href="" class="my"></a>
+            
+            <div class="menu">
+              <span class="menuClose">X</span>
+               <a href="index.html" class="menuLogo">
+                   <img src="./images/menuLogo.png" alt="">
+               </a>
+                <ul class="menuBox">
+                    <li><a href="">카카오뱅크소개</a></li>
+                    <li><a href="">공지 / 이벤트</a></li>
+                    <li><a href="">자주묻는 질문</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <figure id="vs">
+            <ul class="vsBox">
+                <li class="item1">
+                    <img src="./images/vs1Card.png" alt="비쥬얼1카드" class="card">
+                    <h3 class="vsTit">같지만 다른은행<br>카카오뱅크</h3>
+                    <img src="./images/vsBottom.png" alt="비쥬얼아래텍스트이미지" class="vsBottomTxt">
+                    <img src="./images/vs1Ani.png" alt="비쥬얼1애니" class="vsAni">
+                </li>
+                <li class="item2">
+                    <img src="./images/vs2Card.png" alt="비쥬얼2카드" class="card">
+                    <h3 class="vsTit">카드는 언제나<br>카카오뱅크와 함께</h3>
+                    <img src="./images/vsBottom.png" alt="비쥬얼아래텍스트이미지" class="vsBottomTxt">
+                    <img src="./images/vs2Ani.png" alt="비쥬얼2애니" class="vsAni">
+                </li>
+                <li class="item3">
+                    <img src="./images/vs3Card.png" alt="비쥬얼3카드" class="card">
+                    <h3 class="vsTit">계좌계설 X 간편이체<br>콘과 함께하세요.</h3>
+                    <img src="./images/vsBottom.png" alt="비쥬얼아래텍스트이미지" class="vsBottomTxt">
+                    <img src="./images/vs3Ani.png" alt="비쥬얼3애니" class="vsAni">
+                </li>
+                <li class="item4">
+                    <img src="./images/vs4Card.png" alt="비쥬얼4카드" class="card">
+                    <h3 class="vsTit">카카오뱅크<br>브랜드 아이덴티티</h3>
+                    <img src="./images/vsBottom.png" alt="비쥬얼아래텍스트이미지" class="vsBottomTxt">
+                    <img src="./images/vs4Ani.png" alt="비쥬얼4애니" class="vsAni">
+                </li>
+            </ul>
+        </figure>
+        <img src="./images/exvs1Top.png" alt="비쥬얼1탑" class="vsTop">
+        
+        <div class="content1">
+            <img src="./images/contentBg.png" alt="콘텐츠배경" class="contentBg">
+            <div class="con1Tit">
+                <h2 class="con1Tit1">카드를 터치해 보세요.</h2>
+                <h2 class="con1Tit2">Touch the card</h2>
+            </div>
+            <div class="con1Card">
+                <a href="" class="con1It con1Item1"></a>
+                <a href="" class="con1It con1Item2"></a>
+                <a href="" class="con1It con1Item3"></a>
+                <a href="" class="con1It con1Item4"></a>
+                
+                <div class="tuch1">
+                    <img src="./images/contentHover1.png" alt="" class="contenton">
+                    <span class="tuchTit">카카오뱅크 비즈니스<br>한발 앞서는 비즈니스 컨셉</span>
+                    <a href="" class="more1"></a>
+                </div>
+                <div class="tuch2">
+                    <img src="./images/contentHover2.png" alt="" class="contenton">
+                    <span class="tuchTit">카카오뱅크 비즈니스<br>한발 앞서는 비즈니스 컨셉</span>
+                    <a href="" class="more2"></a>
+                </div>
+                <div class="tuch3">
+                    <img src="./images/contentHover3.png" alt="" class="contenton">
+                    <span class="tuchTit">카카오뱅크 브랜드 아이덴티티를<br>경험해 보세요.</span>
+                    <a href="" class="more3"></a>
+                </div>
+                <div class="tuch4">
+                    <img src="./images/contentHover4.png" alt="" class="contenton">
+                    <span class="tuchTit">카카오뱅크 브랜드 아이덴티티를<br>경험해 보세요.</span>
+                    <a href="" class="more4"></a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="subFt">
+            <ul class="ftLst">
+                        <li><a href="">모바일뱅킹</a></li>
+                        <li><a href="">서비스</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">전자금융겨래약관</a></li>
+                        <li><a href="">개인정보보호정책</a></li>
+                    </ul>
+        </div>
+        
+        <footer class="ft">
+                    <ul class="ftLst">
+                        <li><a href="">모바일뱅킹</a></li>
+                        <li><a href="">서비스</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">전자금융겨래약관</a></li>
+                        <li><a href="">개인정보보호정책</a></li>
+                    </ul>
+                    <span class="copyright">Copyright © KakaoBank of Korea Corp.</span>
+                </footer>
+    </div>
+</body>
+</html>
