@@ -1,0 +1,68 @@
+ @charset "utf-8";
+ /* 푸터영역설정 */
+        
+        #ft {
+            background-color: #333;
+        }
+        .ft_wrap {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            background-image: url("./images/logo.png");
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-color: #ccc;
+        }
+        .fnb {
+            width: 60%;
+            float: left;
+            margin-left: 692px;
+        }
+        .fnb a {
+            color: #000;
+            font-size: 0.9em;
+        }
+        .fnb li {
+            float: left;
+            padding: 10px;
+            
+        }
+        .fnb a:hover {
+            color: #f442b0;
+        }
+        .fnb a.imp {
+            color: red;
+        }
+        .copyright {
+            clear: both;
+            color: #fff;
+            font-weight: 100;
+            font-family: 'NanumGothic', sans-serif;
+            font-size: 0.8em;
+            text-align: center;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        .snb {
+            width: 30%;
+            float: right;
+            padding-top: 20px;
+        }
+        .snb li {
+            float: right;
+            padding: 10px;
+        }
+        .toTop {
+            display: block;
+            padding: 15px;
+            position: fixed;
+            right: 100px;
+            bottom: 60px;
+            z-index: 9999;
+            background: #ececec;
+            font-size: 10px;
+            color: #222;
+            box-shadow: 0px 0px 2px #000;
+            border: 1px solid #ccc;
+        }

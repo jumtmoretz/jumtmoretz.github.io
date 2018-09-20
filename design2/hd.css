@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.hd {
+    width: 100%;
+    position: relative;
+    z-index: 40;
+        }
+        .hdwrap {
+            width: 1820px;
+            margin: 0px auto;
+            clear: both;
+            position: relative;
+            z-index: 60;
+        }
+
+        .tnb ul li {
+            float: left;
+        }
+
+        .tnb ul li a{
+            color: #333;
+            padding: 10px;
+            font-size: 35px;
+        }
+
+        .tnb ul .lag:hover .la {
+            display: block;
+        }
+        .la {
+            position: absolute;
+            display: none;
+            clear: both;
+            margin: 10px;
+        }
+        .logo {
+            clear: both;
+            float: left;
+            margin-left: 140px;
+            margin-top: -10px;
+        }

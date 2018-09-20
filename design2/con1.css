@@ -1,0 +1,143 @@
+@charset "utf-8";
+.raIt {
+            display: none;
+        }
+        #con1 {
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            position: absolute;
+            left: 0px;
+        }
+        #con1 .imgBox {
+            clear: both;
+            width: 400%;
+            height: 100%;
+            margin-left: 0;
+            transition: 0.8s;
+        }
+
+        #con1 li {
+            width: 25%;
+            float: left;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center top;
+            position: relative;
+        }
+        #con1 .item1 {
+            background-image: url("./images/benner2.png");
+        }
+        #con1 .item2 {
+            background-image: url("./images/benner1.png");
+        }
+        #con1 .item3 {
+            background-image: url("./images/benner1.png");
+        }
+
+        #con1 .banTit {
+            color: #ffc1e1;
+            padding-top: 20%;
+            text-align: center;
+            font-size: 30px;
+        }
+        #con1 .detail {
+            display: block;
+            width: 100px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            background:rgba(0,2,0,8);
+            left: 47%;
+            border: 2px solid #fff;
+            position: absolute;
+            z-index:10;
+            margin-top: 1%;
+        }
+        #con1 .upBox {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index:2;
+            text-align: center;
+            padding-top: 15%;
+        }
+        #con1 .upBox .ty {
+            display: block;
+            width: 639px;
+            height: auto;
+            float: left;
+            margin-left: 27%;
+        }
+        #con1 .upBox .wt {
+            float: left;
+            width: 140px;
+            text-align: center;
+        }
+        #con1 .upBox .wt span {
+            display: block;
+            color: #fff;
+            font-weight: 800;
+            text-align: center;
+        }
+        #con1 .btnBox {
+            clear: both;
+            position: relative;
+            z-index:21;
+            height: 15px;
+            margin-top: -110px;
+        }
+        #con1 .btnBox li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-right: 6px;
+ 
+        }
+        #con1 .btnBox li button, #con1 .btnBox li label {
+            position: relative;
+            top: -400px;
+            left: 860px;
+            border-radius: 9px;
+            outline: 0;
+            border: 0;
+            background-color: #c3c;
+            display: block;
+            background-repeat: no-repeat;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            background-position: center center;
+        }
+        .playBtn {
+            background-image: url("images/rightbt.png");
+        }
+        .stopBtn {
+            background-image: url("images/stopbt.png");
+        }
+        #con1 .btnBox li label {
+            width: 20px;
+            height: 20px;
+            background-image: url("images/stopbt11.png");
+            margin-top: 0;
+        }
+        #ra1:checked ~ .btnBox .item1 {
+            background-image: url("images/button.png"); 
+        }
+        #ra2:checked ~ .btnBox .item2 {
+            background-image: url("images/button.png")
+        }
+        #ra3:checked ~ .btnBox .item3 {
+            background-image: url("images/button.png")
+        }
+        #ra1:checked ~ .imgBox {
+            margin-left: 0;
+        }
+        #ra2:checked ~ .imgBox {
+            margin-left: -100%;
+        }
+        #ra3:checked ~ .imgBox {
+            margin-left: -200%;
+        }

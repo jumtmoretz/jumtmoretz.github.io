@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "H2O";
+    src:url("../font/H2O-Shadow.eot") format('embedded-opentype'),
+        url("../font/H2O-Shadow.woff") format('woff'),
+        url("../font/H2O-Shadow.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "BMK";
+    src:url("../font/BMKIRANGHAERANG-TTF.eot") format('embedded-opentype'),
+        url("../font/BMKIRANGHAERANG-TTF.eot?#iefix") format('embedded-opentype'),
+        url("../font/BMKIRANGHAERANG-TTF.woff") format('woff'),
+        url("../font/BMKIRANGHAERANG-TTF.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "mis";
+    src:url("../font/SDMiSaeng.eot") format('embedded-opentype'),
+        url("../font/SDMiSaeng.woff") format('woff'),
+        url("../font/SDMiSaeng.ttf") format('truetype');
+}
