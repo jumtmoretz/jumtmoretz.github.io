@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>아이디어큐브</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            max-width: 375px;
+            max-height: 812px;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+    </style>
+    
+    <style>
+        #hd {
+            width: 100%;
+            height: 60px;
+            background-color: #35323d;
+            position: relative;
+        }
+        .logo {
+            display: block;
+            width: 153px;
+            height: auto;
+            margin: 0px auto;
+            padding-top: 17px;
+        }
+        .menuBtn {
+            display: block;
+            width: 26px;
+            height: 19px;
+            background-image: url("./images/menuBtn.png");
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+    
+    <style>
+        #vs {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .vsBox {
+            width: 300%;
+            height: auto;
+        }
+        .vsBox li {
+            float: left;
+            position: relative;
+        }
+        .vsBox li img {
+            display: block;
+        }
+        .vsBox li .vsTitImg {
+            position: absolute;
+            top: 55px;
+            left: 55px;
+        }
+        .vsBox li h2 {
+            position: absolute;
+            bottom: 30px;
+            right: 50px;
+        }
+        .vsTit1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 12px;
+            font-weight: 300;
+        }
+        .vsBox li .vsT {
+            display: block;
+            position: absolute;
+            bottom: 7px;
+            right: 10px;
+        }
+        .vs2Tit {
+            clear: both;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 18px;
+            text-align: center;
+            color: #fff;
+            left: 40px;
+            top: 105px;
+            font-weight: 500;
+        }
+        
+    </style>
+    
+    <style>
+        .con {
+            width: 100%;
+            height: 426px;
+            background-image: url("./images/c1Bg.png");
+            background-repeat: no-repeat;
+        }
+        .con ul {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .con ul li {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+        }
+        .con ul li.itemC1 {
+            opacity: 1;
+        }
+        .ani {
+            display: block;
+            height: 108px;
+            width: auto;
+            position: absolute;
+            top: 15px;
+            left: 25px;
+        }
+        .count1 {
+            position: absolute;
+            height: 35px;
+            width: auto;
+            left: 98px;
+            top: 40px;
+        }
+        .count2 {
+            position: absolute;
+            height: 35px;
+            width: auto;
+            left: 132px;
+            top: 40px;
+        }
+        .count3 {
+            position: absolute;
+            height: 35px;
+            width: auto;
+            left: 120px;
+            top: 40px;
+        }
+        .con li span {
+            display: block;
+            font-family: 'Do Hyeon', sans-serif;
+            color: #3f406f;
+        }
+        .conTit {
+            position: absolute;
+            font-size: 20px;
+            top: 35px;
+            left: 160px;
+        }
+        .conTxt {
+            position: absolute;
+            font-size: 12px;
+            top: 85px;
+            left: 130px;
+        }
+        .conTi {
+            display: block;
+            position: absolute;
+            top: 370px;
+            left: 20px;
+        }
+        .conTiAni {
+            display: block;
+            position: absolute;
+            bottom: 190px;
+            right: 20px;
+            transition: 0.9s;
+        }
+        .conTiAni.on {
+            bottom: 220px;
+            transform: rotateX(35deg);
+        }
+        .aniBottom {
+            width: 100%;
+            position: relative;
+        }
+        .aniBottom li {
+            position: absolute;
+            top: -60px;
+            left: 10px;
+        }
+        .aniBottom .btAni2 {
+            left: 60px;
+        }
+        .aniBottom .btAni3 {
+            left: 110px;
+        }
+        .aniBottom .btAni4 {
+            left: 160px;
+        }
+        .aniBottom .btAni5 {
+            left: 210px;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 165px;
+            background-color: #35323d;
+            color: #fff;
+            z-index: 99999;
+        }
+        .ftName {
+            text-align: center;
+            font-size: 13px;
+            line-height: 30px;
+        }
+        .ftLine {
+            display: block;
+            width: 50px;
+            border: 1px solid #fff;
+            transform: rotateX(180deg);
+            margin: 10px auto;
+        }
+        .ftLink li {
+            float: left;
+        }
+        .ftLink li a {
+            display: block;
+            color: #fff;
+            font-size: 12px;
+            margin: 14px;
+            margin-top: 0;
+        }
+        .add {
+            display: block;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 40px;
+            font-style: normal;
+        }
+        .copyright {
+            display: block;
+            font-size: 13px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+    </style>
+    
+    <style>
+        .menuSl {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #fff;
+            z-index: 9999;
+        }
+        .login {
+            position: absolute;
+            background-image: url("./images/loginBg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 250px;
+            height: 109px;
+            cursor: pointer;
+        }
+        .login h2 {
+            color: #888;
+            font-size: 15px;
+            position: absolute;
+            top: 60px;
+            left: 12px;
+        }
+        .menuLst {
+            position: absolute;
+            top: 120px;
+        }
+        .menuLst li {
+            margin: 20px;
+        }
+        .menuLst li a {
+            display: block;
+            color: #333;
+            font-weight: 500;
+        }
+        .xBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-image: url("./images/xBtn.png");
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+        $(document).ready(function() { 
+            var wd = parseInt($(".vsBox li").width());
+            function rAni(){
+                $(".vsBox").not(":animated").animate({"margin-left" : - wd + "px"}, 800, function(){
+                    $(".vsBox li").eq(0).appendTo($(".vsBox"));
+                    $(".vsBox").css("margin-left", "0px");
+                });
+            };
+            var intv = setInterval(function(){
+                rAni();
+            }, 5000);
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".vsBox li .vsTitImg").css("display", "none");
+            var i=0;
+            var intv = setInterval(function(){ 
+                if(i<3){
+                    i++; 
+                } else {
+                    i=0;
+                }
+                Ani(i);
+            }, 3000);
+            function Ani(n){
+                $(".vsBox li .vsTitImg").css("display", "none");
+                $(".vsBox li .vsTitImg").fadeIn(500).delay(1500);
+            };
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".con ul").width());
+            var cnt = $(".con ul li").length;
+            var n = 0;
+            $(".con ul li").eq(0).css("z-index", "30").css("opacity", "1");
+            $(".con ul li").eq(0).siblings().css("z-index", "25").css("opacity", "0");
+            
+            var intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 4000);
+
+            function nAni(i){
+                $(".con ul li").eq(i).siblings().css("z-index", "25");
+                $(".con ul li").eq(i).css("z-index", "30").not(":animated").animate({"opacity" : "1"}, 1200, function(){
+                    $(".con ul li").eq(i).siblings().css("opacity", "0");
+                });
+            }
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var i=0;
+            var intv2 = setInterval(function(){ 
+                if(i<2){
+                    i++; 
+                } else {
+                    i=0;
+                }
+                CAni(i);
+            }, 800);
+            function CAni(i){
+                $(".con .conTiAni").toggleClass("on");
+            }
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".menuBtn").click(function(){
+                $(".menuSl").not(":animated").animate({"left" : "0px"}, 800);
+            });
+            $(".xBtn").click(function(){
+                $(".menuSl").not(":animated").animate({"left" : "-250px"}, 800);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <header id="hd">
+            <a href="index.html" class="logo">
+                <img src="./images/logoW.png" alt="로고">
+            </a>
+            <span class="menuBtn"></span>
+        </header>
+        
+        <figure id="vs">
+            <ul class="vsBox">
+                <li>
+                    <img src="./images/vs1.png" alt="vs1배경" class="vsImg">
+                    <img src="./images/vs1_TitImg1.png" alt="vs1타이틀1" class="vsTitImg">
+                    <h2 class="vsTit1">World Venture Company</h2>
+                    <img src="./images/vs1Tit2.png" alt="" class="vsT">
+                </li>
+                <li>
+                    <img src="./images/vs2.png" alt="" class="vsImg">
+                    <h2 class="vs2Tit">코딩 의무교육<br>아이디어큐브와 함께하세요.</h2>
+                </li>
+                <li>
+                    <img src="./images/vs3.png" alt="" class="vsImg">
+                    <h2 class="vs2Tit">배움의 차이<br>아이디어큐브에서 확인하세요.</h2>
+                </li>
+            </ul>
+        </figure>
+        
+        <div class="con">
+            <ul>
+                <li class="itemC1">
+                    <img src="./images/con1Ani1.png" alt="" class="ani">
+                    <img src="./images/one.png" alt="" class="count1">
+                    <span class="conTit">문제해결 능력을<br>키워줍니다.</span>
+                    <span class="conTxt">코딩은 배우는것이아닌,<br>문제해결 능력에 대한 향상능력을키우기위한<br>시스템사용 수단 입니다. </span>
+                </li>
+                <li class="itemC2">
+                    <img src="./images/con1Ani2.png" alt="" class="ani">
+                    <img src="./images/two.png" alt="" class="count2">
+                    <span class="conTit">프로젝트 수행 능력을<br>키워줍니다.</span>
+                    <span class="conTxt">아이디어큐브는<br>프로젝트 수행능력을키워줌으로써<br>성장에 대한 고정관념이 아닌, 성장을 보여드립니다.</span>
+                </li>
+                <li class="itemC3">
+                    <img src="./images/con1Ani3.png" alt="" class="ani">
+                    <img src="./images/three.png" alt="" class="count3">
+                    <span class="conTit">스스로 해결하는 능력을<br>키워줍니다.</span>
+                    <span class="conTxt">아이디어큐브만의 스스로학습<br>스스로 무언가를 해결해 나가는 방법을<br>본인 스스로가 익힐 수 있도록 학습합니다.</span>
+                </li>
+            </ul>
+            
+            <img src="./images/conTi.png" alt="" class="conTi">
+            <img src="./images/conTiAni.png" alt="" class="conTiAni">
+        </div>
+        
+        <div class="bottom">
+            <ul class="aniBottom">
+                <li class="btAni1"><img src="./images/bottom1.png" alt=""></li>
+                <li class="btAni2"><img src="./images/bottom2.png" alt=""></li>
+                <li class="btAni3"><img src="./images/bottom3.png" alt=""></li>
+                <li class="btAni4"><img src="./images/bottom4.png" alt=""></li>
+                <li class="btAni5"><img src="./images/bottom5.png" alt=""></li>
+            </ul>
+        </div>
+        
+        <footer id="ft">
+            <h2 class="ftName">I  D  E  A  C  U  B  E</h2>
+            <span class="ftLine"></span>
+            <ul class="ftLink">
+                <li><a href="">이용약관</a></li>
+                <li><a href="">개인정보처리방침</a></li>
+                <li style="float: right;"><a href="" style="font-weight: bold;">010-8670-3170</a></li>
+            </ul>
+            <address class="add">경기도 의정부시 오목로 217 송민프라자 201호</address>
+            <span class="copyright">Copyright ⓒ 아이디어큐브</span>
+        </footer>
+    </div>
+    
+    <div class="menuSl off">
+       <div class="login">
+           <h2 class="loginTit">로그인이 필요합니다.</h2>
+       </div>
+        <ul class="menuLst">
+            <li><a href="">소개</a></li>
+            <li><a href="">상담신청</a></li>
+            <li><a href="">갤러리</a></li>
+            <li><a href="">1:1 문의</a></li>
+        </ul>
+        <span class="xBtn"></span>
+    </div>
+</body>
+</html>
