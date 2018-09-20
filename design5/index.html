@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가오 엑티브 태권도</title>
+    
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Amethysta" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Old+Standard+TT" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        img {
+            border: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        
+        .all {
+            width: 100%;
+            height: 100%;
+            background-image: url("./images/mainBg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #hd {
+            width: 100%;
+            height: 100px;
+            position: fixed;
+            z-index: 1000;
+        }
+        .logo img {
+            display: block;
+            height: 100px;
+            width: auto;
+            float: right;
+            margin-right: 55px;
+            margin-top: 10px;
+        }
+        #main {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #vs1 {
+            width: 1500px;
+            height: 600px;
+            background-color: #efefef;
+            position: absolute;
+            top: 200px;
+            left: 210px;
+        }
+        #vs2 {
+            width: 1500px;
+            height: 600px;
+            background-color: #efefef;
+            position: absolute;
+            top: 200px;
+            left: 210px;
+        }
+        #vs3 {
+            width: 1500px;
+            height: 600px;
+            background-color: #efefef;
+            position: absolute;
+            top: 200px;
+            left: 210px;
+        }
+        #vs4 {
+            width: 1500px;
+            height: 600px;
+            background-color: #efefef;
+            position: absolute;
+            top: 200px;
+            left: 210px;
+        }
+        .vs {
+            opacity: 0;
+        }
+        #vs1 {
+            opacity: 1;
+        }
+        .vs1Tit {
+            display: block;
+            width: auto;
+            height: 50px;
+            position: absolute;
+            top: 5px;
+            left: 60px;
+        }
+        .vs1Img {
+            display: block;
+            width: auto;
+            height: 600px;
+            position: absolute;
+            top: 90px;
+            left: 200px;
+        }
+        .vs1menu {
+            position: absolute;
+            width: 500px;
+            height: 200px;
+            right: 50px;
+            top: 50px;
+        }
+        .vs1menu li {
+            float: left;
+            margin: 30px;
+        }
+        .vs1menu li a {
+            display: block;
+            color: #fff;
+            font-family: 'Do Hyeon', sans-serif;
+            text-shadow: 1px 1px 1px #333;
+            font-size: 20px;
+            transition: 0.5s;
+        }
+        .vs1menu li a:hover {
+            color: #9587ff;
+        }
+        .vs1Txt1 {
+            display: block;
+            position: absolute;
+            right: -75px;
+            top: 235px;
+            width: 750px;
+            height: auto;
+        }
+        .vs1Txt2 {
+            display: block;
+            position: absolute;
+            right: 350px;
+            top: 340px;
+            width: 350px;
+            height: auto;
+        }
+        .vs1Txt3 {
+            position: absolute;
+            bottom: -20px;
+            right: -40px;
+            color: #333;
+            font-size: 25px;
+            font-family: 'Nanum Myeongjo', serif;
+            font-weight: bold;
+        }
+        .lBtn {
+            position: absolute;
+            left: 70px;
+            top: 670px;
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            background-image: url("./images/lBtn.png");
+            background-color: #fff;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .rBtn {
+            position: absolute;
+            right: 70px;
+            top: 670px;
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            background-image: url("./images/rBtn.png");
+            background-color: #fff;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        
+        #ft {
+            width: 100%;
+            height: 130px;
+            background-color: darkslategrey;
+        }
+        .ftLink {
+            width: 100%;
+            height: 20px;
+        }
+        .ftLink li {
+            float: left;
+            margin: 20px;
+        }
+        .ftLink li a {
+            display: block;
+            color: #fff;
+            transition: 0.5s;
+        }
+        .ftLink li a:hover {
+            color: deeppink;
+        }
+        .ftTxt{
+            clear: both;
+            width: 100%;
+            height: 50px;
+            color: #fff;
+            
+        }
+        .address {
+            display: block;
+            font-size: 18px;
+            text-align: center;
+        }
+        .copyright {
+            display: block;
+            text-align: center;
+        }
+    </style>
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".vs").width());
+            var cnt = $("#main .vs").length;
+            var n = 0;
+            $("#main .vs").eq(0).css("z-index", "30").css("opacity", "1");
+            $("#main .vs").eq(0).siblings().css("z-index", "25").css("opacity", "0");
+            
+            var intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 3000);
+
+            function nAni(i){
+                $("#main .vs").eq(i).siblings().css("z-index", "25");
+                $("#main .vs").eq(i).css("z-index", "30").not(":animated").animate({"opacity" : "1"}, 800, function(){
+                    $("#main .vs").eq(i).siblings().css("opacity", "0");
+                });
+            }
+            $(".lBtn").click(function(){
+                clearInterval(intv);
+                if(n>0) {
+                    n=n-1;
+                    nAni(n);
+                } else {
+                    n=cnt-1;
+                    nAni(n);
+                }
+                intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 3000);
+            });
+            $(".rBtn").click(function(){
+                clearInterval(intv);
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 3000);
+            });
+            
+            $("#main .vs").mouseover(function(){
+                clearInterval(intv);
+            });
+            $("#main .vs").mouseout(function(){
+                intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 3000);
+            });
+        });
+    </script> <!-- 좌우 버튼 -->
+</head>
+<body>
+   <div class="all">
+        <header id="hd">
+            <a href="" class="logo">
+                <img src="./images/logo.png" alt="로고">
+            </a>
+        </header>
+
+        <div id="main" class="mainVs">
+            <div class="vs" id="vs1">
+                <img src="./images/vs1Tit.png" alt="1번타이틀" class="vs1Tit">
+                <img src="./images/vs1Img.png" alt="1번이미지" class="vs1Img">
+                <ul class="vs1menu">
+                    <li><a href="sub1.html">영유아 훈련</a></li>
+                    <li><a href="sub1.html">교육진 세미나</a></li>
+                    <li><a href="sub1.html">시범단 유아</a></li>
+                </ul>
+                <img src="./images/txt1.png" alt="텍스트1" class="vs1Txt1">
+                <img src="./images/txt2.png" alt="텍스트2" class="vs1Txt2">
+                <span class="vs1Txt3">태권도를 하면<br>단체 활동 속 배움으로<br>주변과 어우러지는 아이로 자라납니다.</span>
+            </div>
+            
+            <div class="vs" id="vs2">
+                <img src="./images/vs1Tit.png" alt="1번타이틀" class="vs1Tit">
+                <img src="./images/vs1Img2.png" alt="1번이미지" class="vs1Img">
+                <ul class="vs1menu">
+                    <li><a href="sub1.html">학생부 훈련</a></li>
+                    <li><a href="sub1.html">교육진 세미나</a></li>
+                    <li><a href="sub1.html">시범단 학생</a></li>
+                </ul>
+                <img src="./images/txt1_2.png" alt="텍스트1" class="vs1Txt1">
+                <img src="./images/txt2_2.png" alt="텍스트2" class="vs1Txt2">
+                <span class="vs1Txt3">태권도 교육<br>학교생활의 큰 힘이되는<br>강인함을 최대로 올려드리겠습니다.</span>
+                
+            </div>
+            
+            <div class="vs" id="vs3">
+                <img src="./images/vs1Tit.png" alt="1번타이틀" class="vs1Tit">
+                <img src="./images/vs1Img3.png" alt="1번이미지" class="vs1Img">
+                <ul class="vs1menu">
+                    <li><a href="sub1.html">일반부 훈련</a></li>
+                    <li><a href="sub1.html">교육진 세미나</a></li>
+                    <li><a href="sub1.html">시범단 일반</a></li>
+                </ul>
+                <img src="./images/txt1_3.png" alt="텍스트1" class="vs1Txt1">
+                <img src="./images/txt2_3.png" alt="텍스트2" class="vs1Txt2">
+                <span class="vs1Txt3">성인의 피지컬<br>헛으로 되돌아가지 않는<br>교육훈련으로 보다 강인한 체력으로 만들어 드리겠습니다.</span>
+                
+            </div>
+            
+            <div class="vs" id="vs4">
+                <img src="./images/vs1Tit.png" alt="1번타이틀" class="vs1Tit">
+                <img src="./images/vs1Img4.png" alt="1번이미지" class="vs1Img">
+                <ul class="vs1menu">
+                    <li><a href="sub1.html">시범단 훈련</a></li>
+                    <li><a href="sub1.html">시범단 일정</a></li>
+                    <li><a href="sub1.html">시범단 성인</a></li>
+                </ul>
+                <img src="./images/txt1_4.png" alt="텍스트1" class="vs1Txt1">
+                <img src="./images/txt2_4.png" alt="텍스트2" class="vs1Txt2">
+                <span class="vs1Txt3">태권도의 시각화<br>시범단의 모습<br>가오엑티브 태권도의 시범단이 함께합니다.</span>
+                
+            </div>
+        </div>
+        <button class="lBtn"></button>
+        <button class="rBtn"></button>
+    </div>
+    <footer id="ft">
+        <div class="ftLink">
+            <ul>
+                <li><a href="">이용약관</a></li>
+                <li><a href="">개인정보취급방침</a></li>
+                <li><a href="">찾아오시는 길</a></li>
+                <li><a href="">이메일무단수집거부</a></li>
+            </ul>
+        </div>
+        
+        <div class="ftTxt">
+            <span class="address">주소 : 대전 동구 가오동 651번지 유미빌딩 4층 가오엑티브태권도장</span>
+            <span class="copyright">Copyright© 1998-2018.Korea Taekwondo Association All right reseved.</span>
+        </div>
+    </footer>
+</body>
+</html>
