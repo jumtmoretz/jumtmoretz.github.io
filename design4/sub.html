@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:::형지:::</title>
+    <link rel="stylesheet" href="clear.css">
+<link rel="stylesheet" href="menu.css">
+<!-- 폰트링크 -->
+ <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  
+   
+    <style>
+        .sub {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url("./images/bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .lst {
+            position: absolute;
+            left: 250px;
+            top: 200px;
+            width: 100%;
+        }
+        .lst li {
+            position: relative;
+            float: left;
+            width: 320px;
+            margin-left: 110px;
+            height: 551px;
+        }
+        
+        .lst li a {
+            display: block;
+            width: 320px;
+            height: 551px;
+        }
+        .lst li img {
+            width: 320px;
+            height: 551px;
+            transform: scale(1);
+            transition: 0.8s;
+            background-color: #fff;
+        }
+        .lst li:hover img {
+            transform: rotateY(180deg);
+            background-color: #ccc;
+            opacity: 0.15;
+        }
+        .lst li .txt {
+            position: absolute;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 40px;
+            left: 85px;
+            top: 20px;
+            color: #fff;
+        }
+        .lst li .itemTxt1 {
+            position: absolute;
+            text-align: center;
+            font-family: 'Sunflower', sans-serif;
+            font-size: 15px;
+            left: 50px;
+            top: 120px;
+            color: #000;
+        }
+        .lst li .itemTxt2 {
+            position: absolute;
+            text-align: center;
+            font-family: 'Sunflower', sans-serif;
+            font-size: 12px;
+            top: 200px;
+            color: #000;
+        }
+        .lst li .moreTxt {
+            position: absolute;
+            text-align: center;
+            font-family: 'Old Standard TT', serif;
+            font-size: 50px;
+            bottom: 20px;
+            right: 20px;
+            color: #000;
+            z-index: 100;
+            transition: 0.5s;
+        }
+        .lst li .moreTxt:hover {
+            color: palevioletred;
+            text-shadow: 1px 1px 1px #fff;
+        }
+        .lst li .txtBg {
+            position: absolute;
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 30px;
+            bottom: 100px;
+            right: 60px;
+            color: #fff;
+        }
+        .lst li .map {
+            width: 320px;
+            height: 243px;
+            background-image: url("./images/map.png");
+            position: absolute;
+            top: 90px;
+        }
+    </style>
+    
+    
+<link rel="stylesheet" href="ft.css">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+<body>
+   <input type="checkbox" class="ckItem" id="ia_open">  
+   
+    <div class="hdContain" id="hd1">
+       
+        <ul class="tnb left">
+            <li><a href="" class="login">로그인</a></li>
+            <li><a href="" class="join">회원가입</a></li>
+        </ul>
+        <ul class="tnb right">
+            <li><label for="ia_open" class="opener">sitemap</label></li>
+            <li><a>English</a></li>
+        </ul>
+    </div>
+    <input type="radio" name="subRa" class="raItem" id="subRa0" checked>
+    
+    
+    <div class="collap" id="collap1">
+       <h1 class="sitemapTit">사이트 맵</h1>
+       <nav class="sitemap">
+       <ul>
+           <li class="sitemapCateTit">형지 스토리</li>
+           <li><a href="">형지 소개</a></li>
+           <li><a href="">연역</a></li>
+           <li><a href="">비전 및 미션</a></li>
+           <li><a href="">CEO</a></li>
+           <li><a href="">상생 건의함</a></li>
+           <li><a href="">오시는 길</a></li>
+       </ul>
+       <ul>
+           <li class="sitemapCateTit">형지 브랜드</li>
+           <li><a href="">여성복</a></li>
+           <li><a href="">남성복</a></li>
+           <li><a href="">아웃도어</a></li>
+           <li><a href="">골프웨어</a></li>
+           <li><a href="">학생복</a></li>
+           <li><a href="">유니폼</a></li>
+       </ul>
+       <ul>
+           <li class="sitemapCateTit">행복 채널</li>
+           <li><a href="">형지 뉴스</a></li>
+           <li><a href="">언론 보도</a></li>
+           <li><a href="">수상 내역</a></li>
+           <li><a href="">영상 갤러리</a></li>
+       </ul>
+       <ul>
+           <li class="sitemapCateTit">행복 나눔</li>
+           <li><a href="">여성 후원</a></li>
+           <li><a href="">아동 후원</a></li>
+           <li><a href="">교육 후원</a></li>
+           <li><a href="">문화 후원</a></li>
+           <li><a href="">긴급 구호</a></li>
+           <li><a href="">행복 드림</a></li>
+       </ul>
+       </nav>
+       
+   </div>
+
+    <div class="hdwrap">
+        <nav class="gnb">
+           <a href="./index.html" class="logo"></a>
+            <ul class="mainMenu">
+                <li class="cate1">
+                    <input type="radio" name="subRa" class="raItem" id="subRa1">
+                    <label for="subRa1" class="mainList">형지 스토리</label>
+                    <div class="sub">
+                      
+                       <!-- figure.subFrame>h2.subMenuTit+span.bdTxt+img+(ul.subMenu>li*6>a>img+h3.subMenuCateTit+p.subMenuCateDesc)+label[for=subRa0].closeBtn+(label[for=ia_open].lstBtn)
+                       -->
+                       
+                        <figure class="subFrame1">
+                            <!--<h2 class="subMenuTit">형지를<br>숨김없이</h2>
+                            <span class="bdTxt">보여드리겠습니다.</span> -->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="sub.html">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">형지소개</h3>
+                                        <p class="subMenuCateDesc">형지의 기업의<br>브랜드 가치를<br>보여드리겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/2.png" alt="">
+                                        <h3 class="subMenuCateTit">연역</h3>
+                                        <p class="subMenuCateDesc">형지의 역사를<br>여러분께<br>알려드립니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/3.png" alt="">
+                                        <h3 class="subMenuCateTit">비전 및 미션</h3>
+                                        <p class="subMenuCateDesc">형지의 기업에 맞는<br>브랜드가치를<br>느껴보세요.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/4.png" alt="">
+                                        <h3 class="subMenuCateTit">CEO</h3>
+                                        <p class="subMenuCateDesc">평생 남보다<br>반걸음 더 앞서 가겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/5.png" alt="">
+                                        <h3 class="subMenuCateTit">상생 건의함</h3>
+                                        <p class="subMenuCateDesc">협력사와의<br>파트너십을
+                                       <br>위한 공간입니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/6.png" alt="">
+                                        <h3 class="subMenuCateTit">오시는 길</h3>
+                                        <p class="subMenuCateDesc">위치안내<br>매장위치 정보를<br>확인할 수 있습니다.</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                        </figure>
+                    </div>
+                </li>
+                <li class="cate2">
+                    <input type="radio" name="subRa" class="raItem" id="subRa2">
+                    <label for="subRa2" class="mainList">형지 브랜드</label>
+                    <div class="sub">
+                        <figure class="subFrame2">
+                            <!--<h2 class="subMenuTit">반걸음<br>앞에 서서</h2>
+                            <span class="bdTxt">다가가겠습니다.</span> -->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">여성복</h3>
+                                        <p class="subMenuCateDesc">여성 캐주얼 브랜드<br>크로커다일 레이디
+                                       <br>전속모델 - 하지원</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">남성복</h3>
+                                        <p class="subMenuCateDesc">남성 모던 멘즈웨어<br>BON
+                                       <br>World Contents</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">아웃도어</h3>
+                                        <p class="subMenuCateDesc">라이프 스타일 아웃도어<br>와일드 로즈
+                                       <br>Wild Roses</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">골프웨어</h3>
+                                        <p class="subMenuCateDesc">프랑스 명품 골프웨어<br>CASTELBAJAC
+                                       <br>전속모델 - 이하늬</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">학생복</h3>
+                                        <p class="subMenuCateDesc">학생복 1등 브랜드<br>엘리트
+                                       <br>당신을 듣고 교복을 연구합니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">유니폼</h3>
+                                        <p class="subMenuCateDesc">고품격 유니폼 브랜드<br>월비
+                                       <br>전속모델 - 이태곤</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                        </figure>
+                    </div>
+                </li>
+                <li class="cate3">
+                    <input type="radio" name="subRa" class="raItem" id="subRa3">
+                    <label for="subRa3" class="mainList">행복 채널</label>
+                    <div class="sub">
+                        <figure class="subFrame3">
+                            <!--<h2 class="subMenuTit">행복패션<br>행복브랜드</h2>
+                            <span class="bdTxt">선보이겠습니다.</span>-->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">형지 뉴스</h3>
+                                        <p class="subMenuCateDesc">행복한 미래를 여는<br>형지소식
+                                       <br>빠르게 행복을 전하겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/2.png" alt="">
+                                        <h3 class="subMenuCateTit">언론 보도</h3>
+                                        <p class="subMenuCateDesc">언론 속의<br>패션그룹 형지
+                                       <br>한발 앞선 행보로 다가가겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/6.png" alt="">
+                                        <h3 class="subMenuCateTit">수상 내역</h3>
+                                        <p class="subMenuCateDesc">No.1브랜드를<br>넘어서
+                                       <br>고객의 마음 속 No.1이 되겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/3.png" alt="">
+                                        <h3 class="subMenuCateTit">영상 갤러리</h3>
+                                        <p class="subMenuCateDesc">영상 속 기업<br>브랜드 이야기
+                                       <br>기업 동영상을 감상하실 수 있습니다.</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                            
+                        </figure>
+                    </div>
+                </li>
+                <li class="cate4">
+                    <input type="radio" name="subRa" class="raItem" id="subRa4">
+                    <label for="subRa4" class="mainList">행복 나눔</label>
+                    <div class="sub">
+                        
+                        <figure class="subFrame4">
+                            <!--<h2 class="subMenuTit">도움으로써<br>바르게</h2>
+                            <span class="bdTxt">성장하겠습니다.</span>-->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">여성 후원</h3>
+                                        <p class="subMenuCateDesc">여성이<br>행복한 세상
+                                       <br>저소득 여성가장의 나눔을 실천</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">아동 후원</h3>
+                                        <p class="subMenuCateDesc">어린아이에게<br>꿈과 희망을
+                                       <br>교육 및 정서 지원</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">교육 후원</h3>
+                                        <p class="subMenuCateDesc">젋은 이들에게<br>배움의 기회를
+                                       <br>미래 인재양성에 힘쓰고 있습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">문화 후원</h3>
+                                        <p class="subMenuCateDesc">문화 예술로<br>세상을 풍요롭게
+                                       <br>각종 문화 예술활동을 후원</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">긴급 구호</h3>
+                                        <p class="subMenuCateDesc">지구촌<br>온정 나눔
+                                       <br>구호물품을 후원하고 있습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">행복 드림</h3>
+                                        <p class="subMenuCateDesc">나눌수록<br>커지는 보람
+                                       <br>소외계층을 돕기 위해 나눔활동을 참여</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                        </figure>
+                    </div>
+                </li>
+
+            </ul>
+            <label for="ia_open" class="lstBtn"></label>
+        </nav>
+    </div>
+    
+    <main class="sub">
+        <ul class="lst">
+        <li class="item1">
+            <a href="">
+               <h2 class="txt">형지 소개</h2>
+               <span class="itemTxt1">끝없는 상상으로 패션을 창조하는 기업<br>우리 삶에 행복한 변화가 시작됩니다.</span>
+               <span class="itemTxt2">여성복으로는 크로커다일레이디, 샤트렌, 올리비아하슬러,
+캐리스노트, 스테파넬, 라젤로 등 6개의 브랜드를, 남성복으로는 예작, 본 등 2개의 브랜드를 전개중입니다. 또한 아웃도어로는 와일드로즈, 골프웨어로는 까스텔바작을 선보이고 있습니다. 학생복 엘리트, 유통브랜드 아트몰링 장안점 및 패션라운지, 아트몰링 부산본점과 더불어 에스콰이아 및 영에이지, 젤플렉스, 소노비, 포트폴리오, 까스텔바작ACC 등 제화잡화를 전개하고 있습니다. 더불어 홈리빙 브랜드 ‘까스텔바작홈’ 을 전개합니다. 이처럼 패션그룹형지는 총 22개 브랜드를 전개하며 패션을 통해 행복을 전파하고 있습니다.</span>
+              <span class="txtBg">HYUNG JI<br>Creative Culture</span>
+               <span class="moreTxt">More</span>
+                <img src="./images/q1.png" alt="이미지1">
+                
+            </a>
+        </li>
+        <li class="item2">
+            <a href="">
+               <h2 class="txt">형지 연혁</h2>
+               <span class="itemTxt1">언제나 새로운 발상과 시도로<br>패션산업 발전의 길을 만들어 왔습니다.</span>
+               <span class="itemTxt2">고객, 구성원, 파트너의 아름다운 조화를 바탕으로 행복한 패션문화를 창출하는 존경 받는 기업 NO1. 패션 유통기업이 되는 사회와 한발 앞선 고객만족 경영과 상생경여으로 NO.1 패션 유통기업이 되는것에 이바지합니다. 또한 고객의 라이프 스타일을 선도하는 패션유통G3산업을 이어가며 이는 지속적인 성장으로 세계속에 뻗어나가는 최고의 일터라고 자랑합니다.</span>
+              <span class="txtBg">HYUNG JI<br>Creative Culture</span>
+               <span class="moreTxt">More</span>
+                <img src="./images/q2.png" alt="이미지2">
+                
+            </a>
+        </li>
+        <li class="item3">
+            <a href="">
+               <h2 class="txt">오시는 길</h2>
+               <span class="map"></span>
+               <span class="txtBg">HYUNG JI<br>Creative Culture</span>
+               <span class="moreTxt">More</span>
+                <img src="./images/q3.png" alt="이미지3">
+                
+            </a>
+        </li>
+    </ul>
+    </main>
+
+
+    <!-- 푸터영역 -->
+     <footer class="ft">
+           <div class="ftFrame">
+           <nav class="fnb">
+              <ul>
+                  <li><h3 class="ftList"><a href="">개인정보 취급 방침</a></h3></li>
+                  <li><h3 class="ftList"><a href="">사이트 맵</a></h3></li>
+                  <li><h3 class="ftList last"><a href="">ENGLISH</a></h3></li>
+              </ul>
+                <address class="copyright">COPYRIGHT 2013 FASHION GROUP HYUNGJI ALL RIGHTS RESERVED</address>
+           </nav>
+    </div>
+</footer>
+
+</body>
+</html>

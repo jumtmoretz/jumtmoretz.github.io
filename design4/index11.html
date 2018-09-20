@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:::형지에 오신것을 환영합니다:::</title>
+    <meta name= "viewport" content= "width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Render to IE`s latest version-->
+    <meta http-equiv= "X-UA-Compatible" content= "ie=edge">
+    <!-- Refresh Interval Time -->
+    <meta http-equiv= "refresh" content= "180">
+    <!-- website information -->
+    <meta name= "application-name" content= "ilshin website">
+    <meta name= "author" content= "litae Cortez">
+    <meta name= "description" content= "웹사이트 소개">
+    <meta name= "keywords" content= "형지, 패션, 그룹, 섬유">
+
+    <!-- shortcut icon Setting -->
+    <!-- Chrome, safari, IE -->
+    <link rel= "shortcut icon" href= "./ico/favicon.ico">
+    <!-- Firefox, opera (Chrome and safari say thanks but no thanks) -->
+    <link rel= "icon" href= "./ico/favicon.png">
+    <!-- still works in IE6+ series2 -->
+    <link rel= "shortcut icon" href= "./ico/favicon.ico" type= "image/vnd.microsoft.icon">
+    <!-- still works in IE6+ series3 -->
+    <link rel= "shortcut icon" href= "./ico/favicon.ico" type= "image/x-icon">
+    <meta name= "msapplication-TileColor" content= "ffffff">
+    <meta nmae= "msapplication-TileImage" content= "./ico/ms-icon-114.png">
+    <link rel="stylesheet" href="./sl.css">
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;  
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul, li {
+            list-style: none;
+        }
+        input {
+            display: none;
+        }
+        .gnbSupmenu {
+            min-width: 864px;
+            height: 28px;
+            padding: 11px 80px;
+            background: #2c2f36;
+            line-height: 27px;
+            text-align: right;
+            z-index: 99;
+        }
+        .gnbSupmenu ul li {
+            float: left;
+        }
+        gnbSupmenu ul .sign {
+            float: left;
+            
+        }
+        .sign a {
+            color: #fff;
+            margin-right: 20px;
+        }
+        .sign a:hover {
+            color: cadetblue;
+            transition: 0.5s;
+        }
+        .sublist {
+            float: right;
+        }
+        .sublist li {
+            margin-right: 20px;
+        }
+        .sublist li a {
+            color: #fff;
+        }
+        .subMenu {
+            z-index: 99;
+        }
+        .subMenu ul li a {
+            color: #fff;
+        }
+        .ckItem {
+            width: 50%;
+            height: 30%;
+            background-color: #fff;
+            
+        }
+    </style>
+    
+      <style>
+        .gnb {
+            position: absolute;
+            top: 160px;
+            left: 13%;
+            width: 77%;
+            z-index: 999;
+            
+        }
+          
+
+          .gnb li label {
+              position: relative;
+              margin:50px;
+              cursor: pointer;
+              font-family: 'Black Han Sans', sans-serif;
+              color: #474b9f;
+              
+          }
+        .gnb li {
+            display: block;
+            float: left;
+            font-size: 17px;
+            color: #fff;
+            z-index: 99;
+            margin: 30px;
+        }
+
+        .gnb li label.menuList:hover {
+            color: #e92879;
+            transition: 0.5s;
+            padding-bottom: 7px;
+            border-bottom: 1px solid #e92879;
+            text-shadow: 1px 1px 5px #fff;
+        }
+          .menuList {
+              position: absolute;
+              display: block;
+              z-index: 999;
+          }
+        .gnb ul li.cate3 {
+            margin-left: 510px;
+          }
+        .sub {
+            position: absolute;
+            top: 0;
+            left: -4.3%;
+            width: 110%;
+            height: 750px;
+            background: #ccc;
+            z-index: 23;
+            display: none;
+        }
+        .subMenu {
+            position: relative;
+              background-color: #fff;
+            display: block;
+          }
+        .gnb li .raItem:checked ~ .sub { 
+            display: block;
+          }
+        .gnb li .raItem:checked ~ label {
+              color: #e42b8f;
+          }
+        .raItem:not(:checked) ~ .hdWrap label {
+              color: #000;
+          }
+          .subFrame {
+                float: left;
+                padding: 30px;
+                width: 280px;
+                padding-left: 60px;
+              margin-top: 250px;
+          }
+          .subMenuTit {
+                display: block;
+                font-size: 24px;
+                color: #000000;
+                font-weight: 300;
+                line-height: 2;
+        }
+          .subMenu {
+            float: right;
+            min-width: 800px;
+            max-width: 68%;
+              margin-top: 250px;
+          }
+          .siteMap {
+              color: #999;
+              font-size: 16px;
+              cursor: pointer;
+          }
+          .closeBtn.menuBtn {
+                background: url(./images/xbtn.png) no-repeat;
+                background-position: 0px 0px;
+              background-size: 100% 100%;
+                top: 10px;
+                right: 10px;
+                width: 50px;
+                height: 50px;
+          }
+          .gnb .closeBtn {
+              position: relative;
+            display: block;
+            cursor: pointer;
+              margin-top: 400px;
+              margin-left: 900px;
+          }
+    </style>
+    
+    <style>
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+        .next, .prev {
+            z-index:999;
+            position:absolute;
+            display:block;
+            width:50px;
+            height:50px;
+            top:10%;
+            background-repeat:no-repeat; 
+            cursor:pointer;
+        }
+        .next, .prev {
+            width:58px;
+            height:58px;
+            text-indent:-9999px;
+            margin-top: 300px;
+        }
+        .next {
+            background-image: url("./images/rbtn.png");
+            right:5%;
+        }
+        .prev {
+            background-image: url("./images/lbtn.png");
+            left:5%;
+        }
+        .imgSlide {
+            position:relative;
+
+        }
+        .gallery {
+            height: 100%;
+            
+        }
+        .gallery img {
+            display: block;
+            float: left;
+            width: 1920px;
+            height: 100%;
+        }
+        .logo a {
+            display: block;
+            width: 180px;
+            height: 118px;
+            background-image: url("./ico/favicon.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            text-indent: -999px;
+            font-size: 0;
+            position: absolute;
+            margin-top: 130px;
+            margin-left: 45%;
+            z-index: 9990;
+        }
+        
+        </style>
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="ktslider2.js"></script>
+    <script src="txtslider2.js"></script>
+    
+        
+    <style>
+        .mainTit {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            height: 250px;
+            margin: 0 0 0 -470px;
+            padding: 0 60px;
+            color: #fff;
+            z-index: 100;
+        }
+        .mainTit .tit {
+            font-family: 'Gugi', cursive;
+            font-size: 58px;
+            letter-spacing: 0.3em;
+            margin-left: -380px;
+        }
+        .mainTit .titCom img {
+            position: absolute;
+            left: -350px;
+        }
+        .mainTit .more {
+            display: block;
+            margin-top: 90px;
+            padding: 10px;
+            border-top: 2px solid #fe0000;
+            font-size: 14px;
+            line-height: 14px;
+            color: #fff;
+            width: 70px;
+            margin-left: -125px;
+        }
+        .mainTit .more:hover {
+            color: #1284ff;
+            transition: 0.5s;
+            border-top: 2px solid #1284ff;
+        }
+    </style>
+    
+    <style>
+        .ft {
+            border: none;
+            margin: 0;
+            background: #bababb;
+        }
+        .ftCon {
+            position: relative;
+            width: 960px;
+            margin: 0 auto;
+            padding: 30px 0 60px 0px;
+            font-size: 10px;
+        }
+        .ftCon a {
+            display: block;
+            float: left;
+            margin-left: 50px;
+            font-size: 14px;
+            color: #000;
+        }
+        .ftList:after {
+            position: absolute;
+            content: "|";
+            margin-left: 20px;
+            font-size: 14px;
+        }
+        .ftList.last:after {
+            content: "";
+        }
+        .ad {
+            margin: 50px;
+            color: #666666;
+            font-size: 14px;
+        }
+    </style>
+    
+    <style>
+        .ckItem {
+            display: none;
+        }
+        .wrap, .boxWrap1, .page0 {
+            width: 50%;
+        }
+        .page0 {
+            height: 50%;
+        }
+        .boxWrap1 {
+            position: absolute;
+            z-index: 1000;
+            top: 605px;
+            left: -110%;
+            background: rgba(0,0,0,0.65);
+            background-color: #f1155c;
+            transition: 0.8s;
+            height: 40%;
+            
+        }
+        #ck1:checked ~ .boxWrap1 {
+            left: 0;
+        }
+        
+        #page0 label {
+            position:absolute;
+            display: block;
+            background: #f1155c;
+            background-size: 100% 100%;
+            border-radius: 30px;
+            width: 197px;
+            height: 375px;
+            top: -390px;
+            z-index: 999;
+            left: -100px;
+        }
+        
+        #page0 .opener {
+            position: relative;
+        }
+        .colTit1 {
+            color: #fff;
+            margin: 5px;
+            font-size: 70px;
+            margin-left: 120px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            transition: 0.4s;
+            transform: rotate(0deg);
+        }
+        .colTit2 {
+            display: block;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 90px;
+            margin-top: 90px;
+            transform:rotate(90deg);
+        }
+        .popBox {
+            width: 600px;
+            height: auto;
+            margin-left: 200px;
+            
+
+        }
+        .titLine {
+            height: 60px;
+            border-bottom: 2px solid #fff;
+            position: relative;
+            width: 100%;
+        }
+        .popTit {
+            text-align: center;
+            color: #fff;
+            line-height: 60px;
+        }
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+    
+    <style>
+        #page2 {
+            position: relative;
+        }
+        .con1 {
+            width: 100%;
+            height: 100%;
+        }
+        .conbg li {
+            position: absolute;
+            float: left;
+            margin-top: -730px;
+            z-index: 80;
+            margin-left: 350px;
+        }
+        .conbg .conbg1 {
+            width: 500px;
+            height: 600px;
+            background-image: url("./images/page1img1.png");
+            background-repeat: no-repeat;
+        }
+        .conbg .conbg2 {
+            width: 500px;
+            height: 600px;
+            background-image: url("./images/page1img2.png");
+            background-repeat: no-repeat;
+            right: 20%;
+        }
+        .showBtn {
+            position: absolute;
+            right: 15%;
+            margin-top: -260px;
+            z-index: 999;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-image: url(./images/showbtn.png);
+            background-repeat: no-repeat;
+            border: 0;
+        }
+        .showBtn:hover {
+            background-image: url(./images/showbtnon.png);
+            transition: 0.5s;
+        }
+        .border {
+            border: 3px solid #b0d1d2;
+            width: 83%;
+            height: 70%;
+            margin-left: 150px;
+            top: -100px;
+        }
+        .conbg2 li {
+            position: absolute;
+            float: left;
+            z-index: 80;
+            left: 0;
+        }
+        
+        .conbg2 .conbg3 {
+            width: 600px;
+            height: 400px;
+            background-image: url("./images/page1img3.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 100px;
+            border: 0;
+            margin-top: 250px;
+            z-index: 90;
+            cursor: pointer;
+        }
+        .conbg2 .conbg4 {
+            width: 800px;
+            height: 450px;
+            background-image: url("./images/page1img4.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin-left: 1000px;
+            border: 0;
+            margin-top: 450px;
+            z-index: 90;
+            cursor: pointer;
+        }
+        .conbg2 .conbg5 {
+            width: 400px;
+            height: 800px;
+            background-image: url("./images/page1img5.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin-left: 650px;
+            border: 0;
+            margin-top: -80px;
+            z-index: 90;
+            cursor: pointer;
+        }
+        .conbg2 .conbg3:hover {
+            background-image: url("./images/pagehover1.png");
+            transition: 0.8s;
+            z-index: 99;
+        }
+        .conbg2 .conbg5:hover {
+            background-image: url("./images/pagehover2.png");
+            transition: 0.8s;
+        }
+        .conbg2 .conbg4:hover {
+            background-image: url("./images/pagehover3.png");
+            transition: 0.8s;
+            z-index: 99;
+            
+        }
+        .con2Txt1 {
+            font-family: 'Libre Baskerville', serif;
+            position: absolute;
+            right: 7%;
+            font-size: 40px;
+            text-align: center;
+            color: #fff;
+            border: 0;
+            width: 500px;
+            height: 70px;
+            background-color: #ccc;
+            margin: 20px;
+            
+        }
+        .con2Txt2 {
+            font-family: 'Libre Baskerville', serif;
+            position: absolute;
+            top: 10%;   
+            right: 2%;
+            font-size: 40px;
+            text-align: center;
+            color: #fff;
+            border: 0;
+            width: 500px;
+            height: 70px;
+            background-color: #ccc;
+            margin: 20px;
+            
+        }
+        
+    </style>
+    
+    <style>
+
+        .collap {
+            position: fixed;
+            background: #fff;
+            width: 100%;
+            height: 800px;
+            z-index: 9999;
+            display: none;
+
+
+        }
+        #site_map:checked ~ .collap {
+            display: block;      
+        }
+
+        .areaname {
+            text-align: center;
+        }
+        .menuTit {
+            margin-left: 350px;
+        }
+        .menuTit li {
+            float: left;
+            margin: 100px;
+            border-bottom: 3px solid #e33088;
+        }
+        .areaMenu {
+            margin-bottom: 12px;
+        }
+
+    </style>
+</head>
+<body>
+<input type="checkbox" id="site_map" class="ckItem">
+<div class="gnbSupmenu">
+ 
+  <ul class="subSign">
+      <li class="sign"><a href="login_form.php">로그인</a></li>
+      <li class="sign"><a href="add_form.php">회원가입</a></li>
+  </ul>
+  
+   <ul class="sublist">
+       <li><label for="site_map" class="siteMap">사이트맵</label></li>
+       <li><a href="">ENGLISH</a></li>
+   </ul>
+   
+</div>
+    <div class="collap" id="collap1">
+       <h1 class="areaname">사이트 맵</h1>
+       <ul class="menuTit">
+           <li class="menu1"><h3 class="areaMenu">형지 스토리</h3>
+           </li>
+           <li class="menu1"><h3 class="areaMenu">형지 브랜드</h3>
+           </li>
+           <li class="menu1"><h3 class="areaMenu">행복 채널</h3>
+           </li>
+           <li class="menu1"><h3 class="areaMenu">행복 나눔</h3>
+           </li>
+       </ul>
+       
+       
+   </div>
+
+
+<section class="page" id="page1">
+       <h1 class="logo">    
+        <a href="">형지로고</a>
+    </h1>
+    
+    <input type="radio" name="subRa" class="raItem" id="subRa0" checked>
+    <div class="hdWrap">
+        <nav class="gnb">
+            <a href="" class="logo"></a>
+            <ul class="mainMenu">
+                <li class="cate1">
+                    <input type="radio" name="subRa" class="raItem" id="subRa1">
+                <label for="subRa1" class="menuList">형지 스토리</label>
+                   <div class="sub">
+                       <figure class="subFrame">
+                           <h2 class="subMenuTit">형지를<br>숨김없이<br>보여드리겠습니다.</h2>
+                       </figure>
+                       <ul class="subMenu">
+                           <li><a href="">
+                                   <img src="" alt="">
+                                    <h3 class="subTxt">형지 소개</h3>
+                                   <p>형지의 기업의<br>브랜드가치를
+                                       <span>보여드리겠습니다.</span>
+                                   </p>
+                               </a></li>
+                               
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">연역</h3>
+                                   <p>형지의 역사를<br>여러분께
+                                       <span>알려드립니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">비전 및 미션</h3>
+                                   <p>형지의 기업에 맞는<br>브랜드가치를
+                                       <span>느껴보세요.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">CEO</h3>
+                                   <p>평생 남보다<br>반의 반걸음 더
+                                       <span>앞서 가겠습니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">상생 건의함</h3>
+                                   <p>협력사와의<br>파트너십을
+                                       <span>위한 공간입니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">오시는 길</h3>
+                                   <p>위치안내<br>매장위치 정보를
+                                       <span>확인할 수 있습니다.</span>
+                                       </p>
+                               </a></li>
+                               <label for="subRa0" class="closeBtn menuBtn">
+                           </label>
+                       </ul>
+                   </div>
+               </li>
+               <li class="cate2">
+                    <input type="radio" name="subRa" class="raItem" id="subRa2">
+                <label for="subRa2" class="menuList">형지 브랜드</label>
+                   <div class="sub">
+                       <figure class="subFrame">
+                           <h2 class="subMenuTit">형지를<br>숨김없이<br>보여드리겠습니다.</h2>
+                       </figure>
+                       <ul class="subMenu">
+                           <li><a href="">
+                                   <img src="" alt="">
+                                    <h3 class="subTxt">여성복</h3>
+                                   <p>여성 캐주얼 브랜드<br>크로커다일 레이디
+                                       <span>전속모델 - 하지원</span>
+                                   </p>
+                               </a></li>
+                               
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">남성복</h3>
+                                   <p>남성 모던 멘즈웨어<br>BON
+                                       <span>World Contents</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">아웃도어</h3>
+                                   <p>라이프 스타일 아웃도어<br>와일드 로즈
+                                       <span>Wild Roses</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">골프웨어</h3>
+                                   <p>프랑스 명품 골프웨어<br>CASTELBAJAC
+                                       <span>전속모델 - 이하늬</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">학생복</h3>
+                                   <p>학생복 1등 브랜드<br>엘리트
+                                       <span>당신을 듣고 교복을 연구합니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">유니품</h3>
+                                   <p>고품격 유니폼 브랜드<br>월비
+                                       <span>전속모델 - 이태곤</span>
+                                       </p>
+                               </a></li>
+                               <label for="subRa0" class="closeBtn menuBtn">
+                           </label>
+                       </ul>
+                   </div>
+               </li>
+               <li class="cate3">
+                    <input type="radio" name="subRa" class="raItem" id="subRa3">
+                <label for="subRa3" class="menuList">행복 채널</label>
+                   <div class="sub">
+                       <figure class="subFrame">
+                           <h2 class="subMenuTit">형지를<br>숨김없이<br>보여드리겠습니다.</h2>
+                       </figure>
+                       <ul class="subMenu">
+                           <li><a href="">
+                                   <img src="" alt="">
+                                    <h3 class="subTxt">형지 뉴스</h3>
+                                   <p>행복한 미래를 여는<br>형지소식
+                                       <span>빠르게 행복을 전하겠습니다.</span>
+                                   </p>
+                               </a></li>
+                               
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">언론 보도</h3>
+                                   <p>언론 속의<br>패션그룹 형지
+                                       <span>한발 앞선 행보로 다가가겠습니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">수상 내역</h3>
+                                   <p>No.1브랜드를<br>넘어서
+                                       <span>고객의 마음 속 No.1이 되겠습니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">영상 갤러리</h3>
+                                   <p>영상 속 기업<br>브랜드 이야기
+                                       <span>기업 동영상을 감상하실 수 있습니다.</span>
+                                       </p>
+                               </a></li>
+                           
+                               <label for="subRa0" class="closeBtn menuBtn">
+                           </label>
+                               
+                       </ul>
+                   </div>
+               </li>
+               <li class="cate4">
+                    <input type="radio" name="subRa" class="raItem" id="subRa4">
+                <label for="subRa4" class="menuList">행복 나눔</label>
+                   <div class="sub">
+                       <figure class="subFrame">
+                           <h2 class="subMenuTit">형지를<br>숨김없이<br>보여드리겠습니다.</h2>
+                       </figure>
+                       <ul class="subMenu">
+                           <li><a href="">
+                                   <img src="" alt="">
+                                    <h3 class="subTxt">여성 후원</h3>
+                                   <p>여성이<br>행복한 세상
+                                       <span>저소득 여성가장의 나눔을 실천</span>
+                                   </p>
+                               </a></li>
+                               
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">아동 후원</h3>
+                                   <p>어린아이에게<br>꿈과 희망을
+                                       <span>교육 및 정서 지원</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">교육 후원</h3>
+                                   <p>젋은 이들에게<br>배움의 기회를
+                                       <span>미래 인재양성에 힘쓰고 있습니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">문화 후원</h3>
+                                   <p>문화 예술로<br>세상을 풍요롭게
+                                       <span>각종 문화 예술활동을 후원</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">긴급 구호</h3>
+                                   <p>지구촌<br>온정 나눔
+                                       <span>구호물품을 후원하고 있습니다.</span>
+                                       </p>
+                               </a></li>
+                           <li><a href="">
+                                   <img src="" alt="">
+                                   <h3 class="subTxt">행복 드림</h3>
+                                   <p>나눌수록<br>커지는 보람
+                                       <span>소외계층을 돕기 위해 나눔활동을 참여</span>
+                                       </p>
+                               </a></li>
+                               <label for="subRa0" class="closeBtn menuBtn">
+                           </label>
+                       </ul>
+                   </div>
+               </li>
+           </ul>
+        </nav>
+    </div>
+            <div class="imgSlide" id="visual">
+        <p class="prev">prev</p>
+        <p class="next">next</p>
+        <div class="gallery">
+            <img src="./images/exmain1.png" class="banImg" alt="배너1">
+            <img src="./images/exmain2.png" class="banImg" alt="배너2">
+            <img src="./images/exmain3.png" class="banImg" alt="배너3">
+            <!-- <img src="http://placehold.it/300x200&text=4"> -->
+        </div>
+        
+        <p class="paging"></p>
+    </div>
+           
+           
+            <div class="mainTit">
+        <p class="tit">형지</p>
+        <h2 class="titCom">
+        <img src="./images/titCom.png" alt="">
+        </h2>
+        
+        <div class="titMore">
+        <a href="" class="more">형지 News
+        </a>
+        </div>
+    </div>
+</section>
+   <div class="wrap">
+        <section class="page" id="page0"><label for="ck1" class="opener">
+            <span class="colTit1">+</span>
+            <span class="colTit2">News Slide</span>
+        </label>
+        </section>
+    </div>
+    <input type="checkbox" id="ck1" class="ckItem">
+        <div class="boxWrap1">
+            <section class="popBox">
+                <div class="titLine">
+                    <h3 class="popTit">존나 어렵네 </h3>
+                    <h5 class="popCom">패션그룹형지는 1996년 런칭한 '크로커다일레이디‘의 성공으로 국내에 3050 여성캐주얼 시장을 만들며 패션 산업을 주도하는 종합패션기업입니다.
+ 
+크로커다일레이디는 고품질의 세련된 디자인, 합리적인 가격대로 매년 30% 이상의 신장세를 거듭하는 등 성과를 거두었고, 이로써 여성복 단일 브랜드로는 최대 매출액과 최다 유통망을 달성해 업계 성공신화로 기록돼 있습니다.
+ 
+여성복으로는 크로커다일레이디, 샤트렌, 올리비아하슬러,
+캐리스노트, 스테파넬, 라젤로 등 6개의 브랜드를, 남성복으로는 예작, 본 등 2개의 브랜드를 전개중입니다. 또한 아웃도어로는 와일드로즈, 골프웨어로는 까스텔바작을 선보이고 있습니다. 학생복 엘리트, 유통브랜드 아트몰링 장안점 및 패션라운지, 아트몰링 부산본점과 더불어 에스콰이아 및 영에이지, 젤플렉스, 소노비, 포트폴리오, 까스텔바작ACC 등 제화잡화를 전개하고 있습니다. 더불어 홈리빙 브랜드 ‘까스텔바작홈’ 을 전개합니다. 이처럼 패션그룹형지는 총 22개 브랜드를 전개하며 패션을 통해 행복을 전파하고 있습니다.
+ 
+패션그룹형지의 임직원들은 패션을 통해 행복을 전한다는 경영이념을 기반으로 여성복과 남성복, 아웃도어, 골프웨어, 학생복, 유통, 제화잡화 등 사업 포트폴리오를 확대하고 있습니다. 창업 30주년을 맞은 해인 2012년에는 남성복 전문기업 ㈜우성I&C를 인수함으로써 남성복의 입지를 확대하는 한편,</h5>
+                    <label for="ck1" class="close">X</label>
+                </div>
+                <div class="popCon">
+                <img src="" alt="" class="im">
+                </div>
+            </section>
+        </div>
+
+    <section class="page" id="page2">
+        <div class="con1">
+            <ul class="conbg">
+                <li class="conbg1"></li>
+                <li class="conbg2"></li>
+            </ul>
+            <a href="#" class="showBtn"></a>
+            <div class="border">
+            <ul class="conbg2">
+                <li class="conbg3"></li>
+                <li class="conbg4"></li>
+                <li class="conbg5"></li>
+            </ul>
+            <p class="con2Txt1">아름다움을 찾아서</p>
+            <p class="con2Txt2">2018 COLLECTION</p>
+        </div>
+        
+        </div>
+    </section>
+    
+    <footer class="ft">
+   <div class="ftCon">
+    <h3 class="ftList"><a href="">개인정보 취급 방침</a></h3>
+    <h3 class="ftList"><a href="">사이트 맵</a></h3>
+    <h3 class="ftList last"><a href="">ENGLISH</a></h3>
+    <address class="ad">COPYRIGHT 2013 FASHION GROUP HYUNGJI ALL RIGHTS RESERVED</address>
+    </div>
+</footer>
+</body>
+</html>

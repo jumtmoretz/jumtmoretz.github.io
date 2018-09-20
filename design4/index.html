@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:::형지:::</title>
+    <link rel="stylesheet" href="clear.css">
+<link rel="stylesheet" href="menu.css">
+   
+    <style>
+        .content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .mainSlider {
+            width: 100%;
+            position: relative;
+        }
+        .imgFrame {
+            width: 400%;
+            transition: 0.5s;
+        }
+        .imgFrame li {
+            float: left;
+            width: 25%;
+        }
+        .sliderFrame {
+            width: 400%;
+            position: absolute;
+            top: 450px;
+            z-index: 80;
+        }
+        .sliderFrame li {
+            float: left;
+            width: 25%;
+            position: relative;
+            display: none;
+            
+            
+        }
+        .sliderNumFrame {
+            position: absolute;
+            z-index: 20;
+            right: 320px;
+            top: 420px;
+            text-align: center;
+        }
+        .slidernumBtn {
+            display: block;
+            position: relative;
+            width: 14px;
+            height: 14px;
+            margin: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        .slidernumBtn {
+            width: 14px;
+            height: 14px;
+            background-color: #fff;
+            border-radius: 14px;
+            /* background-image: url("images/off.png"); */
+        } 
+        .sliderFrame .slider_left {
+            position: absolute;
+            top: 40%;
+            z-index: 99;
+            left: 35px;
+            background-image: url(./images/lbtn.png);
+            width: 40px;
+            height: 40px;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+        .sliderFrame .slider_right {
+            position: absolute;
+            top: 40%;
+            z-index: 99;
+            right: 35px;
+            background-image: url(./images/rbtn.png);
+            width: 40px;
+            height: 40px;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+        
+        
+        #slRa01:checked ~ .mainSlider .imgFrame {
+            margin-left: -0;
+        }
+        #slRa02:checked ~ .mainSlider .imgFrame {
+            margin-left: -100%;
+        }
+        #slRa03:checked ~ .mainSlider .imgFrame {
+            margin-left: -200%;
+        }
+        #slRa04:checked ~ .mainSlider .imgFrame {
+            margin-left: -300%;
+        }
+        #slRa01:checked ~ .mainSlider .imgFrame .item1 {
+            opacity: 1;
+        }
+        #slRa02:checked ~ .mainSlider .imgFrame .item2 {
+            opacity: 1;
+        }
+        #slRa03:checked ~ .mainSlider .imgFrame .item3 {
+            opacity: 1;
+        }
+        #slRa04:checked ~ .mainSlider .imgFrame .item4 {
+            opacity: 1;
+        }
+        #slRa01:checked ~ .mainSlider .sliderNumFrame .item1 .slidernumBtn {
+            background-image: url("./images/on.png");
+        }
+        #slRa02:checked ~ .mainSlider .sliderNumFrame .item2 .slidernumBtn {
+            background-image: url("./images/on.png");
+        }
+        #slRa03:checked ~ .mainSlider .sliderNumFrame .item3 .slidernumBtn {
+            background-image: url("./images/on.png");
+        }
+        #slRa04:checked ~ .mainSlider .sliderNumFrame .item4 .slidernumBtn {
+            background-image: url("./images/on.png");
+        }
+        
+        
+        #slRa01:checked ~ .mainSlider .sliderFrame .item1 {
+            display: block;
+        }
+        #slRa02:checked ~ .mainSlider .sliderFrame .item2 {
+            display: block;
+        }
+        #slRa03:checked ~ .mainSlider .sliderFrame .item3 {
+            display: block;
+        }
+        #slRa04:checked ~ .mainSlider .sliderFrame .item4 {
+            display: block;
+        }
+        .sliderBtn{
+            display: block;
+            position: relative;
+            width: 14px;
+            height: 14px;
+            margin: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            }
+        .txtFrame {
+            position: absolute;
+            top: 320px;
+            right: 20%;
+        }
+        .txtFrame {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            height: 250px;
+            margin: 0 0 0 -470px;
+            padding: 0 60px;
+            color: #fff;
+        }
+        .txtFrame .tit {
+            font-family: 'Gugi', cursive;
+            font-size: 58px;
+            letter-spacing: 0.3em;
+            margin-left: -380px;
+        }
+        .txtFrame .titCom img {
+            position: absolute;
+            left: -350px;
+        }
+        .txtFrame .more {
+            display: block;
+            margin-top: 90px;
+            padding: 10px;
+            border-top: 2px solid #fe0000;
+            font-size: 14px;
+            line-height: 14px;
+            color: #fff;
+            width: 70px;
+            margin-left: -125px;
+        }
+        .txtFrame .more:hover {
+            color: #1284ff;
+            transition: 0.5s;
+            border-top: 2px solid #1284ff;
+        }
+    </style>
+    
+    <style>
+        #page1 {
+            left: 0;
+            z-index: 21;
+        }
+        .gridFrame {
+            position: relative;
+            width: 960px;
+            margin: 0 auto;
+            height: 520px;
+            top: -250px;
+        }
+        .gridFrame li {
+            position: absolute;
+            z-index: 90;
+            box-sizing: border-box;
+            padding: 35px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .gridFrame li.item1 {
+            background-image: url("./images/page1img01.png");
+            background-size: 100% 100%;
+            width: 300px;
+            height: 300px;
+            left: 0;
+            top: 0;
+        }
+         .gridFrame li.item1:hover {
+            background-image: url("./images/pg1over1.png");
+            background-size: 100% 100%;
+            width: 300px;
+            height: 300px;
+            left: 0;
+            top: 0;
+             display: block;
+             transition: 0.5s;
+        }
+        
+        .gridFrame li.item2 {
+            background-image: url("./images/page1img02.png");
+            background-size: 100% 100%;
+            width: 300px;
+            height: 300px;
+            left: 300px;
+            top: 0;
+        }
+        .gridFrame li.item2:hover {
+            background-image: url("./images/pg1over2.png");
+             transition: 0.5s;
+            display: block;
+        }
+        .gridFrame li.item3 {
+            background-image: url("./images/page1img6.png");
+            background-size: 100% 100%;
+            width: 360px;
+            height: 520px;
+            left: 600px;
+            top: 0;
+        }
+        .gridFrame li.item3:hover {
+            background-image: url("./images/pg1over.png");
+            background-size: 100% 100%;
+             transition: 0.5s;
+        }
+        .gridFrame li.item4 {
+            background-image: url("./images/page1mg7.png");
+            background-size: 100% 100%;
+            width: 600px;
+            height: 220px;
+            left: 0;
+            top: 300px;
+        }
+        .gridName1 {
+            color: #fff;
+            text-shadow: 3px 3px 1px #ccc;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 150px;
+        }
+        .gridTit1 {
+            color: #fff;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #ccc;
+        }
+        
+        .gridName2 {
+            color: #fff;
+            text-shadow: 3px 3px 1px #ccc;
+            font-size: 40px;
+            margin-top: 150px;
+        }
+        .gridTit2 {
+            color: #ee2858;
+            font-size: 20px;
+            text-shadow: 1px 1px 1px #ccc;
+            
+        }
+        .gridName3 {
+            color: #fff;
+            text-shadow: 3px 3px 1px #ccc;
+            font-size: 30px;
+        }
+        .gridTit3 {
+            color: #ee2858;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #ccc;
+        }
+        
+        .gridName4 {
+            color: #fff;
+            text-shadow: 3px 3px 1px #ccc;
+            font-size: 30px;
+            margin-left: 200px;
+        }
+        .gridTit4 {
+            margin-left: 260px;
+            color: #ee2858;
+            font-size: 20px;
+            text-shadow: 1px 1px 1px #ccc;
+        }
+        
+    </style>
+    
+<link rel="stylesheet" href="ft.css">
+    
+    <style>
+        .collapFrame {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            left: -100%;
+            top: 0;
+            background: rgba(0,0,0,0.65);
+            transition: 0.7s;
+        }
+        .cnb {
+            width: 900px;
+            height: 320px;
+            position: absolute;
+            top: 55%;
+            right: -80px;
+            border-radius: 0px 25px 25px 0px;
+            background: #333;
+            padding: 40px;
+        }
+        .cnb li {
+            float: left;
+        }
+        .collapImgFrame {
+            width: 300px;
+        }
+        .collapImgFrame img {
+            display: block;
+            width: 300px;
+            height: auto;
+        }
+        .collapTxtFrame {
+            width: 400px;
+            padding: 35px;
+        }
+        #collapCk1:checked ~ .collapFrame {
+            left: 0;
+        }
+        #collapCk1:checked ~ .collapFrame .cnb {
+            right: auto;
+            left: 0;
+        }
+        .closeBtn1 {
+            background: url(./images/collbtn.png);
+            background-position: 0px 0px;
+            top: 25px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: absolute;
+            font-size: 0;
+            text-indent: -999px;
+            cursor: pointer;
+            z-index: 100;
+            transition: 0.5s;
+        }
+        .closeBtn1:hover {
+            background: url(./images/collbtnhover.png);
+        }
+        .closeBtn1.on {
+            transform: rotate(180deg);
+        }
+        .collapName {
+            writing-mode: tb-rl;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            z-index: 100;
+            right: 32px;
+            top: 120px;
+            color: #fff;
+        }
+        .cnb .collapTxtFrame {
+            width: 400px;
+            padding: 35px;
+        }
+        .collapTit {
+            color: #fff;
+            margin: 0 0 30px 0;
+            font-size: 28px;
+            line-height: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+        .collapDesc {
+            text-align: left;
+            color: #fff;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            
+        }
+        
+        
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+        var a=0;
+        var intv = setInterval(function(){
+            func(a);
+            if(a<3) { a=a+1; } else { a=0; }
+        }, 2000);
+        function func(b){
+            $(".content input[type=radio]").prop("checked", "false");
+            $(".content input[type=radio]").eq(b).prop("checked", "true");
+        }
+        $(".btnBox .slBtn").click(function(){
+           a = parseInt($(this).attr("data-val"));
+           clearInterval(intv);
+           intv = setInterval(function(){
+                func(a);
+                if(a<3) { a=a+1; } else { a=0; }
+           }, 1000);
+        });
+    });
+
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var tran = 0;
+        $('.closeBtn1').click(function() {
+          $(this).toggleClass("on");
+        });
+    });
+    </script>
+</head>
+<body>
+   <input type="checkbox" class="ckItem" id="ia_open">  
+   
+    <div class="hdContain" id="hd1">
+       
+        <ul class="tnb left">
+            <li><a href="" class="login">로그인</a></li>
+            <li><a href="" class="join">회원가입</a></li>
+        </ul>
+        <ul class="tnb right">
+            <li><label for="ia_open" class="opener">sitemap</label></li>
+            <li><a>English</a></li>
+        </ul>
+    </div>
+    <input type="radio" name="subRa" class="raItem" id="subRa0" checked>
+    
+    
+    <div class="collap" id="collap1">
+       <h1 class="sitemapTit">사이트 맵</h1>
+       <nav class="sitemap">
+       <ul>
+           <li class="sitemapCateTit">형지 스토리</li>
+           <li><a href="">형지 소개</a></li>
+           <li><a href="">연역</a></li>
+           <li><a href="">비전 및 미션</a></li>
+           <li><a href="">CEO</a></li>
+           <li><a href="">상생 건의함</a></li>
+           <li><a href="">오시는 길</a></li>
+       </ul>
+       <ul>
+           <li class="sitemapCateTit">형지 브랜드</li>
+           <li><a href="">여성복</a></li>
+           <li><a href="">남성복</a></li>
+           <li><a href="">아웃도어</a></li>
+           <li><a href="">골프웨어</a></li>
+           <li><a href="">학생복</a></li>
+           <li><a href="">유니폼</a></li>
+       </ul>
+       <ul>
+           <li class="sitemapCateTit">행복 채널</li>
+           <li><a href="">형지 뉴스</a></li>
+           <li><a href="">언론 보도</a></li>
+           <li><a href="">수상 내역</a></li>
+           <li><a href="">영상 갤러리</a></li>
+       </ul>
+       <ul>
+           <li class="sitemapCateTit">행복 나눔</li>
+           <li><a href="">여성 후원</a></li>
+           <li><a href="">아동 후원</a></li>
+           <li><a href="">교육 후원</a></li>
+           <li><a href="">문화 후원</a></li>
+           <li><a href="">긴급 구호</a></li>
+           <li><a href="">행복 드림</a></li>
+       </ul>
+       </nav>
+       
+   </div>
+
+    <div class="hdwrap">
+        <nav class="gnb">
+           <a href="index.html" class="logo"></a>
+            <ul class="mainMenu">
+                <li class="cate1">
+                    <input type="radio" name="subRa" class="raItem" id="subRa1">
+                    <label for="subRa1" class="mainList">형지 스토리</label>
+                    <div class="sub">
+                      
+                       <!-- figure.subFrame>h2.subMenuTit+span.bdTxt+img+(ul.subMenu>li*6>a>img+h3.subMenuCateTit+p.subMenuCateDesc)+label[for=subRa0].closeBtn+(label[for=ia_open].lstBtn)
+                       -->
+                       
+                        <figure class="subFrame1">
+                            <!--<h2 class="subMenuTit">형지를<br>숨김없이</h2>
+                            <span class="bdTxt">보여드리겠습니다.</span> -->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="sub.html">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">형지소개</h3>
+                                        <p class="subMenuCateDesc">형지의 기업의<br>브랜드 가치를<br>보여드리겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/2.png" alt="">
+                                        <h3 class="subMenuCateTit">연역</h3>
+                                        <p class="subMenuCateDesc">형지의 역사를<br>여러분께<br>알려드립니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/3.png" alt="">
+                                        <h3 class="subMenuCateTit">비전 및 미션</h3>
+                                        <p class="subMenuCateDesc">형지의 기업에 맞는<br>브랜드가치를<br>느껴보세요.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/4.png" alt="">
+                                        <h3 class="subMenuCateTit">CEO</h3>
+                                        <p class="subMenuCateDesc">평생 남보다<br>반걸음 더 앞서 가겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/5.png" alt="">
+                                        <h3 class="subMenuCateTit">상생 건의함</h3>
+                                        <p class="subMenuCateDesc">협력사와의<br>파트너십을
+                                       <br>위한 공간입니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/6.png" alt="">
+                                        <h3 class="subMenuCateTit">오시는 길</h3>
+                                        <p class="subMenuCateDesc">위치안내<br>매장위치 정보를<br>확인할 수 있습니다.</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                        </figure>
+                    </div>
+                </li>
+                <li class="cate2">
+                    <input type="radio" name="subRa" class="raItem" id="subRa2">
+                    <label for="subRa2" class="mainList">형지 브랜드</label>
+                    <div class="sub">
+                        <figure class="subFrame2">
+                            <!--<h2 class="subMenuTit">반걸음<br>앞에 서서</h2>
+                            <span class="bdTxt">다가가겠습니다.</span> -->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">여성복</h3>
+                                        <p class="subMenuCateDesc">여성 캐주얼 브랜드<br>크로커다일 레이디
+                                       <br>전속모델 - 하지원</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">남성복</h3>
+                                        <p class="subMenuCateDesc">남성 모던 멘즈웨어<br>BON
+                                       <br>World Contents</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">아웃도어</h3>
+                                        <p class="subMenuCateDesc">라이프 스타일 아웃도어<br>와일드 로즈
+                                       <br>Wild Roses</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">골프웨어</h3>
+                                        <p class="subMenuCateDesc">프랑스 명품 골프웨어<br>CASTELBAJAC
+                                       <br>전속모델 - 이하늬</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">학생복</h3>
+                                        <p class="subMenuCateDesc">학생복 1등 브랜드<br>엘리트
+                                       <br>당신을 듣고 교복을 연구합니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">유니폼</h3>
+                                        <p class="subMenuCateDesc">고품격 유니폼 브랜드<br>월비
+                                       <br>전속모델 - 이태곤</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                        </figure>
+                    </div>
+                </li>
+                <li class="cate3">
+                    <input type="radio" name="subRa" class="raItem" id="subRa3">
+                    <label for="subRa3" class="mainList">행복 채널</label>
+                    <div class="sub">
+                        <figure class="subFrame3">
+                            <!--<h2 class="subMenuTit">행복패션<br>행복브랜드</h2>
+                            <span class="bdTxt">선보이겠습니다.</span>-->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">형지 뉴스</h3>
+                                        <p class="subMenuCateDesc">행복한 미래를 여는<br>형지소식
+                                       <br>빠르게 행복을 전하겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/2.png" alt="">
+                                        <h3 class="subMenuCateTit">언론 보도</h3>
+                                        <p class="subMenuCateDesc">언론 속의<br>패션그룹 형지
+                                       <br>한발 앞선 행보로 다가가겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/6.png" alt="">
+                                        <h3 class="subMenuCateTit">수상 내역</h3>
+                                        <p class="subMenuCateDesc">No.1브랜드를<br>넘어서
+                                       <br>고객의 마음 속 No.1이 되겠습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/3.png" alt="">
+                                        <h3 class="subMenuCateTit">영상 갤러리</h3>
+                                        <p class="subMenuCateDesc">영상 속 기업<br>브랜드 이야기
+                                       <br>기업 동영상을 감상하실 수 있습니다.</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                            
+                        </figure>
+                    </div>
+                </li>
+                <li class="cate4">
+                    <input type="radio" name="subRa" class="raItem" id="subRa4">
+                    <label for="subRa4" class="mainList">행복 나눔</label>
+                    <div class="sub">
+                        
+                        <figure class="subFrame4">
+                            <!--<h2 class="subMenuTit">도움으로써<br>바르게</h2>
+                            <span class="bdTxt">성장하겠습니다.</span>-->
+                            <img src="" alt="">
+                            <ul class="subMenu">
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">여성 후원</h3>
+                                        <p class="subMenuCateDesc">여성이<br>행복한 세상
+                                       <br>저소득 여성가장의 나눔을 실천</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">아동 후원</h3>
+                                        <p class="subMenuCateDesc">어린아이에게<br>꿈과 희망을
+                                       <br>교육 및 정서 지원</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">교육 후원</h3>
+                                        <p class="subMenuCateDesc">젋은 이들에게<br>배움의 기회를
+                                       <br>미래 인재양성에 힘쓰고 있습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">문화 후원</h3>
+                                        <p class="subMenuCateDesc">문화 예술로<br>세상을 풍요롭게
+                                       <br>각종 문화 예술활동을 후원</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">긴급 구호</h3>
+                                        <p class="subMenuCateDesc">지구촌<br>온정 나눔
+                                       <br>구호물품을 후원하고 있습니다.</p>
+                                    </a></li>
+                                <li><a href="">
+                                        <img src="./images/1.png" alt="">
+                                        <h3 class="subMenuCateTit">행복 드림</h3>
+                                        <p class="subMenuCateDesc">나눌수록<br>커지는 보람
+                                       <br>소외계층을 돕기 위해 나눔활동을 참여</p>
+                                    </a></li>
+                                    <label for="subRa0" class="closeBtn"></label>
+                            <label for="ia_open" class="lstBtn"></label>
+                            </ul>
+                            
+                        </figure>
+                    </div>
+                </li>
+
+            </ul>
+            <label for="ia_open" class="lstBtn"></label>
+        </nav>
+    </div>
+    
+    <!-- 슬라이드 부분 -->
+    
+    <main class="content">
+    <input type="radio" name="slRa1" class="raItem" id="slRa01" checked>
+    <input type="radio" name="slRa1" class="raItem" id="slRa02">
+    <input type="radio" name="slRa1" class="raItem" id="slRa03">
+    <input type="radio" name="slRa1" class="raItem" id="slRa04">
+        <figure class="mainSlider">
+    <ul class="imgFrame">
+        <li class="item1"><img src="./images/exmain.png" alt=""></li>
+        <li class="item2"><img src="./images/exmain1.png" alt=""></li>
+        <li class="item3"><img src="./images/exmain2.png" alt=""></li>
+        <li class="item3"><img src="./images/exmain3.png" alt=""></li>
+    </ul>
+        <ul class="sliderFrame">
+            <li class="item1">
+            <label for="slRa04" class="slider_left"></label>
+            <label for="slRa02" class="slider_right"></label>
+            </li>
+            <li class="item2">
+            <label for="slRa01" class="slider_left"></label>
+            <label for="slRa03" class="slider_right"></label>
+            </li>
+            <li class="item3">
+            <label for="slRa02" class="slider_left"></label>
+            <label for="slRa04" class="slider_right"></label>
+            </li>
+            <li class="item4">
+            <label for="slRa03" class="slider_left"></label>
+            <label for="slRa01" class="slider_right"></label>
+            </li>
+        </ul>
+        <ul class="sliderNumFrame">
+            <li class="item1">
+            <label for="slRa01" class="slidernumBtn"></label>
+            </li>
+            <li class="item2">
+            <label for="slRa02" class="slidernumBtn"></label>
+            </li>
+            <li class="item3">
+            <label for="slRa03" class="slidernumBtn"></label>
+            </li>
+            <li class="item4">
+            <label for="slRa04" class="slidernumBtn"></label>
+            </li>
+        </ul>
+        </figure>
+    </main>
+    
+    <div class="txtFrame">
+        <p class="tit">형지</p>
+        <h2 class="titCom">
+        <img src="./images/titCom.png" alt="">
+        </h2>
+        
+        <div class="titMore">
+        <a href="" class="more">형지 News
+        </a>
+        </div>
+    </div>
+    
+    <!-- 그리드 영역 -->
+        <section class="page" id="page1">
+            <ul class="gridFrame">
+                <li class="gridCol item1 bgC1">
+                    <h3 class="gridName1"></h3>
+                    <h2 class="gridTit1"></h2>
+                    <a href="" class="gridMore"></a>
+                </li>
+                <li class="gridCol item2 bgC2">
+                    <h3 class="gridName2"></h3>
+                    <h2 class="gridTit2"></h2>
+                    <a href="" class="gridMore"></a>
+                </li>
+                <li class="gridCol item3 bgC3">
+                    <h3 class="gridName3"></h3>
+                    <h2 class="gridTit3"></h2>
+                    <a href="" class="gridMore"></a>
+                </li>
+                <li class="gridCol item4 bgC4">
+                    <h3 class="gridName4">즐거운</h3>
+                    <h2 class="gridTit4">쇼핑문화를 창조합니다.</h2>
+                    <a href="" class="gridMore"></a>
+                </li>
+            </ul>
+        </section>
+        
+    <!-- 푸터영역 -->
+     <footer class="ft">
+           <div class="ftFrame">
+           <nav class="fnb">
+              <ul>
+                  <li><h3 class="ftList"><a href="">개인정보 취급 방침</a></h3></li>
+                  <li><h3 class="ftList"><a href="">사이트 맵</a></h3></li>
+                  <li><h3 class="ftList last"><a href="">ENGLISH</a></h3></li>
+              </ul>
+                <address class="copyright">COPYRIGHT 2013 FASHION GROUP HYUNGJI ALL RIGHTS RESERVED</address>
+           </nav>
+    </div>
+</footer>
+   <!-- 옆슬라이스(어사이드) 영역 -->
+    <input type="checkbox" id="collapCk1" class="ckItem">
+    <aside class="collapFrame"><label for="collapCk1" class="opener"></label>
+        <ul class="cnb">
+            <li class="collapCol">
+                <div class="collapImgFrame"><img src="./images/coll.png" alt="뉴스"></div>
+            </li>
+            <li class="collapCol"><a href="">
+                    <div class="collapTxtFrame">
+                        <h3 class="collapTit wTxt"><span class="tit">형지패션그룹뉴스 - 런칭 성공 기념</span></h3>
+                        <p class="collapDesc WTxt">
+                            패션그룹형지는 1996년 런칭한 '크로커다일레이디‘의 성공으로 국내에 3050 여성캐주얼 시장을 만들며 패션 산업을 주도하는 종합패션기업입니다.
+
+여성복으로는 크로커다일레이디, 샤트렌, 올리비아하슬러,
+캐리스노트, 스테파넬, 라젤로 등 6개의 브랜드를, 남성복으로는 예작, 본 등 2개의 브랜드를 전개중입니다. 또한 아웃도어로는 와일드로즈, 골프웨어로는 까스텔바작을 선보이고 있습니다. 학생복 엘리트, 유통브랜드 아트몰링 장안점 및 패션라운지, 아트몰링 부산본점과 더불어 에스콰이아 및 영에이지, 젤플렉스, 소노비, 포트폴리오, 까스텔바작ACC 등 제화잡화를 전개하고 있습니다. 더불어 홈리빙 브랜드 ‘까스텔바작홈’ 을 전개합니다. 이처럼 패션그룹형지는 총 22개 브랜드를 전개하며 패션을 통해 행복을 전파하고 있습니다.
+
+                        </p>
+                    </div>
+                </a></li>
+            <label for="collapCk1" class="closeBtn1"></label>
+            <h3 class="collapName wTxt">Hyung Gi Group News</h3>
+        </ul>
+    </aside>
+</body>
+</html>
