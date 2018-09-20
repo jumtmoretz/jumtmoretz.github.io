@@ -1,0 +1,63 @@
+ @charset "utf-8";
+ /* 푸터영역설정 */
+        
+        .ft {
+            clear:both;
+            height: 150px;
+            width: 100%;
+            right: 30%;
+            background: #473244;
+        }
+        .ftWrap {
+            width: 1240px;
+            height: 140px;
+            margin: 0 auto;
+            background-image: url("./images/f_logo.png");
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+        .fnb {
+            width: 60%;
+            float: left;
+            margin-left: 120px;
+        }
+        .fnb a {
+            color: #fff;
+            font-size: 0.9em;
+        }
+        .fnb li {
+            float: left;
+            padding: 10px;
+        }
+        .fnb a.active {
+            color: #f442b0;
+        }
+        .cp {
+            clear: both;
+            color: #fff;
+            font-size: 0.9em;
+            padding-left: 45px;
+            padding-top: 20px;
+        }
+        .snb {
+            width: 30%;
+            float: right;
+            padding-top: 20px;
+        }
+        .snb li {
+            float: right;
+            padding: 10px;
+        }
+        .toTop {
+            display: block;
+            padding: 15px;
+            position: fixed;
+            right: 100px;
+            bottom: 60px;
+            z-index: 9999;
+            background: #ececec;
+            font-size: 10px;
+            color: #222;
+            box-shadow: 0px 0px 2px #000;
+            border: 1px solid #ccc;
+        }

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./normalize.css">
+    <title>커피에 반하다에 오신것을 환영합니다.</title>
+    
+    <!--[if lt IE 9]>
+    <script src="html5shiv.js"></script>
+    <![endif]-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    
+    <link rel="stylesheet" href="./default.css">
+    <link rel="stylesheet" href="./common.css">
+    <style>
+        /*
+        .page:after {
+                clear: both;
+        }
+        */  
+        
+    </style>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./ft.css">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+    //한 페이지씩 스크롤
+    $(document).ready(function () {
+        var sc_pg = parseInt($(window).height());
+        $(window).on('mousewheel', function(e){
+            if(e.originalEvent.wheelDelta < 0) {
+                $('html, body').not(":animated").animate({
+                    scrollTop : '+='+sc_pg+'px'},800);
+            } else {
+                $('html, body').not(":animated").animate({
+                    scrollTop : '-='+sc_pg+'px'},800);
+            }
+            return false;
+        });
+        //$(window).mousewheel
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        var i=0;
+        $("#visual li").eq(0).css("opacity", "1");
+        $("#visual li").eq(0).find(".img").addClass("on");
+        var intv = setInterval(function(){ 
+            if(i<2){
+                i++; 
+            } else {
+                i=0;
+            }
+            rAni(i);
+        }, 3000);
+        function rAni(n){
+            $("#visual li").css("opacity", "0");
+            $("#visual li .img").removeClass("on");
+            $("#visual li .tit").css("display", "none");
+            $("#visual li").eq(n).css("opacity","1");
+            $("#visual li").eq(n).find(".img").addClass("on"); 
+            $("#visual li .tit").delay(200).fadeIn(1500);
+        };
+    });
+    </script> <!-- 좌우 -->
+    
+    <script>
+    $(document).ready(function(){
+        var wd=parseInt($("#banner1 li").width());
+        $(".btnBox li button").click(function(){
+           var th=parseInt($(this).attr("data-val"));
+           $(".btnBox li button").removeClass("active");
+           $(this).addClass("active");    
+           $("#banner1").not(":animated").animate({"margin-left":wd*th*-1+"px"}, 800);
+        });
+    })
+    </script>
+    
+    
+
+</head>
+<body>
+<div class="wrap">
+    <header class="hd">
+        <div class="hd_Wrap">
+            <nav class="tnb">
+                <ul class="left">
+                    <li><a href="login.html" class="Login">로그인</a></li>
+                    <li><a href="join.html" class="Join">회원가입</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="https://www.faccebook.com/" class="FaceBook" target="_blank">FaceBook</a></li>
+                    <li><a href="https://section.blog.naver.com/" class="Blog" target="_blank">Blog</a></li>
+                    <li><a href="https://instagram.com" class="Instagram" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.happypointcard.com/" class="HappyPoint" target="_blank">HappyPoint</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <a href="index.html" class="logo"><img src="./images/logosu1.png" alt="Logo"></a>
+                <ul id="menu">
+                    <li><a href="sub1.html" class="">CoffeeBanhada</a>
+                        <ul class="sub">
+                            <li><a href="sub1.html">브랜드 소개</a></li>
+                            <li><a href="sub1.html">커피 &#45; 컬쳐</a></li>
+                            <li><a href="sub1.html">흥보센터</a></li>
+                        </ul>
+                        </li>
+                    <li><a href="menu.html" class="">MENU</a>
+                        <ul class="sub">
+                            <li><a href="">Coffee</a></li>
+                            <li><a href="">Ade</a></li>
+                            <li><a href="">classic</a></li>
+                            <li><a href="">Bakery</a></li>
+                            <li><a href="">MD Special</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="event.html" class="">EVENT&amp;TALK</a>
+                        <ul class="sub">
+                            <li><a href="">진행중인 이벤트</a></li>
+                            <li><a href="">지난 이벤트</a></li>
+                            <li><a href="">당첨자 발표</a></li>
+                            <li><a href="">커피에반하다Talk</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="store" class="">STORE</a>
+                        <ul class="sub">
+                            <li><a href="">매장 안내</a></li>
+                            <li><a href="">고객센터</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="customer.html" class="">CUSTOMER</a>
+                        <ul class="sub">
+                            <li><a href="">제휴 센터</a></li>
+                            <li><a href="">자주묻는질문</a></li>
+                            <li><a href="">1:1 문의</a></li>
+                            <li><a href="">공지 사항</a></li>
+                        </ul>
+                    </li>
+                    <a href="Wiktionary.html" class="lnk"><span>가맹사업안내</span></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="con">
+        <div class="page" id="main">
+            <figure id="visual">
+                <ul class="imgBox">
+                    <li class="item1">
+                        <div class="lBan">
+                            <img src="./images/sss1.png" alt="" class="img">
+                        </div>
+                        
+                        <div class="rBan">
+                            <img src="./images/sss2.png" alt="" class="img">
+                        </div>
+                        
+                        <div class="titBox">
+                            <img src="./images/1text.png" alt="" class="tit">
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="lBan">
+                            <img src="./images/sl3.png" alt="" class="img">
+                        </div>
+                        
+                        <div class="rBan">
+                            <img src="./images/sl4.png" alt="" class="img">
+                        </div>
+                        
+                        <div class="titBox">
+                            <img src="./images/2text.png" alt="" class="tit">
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="lBan">
+                            <img src="./images/3_1sl.png" alt="" class="img">
+                        </div>                        
+                        <div class="rBan">
+                            <img src="./images/3_2sl.png" alt="" class="img">
+                        </div>
+                        
+                        <div class="titBox">
+                            <img src="./images/3text.png" alt="" class="tit">
+                        </div>
+                    </li>
+                </ul>
+                <a href="" class="more"><span>브랜드스토리 보기</span></a>
+            </figure>
+        </div>
+        <!-- 1페이지 끝 -->
+        
+        <div class="page" id="page2">
+            <divpageWrap>
+                <ul class="btnBox">
+                    <li><button class="active" data-val="0"></button></li>
+                    <li><button data-val="1"></button></li>
+                    <li><button data-val="2"></button></li>
+                </ul>
+
+                <ul class="imgBox" id="banner1">
+                    <li class="ss1"><img src="./images/ss3.png" alt="메인배너1"></li>
+                    <li class="ss2"><img src="./images/mm2.png" alt="메인배너2"></li>
+                    <li class="ss3"><img src="./images/ex2_2.png" alt="메인배너3"></li>
+                </ul>
+            </divpageWrap>
+        </div>
+    
+        <div class="page" id="page3">
+            <divpageWrap>
+                <ul class="imgBox">
+                    <li class="sss1"><img src="./images/mm.png" alt="메인배너1"></li>
+
+                </ul>
+            </divpageWrap>
+        </div>
+        <!-- 3페이지 끝 -->
+        
+        <div class="page" id="page4">
+            <divpageWrap>
+                <h2 class="pageTitle">　</h2>
+                <h1 class="midTitle">　</h1>
+                <ul class="proBox2">
+                    <li class="first"><a href=""><img src="./images/event_1.png" alt="팝업1"></a><span class="sns1"></span></li>
+                    <li><a href=""><img src="./images/event_2.png" alt="팝업2"></a><span class="sns2"></span>
+                    </li>
+                    <li class="last"><a href=""><img src="./images/event_3.png" alt="팝업3"></a><span class="sns3"></span></li>
+                </ul>
+            </divpageWrap>
+        </div>
+        <div class="page" id="page5">
+            <div class="row item1">
+                <h2 class="pageTitle">STORE</h2>
+                <h1 class="midTitle">매장찾기</h1>
+                <input type="text" id="search" placeholder="매장명 또는 주소를 입력하세요" />
+                <a href="" class="detail">자세히보기</a>
+            </div>
+            <div class="row item2">
+                <h2 class="pageTitle">가맹모집 설명회</h2>
+                <h1 class="midTitle">대전지역</h1>
+                <p class="noti">5월 00일 ~ 5월 00일 까지</p>
+                <a href="" class="detail">참가신청하기</a>
+            </div>
+ 
+        </div>
+        
+        <footer class="ft">
+        <div class="ftWrap">
+            <nav class="fnb">
+                <ul>
+                    <li><a href="">포인트</a></li>
+                    <li><a href="" class="active">개인정보 처리방침</a></li>
+                    <li><a href="">영상정보처리기기운영·관리방침</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">윤리신고센터</a></li>
+                     <li><a href="">거래희망사전등록</a></li>
+                </ul>
+                <p class="cp">
+                <span>대전광역시 동구 충정로 21 커피에반하다</span>
+                <span>고객상담센터 000-000-0000</span><br>
+                <span>COPYRIGHT © 2018 CoffeeLove Caffee</span>
+                </p>
+            </nav>
+            <nav class="snb">
+                <li>
+                    <ul>   
+                           <a href="https://www.faccebook.com/">
+                            <img src="./images/f1.png" alt="페이스북" target="_blank"></a></ul>
+                    <ul>
+                           <a href="https://instagram.com">
+                            <img src="./images/f3.png" alt="인스타그램" target="_blank"></a></ul>
+                </li>
+            </nav>
+        </div>
+    </footer>
+    
+    <a href="" class="toTop"><span>TOP</span></a>
+    </section>
+    <!-- 4페이지 끝 -->
+    <!--
+    <footer class="ft">
+        <div class="ftWrap">
+            <nav class="fnb">
+                <ul>
+                    <li><a href="">포인트</a></li>
+                    <li><a href="">개인정보</a></li>
+                    <li><a href="">처리방침영상</a></li>
+                    <li><a href="">정보처리기기운영·관리방침</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">윤리신고센터</a></li>
+                     <li><a href="">거래희망사전등록</a></li>
+                </ul>
+                <p class="cp">
+                <span>대전광역시 동구 충정로 21 커피에반하다</span>
+                <span>고객상담센터 000-000-0000</span><br>
+                <span>COPYRIGHT © 2018 CoffeeLove Caffee</span>
+                </p>
+            </nav>
+            <nav class="snb">
+                <li>
+                    <ul>
+                           <a href="https://www.faccebook.com/">
+                            <img src="./images/facebooklogo.png" alt="페이스북"></a></ul>
+                    <ul>
+                           <a href="https://instagram.com">
+                            <img src="./images/instalogo.png" alt="인스타그램"></a></ul>
+                </li>
+            </nav>
+        </div>
+    </footer> -->
+    <!-- 푸터영역 끝 -->
+    
+    <!-- <a href="" class="toTop"><span>TOP</span></a> -->
+</div>
+</body>
+</html>
