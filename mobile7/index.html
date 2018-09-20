@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>팬콧</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            max-width: 375px;
+            max-height: 812px;
+            background-color: #e8e8e8;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+    </style>
+    
+    <style>
+        #hd {
+            width: 100%;
+            height: 90px;
+            position: relative;
+        }
+        .logo img {
+            display: block;
+            width: 134px;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 27px;
+        }
+        .menuBtn {
+            display: block;
+            width: 19px;
+            height: 16px;
+            background-image: url("./images/menuBtn.png");
+            position: absolute;
+            top: 40px;
+            left: 20px;
+        }
+    </style>
+    
+    <style>
+        .sec {
+            position: relative;
+            z-index: 999;
+        }
+        .search {
+            display: block;
+            width: 220px;
+            height: 40px;
+            border-radius: 50px;
+            border: 0.5px solid gray;
+            margin: 20px auto;
+            padding-left: 10px;
+        }
+        .searchIcon {
+            display: block;
+            position: absolute;
+            top: 13px;
+            right: 90px;
+        }
+        #vs {
+            width: 100%;
+            height: 300px;
+            background-image: url("./images/slBox.png");
+            background-repeat: no-repeat;
+            position: relative;
+            top: -70px;
+        }
+        .visual {
+            width: 187px;
+            height: 400px;
+            overflow: hidden;
+            position: absolute;
+            top: 48px;
+            left: 94px;
+        }
+        .btn {
+            display: block;
+            position: absolute;
+            background: none;
+            border: 0;
+        }
+        .lBtn {
+            width: 41px;
+            height: 50px;
+            top: 94px;
+            left: 30px;
+        }
+        .rBtn {
+            width: 47px;
+            height: 50px;
+            right: 33px;
+            top: 165px;
+        }
+        .vsBox {
+            width: 561px;
+            height: auto;
+        }
+        .vsBox li {
+            width: 187px;
+            float: left;
+        }
+        .vsTit {
+            display: block;
+            font-family: 'Abril Fatface', cursive;
+            text-align: center;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+    </style>
+    
+    <style>
+        .subMenu {
+            width: 274px;
+            height: 489px;
+            background-color: #323232;
+            position: fixed;
+            top: 0px;
+            left: -320px;
+            z-index: 999;
+            transition: 0.5s;
+        }
+        .subMenu .menuLogo {
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+        .subMenu a {
+            display: block;
+            color: #fff;
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .sign {
+            float: right;
+            margin: 20px;
+        }
+        .menuBox {
+            position: absolute;
+            top: 45px;
+            left: 10px;
+        }
+        .menuBox li a {
+            margin: 30px;
+        }
+        .close {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url("./images/xBtn.png");
+            right: -30px;
+            top: 0;
+        }
+        .menuLine {
+            width: 260px;
+            border: 0.5px solid #fff;
+            position: absolute;
+            bottom: 130px;
+            left: 6px;
+        }
+        .downMenu {
+            width: 216px;
+            height: 75px;
+            position: absolute;
+            bottom: 60px;
+            left: 20px;
+        }
+        .downMenu li {
+            float: left;
+            width: 80px;
+            height: 15px;
+            margin-left: 28px;
+            margin-top: 17px;
+            
+        }
+        .downMenu li a {
+            font-family: 'Lalezar', cursive;
+            text-align: left;
+        }
+        .downMenu li a.menuOp1 {
+            color: #9b2644;
+        }
+        .downMenu li a.menuOp2 {
+            color: #a0a945;
+        }
+    </style>
+    
+    <style>
+        .con1 {
+            width: 100%;
+            height: auto;
+            transition: 0.5s;
+        }
+        .con1Tit {
+            color: #333;
+            text-align: center;
+            font-size: 37px;
+        }
+        .con1BtnBox {
+            width: 310px;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con1BtnBox li {
+            float: left;
+            margin: 20px;
+        }
+        .con1BtnBox li a {
+            display: block;
+            color: #fff;
+            font-family: 'Abril Fatface', cursive;
+            font-weight: 100;
+            text-shadow: 1px 1px 14px #333;
+            
+        }
+        .con1ListBox {
+            width: 100%;
+        }
+        .con1ListBox li {
+            float: left;
+            margin: 13px;
+        }
+        .con1ListBox li a,span {
+            display: block;
+            text-align: center;
+            color: #333;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page {
+            top: 440px;
+        }
+        .ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited {
+            color: #fff;
+        }
+        body.ui-mobile-viewport, div.ui-mobile-viewport {
+            overflow: hidden;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            clear: both;
+            width: 100%;
+            height: 600px;
+            background-image: url("./images/ftBg.png");
+            position: relative;
+            bottom: -780px;
+        }
+        .coll li {
+            float: left;
+            margin: 10px;
+            margin-top: 80px;
+        }
+        .tel {
+            display: block;
+            color: #fff;
+        }
+        .mun {
+            width: 110px;
+            height: 20px;
+            line-height: 20px;
+            display: block;
+            color: #fff;
+            border: 1px solid #fff;
+            background-color: #555;
+            text-align: center;
+            font-size: 12px;
+        }
+        .ftLstBox {
+            position: absolute;
+            top: 110px;
+            left: 20px;
+        }
+        .ftLstBox li {
+            margin-top: 10px;
+        }
+        .ftLstBox li a {
+            display: block;
+            color: #777;
+            font-size: 12px;
+        }
+        .address1 {
+            display: block;
+            width: 350px;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            top: 300px;
+            left: 10px;
+            color: #999;
+            border: 1px solid #fff;
+            background-color: #555;
+            font-weight: 100;
+        }
+        .brand {
+            display: block;
+            color: #fff;
+            position: absolute;
+            text-align: left;
+            top: 345px;
+            left: 15px;
+            font-weight: 100;
+            font-size: 11px;
+        }
+        .email {
+            display: block;
+            width: 210px;
+            height: 20px;
+            line-height: 18px;
+            position: absolute;
+            top: 430px;
+            left: 10px;
+            color: #999;
+            border: 1px solid #fff;
+            background-color: #555;
+            font-weight: 100;
+        }
+        .address2 {
+            display: block;
+            position: absolute;
+            font-size: 11px;
+            color: #fff;
+            font-weight: 100;
+            top: 470px;
+            left: 12px;
+        }
+        .copyright {
+            display: block;
+            position: absolute;
+            bottom: 30px;
+            color: #fff;
+            font-size: 9px;
+            left: 60px;
+        }
+        .snsBox {
+            position: absolute;
+            bottom: 50px;
+            left: 105px;
+        }
+        .snsBox li {
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".vsBox li").width());
+            var cnt = $(".vsBox li").length;
+            function Ani(){
+                $(".vsBox").not(":animated").animate({"margin-left" : - wd + "px"}, 1200, function(){
+                    $(".vsBox li").eq(0).appendTo($(".vsBox"));
+                    $(".vsBox").css("margin-left", "0px");
+                });
+            };
+            var intv = setInterval(function(){
+                Ani();
+            }, 4000);
+            
+            $(".lBtn").click(function(){
+                clearInterval(Ani);
+                $(".vsBox").not(":animated").animate({"margin-left" : - wd + "px"}, 1200);
+                var intv = setInterval(function(){
+                Ani();
+            }, 4000);
+            });
+            $(".rBtn").click(function(){
+                $(".vsBox li").eq(cnt-1).prependTo(".vsBox");
+                $(".vsBox").css("margin-left", -wd + "px");
+                $(".vsBox").not(":animated").animate({"margin-left" : "0px"}, 1200);
+                var intv = setInterval(function(){
+                Ani();
+            }, 4000);
+            });
+            /*
+            $(".vsBox").animate({"margin-left" : "0px"}, 1200, function(){
+                $(".vsBox li .vsTit").fadeIn(1000);
+            }); 
+            */
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".menuBtn").click(function(){
+                $(".subMenu").css("left", "0px");
+            });
+            $(".close").click(function(){
+                $(".subMenu").css("left", "-320px");
+            });
+        });
+    </script>
+    
+    
+</head>
+<body>
+    <div class="main">
+        <header id="hd">
+            <a href="index.html" class="logo">
+                <img src="./images/logo.png" alt="로고">
+            </a>
+            <span class="menuBtn"></span>
+        </header>
+        
+        <div class="sec">
+            <input type="text" class="search" value="Search" style="color: gray">
+        <a href=""><img src="./images/search.png" alt="돋보기" class="searchIcon"></a>
+        </div>
+        
+        <div id="vs">
+           <figure class="visual">
+            <ul class="vsBox">
+                <li><a href="#">
+                        <img src="./images/sl1.png" alt="슬라이드1"></a>
+                        <h2 class="vsTit">10TH ANNIVERSARY<br>"BEST OF COLLECTION"</h2>
+                    </li>
+                <li><a href="#">
+                        <img src="./images/sl2.png" alt="슬라이드2"></a>
+                        <h2 class="vsTit">COLORFUL BUT MINIMAL</h2>
+                    </li>
+                <li><a href="#">
+                        <img src="./images/sl3.png" alt="슬라이드3"></a>
+                        <h2 class="vsTit">TASTES OF OTHERS</h2>
+                    </li>
+            </ul>
+            </figure>
+            <button class="lBtn btn"><img src="./images/leftBtn.png" alt=""></button>
+            <button class="rBtn btn"><img src="./images/rightBtn.png" alt=""></button>
+        </div>
+        
+        <div class="con1" id="con1" data-role="page">
+            <h2 class="con1Tit">New Arrival</h2>
+            <ul class="con1BtnBox">
+                <li><a href="#con1" data-transition="turn" style="color: #e1245a; text-shadow: 1px 2px 2px #fff;">KIDS</a></li>
+                <li><a href="#con2" data-transition="turn">CASUAL</a></li>
+                <li><a href="#con3" data-transition="turn">LIFESTYLE</a></li>
+            </ul>
+            <div class="con1List">
+                <ul class="con1ListBox">
+                        <li><a href="">
+                                <img src="./images/con1Img1.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img1.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img1.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img1.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">$167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img1.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img1.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="con1" id="con2" data-role="page">
+            <h2 class="con1Tit">New Color</h2>
+            <ul class="con1BtnBox">
+                <li><a href="#con1" data-transition="turn">KIDS</a></li>
+                <li><a href="#con2" data-transition="turn" style="color: #e1245a; text-shadow: 1px 2px 2px #fff;">CASUAL</a></li>
+                <li><a href="#con3" data-transition="turn">LIFESTYLE</a></li>
+            </ul>
+            <div class="con1List">
+                <ul class="con1ListBox">
+                        <li><a href="">
+                                <img src="./images/con1Img2.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img2.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img2.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img2.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">$167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img2.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img2.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                </ul>
+            </div>
+        </div>
+              
+        <div class="con1" id="con3" data-role="page">
+            <h2 class="con1Tit">LIFE Style</h2>
+            <ul class="con1BtnBox">
+                <li><a href="#con1" data-transition="turn">KIDS</a></li>
+                <li><a href="#con2" data-transition="turn">CASUAL</a></li>
+                <li><a href="#con3" data-transition="turn" style="color: #e1245a; text-shadow: 1px 2px 2px #fff;">LIFESTYLE</a></li>
+            </ul>
+            <div class="con1List">
+                <ul class="con1ListBox">
+                        <li><a href="">
+                                <img src="./images/con1Img3.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img3.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img3.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img3.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">$167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img3.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                        <li><a href="">
+                                <img src="./images/con1Img3.png" alt="">
+                                <span class="imgTit">팬콧신상품 후드짚업</span>
+                                <span class="imgCon">167WON</span>
+                            </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer id="ft">
+       <ul class="coll">
+           <li><a href="" class="tel">TEL. 1566-6312</a></li>
+           <li><a class="mun">1:1문의하기</a></li>
+       </ul>
+        <ul class="ftLstBox">
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">NOTICE</a></li>
+            <li><a href="">AGREEMENT</a></li>
+            <li><a href="">PRIVACY</a></li>
+            <li><a href="">GUIDE</a></li>
+            <li><a href="" style="color: #fff;">INFORMATION</a></li>
+        </ul>
+        <span class="address1">반품 주소 : 경기도 광주시 도척면 도척로 376-68 MK물류</span>
+         <span class="brand">(주)브랜드인덱스 대표 : 최정욱<br>사업자 등록번호 : 215-87-33220<br>통신판매업신고번호 : 제2013-서울강남-01307호<br>대표전화 : 1566-6312 개인정보관리책임자 : 전종선</span>
+         <span class="email">pancoat@brandindex.co.kr</span>
+         <span class="address2">서울특별시 강남구 봉은사로 108번길 39 (준성빌딩)(반품주소아님)</span>
+         <div class="sns">
+             <ul class="snsBox">
+                     <li><a href="#"><img src="./images/sns1.png" alt=""></a></li>
+                     <li><a href="#"><img src="./images/sns2.png" alt=""></a></li>
+                     <li><a href="#"><img src="./images/sns3.png" alt=""></a></li>
+             </ul>
+         </div>
+         <span class="copyright">© Copyright 2018 PANCOAT - All Rights Reserved</span>
+    </footer>
+    
+    <div class="subMenu">
+            <img src="./images/menuLogo.png" alt="메뉴로고" class="menuLogo">
+            <a href="" class="login sign">LOGIN</a>
+            <a href="" class="join sign">JOIN</a>
+            <ul class="menuBox">
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">COLLECTION</a></li>
+                <li><a href="">PANCOAT + STAR</a></li>
+                <li><a href="">NEWS &amp; EVENT</a></li>
+                <li><a href="">STORE LOCATOR</a></li>
+                <li><a href="">E-SHOP</a></li>
+            </ul>
+            <span class="close"></span>
+            <span class="menuLine"></span>
+            <ul class="downMenu">
+                <li><a href="">NEW</a></li>
+                <li><a href="" class="menuOp1">KIDS ONLY</a></li>
+                <li><a href="">UNISEX</a></li>
+                <li><a href="">LIFE STYLE</a></li>
+                <li><a href="" class="menuOp2">EVENT</a></li>
+            </ul>
+        </div>
+</body>
+</html>
