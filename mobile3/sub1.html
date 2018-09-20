@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상품구매</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- 폰트 -->
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <!-- 메타정보 -->
+    <meta name="application-name" content="rolex">
+    <meta name="author" content="lee">
+    <meta name="keywords" content="rolex">
+    <meta name="description" content="mobile3 example">
+    <!-- 바로가기 아이콘 -->
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./header.css">
+    <style>
+        body, html {
+            background: none;
+        }
+        .menuBtn2 {
+            position: absolute;
+            left: -55px;
+            top: 15px;
+        }
+    </style>
+    
+    <style>
+        .main1 {
+            width: 100%;
+            height: 100%;
+        }
+        .left {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            font-size:8px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: bolder;
+        }
+        .leftCon {
+            width: 187.5px;
+            height: 528px;
+            margin: 90px auto;
+            overflow: hidden;
+        }
+        .leftLst {
+            width: 187.5px;
+            height: 264px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+            transition: 1.5s;
+        }
+        .leftLst[page-value="1"] {
+            opacity: 1;
+        }
+        .leftLst[page-value="2"] {
+            font-size: 0;
+        }
+        .leftLst img {
+            display: block;
+            width: 90px;
+            height: 160px;
+            margin: 20px auto;
+            
+        }
+        .leftTitMore {
+            display: block;
+            color: #000;
+            width: 160px;
+            height: 20px;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 17px;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .leftTxt {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        
+        .more_wrap {
+            display: block;
+        }
+        .more {
+            width: 30px;
+            height: 30px;
+            color: #000;
+            font-size: 30px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .down {
+            position: absolute;
+            top: 350px;
+            left: 70px;
+        }
+        .up {
+            position: absolute;
+            top: 45px;
+            left: 70px;
+        }
+    </style>
+    
+    <style>
+        .right {
+            position: absolute;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            font-size:8px;
+            text-align: center;
+            font-family: 'Nanum Myeongjo', serif;
+            font-weight: bolder;
+        }
+        .rightBtn {
+            width: 89%;
+            height: 30px;
+            line-height: 30px;
+            margin: 0 auto;
+        }
+        .rightBtn .item {
+            display: block;
+            background-color: #464646;
+            color: #fff;
+            margin: 1px;
+        }
+        .item1 {
+            float: left;
+            width: 100px;
+            height: 30px;
+        }
+        .item2, .item3 {
+            width: 30px;
+            height: 30px;
+            float: left;
+        }
+        .rightCon {
+            width: 187.5px;
+            height: 528px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .rightLst {
+            width: 100%;
+            height: 480px;
+            transition: 1.5s;
+            opacity: 0;
+        }
+        .rightLst[page-value="1"] {
+            opacity: 1;
+        }
+        .rightTxt1 {
+            font-size: 5px;
+            font-weight:600;
+            width: 180px;
+            height: 150px;
+        }
+        .rightLst img {
+            width: 187px;
+            height: 154px;
+            margin: 20px auto;
+        }
+        .rightConTxt2 {
+            font-size: 5px;
+            font-weight:600;
+            width: 180px;
+            height: 150px;
+        }
+        .bottom {
+            position: absolute;
+            bottom: -50px;
+        }
+    </style>
+    
+    
+    
+    <link rel="stylesheet" href="./footer.css">
+    
+    <style>
+        .ft {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 26%;
+            background-color: #3d5a49;
+            color: #fff;
+            font-size: 10px;
+            display: none;
+            z-index: 100;
+        }
+        .toTop {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #3d5a49;
+            color: #fff;
+        }
+        .toTop span {
+            position: absolute;
+            bottom: 10px;
+            left: 120px;
+        }
+        .toTop2 {
+            position: fixed;
+            bottom: 5px;
+        }
+        .toTop2 {
+            transform: rotate(180deg);
+        }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".menuBtn").click(function(){
+                $(".sub").fadeIn(500);
+            });
+            $(".menuBtn2").click(function(){
+                $(".sub").fadeOut(500);
+            });
+        });
+    </script>
+    
+    <script> 
+        $(document).ready(function(){
+            var cnt = $(".left li").length;
+            var top = parseInt($(".left li").height()+20);
+            var top2 = parseInt($(".right li").height());
+            console.log(top);
+            console.log(cnt);
+            
+            
+            $("#pageSkip").click(function(){ // 페이지스킵 버튼을 클릭했을 때 실행해라
+                var value = parseInt($("#pageSkip").attr("page-value")); // 먼저 페이지스킵의 벨류값을 즈장
+                console.log(value);
+                if(value<cnt) {
+                    $(".leftCon li").eq(value).not(":animated").animate({"margin-top" : -top + "px"}, 1000); // 페이지 수보다 버튼의 벨류 속성값이 더 작으면 페이지를 열어라
+                     $(".rightCon li").eq(value).not(":animated").animate({"margin-top" : -top2 + "px"}, 1000);
+                    
+                    $("#pageSkip").attr("page-value", value+1); // 페이지벨류 속성값에 value값을 1 증가 시킨다
+                    $(".leftCon li").eq(value+1).css("font-size", "8px").css("opacity", "1").siblings().css("opacity", "0.5").css("font-size", "0px");
+                    $(".rightCon li").eq(value+1).css("opacity", "1").siblings().css("opacity", "0")
+                }
+            }); 
+            
+                $(".up").click(function(){ // 업버튼을 클릭하였을 때 실행해라
+                    var value = parseInt($("#pageSkip").attr("page-value")); // 먼저 페이지스킵버튼에서 벨류값이 증가하였기때문에 페이지 벨류의 현재값을 불러온다.
+                    var val = value-1; // 페이지벨류값에서 -1한 값을 저장해버린다.
+                    console.log(val);
+                    
+                    if(val>-1) { // 만약 -1한 값이 0보다 크면 실행해라
+                        $(".leftCon li").eq(val).not(":animated").animate({"margin-top" : "0px"}, 1000).css("font-size", "8px").css("opacity", "1").siblings().css("opacity", "0.5").css("font-size", "0px");
+                        
+                        $(".rightCon li").eq(val).not(":animated").animate({"margin-top" : "0px"}, 1000).css("opacity", "1").siblings().css("opacity", "0");
+                        
+                        $("#pageSkip").attr("page-value", val); // 페이지스킵의 페이지 벨류값을 업버튼 눌렀을 때의 페이지 벨류값을 val에 다시 즈장한닼ㅋ
+                    }
+                });
+            });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".toTop").click(function(){
+                $(".ft").fadeIn(500);
+            });
+            $(".toTop2").click(function(){
+                $(".ft").fadeOut(500);
+            });
+        });
+    </script>
+
+</head>
+<body>
+   <div class="main">
+    <header id="hd">
+           <a href="index.html" class="logo">
+            <img src="./images/lo.png" alt="로고"></a>
+            <nav class="gnb">
+               <span class="menuBtn"><img src="./images/menuBtn.png" alt="메뉴버튼"></span>
+                <ul class="sub">
+                   <span class="menuBtn2"><img src="./images/menuBtn2.png" alt="메뉴버튼"></span>
+                    <li class="item1"><a href="">로그인</a></li>
+                    <li class="item2"><a href="">회원가입</a></li>
+                    <li class="item3"><a href="">고객센터</a></li>
+                    <li class="item4"><a href="">서비스</a></li>
+                    <li> <a href="index.html" class="subLogo">
+            <img src="./images/logo.png" alt="로고"></a></li>
+                    
+                </ul>
+            </nav>
+        
+    </header>
+    <div class="main1">
+        <div class="left">
+            <ul class="leftCon">
+                <li class="leftLst" page-value="1">
+                    <h2 class="leftTit">YACHT-MASTER II</h2>
+                    <a href="" class="leftTitMore">모든YACHT-MASTER 모델 보기</a>
+                    <img src="./images/sub1_sam1.png" alt="">
+                    <span class="leftTxt">오이스터 Oyster, 44mm<br>오이스터스틸 Oystersteel</span>
+                </li>
+                <li class="leftLst" page-value="2">
+                    <h2 class="leftTit">PEARLMASTER 39</h2>
+                    <a href="" class="leftTitMore">모든PEARLMASTER 모델 보기</a>
+                    <img src="./images/sub1_sam2.png" alt="">
+                    <span class="leftTxt">오이스터 Oyster, 39mm<br>에버로즈Everose골드</span>
+                </li>
+                <li class="leftLst" page-value="3">
+                    <h2 class="leftTit">SEA-DWELLER</h2>
+                    <a href="" class="leftTitMore">모든SEA-DWELLE 모델 보기</a>
+                    <img src="./images/sub1_sam3.png" alt="">
+                    <span class="leftTxt">오이스터 Oyster, 43mm<br>오이스터스틸 Oystersteel</span>
+                </li>
+                <li class="leftLst" page-value="4">
+                    <h2 class="leftTit">PEARLMASTER 34</h2>
+                    <a href="" class="leftTitMore">모든PEARLMASTER 모델 보기</a>
+                    <img src="./images/sub1_sam4.png" alt="">
+                    <span class="leftTxt">오이스터 Oyster, 34mm<br>화이트골드와 다이아몬드</span>
+                </li>
+                <li class="leftLst" page-value="5">
+                    <h2 class="leftTit">LADY-DATEJUST 28</h2>
+                    <a href="" class="leftTitMore">모든DATEJUST 모델 보기</a>
+                    <img src="./images/sub1_sam5.png" alt="">
+                    <span class="leftTxt">오이스터 Oyster, 28mm<br>플래티넘과 다이아몬드</span>
+                </li>
+                <li class="leftLst" page-value="6">
+                    <h2 class="leftTit">상품 더보기</h2>
+                    <a href="" class="leftTitMore">+</a>
+                </li>
+            </ul>
+            <div class="more_wrap" id="pageNation">
+                    <div class="more down" page-value="0" id="pageSkip">▼</div>
+                    <div class="more up" page-value="0" id="pageSkip">▲</div>
+                </div>
+        </div>
+
+        <div class="right">
+           <div class="rightBtn">
+                <a href="" class="item item1">공식 판매점 찾기</a>
+                <a href="" class="item item2">♥</a>
+                <a href="" class="item item3">!</a>
+            </div>
+            <ul class="rightCon">
+                <li class="rightLst" page-value="1">
+                    <span class="rightTxt1">세일러의 정신이 담겨 있는<br>롤렉스 요트-마스터Yacht-Master와<br>요트-마스터 II Yacht-Master II 모델<br>1950년대부터 롤렉스와 요트 세계가 맺고 있는<br>긴밀한 유대
+ 관계에 영감을 얻어 탄생한 시계. 기능과<br>디자인이 조화를 이룬 요트-마스터와<br>롤렉스의 최고급 기술이 접목된 요트-마스터 II는<br>요트 대회를 위해 제작된<br>레가타 크로노그래프입니다.</span>
+                    <img src="./images/rightConBg1.png" alt="">
+                    <p class="rightConTxt2">롤렉스는 스틸 시계의 케이스 제작에 오이스터스틸을<br>사용합니다. 904L 스틸 제품군에 속하는<br>오이스터스틸은 롤렉스에서 특별히 개발한 초합금으로<br>첨단 기술, 항공, 화학 등 탁월한 내부식성이 요구되는<br>분야에 주로 사용되는 특수 소재입니다. 뛰어난 저항력을<br>자랑하는 오이스터스틸은 극한의 환경에서도 특유의<br>아름다움을 유지할 뿐 아니라, 연마를 거치면 더 없이<br>멋진 광택을 냅니다.</p>
+                </li>
+                <li class="rightLst" page-value="2">
+                    <span class="rightTxt1">롤렉스가 자체 주조한 18캐럿<br>옐로우, 화이트 또는<br>애버로즈Everose골드로만 제작되며<br>다이아몬드, 사파이어, 루비 등<br>아름다운 보석 세팅과<br>화려한 다이얼이 특징인<br>롤렉스 펄마스터Pearlmaster는<br>완만한 곡선의<br>펄 마스터 디자인을<br>갖춘 모델입니다.</span>
+                    <img src="./images/rightConBg2.png" alt="">
+                    <p class="rightConTxt2">핑크 골드 시계의 아름다운 컬러를<br>오래도록 보존하기위하여,<br>롤렉스는 자체적으로<br>특별한 18캐럿 핑크 골드합금인<br>에버로즈 골드를 개발하여<br>특허를 획득했습니다.<br>핑크 골드 버전의 모든 롤렉스 모델에<br>사용되고 있습니다.</p>
+                </li>
+                <li class="rightLst" page-value="3">
+                    <span class="rightTxt1">심해 탐험을 위해 롤렉스에서<br>개발한 고성능 다이버 워치.<br>1,220미터(4,000피트)와<br>3,900미터(12,800피트)의 수심에<br>견디도록 제작된<br>롤렉스 씨-드웰러Sea-Dweller와<br>롤렉스 딥씨Rolex Deepsea는<br>프로페셔널 다이버들과<br>수십 년간 협력하여<br>탄생한 모델입니다.</span>
+                    <img src="./images/rightConBg3.png" alt="">
+                    <p class="rightConTxt2">롤렉스는 스틸 시계의 케이스 제작에 오이스터스틸을<br>사용합니다. 904L 스틸 제품군에 속하는<br>오이스터스틸은 롤렉스에서 특별히 개발한 초합금으로<br>첨단 기술, 항공, 화학 등 탁월한 내부식성이 요구되는<br>분야에 주로 사용되는 특수 소재입니다. 뛰어난 저항력을<br>자랑하는 오이스터스틸은 극한의 환경에서도 특유의<br>아름다움을 유지할 뿐 아니라, 연마를 거치면 더 없이<br>멋진 광택을 냅니다.</p>
+                </li>
+                <li class="rightLst" page-value="4">
+                    <span class="rightTxt1">세일러의 정신이 담겨 있는<br>롤렉스 요트-마스터Yacht-Master와<br>요트-마스터 II Yacht-Master II 모델<br>1950년대부터 롤렉스와 요트 세계가 맺고 있는<br>긴밀한 유대
+ 관계에 영감을 얻어 탄생한 시계. 기능과<br>디자인이 조화를 이룬 요트-마스터와<br>롤렉스의 최고급 기술이 접목된 요트-마스터 II는<br>요트 대회를 위해 제작된<br>레가타 크로노그래프입니다.</span>
+                    <img src="./images/rightConBg1.png" alt="">
+                    <p class="rightConTxt2">롤렉스는 스틸 시계의 케이스 제작에 오이스터스틸을<br>사용합니다. 904L 스틸 제품군에 속하는<br>오이스터스틸은 롤렉스에서 특별히 개발한 초합금으로<br>첨단 기술, 항공, 화학 등 탁월한 내부식성이 요구되는<br>분야에 주로 사용되는 특수 소재입니다. 뛰어난 저항력을<br>자랑하는 오이스터스틸은 극한의 환경에서도 특유의<br>아름다움을 유지할 뿐 아니라, 연마를 거치면 더 없이<br>멋진 광택을 냅니다.</p>
+                </li>
+                <li class="rightLst" page-value="5">
+                    <span class="rightTxt1">세일러의 정신이 담겨 있는<br>롤렉스 요트-마스터Yacht-Master와<br>요트-마스터 II Yacht-Master II 모델<br>1950년대부터 롤렉스와 요트 세계가 맺고 있는<br>긴밀한 유대
+ 관계에 영감을 얻어 탄생한 시계. 기능과<br>디자인이 조화를 이룬 요트-마스터와<br>롤렉스의 최고급 기술이 접목된 요트-마스터 II는<br>요트 대회를 위해 제작된<br>레가타 크로노그래프입니다.</span>
+                    <img src="./images/rightConBg1.png" alt="">
+                    <p class="rightConTxt2">롤렉스는 스틸 시계의 케이스 제작에 오이스터스틸을<br>사용합니다. 904L 스틸 제품군에 속하는<br>오이스터스틸은 롤렉스에서 특별히 개발한 초합금으로<br>첨단 기술, 항공, 화학 등 탁월한 내부식성이 요구되는<br>분야에 주로 사용되는 특수 소재입니다. 뛰어난 저항력을<br>자랑하는 오이스터스틸은 극한의 환경에서도 특유의<br>아름다움을 유지할 뿐 아니라, 연마를 거치면 더 없이<br>멋진 광택을 냅니다.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom">
+        <img src="./images/sam1.png" alt="">
+    </div>
+    
+ <footer class="ft">
+
+        <ul class="ftLst">
+            <li class="lst">
+                <h2 class="ftTit">롤렉스 컬렉션</h2>
+                <ul class="ftLst2">
+                    <li><a href="">모든 롤렉스 컬렉션</a></li>
+                    <li><a href="">2018 바젤월드</a></li>
+                    <li><a href="">특별한 셀렉션</a></li>
+                    <li><a href="">워치 메이킹</a></li>
+                    <li><a href="">남성 시계</a></li>
+                    <li><a href="">여성 시계</a></li>
+                    <li><a href="">사용자 가이드</a></li>
+                    <li><a href="">다이버 시계</a></li>
+                </ul>
+            </li>
+            <li class="lst">
+                <h2 class="ftTit">롤렉스 채널</h2>
+                <ul class="ftLst2">
+                    <li><a href="">페이스북(FACEBOOK)</a></li>
+                    <li><a href="">인스타그램(INSTAGRAM)</a></li>
+                    <li><a href="">유튜브(YOUTUBE)</a></li>
+                    <li><a href="">핀터레스트(PINTEREST)</a></li>
+                    <li><a href="">유쿠(YOUKU)</a></li>
+                    <li><a href="">위켓(WECHAT)</a></li>
+                    <li><a href="">웨이보(WABO)</a></li>
+                </ul>
+            </li>
+            <li class="lst">
+                <h2 class="ftTit">서비스</h2>
+                <ul class="ftLst2">
+                    <li><a href="">검색 가이드</a></li>
+                    <li><a href="">위시 리스트</a></li>
+                    <li><a href="">공식 판매점 찾기</a></li>
+                    <li><a href="">롤렉스 서비스</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="ftM">
+            <li><a href="">PC버전</a></li>
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보취급방침</a></li>
+        </ul>
+        <img src="./images/ftLogo.png" alt="푸터로고" class="ftLogo2">
+        <span class="add">개인 정보 관리자: Xavier Braun<br>
+전화번호: +4122 302 22 00<br>
+이메일 주소: privacy@rolex.com</span>
+            <span class="copyright">© Rolex, 2018 All Rights Reserved.</span>
+            <div class="toTop2"><a><img src="./images/toTop.png" alt="투탑"></a></div>
+    </footer> 
+    
+       <div class="toTop"><a><img src="./images/toTop.png" alt="투탑"></a><span>ROLEX COPYRIGHT</span></div>
+</div>
+</body>
+</html>

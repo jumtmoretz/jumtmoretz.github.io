@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- 폰트 -->
+    <link rel="stylesheet" href="">
+    <!-- 메타정보 -->
+    <meta name="application-name" content="rolex">
+    <meta name="author" content="lee">
+    <meta name="keywords" content="rolex">
+    <meta name="description" content="mobile3 example">
+    <!-- 바로가기 아이콘 -->
+    <link rel="stylesheet" href="">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-image: url(./images/bg1.png);
+            background-size: 100% 100%;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        #hd {
+            position: relative;
+            width: 100%;
+            height: 80px;
+        }
+        .logo {
+            display: block;
+            width: 95px;
+            height: 85px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+        .gnb {
+            position: absolute;
+            top: 10px;
+        }
+        .sub {
+            position: absolute;
+            float: right;
+            top: -15px;
+            left: 55px;
+            width: 320px;
+            height: 85px;
+            background-color: #fff;
+            display: none;
+            
+        }
+        .sub li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            font-size: 10px;
+            margin: 6px;
+            margin-top: 32px;
+        }
+        .sub a {
+            display: block;
+            color: #000;
+            width: 50px;
+            height: 50px;
+            font-size: 11px;
+        }
+        .subLogo img {
+            clear: both;
+            display: block;
+            width: 50px;
+            height: 40px;
+            margin-top: -9px;
+        }
+    </style>
+    
+    <style>
+        .conLst {
+            width: 100%;
+            height: 100px;
+            margin: 30px auto;
+        }
+        .conLst li {
+            width: 90px;
+            height: 90px;
+            float: left;
+            box-shadow: 2px 2px 4px #000;
+            border-radius: 20px;
+            margin: 15px;
+        }
+        .conLst li img {
+            display: block;
+            width: 90px;
+            height: 90px;
+        }
+    </style>
+    
+    <style>
+        .con2 {
+            width: 100%;
+            height: 350px;
+        }
+        .con2Icon {
+            display: block;
+            width: 48px;
+            height: 52px;
+            margin: 0 auto;
+        }
+        .con2Tit {
+            text-align: center;
+            font-family: Constantia;
+            font-weight: 100;
+            font-size: 30px;
+        }
+        .con2Lst {
+            width: 180px;
+            height: 160px;
+        }
+        .con2Lst li {
+            width: 80px;
+            height: 80px;
+            float: left;
+            margin: 5px;
+        }
+        .con2Lst li img {
+            display: block;
+            width: 80px;
+            height: 80px;
+        }
+        .conMore {
+            clear: both;
+            width: 160px;
+            height: 160px;
+            float: right;
+            margin-top: -170px;
+            margin-right: 20px;
+        }
+        .conMore img {
+            display: block;
+            width: 160px;
+            height: 160px;
+        }
+    </style>
+    
+    <style>
+        .ft {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #3d5a49;
+            color: #fff;
+            font-size: 10px;
+        }
+        .ftBtn {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 20px;
+        }
+        .ftLst {
+            width: 100%;
+        }
+        .ftLst li {
+            float: left;
+        }
+        .ftLst2 li {
+            clear: both;
+        }
+        .ftLst2 li a {
+            display: block;
+            color: #fff;
+        }
+        .add {
+            position: absolute;
+            text-align: left;
+            left: 220px;
+            top: 140px;
+        }
+        .copyright {
+            position: absolute;
+            left: 85px;
+            top: 190px;
+            font-size: 13px;
+        }
+        .ftM {
+            position: absolute;
+            width: 500px;
+            height: 50px;
+            top: 150px;
+            left: 3px;
+        }
+        .ftM li {
+            float: left;
+            margin: 7px;
+        }
+        .ftM a {
+            display: block;
+            color: #a2803e;
+            font-weight: bold;
+        }
+        .ftLogo2 {
+            display: block;
+            position: absolute;
+            left: 265px;
+            top: 100px;
+        }
+        .ftTit {
+            margin-bottom: 5px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        .ftLst .lst {
+            margin-left: 20px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".menuBtn").click(function(){
+                $(".sub").fadeToggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+   <div class="main">
+    <header id="hd">
+           <a href="index.html" class="logo">
+            <img src="./images/lo.png" alt="로고"></a>
+            <nav class="gnb">
+               <span class="menuBtn"><img src="./images/menuBtn.png" alt="메뉴버튼"></span>
+                <ul class="sub">
+                    <li class="item1"><a href="">로그인</a></li>
+                    <li class="item2"><a href="">회원가입</a></li>
+                    <li class="item3"><a href="">고객센터</a></li>
+                    <li class="item4"><a href="">서비스</a></li>
+                    <li> <a href="index.html" class="subLogo">
+            <img src="./images/logo.png" alt="로고"></a></li>
+                    
+                </ul>
+            </nav>
+        
+    </header>
+    
+    <div class="conMenu">
+        <ul class="conLst">
+            <li><a href="sub1.html"><img src="./images/con1.png" alt="콘텐츠아이콘1"></a></li>
+            <li><a href="#"><img src="./images/con2.png" alt="콘텐츠아이콘1"></a></li>
+            <li><a href="#"><img src="./images/con3.png" alt="콘텐츠아이콘1"></a></li>
+        </ul>
+    </div>
+    
+    <section class="con2">
+        <img src="./images/sec1TitIcon.png" alt="콘텐츠2타이틀아이콘" class="con2Icon">
+        <h2 class="con2Tit">ROLEX<br>WORLD CLASIC</h2>
+            <ul class="con2Lst">
+                <li><a href="#"><img src="./images/sec1Con1.png" alt="2번째아이콘1"></a></li>
+                <li><a href="#"><img src="./images/sec1Con2.png" alt="2번째아이콘2"></a></li>
+                <li><a href="#"><img src="./images/sec1Con3.png" alt="2번째아이콘3"></a></li>
+                <li><a href="#"><img src="./images/sec1Con4.png" alt="2번째아이콘4"></a></li>
+            </ul>
+            <div class="conMore">
+                <a href="" class="more">
+                    <img src="./images/letter.png" alt="MORE이미지">
+                </a>
+            </div>
+    </section>
+    
+    <footer class="ft">
+
+        <ul class="ftLst">
+            <li class="lst">
+                <h2 class="ftTit">롤렉스 컬렉션</h2>
+                <ul class="ftLst2">
+                    <li><a href="">모든 롤렉스 컬렉션</a></li>
+                    <li><a href="">2018 바젤월드</a></li>
+                    <li><a href="">특별한 셀렉션</a></li>
+                    <li><a href="">워치 메이킹</a></li>
+                    <li><a href="">남성 시계</a></li>
+                    <li><a href="">여성 시계</a></li>
+                    <li><a href="">사용자 가이드</a></li>
+                    <li><a href="">다이버 시계</a></li>
+                </ul>
+            </li>
+            <li class="lst">
+                <h2 class="ftTit">롤렉스 채널</h2>
+                <ul class="ftLst2">
+                    <li><a href="">페이스북(FACEBOOK)</a></li>
+                    <li><a href="">인스타그램(INSTAGRAM)</a></li>
+                    <li><a href="">유튜브(YOUTUBE)</a></li>
+                    <li><a href="">핀터레스트(PINTEREST)</a></li>
+                    <li><a href="">유쿠(YOUKU)</a></li>
+                    <li><a href="">위켓(WECHAT)</a></li>
+                    <li><a href="">웨이보(WABO)</a></li>
+                </ul>
+            </li>
+            <li class="lst">
+                <h2 class="ftTit">서비스</h2>
+                <ul class="ftLst2">
+                    <li><a href="">검색 가이드</a></li>
+                    <li><a href="">위시 리스트</a></li>
+                    <li><a href="">공식 판매점 찾기</a></li>
+                    <li><a href="">롤렉스 서비스</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="ftM">
+            <li><a href="">PC버전</a></li>
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보취급방침</a></li>
+        </ul>
+        <img src="./images/ftLogo.png" alt="푸터로고" class="ftLogo2">
+        <span class="add">개인 정보 관리자: Xavier Braun<br>
+전화번호: +4122 302 22 00<br>
+이메일 주소: privacy@rolex.com</span>
+            <span class="copyright">© Rolex, 2018 All Rights Reserved.</span>
+    </footer>
+    
+    <div class="toTop"><a href="#"><img src="./images/toTop.png" alt="투탑"></a></div>
+</div>
+</body>
+</html>
