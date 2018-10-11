@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="카이스트, 대학, 전기, 전자, 과학, 입학">
+    <meta name="Description" content="한국과학기술원 카이스트 세계의 중심에서 세상을 바꾼다.">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>::KAIST::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+
+    <!-- 데스크탑 CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width:1920px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+         
+    </style>
+    
+    <style>
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        .wrap {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        #hd {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            height: 70px;
+            border-bottom: 1px solid #fff;
+            z-index: 1000;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            z-index: 10;
+        }
+        .logo img {
+            display: block;
+            width: 174px;
+            height: auto;
+        }
+        .menu {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            overflow: hidden;
+            margin: 0 auto;
+            transition: 0.5s;
+        }
+        .menu.on {
+            background-color: #fff;
+            height: 450px;
+        }
+        .menu ul li a.on {
+            color: #333;
+        }
+        .menu ul li a:hover {
+            color: #00448d;
+            box-sizing: border-box;
+            border-bottom: 3px solid #00448d;
+        }
+        .menu .mainMenu:hover {
+            box-sizing: border-box;
+            border-bottom: 3px solid #00448d;
+        }
+        
+        .menu ul {
+            width: 980px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .menu ul li {
+            float: left;
+            width: 140px;
+        }
+        .menu ul li a {
+            position: relative;
+            display: block;
+            height: 70px;
+            line-height: 65px;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+        .topMenu {
+            position: absolute;
+            right: 20px;
+            top: 5px;
+        }
+        .topMenu ul li {
+            float: left;
+            width: 70px;
+        }
+        .topMenu ul li a {
+            color: #fff;
+            display: block;
+            float: left;
+            position: relative;
+            padding-right: 14px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        .menu .sub {
+            width: 100%;
+            text-align: center;
+            padding: 36px 10px 40px;
+        }
+        .menu .sub li {
+            clear: both;
+            margin-bottom: 30px;
+        }
+        .menu .sub li a {
+            display: block;
+            width: 120px;
+            font-size: 1.1vmin;
+            height: 32px;
+            color: #999;
+            line-height: 22px;
+        }
+        #con1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .vs {
+            width: 400%;
+            height: 100%;
+        }
+        .vs li {
+            float: left;
+            width: 25%;
+            height: 100%;
+            position: relative;
+        }
+        .vs li.item1 {
+            background-image: url("./images/desktop/bgGif.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .vs li.item2 {
+            background-image: url("./images/desktop/vsBg2.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .vs li.item3 {
+            background-image: url("./images/desktop/vsBg3.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .vs li.item4 {
+            background-image: url("./images/desktop/vsBg4.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .itemT {
+            position: relative;
+            width: 920px;
+            margin: 0 auto;
+        }
+        .vs li .vsTit {
+            position: absolute;
+            font-family: 'Open Sans Condensed', sans-serif;
+            left: 0px;
+            top: 200px;
+            color: #fff;
+            font-weight: 100;
+            font-size: 7vmin;
+            display: none;
+        }
+        .vs li .kaist {
+            position: absolute;
+            display: block;
+            width: 350px;
+            height: auto;
+            top: 290px;
+            left: 80px;
+            display: none;
+        }
+        .vs li span {
+            display: block;
+            width: 100%;
+            height: 120px;
+            position: absolute;
+            top: 280px;
+            left: 500px;
+            overflow: hidden;
+            text-align: left;
+            font-size: 4vmin;
+            font-family: 'Arapey', serif;
+            line-height: 6vmin;
+            color: #fff;
+        }
+        .vs li span.vsTxt1 {
+            display: block;
+            width: 100%;
+            height: 120px;
+            position: absolute;
+            top: 580px;
+            left: 500px;
+            overflow: hidden;
+            text-align: left;
+            font-size: 4vmin;
+            font-family: 'Arapey', serif;
+            line-height: 6vmin;
+            color: #fff;
+            display: none;
+        }
+        .vs li span.vsTxt2 {
+            font-size: 1.5vmin;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            left: calc(100% - 675px);
+            top: 450px;
+            width: 450px;
+            display: none;
+        }
+        .vsBtn {
+            position: absolute;
+            top: 562px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .vsBtnIcon {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 8px;
+            height: 8px;
+            overflow: hidden;
+            margin-left: 17px;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+        .vsBtnIcon.on {
+            width: 70px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .vsBtnIcon span.on {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 0;
+            height: 8px;
+            background: #9f2a4b;
+        }
+        .vsBtnPS {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+            margin-left: 17px;
+            margin-top: -9px;
+            background-image: url("images/desktop/stop.png");
+            width: 30px;
+            height: 30px;
+            transition: 0.5s;
+        }
+        .vsBtnPS.click {
+            background-image: url("images/desktop/play.png");
+        }
+    </style>
+    
+    <style>
+        #con2 {
+            width: 100%;
+            height: 100%;
+            background-image: url("./images/desktop/con2Bg.png");
+            position: absolute;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            top: 100%;
+            transition: 0.5s;
+        }
+        .con2T {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            color: #fff;
+        }
+        .con2Tit1 {
+            position: absolute;
+            top: 191px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-size: 7vmin;
+            font-family: 'Arapey', serif;
+        }
+        .con2Tit2 {
+            position: absolute;
+            top: 360px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.4vmin;
+            font-weight: bold;
+        }
+        
+        .con2List {
+            width: 1280px;
+            height: 410px;
+            margin: 400px auto;
+            padding-top: 100px;
+        }
+        .con2Lst {
+            width: 100%;
+        }
+        .con2Lst li {
+            width: 280px;
+            height: 390px;
+            float: left;
+            margin: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        .con2Lst li.con2Item1 {
+            background-image: url("./images/desktop/con2Icon1.png");
+            
+        }
+        .con2Lst li.con2Item2 {
+            background-image: url("./images/desktop/con2Icon2.png");
+            
+        }
+        .con2Lst li.con2Item3 {
+            background-image: url("./images/desktop/con2Icon3.png");
+            
+        }
+        .con2Lst li.con2Item4 {
+            background-image: url("./images/desktop/con2Icon4.png");
+            
+        }
+        .con2IHover, .con2IHover2, .con2IHover3, .con2IHover4 {
+            width: 100%;
+            height: 390px;
+            display: none;
+        }
+        .con2HoverItem1 .con2HItemImg1 {
+            display: block;
+            width: 151px;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+        .con2HoverLine {
+            display: block;
+            width: 60px;
+            height: 1px;
+            border-bottom: 3px solid #fff;
+            margin: 30px auto;
+        }
+        .con2HoverTxt {
+            display: block;
+            text-align: center;
+            color: #fff;
+            line-height: 30px;
+        }
+        .con2More {
+            display: block;
+            width: 40px;
+            height: 20px;
+            background-image: url("./images/desktop/con2More.png");
+            margin: 40px auto;
+        }
+        .line, .line1, .line2, .line3, .line4 {
+            width: 280px;
+            height: 390px;
+            position: absolute;
+            top: 0;
+            
+        }
+        .line span {
+            display: block;
+            position: absolute;
+        }
+        .line span.con2ItemLine1 {
+            top: 0;
+            left: 0;
+            width: 0px;
+            border-bottom: 3px solid #fff;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        .line span.con2ItemLine2 {
+            top: 0;
+            left: 0;
+            height: 0px;
+            border-left: 3px solid #fff;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        .line span.con2ItemLine3 {
+            bottom: 0;
+            right: 0;
+            height: 0px;
+            border-right: 3px solid #fff;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        .line span.con2ItemLine4 {
+            bottom: 0;
+            right: 0;
+            width: 0px;
+            border-bottom: 3px solid #fff;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+    </style>
+    
+    <style>
+        #con3 {
+            background-image: url("./images/desktop/con3Bg.png");
+            background-size: 100% 100%;
+            position: absolute;
+            top: 200%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .con3T {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            color: #111;
+        }
+        .con3Tit1 {
+            position: absolute;
+            top: 191px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-size: 10vmin;
+            font-family: 'Arapey', serif;
+        }
+        .con3Tit2 {
+            position: absolute;
+            top: 290px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.4vmin;
+            font-weight: bold;
+        }
+        .con3Contents {
+            width: 1200px;
+            height: 470px;
+            margin: 375px auto;
+            overflow: hidden;
+        }
+        .con3Contents ul {
+            width: 3740px;
+            height: 470px;
+        }
+        .con3Contents ul li {
+            width: 280px;
+            height: 450px;
+            float: left;
+            margin: 10px;
+            box-sizing: border-box;
+            position: relative;
+            background-color: #fff;
+        }
+        .con3ItemTit {
+            width: 280px;
+            height: 170px;
+            background: #fff;
+            font-family: 'Noto Sans KR', sans-serif;
+            padding: 24px 30px 30px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .con3ItemTit .con3Span1 {
+            font-size: 20px;
+            color: #222;
+            font-family: 'Noto Sans KR', sans-serif;
+            display: block;
+            line-height: 30px;
+            text-align: center;
+        }
+        .con3ItemTit .con3Span2 {
+            font-size: 12px;
+            color: #666;
+            display: block;
+            line-height: 20px;
+            margin-top: 13px;    
+        }
+        .con3Btn {
+            width: 85%;
+            height: 30px;
+            z-index: 88;
+            box-sizing: border-box;
+            position: absolute;
+            top: 700px;
+            left: calc(100% - 92%);
+        }
+        .con3Btn button {
+            width: 78px;
+            height: auto;
+            background: none;
+            position: absolute;
+            border: 0;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .con3Btn button.left {
+            width: 78px;
+            height: 25px;
+            background-image: url("./images/desktop/con3LeftBtn.png");
+            background-repeat: no-repeat;
+            left: 0;
+        }
+        .con3Btn button.right {
+            width: 78px;
+            height: 25px;
+            background-image: url("./images/desktop/con3RightBtn.png");
+            background-repeat: no-repeat;
+            right: 0;
+        }
+        .con3Btn button.left:hover {
+            background-image: url("./images/desktop/con3LeftBtnH.png");
+            background-repeat: no-repeat;
+        }
+        .con3Btn button.right:hover {
+            background-image: url("./images/desktop/con3RightBtnH.png");
+            background-repeat: no-repeat;
+        }
+    </style>
+    
+    <style>
+        #con4 {
+            background-image: url("./images/desktop/con4Bg.png");
+            background-size: 100% 100%;
+            position: absolute;
+            top: 300%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .con4T {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            color: #fff;
+        }
+        .con4Tit1 {
+            position: absolute;
+            top: 191px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-size: 10vmin;
+            font-family: 'Arapey', serif;
+        }
+        .con4Tit2 {
+            position: absolute;
+            top: 290px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.4vmin;
+            font-weight: bold;
+        }
+        .con4C1 {
+            width: 1200px;
+            height: 472px;
+            margin: 350px auto;
+            position: relative;
+        }
+        .c1Item {
+            width: 580px;
+            height: 472px;
+            background-image: url("./images/desktop/con4C1Bg.png");
+            position: relative;
+        }
+        .con4Logo {
+            position: absolute;
+            display: block;
+            top: 30px;
+            left: 20px;
+            width: 130px;
+            height: auto;
+        }
+        .c1Item .c1Tit {
+            display: block;
+            width: 480px;
+            height: auto;
+            line-height: 5vmin;
+            padding: 130px 20px 30px;
+            color: #fff;
+            font-size: 3.5vmin;
+            font-family: 'Jua', sans-serif;
+        }
+        .c2Item {
+            width: 580px;
+            height: 472px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .c2Item li a {
+            display: block;
+            width: 270px;
+            height: 216px;
+            margin: 10px;
+            float: left;
+        }
+        .c2Item li a.con4ItemBg1 {
+            background-image: url("./images/desktop/con4MoreBg1.png");
+        }
+        .c2Item li a.con4ItemBg2 {
+            background-image: url("./images/desktop/con4MoreBg2.png");
+        }
+        .c2Item li a.con4ItemBg3 {
+            background-image: url("./images/desktop/con4MoreBg3.png");
+        }
+        .c2Item li a.con4ItemBg4 {
+            background-image: url("./images/desktop/con4MoreBg4.png");
+        }
+        .con4C2Tit span {
+            display: block;
+            color: #1c468f;
+            font-weight: bold;
+            margin: 20px;
+        }
+        .con4C2T1 {
+            font-size: 1.4vmax;
+        }
+        .con4C2T2 {
+            font-size: 1.2vmin;
+            padding-top: 15px;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 400%;
+            left: 0;
+            background-color: #393939;
+        }
+        .ftTop {
+            width: 100%;
+            
+        }
+        .ftTop ul {
+            width: 90%;
+            height: 15px;
+            margin: 0 auto;
+            
+        }
+        .ftTop ul li {
+            float: left;
+            margin: 20px;
+        }
+        .ftTop ul li a {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2vmin;
+        }
+        .ftItemR1 {
+            width: 150px;
+            height: 30px;
+            border: 1px solid #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+        .sns {
+            margin: 30px;
+            position: absolute;
+            right: 120px;
+            top: 40px;
+        }
+        .sns li {
+            float: left;
+            margin-left: 20px;
+        }
+        .copyright {
+            width: 100%;
+            height: auto;
+        }
+        .copyright span {
+            display: block;
+            color: #fff;
+            font-size: 1.3vmin;
+            width: 550px;
+            margin: 0px auto;
+            line-height: 7vmin;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .copyright h2 {
+            color: #fff;
+            font-size: 1.5vmin;
+            text-align: center;
+            font-family: 'Arapey', serif;
+            margin-bottom: 30px;
+            
+        }
+    </style>
+
+    <!-- 모바일 CSS -->
+    <style>
+        .Mmain {
+            width: 100%;
+            height: 100%;
+        }
+        .Mwrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #Mhd {
+            width: 95%;
+            height: 40px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 11;
+        }
+        .Mlogo {
+            display: block;
+            width: 70px;
+            height: auto;
+            padding: 8px;
+        }
+        .MmenuBtn {
+            display: block;
+            width: 20px;
+            height: 15px;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+        }
+        #Mcon1 {
+            width: 100%;
+            height: 380px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .Mcon1Vs {
+            width: 400%;
+            height: auto;
+        }
+        .Mcon1Vs li {
+            width: 25%;
+            height: 380px;
+            float: left;
+            position: relative;
+        }
+        .Mcon1Vs li.Mcon1Item1 {
+            width: 25%;
+            height: 380px;
+            background-image: url("./images/mobile/bgGif.gif");
+            background-size: 100% 100%;
+        }
+        .Mcon1Vs li.Mcon1Item2 {
+            width: 25%;
+            height: 380px;
+            background-image: url("./images/mobile/vsBg2.png");
+            background-size: 100% 100%;
+        }
+        .Mcon1Vs li.Mcon1Item3 {
+            width: 25%;
+            height: 380px;
+            background-image: url("./images/mobile/vsBg3.png");
+            background-size: 100% 100%;
+        }
+        .Mcon1Vs li.Mcon1Item4 {
+            width: 25%;
+            height: 380px;
+            background-image: url("./images/mobile/vsBg4.png");
+            background-size: 100% 100%;
+        }
+        .MvsTit {
+            display: block;
+            width: 200px;
+            height: auto;
+            margin: 50px auto;
+        }
+        .MvsTxt {
+            text-align: center;
+        }
+        .MvsTxt span {
+            display: block;
+            color: #fff;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .MvsTxt span.MvsTxt1 {
+            font-family: 'Arapey', serif;
+            font-size: 3vmin;
+        }
+        .MvsTxt span.MvsTxt2 {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .MvsListBtn {
+            width: 60px;
+            height: 15px;
+            margin: 135px auto;
+            position: relative;
+        }
+        .MvsListBtn ul {
+            width: 60px;
+            height: 15px;
+            position: absolute;
+            top: 0;
+        }
+        .MvsListBtn ul li {
+            float: left; 
+        }
+        .MvsListBtn ul li a {
+            display: block;
+            margin: 5px;
+            background-color: #fff;
+            width: 5px;
+            height: 5px;
+        }
+        .MvsListBtn ul li a.on {
+            background-color: #9f2a4b;
+        }
+    </style>
+    
+    <style>
+        #Mcon2 {
+            width: 100%;
+            height: 380px;
+            position: absolute;
+            top: 378px;
+            left: 0;
+            overflow: hidden;
+            background-image: url("./images/mobile/con2Bg.png");
+            background-size: 100% 100%;
+        }
+        .Mcon2Tit {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            color: #fff;
+        }
+        .Mcon2Tit1 {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-size: 3vmin;
+            font-family: 'Arapey', serif;
+        }
+        .Mcon2Tit2 {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.0vmin;
+            font-weight: bold;
+        }
+        .Mcon2List {
+            width: 75%;
+            height: 50%;
+            margin: 130px auto;
+            overflow: hidden;
+        }
+        .Mcon2Lst {
+            width: 400%;
+            height: 50%;
+        }
+        .Mcon2Lst li {
+            width: 25%;
+            height: 50%;
+            float: left;
+            position: relative;
+        }
+        .Mcon2Lst li span {
+            display: block;
+            color: #fff;
+            text-align: center;
+            font-size: 1vmin;
+            font-weight: bold;
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+        .Mcon2Btn {
+            width: 70%;
+            height: 30px;
+            margin: 60px auto;
+            position: relative;
+        }
+        .Mcon2Btn button {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+        }
+        .Mcon2Btn1 {
+            top: 0;
+            left: 0;
+        }
+        .Mcon2Btn2 {
+            top: 0;
+            right: 0;
+        }
+    </style>
+    
+    <style>
+        #Mcon3 {
+            width: 100%;
+            height: 380px;
+            position: absolute;
+            top: 760px;
+            left: 0;
+            background-color: aliceblue;
+        }
+    </style>
+    
+    <!-- MEDIA 속성 -->
+     <style>
+        @media screen and (max-width:767px) {
+            /* 모바일 */
+            #desktop {
+                display: none;
+            }
+            #mobile {
+                display: block;
+            }
+            
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+            #desktop .con3Btn {
+                top: 900px;
+            }
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+            
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+        }
+        @media screen and (min-width:1200px) {
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+        }
+    </style>
+    
+    <!-- 데스크탑 JS -->
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".vs li").width());
+            $(".vsBtnIcon").removeAttr("href");
+            function rAni(){
+                
+                
+                $(".vs").not(":animated").animate({"margin-left" : - wd + "px"}, 2000, function(){                
+                    
+                    $(".vs li .vsTit, .vs li .kaist").fadeIn(500);
+                    $(".vsTxt2").delay(500).fadeIn(500);
+                    $(".vsTxt1").delay(900).fadeIn(500, function(){
+                        $(this).not(":animated").animate({"top": "280px"}, 500, function(){
+                            $(this).delay(2100).fadeOut(500);
+                        });
+                    });
+                    
+                    $(".vs li").eq(0).appendTo($(".vs"));
+                    $(".vs").css("margin-left", "0px");
+                    $(".vs li .vsTit, .vs li .kaist").delay(3000).fadeOut(500);
+                    $(".vsTxt2").delay(2500).fadeOut(500);
+                    $(".vsTxt1").css("top", "580px");
+                    
+                    
+                    $(".vsBtnIcon.on span.on").delay(1200).not(":animated").animate({"width": "70px"}, 3000, function(){
+                        $(".vsBtnIcon.on span").css("width", "0px");
+                    });
+                    
+            });
+            };
+            
+            var intv = setInterval(function(){
+                rAni();
+            }, 6000);
+            
+            $(".vsBtnIcon1").click(function(){
+                $(this).addClass("on");
+                $(this).find(".bar1").addClass("on");
+                $(".bar2, .bar3, .bar4").removeClass("on");
+                $(this).siblings().removeClass("on");
+                
+                clearInterval();
+                $(".vs").not(":animated").animate({"margin-left" : + "0px"}, 2000, function(){                
+                    
+                    $(".vs li .vsTit, .vs li .kaist").fadeIn(500);
+                    $(".vsTxt2").delay(500).fadeIn(500);
+                    $(".vsTxt1").delay(900).fadeIn(500, function(){
+                        $(this).not(":animated").animate({"top": "280px"}, 500, function(){
+                            $(this).delay(2100).fadeOut(500);
+                        });
+                    });
+                    $(".vs").css("margin-left", "0px");
+                    $(".vs li .vsTit, .vs li .kaist").delay(3000).fadeOut(500);
+                    $(".vsTxt2").delay(2500).fadeOut(500);
+                    $(".vsTxt1").css("top", "580px");
+                    
+                    
+                    $(".vsBtnIcon.on span.on").delay(1200).not(":animated").animate({"width": "70px"}, 3000, function(){
+                        $(".vsBtnIcon.on span").css("width", "0px");
+                    });
+            });
+                
+            });
+            $(".vsBtnIcon2").click(function(){
+                $(this).addClass("on");
+                $(this).find(".bar2").addClass("on");
+                $(this).siblings().removeClass("on");
+                $(".bar1, .bar3, .bar4").removeClass("on");
+                
+                clearInterval();
+                $(".vs").not(":animated").animate({"margin-left" : - wd + "px"}, 2000, function(){                
+                    
+                    $(".vs li .vsTit, .vs li .kaist").fadeIn(500);
+                    $(".vsTxt2").delay(500).fadeIn(500);
+                    $(".vsTxt1").delay(900).fadeIn(500, function(){
+                        $(this).not(":animated").animate({"top": "280px"}, 500, function(){
+                            $(this).delay(2100).fadeOut(500);
+                        });
+                    });
+                    $(".vs").css("margin-left", "0px");
+                    $(".vs li .vsTit, .vs li .kaist").delay(3000).fadeOut(500);
+                    $(".vsTxt2").delay(2500).fadeOut(500);
+                    $(".vsTxt1").css("top", "580px");
+                    
+                    
+                    $(".vsBtnIcon.on span.on").delay(1200).not(":animated").animate({"width": "70px"}, 3000, function(){
+                        $(".vsBtnIcon.on span").css("width", "0px");
+                    });
+            });
+                
+            });
+            $(".vsBtnIcon3").click(function(){
+                $(this).addClass("on");
+                $(this).find(".bar3").addClass("on");
+                $(this).siblings().removeClass("on");
+                $(".bar2, .bar1, .bar4").removeClass("on");
+                
+                clearInterval();
+                $(".vs").not(":animated").animate({"margin-left" : - wd*2 + "px"}, 2000, function(){                
+                    
+                    $(".vs li .vsTit, .vs li .kaist").fadeIn(500);
+                    $(".vsTxt2").delay(500).fadeIn(500);
+                    $(".vsTxt1").delay(900).fadeIn(500, function(){
+                        $(this).not(":animated").animate({"top": "280px"}, 500, function(){
+                            $(this).delay(2100).fadeOut(500);
+                        });
+                    });
+                    $(".vs").css("margin-left", "0px");
+                    $(".vs li .vsTit, .vs li .kaist").delay(3000).fadeOut(500);
+                    $(".vsTxt2").delay(2500).fadeOut(500);
+                    $(".vsTxt1").css("top", "580px");
+                    
+                    
+                    $(".vsBtnIcon.on span.on").delay(1200).not(":animated").animate({"width": "70px"}, 3000, function(){
+                        $(".vsBtnIcon.on span").css("width", "0px");
+                    });
+            });
+                
+            });
+            $(".vsBtnIcon4").click(function(){
+                $(this).addClass("on");
+                $(this).find(".bar4").addClass("on");
+                $(this).siblings().removeClass("on");
+                $(".bar2, .bar3, .bar1").removeClass("on");
+                
+                clearInterval();
+                $(".vs").not(":animated").animate({"margin-left" : - wd*3 + "px"}, 2000, function(){                
+                    
+                    $(".vs li .vsTit, .vs li .kaist").fadeIn(500);
+                    $(".vsTxt2").delay(500).fadeIn(500);
+                    $(".vsTxt1").delay(900).fadeIn(500, function(){
+                        $(this).not(":animated").animate({"top": "280px"}, 500, function(){
+                            $(this).delay(2100).fadeOut(500);
+                        });
+                    });
+                    $(".vs").css("margin-left", "0px");
+                    $(".vs li .vsTit, .vs li .kaist").delay(3000).fadeOut(500);
+                    $(".vsTxt2").delay(2500).fadeOut(500);
+                    $(".vsTxt1").css("top", "580px");
+                    
+                    
+                    $(".vsBtnIcon.on span.on").delay(1200).not(":animated").animate({"width": "70px"}, 3000, function(){
+                        $(".vsBtnIcon.on span").css("width", "0px");
+                    });
+            });
+                
+            });
+        });
+    </script> <!-- vs -->
+
+    <script>
+        $(document).ready(function(){
+            $(".menu, sub, .topMenu").hover(function(){
+                $(".menu ul li a").toggleClass("on");
+                
+                $(".menu").toggleClass("on");    
+                $(".topMenu li a").css("color", "#333");
+                $(".logo img").attr("src", "./images/desktop/logo_on.png");
+            });
+             $(".menu").mouseleave(function(){
+                 $(".topMenu li a").css("color", "#fff");
+                 $(".logo img").attr("src", "./images/desktop/logo_off.png");
+            });
+            
+            
+            $(".vsBtnPS").removeAttr("href");
+            $(".vsBtnPS").click(function(){
+                $(".vsBtnPS").toggleClass("click");
+            });
+        });
+        
+        /* $(document).ready(function(){
+            var didScroll;
+            var lastScrollTop = 0;
+            var delta = 5;
+            var navbarHeight = $('header').outerHeight();
+
+                $(window).scroll(function(event){
+                    didScroll = true;
+                });
+                setInterval(function() {
+                    if (didScroll) {
+                        hasScrolled();
+                        didScroll = false;
+                    }
+                }, 850);
+
+            function hasScrolled() {
+                var st = $(this).scrollTop();
+
+                if(Math.abs(lastScrollTop - st) <= delta) return;
+
+                if (st > lastScrollTop && st > navbarHeight){ 
+                    $('header').css("background", "#333");
+                } else {
+                    $('header').css("background", "none");
+                }
+                lastScrollTop = st;
+            }
+        }); */
+
+    </script> <!-- wrap -->
+        
+    <script>
+        $(document).ready(function(){
+            $(".con2Lst li.con2Item1").hover(function(){
+                $(this).css("background", "none");
+                $(".con2IHover").fadeToggle(500);
+                $(".line1").fadeIn(500);
+                $(".line1 span.con2ItemLine1").css("width", "280px");
+                $(".line1 span.con2ItemLine2").css("height", "390px");
+                $(".line1 span.con2ItemLine3").css("height", "390px");
+                $(".line1 span.con2ItemLine4").css("width", "280px");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2HoverBg1.png')");
+                
+            });
+            $(".con2Lst li.con2Item1").mouseleave(function(){
+                $(".line1 span.con2ItemLine1").css("width", "0px");
+                $(".line1 span.con2ItemLine2").css("height", "0px");
+                $(".line1 span.con2ItemLine3").css("height", "0px");
+                $(".line1 span.con2ItemLine4").css("width", "0px");
+                $(this).css("background", "url('./images/desktop/con2Icon1.png')");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2Bg.png')");
+            });
+            
+            $(".con2Lst li.con2Item2").hover(function(){
+                $(this).css("background", "none");
+                $(".con2IHover2").fadeToggle(500);
+                $(".line2").fadeIn(500);
+                $(".line2 span.con2ItemLine1").css("width", "280px");
+                $(".line2 span.con2ItemLine2").css("height", "390px");
+                $(".line2 span.con2ItemLine3").css("height", "390px");
+                $(".line2 span.con2ItemLine4").css("width", "280px");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2HoverBg2.png')");
+                
+            });
+            $(".con2Lst li.con2Item2").mouseleave(function(){
+                $(".line2 span.con2ItemLine1").css("width", "0px");
+                $(".line2 span.con2ItemLine2").css("height", "0px");
+                $(".line2 span.con2ItemLine3").css("height", "0px");
+                $(".line2 span.con2ItemLine4").css("width", "0px");
+                $(this).css("background", "url('./images/desktop/con2Icon2.png')");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2Bg.png')");
+            });
+            
+            $(".con2Lst li.con2Item3").hover(function(){
+                $(this).css("background", "none");
+                $(".con2IHover3").fadeToggle(500);
+                $(".line3").fadeIn(500);
+                $(".line3 span.con2ItemLine1").css("width", "280px");
+                $(".line3 span.con2ItemLine2").css("height", "390px");
+                $(".line3 span.con2ItemLine3").css("height", "390px");
+                $(".line3 span.con2ItemLine4").css("width", "280px");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2HoverBg3.png')");
+                
+            });
+            $(".con2Lst li.con2Item3").mouseleave(function(){
+                $(".line3 span.con2ItemLine1").css("width", "0px");
+                $(".line3 span.con2ItemLine2").css("height", "0px");
+                $(".line3 span.con2ItemLine3").css("height", "0px");
+                $(".line3 span.con2ItemLine4").css("width", "0px");
+                $(this).css("background", "url('./images/desktop/con2Icon3.png')");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2Bg.png')");
+            });
+            
+            $(".con2Lst li.con2Item4").hover(function(){
+                $(this).css("background", "none");
+                $(".con2IHover4").fadeToggle(500);
+                $(".line4").fadeIn(500);
+                $(".line4 span.con2ItemLine1").css("width", "280px");
+                $(".line4 span.con2ItemLine2").css("height", "390px");
+                $(".line4 span.con2ItemLine3").css("height", "390px");
+                $(".line4 span.con2ItemLine4").css("width", "280px");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2HoverBg4.png')");
+                
+            });
+            $(".con2Lst li.con2Item4").mouseleave(function(){
+                $(".line4 span.con2ItemLine1").css("width", "0px");
+                $(".line4 span.con2ItemLine2").css("height", "0px");
+                $(".line4 span.con2ItemLine3").css("height", "0px");
+                $(".line4 span.con2ItemLine4").css("width", "0px");
+                $(this).css("background", "url('./images/desktop/con2Icon4.png')");
+                $("#con2").not(":animated").css("background-image", "url('./images/desktop/con2Bg.png')");
+            });
+        });
+    </script><!-- con2 -->
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".con3Contents").width());
+            var wd2 = wd+20;
+            var cnt = $(".con3Contents ul li").length;
+            
+            $(".con3Btn button.left").click(function(){
+                $(".con3Contents ul").not(":animated").animate({"margin-left" : -wd + "px"}, 800, function(){
+                    $(".con3Contents ul .con3C").eq(0).appendTo(".con3Contents ul");
+                    $(".con3Contents ul").css("margin-left", "0px");
+                });
+            });
+            $(".con3Btn button.right").click(function(){
+                $(".con3Contents ul .con3C").eq(2).prependTo(".con3Contents ul");
+                $(".con3Contents ul").css("margin-left", -wd + "px");
+                $(".con3Contents ul").not(":animated").animate({"margin-left" : "0px"}, 800);
+            });
+        });
+    </script> <!-- con3 -->
+    
+    <!-- 모바일 JS -->
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".Mcon1Vs li").width());
+            $(".MvsListBtn").removeAttr("href");
+            function rAni(){
+                $(".Mcon1Vs").not(":animated").animate({"margin-left" : - wd + "px"}, 2000, function(){
+                    $(".Mcon1Vs li").eq(0).appendTo($(".Mcon1Vs"));
+                    $(".Mcon1Vs").css("margin-left", "0px");
+                });
+            };
+            var intv = setInterval(function(){
+                rAni();
+            }, 6000);
+            
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".Mcon2List").width());
+            $(".Mcon2Btn1").click(function(){
+                $(".Mcon2Lst").not(":animated").animate({"margin-left" : -wd + "px"}, 1500, function(){
+                    $(".Mcon2Lst li").eq(0).appendTo($(".Mcon2Lst"));
+                    $(".Mcon2Lst").css("margin-left", "0px");
+                });
+            });
+            $(".Mcon2Btn2").click(function(){
+                    $(".Mcon2Lst li").eq(3).prependTo($(".Mcon2Lst"));
+                    $(".Mcon2Lst").css("margin-left", -wd + "px");
+                    $(".Mcon2Lst").not(":animated").animate({"margin-left": "0px"}, 1500);
+                });
+            });
+    </script>
+</head>
+<body>
+    <div class="main" id="desktop">
+       
+        <div class="wrap">
+            <header id="hd">
+                <a href="" class="logo">
+                    <img src="./images/desktop/logo_off.png" alt="로고">
+                </a>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="sub1.html" class="mainMenu">KAIST</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="sub1.html">개요</a></li>
+                                    <li><a href="sub1.html">인사말</a></li>
+                                    <li><a href="sub1.html">비전</a></li>
+                                    <li><a href="sub1.html">연혁</a></li>
+                                    <li><a href="sub1.html">카이스트</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">교육</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">대학소개</a></li>
+                                    <li><a href="">개설교과목</a></li>
+                                    <li><a href="">학사정보</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">입학</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">입학안내</a></li>
+                                    <li><a href="">학사과정</a></li>
+                                    <li><a href="">대학원과정</a></li>
+                                    <li><a href="">Applicants</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">연구</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">연구목표</a></li>
+                                    <li><a href="">연구통계</a></li>
+                                    <li><a href="">창업</a></li>
+                                    <li><a href="">신학협력단</a></li>
+                                    <li><a href="">도서관</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">캠퍼스</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">학생생활복지</a></li>
+                                    <li><a href="">문화행사</a></li>
+                                    <li><a href="">학생활동</a></li>
+                                    <li><a href="">상담</a></li>
+                                    <li><a href="">취업.인턴십</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">뉴스</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">News</a></li>
+                                    <li><a href="">Newsletter</a></li>
+                                    <li><a href="">행사안내</a></li>
+                                    <li><a href="">KAIST홍보</a></li>
+                                    <li><a href="">알립니다</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">국제협력</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">국제협력</a></li>
+                                    <li><a href="">국제교원및학생지원</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="topMenu">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">SITEMAP</a></li>
+                        <li><a href="">Q&amp;A</a></li>
+                        <li><a href="">ENGLISH</a></li>
+                        <li><a href="">API</a></li>
+                    </ul>
+                </div>
+            </header>
+            </div>
+            
+            <div id="con1" class="con">
+                <ul class="vs">
+                    <li class="item1">
+                       <div class="itemT">
+                            <h2 class="vsTit">UNIVERSITY</h2>
+                            <img src="./images/desktop/kaistImg.png" alt="" class="kaist">
+                            <span class="vsTxt1 vsTxt">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="vsTxt2">세계혁신 글로벌 인공지능 제어 기술 도입</span>
+                        </div>
+                    </li>
+                    <li class="item2">
+                       <div class="itemT">
+                        <h2 class="vsTit">UNIVERSITY</h2>
+                        <img src="./images/desktop/kaistImg.png" alt="" class="kaist">
+                            <span class="vsTxt1 vsTxt">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="vsTxt2">과학기술 성장의 중심 카이스트형 기술</span>
+                            </div>
+                    </li>
+                    <li class="item3">
+                       <div class="itemT">
+                        <h2 class="vsTit">UNIVERSITY</h2>
+                        <img src="./images/desktop/kaistImg.png" alt="" class="kaist">
+                            <span class="vsTxt1 vsTxt">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="vsTxt2">세계혁신 글로벌 인공지능 제어 기술 도입</span>
+                            </div>
+                    </li>
+                    <li class="item4">
+                       <div class="itemT">
+                        <h2 class="vsTit">UNIVERSITY</h2>
+                        <img src="./images/desktop/kaistImg.png" alt="" class="kaist">
+                            <span class="vsTxt1 vsTxt">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="vsTxt2">세계혁신 글로벌 인공지능 제어 기술 도입</span>
+                            </div>
+                    </li>
+                </ul>
+                
+                <div class="vsBtn">
+                    <a href="" class="vsBtnIcon on vsBtnIcon1">
+                        <span class="on bar bar1"></span>
+                    </a>
+                    <a href="" class="vsBtnIcon vsBtnIcon2">
+                        <span class="bar bar2"></span>
+                    </a>
+                    <a href="" class="vsBtnIcon vsBtnIcon3">
+                        <span class="bar bar3"></span>
+                    </a>
+                    <a href="" class="vsBtnIcon vsBtnIcon4">
+                        <span class="bar bar4"></span>
+                    </a>
+                    <a href="" class="vsBtnPS">
+                    </a>
+                </div>
+            </div>
+            
+            <div id="con2" class="con">
+                <div class="con2T">
+                    <p class="con2Tit1">TECHNOLOGY<br>UNIVERSITY</p>
+                    <p class="con2Tit2">세계의 중심에서 세상을 움직이는 최고의 과학기술대학</p>
+                </div>
+                
+                <div class="con2List">
+                    <ul class="con2Lst">
+                        <li class="con2Item1"><a href=""></a>
+                            <div class="con2IHover">
+                                            <div class="con2HoverItem1">
+                                                <span class="con2HItemImg1"><img src="./images/desktop/con2Icon1HTit1.png" alt=""></span>
+                                                <span class="con2HoverLine"></span>
+                                                <span class="con2HoverTxt">
+                                                    세계로 뻗어 나가는<br>과학기술대학을<br>소개합니다.
+                                                </span>
+                                                <span class="con2More"></span>
+                                            </div>
+                                        </div>
+                                        <div class="line line1">
+                                            <span class="con2ItemLine1"></span>
+                                            <span class="con2ItemLine2"></span>
+                                            <span class="con2ItemLine3"></span>
+                                            <span class="con2ItemLine4"></span>
+                                        </div>
+                                </li>
+                                <!-- -->
+                        <li class="con2Item2"><a href=""></a>
+                            <div class="con2IHover2">
+                                            <div class="con2HoverItem1">
+                                                <span class="con2HItemImg1"><img src="./images/desktop/con2Icon1HTit1.png" alt=""></span>
+                                                <span class="con2HoverLine"></span>
+                                                <span class="con2HoverTxt">
+                                                    카이스트만의<br>학생을위한 보금자리를<br>소개합니다.
+                                                </span>
+                                                <span class="con2More"></span>
+                                            </div>
+                                        </div>
+                                        <div class="line line2">
+                                            <span class="con2ItemLine1"></span>
+                                            <span class="con2ItemLine2"></span>
+                                            <span class="con2ItemLine3"></span>
+                                            <span class="con2ItemLine4"></span>
+                                        </div>
+                        </li>
+                        
+                        <li class="con2Item3"><a href=""></a>
+                            <div class="con2IHover3">
+                                            <div class="con2HoverItem1">
+                                                <span class="con2HItemImg1"><img src="./images/desktop/con2Icon1HTit1.png" alt=""></span>
+                                                <span class="con2HoverLine"></span>
+                                                <span class="con2HoverTxt">
+                                                    과학기술의 핵심<br>인공지는역학기술을<br>소개합니다.
+                                                </span>
+                                                <span class="con2More"></span>
+                                            </div>
+                                        </div>
+                                        <div class="line line3">
+                                            <span class="con2ItemLine1"></span>
+                                            <span class="con2ItemLine2"></span>
+                                            <span class="con2ItemLine3"></span>
+                                            <span class="con2ItemLine4"></span>
+                                        </div>
+                        </li>
+                        <li class="con2Item4"><a href=""></a>
+                            <div class="con2IHover4">
+                                            <div class="con2HoverItem1">
+                                                <span class="con2HItemImg1"><img src="./images/desktop/con2Icon1HTit1.png" alt=""></span>
+                                                <span class="con2HoverLine"></span>
+                                                <span class="con2HoverTxt">
+                                                    카이스트교육서비스<br>글로벌대학교육을<br>소개합니다.
+                                                </span>
+                                                <span class="con2More"></span>
+                                            </div>
+                                        </div>
+                                        <div class="line line4">
+                                            <span class="con2ItemLine1"></span>
+                                            <span class="con2ItemLine2"></span>
+                                            <span class="con2ItemLine3"></span>
+                                            <span class="con2ItemLine4"></span>
+                                        </div>
+                        </li>
+                    </ul>
+                </div>
+
+        </div>
+        
+        <div id="con3" class="con">
+           <div class="con3T">
+                <p class="con3Tit1">NEWS</p>
+                <p class="con3Tit2">카이스트 소식을 알려드립니다.</p>
+            </div>
+            <div class="con3Contents">
+                <ul>
+                   <div class="con3C con3C1">
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg1.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg2.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg3.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg4.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    </div>
+                    <div class="con3C con3C2">
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg5.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg6.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg7.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg8.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    </div>
+                    <div class="con3C con3C3">
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg9.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg10.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg11.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./images/desktop/con3ItemImg12.png" alt="">
+                            <p class="con3ItemTit">
+                                <span class="con3Span1">
+                                    카이스트 전기전자분야<br>대학브랜드 1위
+                                </span>
+                                <span class="con3Span2">
+                                    카이스트 전기전자분야 대학 브랜드를 1위를 하였으며,<br>
+                                    대전 최초 글로벌 전기전자 메거진 탑률...
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                    </div>
+                </ul>
+            </div>
+            
+            <div class="con3Btn">
+                <button class="left"></button>
+                <button class="right"></button>
+            </div>
+        </div>
+        
+        <div id="con4" class="con">
+            <div class="con4T">
+                <p class="con4Tit1">Admission Guide</p>
+                <p class="con4Tit2">카이스트에서는 함께 나아갈 새로운 역사를 발취할 인재와 함께합니다.</p>
+            </div>
+            <div class="con4C1">
+                <p class="c1Item">
+                   <img src="./images/desktop/logo_off.png" alt="" class="con4Logo">
+                    <span class="c1Tit">KAIST BK21 플러스사업<br>(특화전문인재양성형)<br>산학협력전담인력<br>채용 공고</span>
+                </p>
+                
+                <ul class="c2Item">
+                    <li>
+                        <a href="" class="con4ItemBg1">
+                            <p class="con4C2Tit">
+                                <span class="con4C2T1">KAIST소개</span>
+                                <span class="con4C2T2">고급 과학기술 인력을 양성<br>이공계 연구중심대학의 본보기를 제시 위해 1971년 설립</span>
+                                <img src="" alt="" class="con4More">
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="con4ItemBg2">
+                            <p class="con4C2Tit">
+                                <span class="con4C2T1">센터 學 양성</span>
+                                <span class="con4C2T2">KAIST의 전반적인 인제양성<br>국제적 양성교육기반</span>
+                                <img src="" alt="" class="con4More">
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="con4ItemBg3">
+                            <p class="con4C2Tit">
+                                <span class="con4C2T1">카이스트속 세계</span>
+                                <span class="con4C2T2">최고의 리더를 배출하여 세계 과학계가<br>선망하는 초일류 대학으로서의 미래를 지향</span>
+                                <img src="" alt="" class="con4More">
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="con4ItemBg4">
+                            <p class="con4C2Tit">
+                                <span class="con4C2T1">세계속 카이스트</span>
+                                <span class="con4C2T2">학문적 수월성과 창의성을겸비한<br>인재를 배출하여 세계 과학계의 존경의 일원</span>
+                                <img src="" alt="" class="con4More">
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer id="ft">
+            <div class="ftTop">
+                <ul>
+                    <li><a href="">국민권익위</a></li>
+                    <li><a href="">행정서비스현장</a></li>
+                    <li><a href="">윤리강령</a></li>
+                    <li><a href="">안전관리</a></li>
+                    <li><a href="">교수수시초빙·임용</a></li>
+                    <li><a href="">정보공개</a></li>
+                    <li><a href="">경영공시</a></li>
+                    <li><a href="">ALIO</a></li>
+                    <li><a href="">대학정보공시감사실 신문고</a></li>
+                    <li><a href="">청탁금지법</a></li>
+                    
+                    <li class="ftItemR1"><a href="">교내주요사이트  ▲</a></li>
+                    <li class="ftItemR1"><a href="">학과사이트  ▲</a></li>
+                </ul>
+            </div>
+            <div class="snsIcon">
+                <ul class="sns">
+                    <li class="sns1"><a href=""><img src="./images/desktop/face.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/youtube.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/insta.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/twitter.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/kakao.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/pinter.png" alt=""></a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+                <span class="address">
+                    34141 대전광역시 유성구 대학로 291 한국과학기술원(KAIST) / T.042-350-2114 / F.042-350-2210(2220)
+                </span>
+                <h2 class="copy">Copyright (C) 2014, Korea Advanced Institute of Science and Technology, All Rights Reserved.</h2>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="Mmain" id="mobile">
+        <div class="Mwrap">
+            <header id="Mhd">
+                <a href="" class="Mlogo">
+                    <img src="./images/mobile/logo.png" alt="로고">
+                </a>
+                <span class="MmenuBtn"><img src="./images/mobile/menuBtn.png" alt=""></span>
+            </header>
+            
+            <div class="Mcon" id="Mcon1">
+                <ul class="Mcon1Vs">
+                    <li class="Mcon1Item1">
+                        <img src="./images/mobile/slTit.png" alt="" class="MvsTit">
+                        <p class="MvsTxt">
+                            <span class="MvsTxt1">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="MvsTxt2">세계혁신 글로벌 인공지능 제어 기술</span>
+                        </p>
+                    </li>
+                    <li class="Mcon1Item2">
+                        <img src="./images/mobile/slTit.png" alt="" class="MvsTit">
+                        <p class="MvsTxt">
+                            <span class="MvsTxt1">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="MvsTxt2">세계혁신 글로벌 인공지능 제어 기술</span>
+                        </p>
+                    </li>
+                    <li class="Mcon1Item3">
+                        <img src="./images/mobile/slTit.png" alt="" class="MvsTit">
+                        <p class="MvsTxt">
+                            <span class="MvsTxt1">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="MvsTxt2">세계혁신 글로벌 인공지능 제어 기술</span>
+                        </p>
+                    </li>
+                    <li class="Mcon1Item4">
+                        <img src="./images/mobile/slTit.png" alt="" class="MvsTit">
+                        <p class="MvsTxt">
+                            <span class="MvsTxt1">Developed world-class<br>Artificial intelligence innovation</span>
+                            <span class="MvsTxt2">세계혁신 글로벌 인공지능 제어 기술</span>
+                        </p>
+                    </li>
+                </ul>
+                
+                <div class="MvsListBtn">
+                    <ul>
+                        <li><a href="" class="on"></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Mcon" id="Mcon2">
+            <div class="Mcon2Tit">
+                <span class="Mcon2Tit1">TECHNOLOGY<br>UNIVERSITY</span>
+                <span class="Mcon2Tit2">세계의 중심에서 세상을 움직이는 최고의 과학기술대학</span>
+            </div>
+            
+            <div class="Mcon2List">
+                <ul class="Mcon2Lst">
+                    <li>
+                        <img src="./images/mobile/con2Icon1.png" alt="">
+                        <span class="MlstTit">KAIST는 국가 발전에<br>필요한 고급 과학기술 인력을 양성하고<br>이공계 연구중심대학의 본보기를 제시하기 위해<br>1971년 설립되었다.</span>
+                        <a href="" class="Mcon2More"></a>
+                    </li>
+                    <li>
+                        <img src="./images/mobile/con2Icon2.png" alt="">
+                        <span class="MlstTit"></span>
+                        <a href="" class="Mcon2More"></a>
+                    </li>
+                    <li>
+                        <img src="./images/mobile/con2Icon3.png" alt="">
+                        <span class="MlstTit"></span>
+                        <a href="" class="Mcon2More"></a>
+                    </li>
+                    <li>
+                        <img src="./images/mobile/con2Icon4.png" alt="">
+                        <span class="MlstTit"></span>
+                        <a href="" class="Mcon2More"></a>
+                    </li>
+                </ul>
+                
+                <div class="Mcon2Btn">
+                    <button class="Mcon2Btn1"> &#40; </button>
+                    <button class="Mcon2Btn2"> &#41; </button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="Mcon" id="Mcon3">
+            
+        </div>
+        
+    </div>
+</body>
+</html>

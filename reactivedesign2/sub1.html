@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="카이스트, 대학, 전기, 전자, 과학, 입학">
+    <meta name="Description" content="한국과학기술원 카이스트 세계의 중심에서 세상을 바꾼다.">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>::KAIST::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+
+    <!-- 데스크탑 CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width:1920px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+         
+    </style>
+    
+    <style>
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        .wrap {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        #hd {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            height: 70px;
+            border-bottom: 1px solid #fff;
+            z-index: 1000;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #333;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            z-index: 10;
+        }
+        .logo img {
+            display: block;
+            width: 174px;
+            height: auto;
+        }
+        .menu {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            overflow: hidden;
+            margin: 0 auto;
+            transition: 0.5s;
+        }
+        .menu.on {
+            background-color: #fff;
+            height: 450px;
+        }
+        .menu ul li a.on {
+            color: #333;
+        }
+        .menu ul li a:hover {
+            color: #00448d;
+            box-sizing: border-box;
+            border-bottom: 3px solid #00448d;
+        }
+        .menu .mainMenu:hover {
+            box-sizing: border-box;
+            border-bottom: 3px solid #00448d;
+        }
+        
+        .menu ul {
+            width: 980px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .menu ul li {
+            float: left;
+            width: 140px;
+        }
+        .menu ul li a {
+            position: relative;
+            display: block;
+            height: 70px;
+            line-height: 65px;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+        .topMenu {
+            position: absolute;
+            right: 20px;
+            top: 5px;
+        }
+        .topMenu ul li {
+            float: left;
+            width: 70px;
+        }
+        .topMenu ul li a {
+            color: #fff;
+            display: block;
+            float: left;
+            position: relative;
+            padding-right: 14px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        .menu .sub {
+            width: 100%;
+            text-align: center;
+            padding: 36px 10px 40px;
+        }
+        .menu .sub li {
+            clear: both;
+            margin-bottom: 30px;
+        }
+        .menu .sub li a {
+            display: block;
+            width: 120px;
+            font-size: 1.1vmin;
+            height: 32px;
+            color: #999;
+            line-height: 22px;
+        }
+    </style>
+    
+    <style>
+        #con1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .subTit {
+            width: 100%;
+            height: 50%;
+            background-image: url("./images/desktop/subBg1.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .subTit .subTitIn {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .subTitIn h2 {
+            text-align: center;
+            font-size: 8.5vmin;
+            color: #fff;
+            text-shadow: 1px 3px 2px #333;
+            line-height: 500px;
+        }
+        .subArea {
+            width: 100%;
+            height: 70%;
+        }
+        .Area1In {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 5%;
+        }
+        .Area1Tit {
+            text-align: center;
+            font-size: 4vmin;
+            color: #333;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .Area1Tit:hover {
+            color: #1cccce;
+        }
+        .Area1Txt {
+            padding-top: 5%;
+            display: block;
+            text-align: center;
+            font-size: 2vmin;
+            color: #333;
+            transition: 0.5s;
+        }
+        .Area1Item {
+            width: 100%;
+            height: auto;
+        }
+        .itemIn {
+            width: 70%;
+            height: auto;
+            margin: 5% auto;
+        }
+        .itemIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .itemIn ul li {
+            float: left;
+            width: 15%;
+            margin: 2.5%;
+        }
+        .itemIn ul li img {
+            width: 100%;
+            height: auto;
+            transition: 0.5s;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 350%;
+            left: 0;
+            background-color: #393939;
+        }
+        .ftTop {
+            width: 100%;
+            
+        }
+        .ftTop ul {
+            width: 90%;
+            height: 15px;
+            margin: 0 auto;
+            
+        }
+        .ftTop ul li {
+            float: left;
+            margin: 20px;
+        }
+        .ftTop ul li a {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2vmin;
+        }
+        .ftItemR1 {
+            width: 150px;
+            height: 30px;
+            border: 1px solid #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+        .sns {
+            margin: 30px;
+            position: absolute;
+            right: 120px;
+            top: 40px;
+        }
+        .sns li {
+            float: left;
+            margin-left: 20px;
+        }
+        .copyright {
+            width: 100%;
+            height: auto;
+        }
+        .copyright span {
+            display: block;
+            color: #fff;
+            font-size: 1.3vmin;
+            width: 550px;
+            margin: 0px auto;
+            line-height: 7vmin;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .copyright h2 {
+            color: #fff;
+            font-size: 1.5vmin;
+            text-align: center;
+            font-family: 'Arapey', serif;
+            margin-bottom: 30px;
+            
+        }
+    </style>
+
+    <!-- 모바일 CSS -->
+    
+    <!-- MEDIA 속성 -->
+     <style>
+        @media screen and (max-width:767px) {
+            /* 모바일 */
+            
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+
+        }
+        @media screen and (min-width:1200px) {
+
+        }
+    </style>
+    
+    <!-- 데스크탑 JS -->
+
+
+    <script>
+        $(document).ready(function(){
+            $(".menu, sub, .topMenu").hover(function(){
+                $(".menu ul li a").toggleClass("on");
+                
+                $(".menu").toggleClass("on");    
+                $(".topMenu li a").css("color", "#333");
+                $(".logo img").attr("src", "./images/desktop/logo_on.png");
+            });
+             $(".menu").mouseleave(function(){
+                 $(".topMenu li a").css("color", "#fff");
+                 $(".logo img").attr("src", "./images/desktop/logo_off.png");
+            });
+            
+            
+            $(".vsBtnPS").removeAttr("href");
+            $(".vsBtnPS").click(function(){
+                $(".vsBtnPS").toggleClass("click");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main" id="desktop">
+       
+        <div class="wrap">
+            <header id="hd">
+                <a href="index.html" class="logo">
+                    <img src="./images/desktop/logo_off.png" alt="로고">
+                </a>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="" class="mainMenu">KAIST</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">개요</a></li>
+                                    <li><a href="">인사말</a></li>
+                                    <li><a href="">비전</a></li>
+                                    <li><a href="">연혁</a></li>
+                                    <li><a href="">카이스트</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">교육</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">대학소개</a></li>
+                                    <li><a href="">개설교과목</a></li>
+                                    <li><a href="">학사정보</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">입학</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">입학안내</a></li>
+                                    <li><a href="">학사과정</a></li>
+                                    <li><a href="">대학원과정</a></li>
+                                    <li><a href="">Applicants</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">연구</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">연구목표</a></li>
+                                    <li><a href="">연구통계</a></li>
+                                    <li><a href="">창업</a></li>
+                                    <li><a href="">신학협력단</a></li>
+                                    <li><a href="">도서관</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">캠퍼스</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">학생생활복지</a></li>
+                                    <li><a href="">문화행사</a></li>
+                                    <li><a href="">학생활동</a></li>
+                                    <li><a href="">상담</a></li>
+                                    <li><a href="">취업.인턴십</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">뉴스</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">News</a></li>
+                                    <li><a href="">Newsletter</a></li>
+                                    <li><a href="">행사안내</a></li>
+                                    <li><a href="">KAIST홍보</a></li>
+                                    <li><a href="">알립니다</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="mainMenu">국제협력</a>
+                            <div class="sub">
+                                <ul class="subMenu">
+                                    <li><a href="">국제협력</a></li>
+                                    <li><a href="">국제교원및학생지원</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="topMenu">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">SITEMAP</a></li>
+                        <li><a href="">Q&amp;A</a></li>
+                        <li><a href="">ENGLISH</a></li>
+                        <li><a href="">API</a></li>
+                    </ul>
+                </div>
+            </header>
+            </div>
+            
+            <div id="con1" class="con">
+                <div class="subTit">
+                    <div class="subTitIn">
+                        <h2>학교 소개</h2>
+                    </div>
+                </div>
+                
+                <div class="subArea">
+                    <div class="Area1In">
+                       
+                        <h3 class="Area1Tit">
+                            “좋은 연구 성과는 학문의 대를 이어 지속돼야 한다.”.
+                        </h3>
+                        <span class="Area1Txt">
+                            카이스트가 지속가능한 연구풍토 조성을 위해
+노장교수와 젊은 교수들이 함께 연구하는
+초세대 협업 연구실’을 만들고 26일 개소식을 
+가졌다.
+
+올해 처음 시행되는
+‘카이스트 초세대 협업 연구실’제도는
+오랫동안 연구성과를 쌓은 교수가 퇴직하면
+함께 사라지던 축적된 연구업적과 노하우 등의
+학문적 유산을 후배 교수들이 계승 발전시켜 나가자는
+취지로 만들었다. 세대를 뛰어 넘어 상호 보완적,
+연속적 협력을 통해 학문의 대를 이어가야 한다는 
+게 제도를 도입한 신성철 총장의 설명이다.
+
+
+                        </span>
+                        <div class="Area1Item">
+                            <div class="itemIn">
+                                <ul>
+                                    <li><img src="./images/desktop/sub2Item.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item13.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item12.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item14.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item1.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subArea">
+                    <div class="Area1In">
+                       
+                        <h3 class="Area1Tit">
+                            “조연우 교수, 물 속 운동체의 항력 감소 기술 개발”
+                        </h3>
+                        <span class="Area1Txt">
+                            공기에서 어떤 물체가 운동하는 경우에 물체가 받는 저항력은 동일한 물체가 물속에서 운동하는 경우의 항력보다 매우 작다.
+따라서 만약 물속에서 운동하는 어떤 물체가 공기로 완전히 감싸진 채 운동한다면 그 물체가 받는 항력을 매우 줄일 수 있을 것이다.
+연구팀은 압축 공기를 이용해 미사일 모양의 수중 운동체를 공기로 완전히 감쌀 수 있는 초공동(supercavitation) 현상을 발생 시킨 후 수중 운동체에 가해지는 항력을 측정했다.
+그 결과 동일한 속력에서 초공동으로 둘러싸인 수중 운동체가 받는 항력이 기존 수중 운동체가 받는 항력의 25% 정도로 측정됨을 확인했다.
+연구 결과는 초고속 수중 운동체 개발 및 공기윤활(air lubrication)을 이용한 초고속 선박의 개발에 응용될 수 있을 것으로 기대된다.
+이번 연구는 한국연구재단의 이공학개인기초연구지원사업의 지원으로 수행됐다.
+
+
+                        </span>
+                        <div class="Area1Item">
+                            <div class="itemIn">
+                                <ul>
+                                    <li><img src="./images/desktop/sub2Item2.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item3.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item4.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item5.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item6.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subArea">
+                    <div class="Area1In">
+                       
+                        <h3 class="Area1Tit">
+                            “김도현 교수, 2차원 나노소재 분산용액 양산 기술 개발”
+                        </h3>
+                        <span class="Area1Txt">
+                            우리 대학 생명화학공학과 김도현 교수 연구팀이 수력 공정의 전단력(剪斷力)과 혼합특성을 이용해 2차원 나노소재 분산용액을 대량생산할 수 있는 기술을 개발했다.
+
+2차원 나노소재 분산용액은 전자, 에너지 저장 및 전환 소자 개발에 사용되는 용액기반 공정에 직접 적용 가능해 소자의 다양화와 성능 개선을 실현시키는 데 기여할 것으로 기대된다.
+동국대학교 한영규 교수(제일원리 계산), 강원대학교 최봉길 교수(용액 특성 평가), 한국화학연구원 황성연 박사(물질 특성 평가) 연구팀과 공동으로 진행하고 정재민 박사가 1저자로 참여한 이번 연구 결과는 재료 분야 국제 학술지 ‘어드밴스드 펑셔널 머티리얼즈(Advanced Functional Materials)’ 8월 12일자에 온라인 게재됐고, 논문의 우수성을 인정받아 표지논문에 선정됐다. (논문명 : Hydraulic Power Manufacturing for Highly Scalable and Stable 2D Nanosheet Dispersions and Their Film Electrode Application)
+2차원 소재는 나노사이즈의 두께로 박리됐을 때 새롭고 우수한 물리, 화학적 특성이 나타나는 장점이 있어, 다양한 2차원 나노소재의 대량생산연구가 진행되고 있다.
+
+
+                        </span>
+                        <div class="Area1Item">
+                            <div class="itemIn">
+                                <ul>
+                                    <li><img src="./images/desktop/sub2Item1.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item3.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item9.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item11.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item12.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subArea">
+                    <div class="Area1In">
+                       
+                        <h3 class="Area1Tit">
+                            “KAIST 과학기술정책대학원, 남북 과학기술 협력 전문가 회의 개최”
+                        </h3>
+                        <span class="Area1Txt">
+                            첫 번째 발제자로 나선 변학문 북한과학기술연구센터 연구위원은 북한은 2000년대 초부터 과학기술 중시 정책을 본격적으로 추진해 전 인민의 과학화·정보화를 진행해왔다고 밝혔다. 관련한 과학자 우대 조치로 정보통신, 기계 산업 등 일부 분야는 나름 상당한 수준에 도달했다고 변 연구위원은 분석했다. 그는 이어, 남북 교류협력은 ‘남측의 자본·기술, 북측의 자원·인력’이라는 시대착오적 프레임에서 벗어나 일방적 지원이 아닌 상호 이익을 실현하는 방식으로 이뤄져야 한다고 강조했다.
+북한의 IT·과학기술 분야를 취재해온 강진규 NK경제 기자는 그동안 해커로만 인식되어왔던 북한 IT 개발자들의 모습을 소개했다. 강 기자는 조선컴퓨터센터(KCC) 온라인 커뮤니티를 예시로 블록체인, 머신러닝 등 최신 흐름에 발 빠르게 대응하는 북한의 변화상을 주목했다.
+
+
+                        </span>
+                        <div class="Area1Item">
+                            <div class="itemIn">
+                                <ul>
+                                    <li><img src="./images/desktop/sub2Item1.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item10.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item14.png" alt=""></li>
+                                    <li><img src="./images/desktop/sub2Item8.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <footer id="ft">
+            <div class="ftTop">
+                <ul>
+                    <li><a href="">국민권익위</a></li>
+                    <li><a href="">행정서비스현장</a></li>
+                    <li><a href="">윤리강령</a></li>
+                    <li><a href="">안전관리</a></li>
+                    <li><a href="">교수수시초빙·임용</a></li>
+                    <li><a href="">정보공개</a></li>
+                    <li><a href="">경영공시</a></li>
+                    <li><a href="">ALIO</a></li>
+                    <li><a href="">대학정보공시감사실 신문고</a></li>
+                    <li><a href="">청탁금지법</a></li>
+                    
+                    <li class="ftItemR1"><a href="">교내주요사이트  ▲</a></li>
+                    <li class="ftItemR1"><a href="">학과사이트  ▲</a></li>
+                </ul>
+            </div>
+            <div class="snsIcon">
+                <ul class="sns">
+                    <li class="sns1"><a href=""><img src="./images/desktop/face.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/youtube.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/insta.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/twitter.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/kakao.png" alt=""></a></li>
+                    <li class="sns1"><a href=""><img src="./images/desktop/pinter.png" alt=""></a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+                <span class="address">
+                    34141 대전광역시 유성구 대학로 291 한국과학기술원(KAIST) / T.042-350-2114 / F.042-350-2210(2220)
+                </span>
+                <h2 class="copy">Copyright (C) 2014, Korea Advanced Institute of Science and Technology, All Rights Reserved.</h2>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="Mmain" id="mobile">
+        
+        
+    </div>
+</body>
+</html>

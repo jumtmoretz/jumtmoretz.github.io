@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>글자 단위 연</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+        p {
+            font-size: 5em;
+        }
+        p span {
+            display: block;
+        }
+        p span.em {
+            font-size: 2em; /* 부모의 5em *2em = 10em 으로 적용 */
+        }
+        p span.em2 {
+            font-size: 0.4em; /* 2em / 5em */ 
+        }
+        p span.rem {
+            font-size: 2rem; /* 부모에 상관없이 설정된 rem을 em으로 계산하여 적용 */
+        }
+        p span.vw {
+            font-size: 10vw; /* 웹 브라우저의 너비를 100을 기준으로 하여 크기 결정 (수치vw * 브라우저너비 = 실제 글자 크기) */
+        }
+        p span.vh {
+            font-size: 10vh; /* 웹 브라우저의 높이를 100을 기준으로 하여 크기 결정 (수치vh * 브라우저높이 = 실제 글자 크기) */
+        }
+        p span.vmin {
+            font-size: 10vmin; /* 웹 브라우저의 너비와 높이중 짧은 쪽을 기준으로 크기 설정 (수치vmin * 웹 브라우저 너비와 높이 중 작은 값 = 실제 글자 크기) */
+        }
+        p span.vmax {
+            font-size: 10vmax; /* 웹 브라우저의 너비와 높이중 높은 쪽을 기준으로 크기 설정 (수치vmin * 웹 브라우저 너비와 높이 중 높은 값 = 실제 글자 크기) */
+        }
+    </style>
+</head>
+<body>
+    <p>p태그 5em
+        <span class="em">em 단위! - 2em = 10em</span>
+        <span class="em2">계산된 em 단위! - 0.4em = 2em</span>
+        <span class="rem">rem 단위!</span>
+        <span class="vw">vw 단위!</span>
+        <span class="vh">vh 단위!</span>
+        <span class="vmin">vmin 단위!</span>
+        <span class="vmax">vmax 단위!</span>
+    </p>
+</body>
+</html>
