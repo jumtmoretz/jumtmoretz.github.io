@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="호텔스컴바인, 호텔, 숙박, 예약, 펜션">
+    <meta name="Description" content="최저가 호텔 모아보면 보인다!">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>:: 호텔스컴바인 ::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+   
+   <!-- 데스크탑 CSS -->
+   <style>
+       * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width:1920px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+    </style>
+    
+    <style>
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        #hd {
+            width: 100%;
+            height: 100px;
+            position: fixed;
+            z-index: 11;
+        }
+        .hdIn {
+            max-width: 1700px;
+            height: auto;
+            position: relative;
+            margin: 0 auto;
+        }
+        .logo {
+            display: block;
+            height: 80px;
+            width: 326px;
+            padding: 10px 10px;
+        }
+        .menu {
+            width: 580px;
+            position: absolute;
+            top: 27px;
+            right: 0;
+        }
+        .menuLst {
+            width: 600px;
+            height: auto;
+        }
+        .menuLst li {
+            float: left;
+            margin: 15px;
+        }
+        .menuLst li a {
+            display: block;
+            color: #fff;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 1.4vmin;
+        }
+    </style>
+    
+    <style>
+        #con1 {
+            width: 100%;
+            height: 100%;
+            background-color: #158ccd;
+        }
+        .con1Lst {
+            max-width: 1700px;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con1LstIn {
+            width: 326px;
+            height: auto;
+            float: left;
+        }
+        .con1LstIn ul {
+            width: 326px;
+            height: auto;
+            margin-top: 130px;
+            
+        }
+        .con1LstIn ul li {
+            width: 150px;
+            height: auto;
+            margin: 60px auto;
+        }
+        .con1LstIn ul li a {
+            display: block;
+        }
+        .con1LstIn ul li a img {
+            display: block;
+            max-width: 150px;
+            height: auto;
+        }
+        .contents {
+            max-width: 1374px;
+            height: auto;
+            overflow: hidden;
+        }
+        .conC {
+            width: 500%;
+        }
+        .conC li {
+            width: 71.7vw;
+            height: 695px;
+            float: left;
+            position: relative;
+            margin-top: 130px;
+            opacity: 0;
+        }
+        .conTit {
+            position: absolute;
+            top: 130px;
+            left: 197px;
+            
+        }
+        .conTit span {
+            display: block;
+            color: #fff;
+            font-size: 6vmax;
+            font-family: 'Black Han Sans', sans-serif;
+            font-weight: inherit;
+        }
+        .tit1 {
+            opacity: 0;
+        }
+        .tit2 {
+            display: block;
+            width: 605px;
+            height: 144px;
+            position: absolute;
+            top: 344px;
+            left: 0;
+            opacity: 0;
+        }
+        .conC li img.conLogo {
+            display: block;
+            position: absolute;
+            width: 10vmax;
+            right: 420px;
+            top: 350px;
+        }
+        .conC li img.conCha {
+            display: block;
+            width: 30vmax;
+            height: auto;
+            position: absolute;
+            bottom: 1vmax;
+            right: -100px;
+            opacity: 0;
+        }
+        .contents .conC .item1 .vsMore {
+            display: block;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 70px;
+            cursor: pointer;
+        }
+        .vsMore img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            width: 100%;
+            height: 70%;
+            background-color: #2c4162;
+            position: relative;
+        }
+        #ft .ftLst {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftLst li {
+            float: left;
+            margin-right: 40px;
+            margin-top: 30px;
+        }
+        .ftLst li a {
+            display: block;
+            color: #fff;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 1.8vmin;
+        }
+        .ftSearch {
+            width: 10%;
+            height: 30%;
+            margin: 0 auto;
+            padding-top: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .ftSearch span {
+            display: block;
+            color: #fff;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 1.9vmin;
+            position: absolute;
+            bottom: 50px;
+        }
+        .ftSearch img {
+            display: block;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .ftCon {
+            width: 80%;
+            height: 20%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .ftCon h2 {
+            color: #fff;
+            font-size: 2vmin;
+            font-weight: bold;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        .ftSideTit2 {
+            text-align: right;
+        }
+        .ftCon .ftLeft {
+            width: 40%;
+            position: absolute;
+            left: 0;
+        }
+        .ftLeft  ul li {
+            float: left;
+            margin-right: 30px;
+            margin-top: 30px;
+        }
+        .ftLeft  ul li a img {
+            display: block;
+            width: 30px;
+            height: auto;
+        }
+        .ftCon .ftRight {
+            width: 40%;
+            position: absolute;
+            right: 0;
+        }
+        .ftRight img {
+            display: block;
+            width: 40%;
+            height: auto;
+            float: right;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .ftBox {
+            width: 100%;
+            height: auto;
+        }
+        .ftBox .ftBoxIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftBoxIn ul {
+            width: 100%;
+        }
+        .ftBoxIn ul li {
+            width: 33.33%;
+            float: left;
+            color: #fff;
+            text-align: center;
+        }
+        .ftBoxTxt {
+            display: block;
+            font-weight: bold;
+            padding-top: 20px;
+        }
+        .copyright {
+            width: 400px;
+            height: auto;
+            display: block;
+            color: #fff;
+            font-size: 1.3vmax;
+            font-family: 'Do Hyeon', sans-serif;
+            margin: 0px auto;
+            text-align: center;
+            padding-top: 200px;
+        }
+        .ftBgCha {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 500px;
+        }
+    </style>
+    
+    <style>
+        .click {
+            width: 50%;
+            height: 50%;
+            background-color: #0f4665;
+            position: absolute;
+            top: 22%;
+            left: 25%;
+            display: none;
+        }
+        .trip {
+            width: 90%;
+            height: 33%;
+            margin: 0 auto;
+        }
+        .clickTit {
+            color: #fff;
+            font-size: 2.4vmin;
+            margin: 0.1%;
+            padding-bottom: 10px;
+        }
+        .tripSearch {
+            display: block;
+            width: 100%;
+            height: 30%;
+            color: #333;
+            border: 0;
+        }
+        .check {
+            width: 90%;
+            height: 33%;
+            margin: 0 auto;
+        }
+        .checkIcon {
+            width: 30px;
+            height: auto;
+        }
+        .checkIn {
+            width: 45%;
+            height: 33%;
+            float: left;
+        }
+        .checkOut {
+            width: 45%;
+            height: 33%;
+            float: right;
+        }
+        #ckY {
+            width: 50%;
+            height: 90%;
+            border: 0;
+            border-radius: 5px;
+        }
+        #ckD {
+            width: 20%;
+            height: 90%;
+            border: 0;
+            border-radius: 5px;
+        }
+        .checkBox {
+            width: 90%;
+            height: 10%;
+            margin: 0 auto;
+        }
+        .checkBox span {
+            color: #fff;
+            font-size: 1.6vmin;
+            text-align: center;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        .ckLast {
+            width: 90%;
+            height: 33%;
+            margin: 0 auto;
+        }
+        .peopleCount {
+            width: 60%;
+            height: 33%;
+            float: left;
+        }
+        #p_count {
+            width: 30%;
+            height: 90%;
+            border: 0;
+            border-radius: 5px;
+        }
+        .clickBtn {
+            display: block;
+            width: 30%;
+            height: 33%;
+            border: 0;
+            background-color: cadetblue;
+            color: #fff;
+            font-weight: bold;
+            font-size: 2vmin;
+        }
+    </style>
+    <!-- MEDIA 속성 -->
+     <style>
+        @media screen and (max-width:767px) {
+            /* 모바일 */
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+        }
+        @media screen and (min-width:1200px) {
+        }
+    </style>
+    
+    <!-- 스크립트 -->
+    
+    <!-- <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".conC li").width());
+            function rAni(){
+                
+                $(".conC").not(":animated").animate({"margin-left" : - wd + "px"}, 2000, function(){                
+                    $(".conC li").eq(0).appendTo($(".conC"));
+                    $(".conC").css("margin-left", "0px");    
+                });
+            };
+            
+            var intv = setInterval(function(){
+                rAni();
+            }, 5000);
+        });
+    </script> -->
+    
+    <script>
+        $(document).ready(function(){
+            $(".con1LstIn ul li a").removeAttr("href").css("cursor", "pointer");
+            var wd = parseInt($(".conC li").width());
+            $(".con1LstIn ul li a.click1").click(function(){
+                $(".conC").stop().not(":animated").animate({"margin-left" : "0px"}, 1000, function(){
+                    
+                    $(".conC li.item1").css("opacity", "1").siblings().css("opacity", "0");
+                    
+                    $(".conC li.item1 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
+                        $(this).children(".conC li .conTit").css("opacity", "0");
+                        
+                        $(".conC li.item1 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
+                            $(".conC li.item2 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item3 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item4 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            
+                            
+                            $(".conC li.item1 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
+                                $(".conC li.item2 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item3 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item4 img.conCha").css("opacity", "0").css("right", "-100px");
+                                
+                            });
+                        });
+                    });
+                });
+            });
+            
+            $(".con1LstIn ul li a.click2").click(function(){
+                $(".conC").stop().not(":animated").animate({"margin-left" : - wd + "px"}, 1000, function(){
+                    
+                    $(".conC li.item2").css("opacity", "1").siblings().css("opacity", "0");
+                    
+                    $(".conC li.item2 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
+                        $(this).children(".conC li .conTit").css("opacity", "0");
+                        
+                        $(".conC li.item2 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
+                            $(".conC li.item1 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item3 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item4 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            
+                            $(".conC li.item2 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
+                                $(".conC li.item1 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item3 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item4 img.conCha").css("opacity", "0").css("right", "-100px");
+                            });
+                        });
+                    });
+                });
+            });
+            
+            $(".con1LstIn ul li a.click3").click(function(){
+                $(".conC").stop().not(":animated").animate({"margin-left" : - wd*2 + "px"}, 1000, function(){
+                    
+                    $(".conC li.item3").css("opacity", "1").siblings().css("opacity", "0");
+                    
+                    $(".conC li.item3 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
+                        $(this).children(".conC li .conTit").css("opacity", "0");
+                        
+                        $(".conC li.item3 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
+                            $(".conC li.item1 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item2 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item4 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            
+                            $(".conC li.item3 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
+                                $(".conC li.item1 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item2 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item4 img.conCha").css("opacity", "0").css("right", "-100px");
+                            });
+                        });
+                    });
+                });
+            });
+            
+            $(".con1LstIn ul li a.click4").click(function(){
+                $(".conC").stop().not(":animated").animate({"margin-left" : - wd*3 + "px"}, 1000, function(){
+                    
+                    $(".conC li.item4").css("opacity", "1").siblings().css("opacity", "0");
+                    
+                    $(".conC li.item4 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
+                        $(this).children(".conC li .conTit").css("opacity", "0");
+                        
+                        $(".conC li.item4 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
+                            $(".conC li.item1 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item2 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            $(".conC li.item3 .conTit .tit2").css("opacity", "0").css("top", "344px");
+                            
+                            $(".conC li.item4 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
+                                $(".conC li.item1 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item2 img.conCha").css("opacity", "0").css("right", "-100px");
+                                $(".conC li.item3 img.conCha").css("opacity", "0").css("right", "-100px");
+                            });
+                        });
+                    });
+                });
+            });
+            $(".clickI1").click(function(){
+                $(".clickI1").attr("src", "./images/desktop/conLst1_on.png");
+                $(".clickI2").attr("src", "./images/desktop/conLst2_off.png");
+                $(".clickI3").attr("src", "./images/desktop/conLst3_off.png");
+                $(".clickI4").attr("src", "./images/desktop/conLst4_off.png");
+            });
+            $(".clickI2").click(function(){
+                $(".clickI1").attr("src", "./images/desktop/conLst1_off.png");
+                $(".clickI2").attr("src", "./images/desktop/conLst2_on.png");
+                $(".clickI3").attr("src", "./images/desktop/conLst3_off.png");
+                $(".clickI4").attr("src", "./images/desktop/conLst4_off.png");
+            });
+            $(".clickI3").click(function(){
+                $(".clickI1").attr("src", "./images/desktop/conLst1_off.png");
+                $(".clickI2").attr("src", "./images/desktop/conLst2_off.png");
+                $(".clickI3").attr("src", "./images/desktop/conLst3_on.png");
+                $(".clickI4").attr("src", "./images/desktop/conLst4_off.png");
+            });
+            $(".clickI4").click(function(){
+                $(".clickI1").attr("src", "./images/desktop/conLst1_off.png");
+                $(".clickI2").attr("src", "./images/desktop/conLst2_off.png");
+                $(".clickI3").attr("src", "./images/desktop/conLst3_off.png");
+                $(".clickI4").attr("src", "./images/desktop/conLst4_on.png");
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".vsMore").removeAttr("href");
+            $(".vsMore").click(function(){
+                $(".click").slideToggle(500);
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".ftSearch").hover(function(){
+                $(".ftSearch img").attr("src", './images/desktop/ftCha_on.png');
+            });
+            $(".ftSearch").mouseout(function(){
+                $(".ftSearch img").attr("src", './images/desktop/ftCha.png');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+    <div class="main" id="desktop">
+        <header id="hd">
+           <div class="hdIn">
+                <a href="" class="logo">
+                    <img src="./images/desktop/logo.png" alt="로고">
+                </a>
+                <nav class="menu">
+                    <ul class="menuLst">
+                        <li><a href="">KOREA ▼</a></li>
+                        <li><a href="">￦</a></li>
+                        <li><a href="">핫딜</a></li>
+                        <li><a href="">♡ 위시리스트</a></li>
+                        <li><a href="">최근 검색한 호텔</a></li>
+                        <li><a href="">검색 기록</a></li>
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">회원가입</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="con" id="con1">
+            <div class="con1Lst">
+                <div class="con1LstIn">
+                    <ul>
+                        <li><a href="" class="click1"><img src="./images/desktop/conLst1_on.png" alt="" class="clickI1"></a></li>
+                        <li><a href="" class="click2"><img src="./images/desktop/conLst2_off.png" alt="" class="clickI2"></a></li>
+                        <li><a href="" class="click3"><img src="./images/desktop/conLst3_off.png" alt="" class="clickI3"></a></li>
+                        <li><a href="" class="click4"><img src="./images/desktop/conLst4_off.png" alt="" class="clickI4"></a></li>
+                    </ul>
+                </div>
+                
+                    <div class="contents">
+                    <ul class="conC">
+                        <li class="item1">
+                           <a href="" class="vsMore"><img src="./images/desktop/vsButton.png" alt=""></a>
+                            <p class="conTit">
+                                <span class="tit1">잠깐!</span>
+                                <span class="tit2">호텔 예약은 ?</span>
+                            </p>
+                            <img src="./images/desktop/conLogo.png" alt="" class="conLogo">
+                            <img src="./images/desktop/conCha1.png" alt="" class="conCha">
+                        </li>
+
+                        <li class="item2">
+                            <p class="conTit">
+                                <span class="tit1">즐거운 여행의 시작은 ?</span>
+                                <span class="tit2">컴바인 부터</span>
+                            </p>
+                            <img src="./images/desktop/conCha2.png" alt="" class="conCha">
+                        </li>
+                        <li class="item3">
+                            <p class="conTit">
+                                <span class="tit1">이번달 숙박</span>
+                                <span class="tit2">최고급 호텔!!</span>
+                            </p>
+                            <img src="./images/desktop/conCha3.png" alt="" class="conCha">
+                        </li>
+                        <li class="item4">
+                            <p class="conTit">
+                                <span class="tit1">잠깐!</span>
+                                <span class="tit2">호텔 예약은 ?</span>
+                            </p>
+                            <img src="./images/desktop/conCha4.png" alt="" class="conCha">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="click">
+       <div class="trip">
+            <h4 class="clickTit">여행지</h4>
+            <input type="textarea" class="tripSearch" value="여행지를 선택하거나 여행지 / 호텔을 입력하세요.">
+        </div>
+        
+        <div class="check">
+        <div class="checkIn">
+            <h4 class="clickTit">체크인</h4>
+            <img src="./images/desktop/dateIcon.png" alt="" class="checkIcon">
+            <select name="checkInYear" id="ckY">
+                <option value="" selected>2019년 1월</option>
+                <option value="">2019년 2월</option>
+                <option value="">2019년 3월</option>
+                <option value="">2019년 4월</option>
+                <option value="">2019년 5월</option>
+                <option value="">2019년 6월</option>
+                <option value="">2019년 7월</option>
+                <option value="">2019년 8월</option>
+                <option value="">2019년 9월</option>
+            </select>
+            <select name="checkInDate" id="ckD">
+                <option value="" selected>1일</option>
+                <option value="">2일</option>
+                <option value="">3일</option>
+                <option value="">4일</option>
+                <option value="">5일</option>
+                <option value="">6일</option>
+                <option value="">7일</option>
+                <option value="">8일</option>
+                <option value="">9일</option>
+                <option value="">10일</option>
+                <option value="">11일</option>
+                <option value="">12일</option>
+                <option value="">13일</option>
+                <option value="">14일</option>
+                <option value="">15일</option>
+                <option value="">16일</option>
+                <option value="">17일</option>
+                <option value="">18일</option>
+                <option value="">19일</option>
+                <option value="">20일</option>
+                <option value="">21일</option>
+                <option value="">22일</option>
+                <option value="">23일</option>
+                <option value="">24일</option>
+                <option value="">25일</option>
+                <option value="">26일</option>
+                <option value="">27일</option>
+                <option value="">28일</option>
+                <option value="">29일</option>
+                <option value="">30일</option>
+                <option value="">31일</option>
+            </select>
+        </div>
+        
+        <div class="checkOut">
+            <h4 class="clickTit">체크아웃</h4>
+            <img src="./images/desktop/dateIcon.png" alt="" class="checkIcon">
+            <select name="checkOutYear" id="ckY">
+                <option value="" selected>2019년 1월</option>
+                <option value="">2019년 2월</option>
+                <option value="">2019년 3월</option>
+                <option value="">2019년 4월</option>
+                <option value="">2019년 5월</option>
+                <option value="">2019년 6월</option>
+                <option value="">2019년 7월</option>
+                <option value="">2019년 8월</option>
+                <option value="">2019년 9월</option>
+            </select>
+            <select name="checkOutDate" id="ckD">
+                <option value="" selected>1일</option>
+                <option value="">2일</option>
+                <option value="">3일</option>
+                <option value="">4일</option>
+                <option value="">5일</option>
+                <option value="">6일</option>
+                <option value="">7일</option>
+                <option value="">8일</option>
+                <option value="">9일</option>
+                <option value="">10일</option>
+                <option value="">11일</option>
+                <option value="">12일</option>
+                <option value="">13일</option>
+                <option value="">14일</option>
+                <option value="">15일</option>
+                <option value="">16일</option>
+                <option value="">17일</option>
+                <option value="">18일</option>
+                <option value="">19일</option>
+                <option value="">20일</option>
+                <option value="">21일</option>
+                <option value="">22일</option>
+                <option value="">23일</option>
+                <option value="">24일</option>
+                <option value="">25일</option>
+                <option value="">26일</option>
+                <option value="">27일</option>
+                <option value="">28일</option>
+                <option value="">29일</option>
+                <option value="">30일</option>
+                <option value="">31일</option>
+            </select>
+        </div>
+        </div>
+        
+        <p class="checkBox">
+            <input type="checkbox" name="ck" class="ck"><span>숙박일 미정</span>
+        </p>
+        
+        <div class="ckLast">
+        <div class="peopleCount">
+           <h4 class="clickTit">인원</h4>
+            <select name="peopleC" id="p_count">
+                <option value="" selected>성인1인</option>
+                <option value="">성인2인</option>
+                <option value="">가족(성인3이상 포함)</option>
+                <option value="">단체</option>
+            </select>
+        </div>
+        
+        <button onClick="location.href = 'sub1.html'" class="clickBtn">검색</button>
+        </div>
+    </div>
+    
+    <footer id="ft">
+        <ul class="ftLst">
+            <li><a href="">위치별 호텔 검색</a></li>
+            <li><a href="">호텔스컴바인 소개</a></li>
+            <li><a href="">제휴 프로그램</a></li>
+            <li><a href="">숙박시설관리</a></li>
+            <li><a href="">요금알림 기능 소개</a></li>
+            <li><a href="">고객 지원</a></li>
+            <li><a href="">이용 약관</a></li>
+            <li><a href="">개인정보</a></li>
+            <li><a href="">쿠키 정책</a></li>
+        </ul>
+        
+        <p class="ftSearch">
+            <span class="ftSearchTit">최저가 호텔 검색</span>
+            <img src="./images/desktop/ftCha.png" alt="">
+        </p>
+        
+        <div class="ftCon">
+            <div class="ftLeft">
+                <h2 class="ftSideTit">SNS에서 만나는 호텔스 컴바인</h2>
+                <ul>
+                    <li><a href=""><img src="./images/desktop/facebook.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/desktop/twitter.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/desktop/insta.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/desktop/pinter.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/desktop/you.png" alt=""></a></li>
+                    <li><a href=""><img src="./images/desktop/google.png" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="ftRight">
+                <h2 class="ftSideTit ftSideTit2">이제 스마트폰에서도 태블릿에서도 호텔스컴바인</h2>
+                <a href="">
+                    <img src="./images/desktop/googleDown.png" alt="">
+                </a>
+                <a href="">
+                    <img src="./images/desktop/appleDown.png" alt="">
+                </a>
+            </div>
+        </div>
+        <br><hr style="width: 80%; margin: 0 auto;"><br>
+        
+        <div class="ftBox">
+            <div class="ftBoxIn">
+                <ul>
+                    <li>
+                        <h2 class="ftBoxTit">모든호텔 한눈에 비교</h2>
+                        <span class="ftBoxTxt">전세계 241만 개의 호텔을 한번에 비교하여<br>마음에 쏙 드는 호텔을 예약하세요.</span>
+                    </li>
+                    <li>
+                        <h2 class="ftBoxTit">최저가보장</h2>
+                        <span class="ftBoxTxt">예약 수수료가 없습니다.<br>호텔스컴바인이 고객님께 드리는 약속입니다.</span>
+                    </li>
+                    <li>
+                        <h2 class="ftBoxTit">즐거운 여행의 시작</h2>
+                        <span class="ftBoxTxt">작년 4억명의 여행자가 호텔스 컴바인에서<br>최고의 호텔 상품을 검색했습니다.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span class="copyright">ⓒ2018 COPYRIGHT By 호텔스컴바인.</span>
+        <img src="./images/desktop/ftBgCha.png" alt="" class="ftBgCha">
+    </footer>
+
+</body>
+</html>
