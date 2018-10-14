@@ -16,6 +16,7 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- 폰트링크 -->
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
     
     
     <style>
@@ -171,288 +172,138 @@
             height: auto;
         }
         .con1In {
-            padding-top: 2%;
             width: 80%;
             height: auto;
             margin: 0 auto;
-            overflow: hidden;
         }
-        #vs {
-            width: 100%;
-            height: auto;
+        .con1In h2 {
+            text-align: center;
+            color: #3c3f99;
         }
-        #vs ul {
-            width: 500%;
-            height: auto;
-        }
-        #vs ul li {
-            float: left;
-            width: 20%;
-            height: auto;
-            position: relative;
-        }
-        #vs ul li img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        #vs ul li h2 {
-            position: absolute;
-            color: #323232;
-        }
-        .Tit1 {
+        .con1Tit1 {
             font-size: 8vmin;
-            top: 20%;
-            left: 10%;
+            padding-top: 10%;
         }
-        .Tit2 {
-            font-size: 10vmin;
-            left: 16%;
-            top: 34%;
-        }
-        .Tit3 {
-            top: 70%;
-            left: 15%;
-            font-size: 4vmin;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 100;
-        }
-        
-        .slBtn {
-            width: 100%;    
-            height: auto;
-        }
-        .slBtnIn {
-            width: 40%;
-            height: auto;
-        }
-        .slBtnIn ul {
-            width: 100%;
-            height: auto;
-        }
-        .slBtnIn ul li {
-            float: left;
-            width: 45%;
-            height: auto;
-            margin: 2.5%;
-        }
-        .slBtnIn ul li button {
-            display: block;
-            width: 100%;
-            height: auto;
-            background: none;
-            border: 0;
-            color: #323232;
-            font-size: 3vmin;
+        .con1Txt {
+            text-align: center;
             font-weight: bold;
+            font-size: 2vmin;
+            padding-top: 3%;
         }
-    </style>
-    
-    <style>
-        #con2 {
+        .con1Con {
             width: 100%;
             height: auto;
         }
-        .con2In {
+        .con1ConIn {
             width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .con2Tit1 {
-            font-size: 12vmin;
-            font-weight: bold;
-            text-align: center;
-            line-height: 30vmin;
-            color: #3c3f99;
-        }
-        .con2Tit2 {
-            font-size: 10vmin;
-            font-weight: 100;
-            text-align: center;
-            font-family: 'Oswald', sans-serif;
-            line-height: 1vmin;
-            color: #3c3f99;
-        }
-        .con2Con {
-            width: 100%;
-            height: auto;
-        }
-        .con2Con ul {
-            width: 90%;
             height: auto;
             margin: 5% auto;
         }
-        .con2Con ul li {
-            width: 15%;
-            height: auto;
-            margin: 2.5%;
-            float: left;
-            text-align: center;
-            border: 1px solid #3c3f99;
-            box-sizing: border-box;
-            border-radius: 30px;
-        }
-        .con2Con ul li a {
-            display: block;
-            font-size: 3vmin;
-            font-weight: bold;
-            font-family: 'Oswald', sans-serif;
-            color: #323232;
-        }
-        .con2ConLst {
-            width: 80%;
-            height: auto;
-            margin: 10% auto;
-            
-        }
-        .con2ConLst ul {
-            width: 100%;
-            height: auto;
-        }
-        .con2ConLst ul li {
-            width: 20%;
+        .conLeft {
+            width: 30%;
             height: auto;
             float: left;
-            margin: 2.5%;
-            position: relative;
         }
-        .con2ConLst ul li .con2ItemImg {
-            display: block;
-            width: 100%;
+        .leftTitBox {
+            width: 70%;
             height: auto;
-        }
-        
-        .con2Hover {
-            display: none;
-        }
-        .listHover {
-            background-image: url("./images/desktop/con2hoverBg.png");
-            width: 100%;
-            height: 100%;
-            border: 1px solid #e1e1f9;
-            border-radius: 30px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .listHover .icon img {
-            display: block;
-            width: 40%;
-            height: auto;
-            margin: 0 auto;
-            padding-top: 5%;
-        }
-        .listHover .hoverTit {
-            text-align: center;
-            color: #fff;
-            font-size: 3vmin;
-            line-height: 4vmin;
-            font-weight: bold;
-            padding-top: 30%;
-        }
-    </style>
-    
-    <style>
-        #con3 {
-            width: 100%;
-            height: auto;
-        }
-        .con3In {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-            padding-top: 50%;
-        }
-        .con3Tit1 {
-            font-size: 12vmin;
-            font-weight: bold;
-            text-align: center;
-            line-height: 30vmin;
-            color: #3c3f99;
-        }
-        .newsNoti {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .notiTit {
-            font-size: 4vmin;
-            line-height: 15vmin;
-            color: #3c3f99;
-        }
-        .notiMore {
-            display: block;
-            width: 25px;
-            height: 25px;
-            position: absolute;
-            right: 0;
-            top: 20%;
-            border: 1px solid #ece;
-            background-repeat: no-repeat;
-            text-align: center;
-        }
-        .notiLink {
-            display: block;
-            padding: 0 158px 0 35px;
-            position: relative;
-            background-color: #3c3f99;
-            color: #fff;
-        }
-        .notiLinkTit {
-            font-size: 4vmin;
-            font-weight: bold;
-            line-height: 15vmin;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            word-wrap: normal;
-            overflow: hidden;
-        }
-    </style>
-    
-    <style>
-        #con4 {
-            width: 100%;
-            height: auto;
-        }
-        .con4In {
-            width: 80%;
-            height: auto;
-            margin: 10% auto;
-        }
-        .newsWork {
-            width: 100%;
-            height: auto;
+            border-left: 3px solid #3c3f99;
+            border-right: 3px solid #3c3f99;
+            padding: 0% 4%;
             margin: 0 auto;
         }
-        .workTit {
-            font-size: 4vmin;
-            line-height: 10vmin;
+        .conLeft h2 {
             color: #3c3f99;
+            text-align: center;
         }
-        .workBox {
-            float: left;
+        .con1LeftTit1 {
+            font-size: 1vmin;
+        }
+        .con1LeftTit2 {
+            font-size: 3.2vmin;
+        }
+        .con1LeftTit3 {
+            font-size: 2vmin;
+            font-weight: 600;
+        }
+        .leftItemBox {
+            width: 100%;
+            height: auto;
+            margin-top: 12%;
+        }
+        .leftItemBox ul {
+            width: 100%;
+            height: auto;
+        }
+        .leftItemBox ul li {
             width: 45%;
             height: auto;
             margin: 2.5%;
+            float: left;
+            box-shadow: 4px 1px 24px #f1f1f1;
+            box-sizing: border-box;
+            background-color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
         }
-        .workLink p {
-            background-color: #3c3f99;
-            color: #fff;
-            font-size: 2vmin;
-            line-height: 14vmin;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            word-wrap: normal;
-            overflow: hidden;
-            text-align: center;
-            width: 100%;
-            margin-top: -2%;
-            height: auto;
-        }
-        .workLink img {
+        .leftItemBox ul li a img {
             display: block;
             width: 100%;
             height: auto;
+        }
+        .itemTit {
+            font-size: 3vmin;
+            font-weight: bold;
+        }
+        .itemTitEn {
+            font-size: 1vmin;
+            font-weight: 100;
+            font-family: 'Srisakdi', cursive;
+        }
+        .btnBox {
+            width: 30%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .leftItemBox ul li button {
+            width: 10px;
+            height: 10px;
+            background-color: #bdbdd2;
+            border: 0;
+            border-radius: 10px;
+        }
+        .leftItemBox ul li button.on {
+            background-color: #3c3f99;
+        }
+        
+        .conRight {
+            width: 60%;
+            height: 100%;
+            float: right;
+        }
+        .rightImgBox {
+            width: 100%;
+            height: 100%;
+            background-image: url("./images/desktop/subBg1.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding-bottom: 58%;
+            position: relative;
+        }
+        .rightImgBox .img1 {
+            width: 60%;
+            height: auto;
+            position: absolute;
+            top: 20%;
+            left: -10%;
+        }
+        .rightTxt {
+            position: absolute;
+            writing-mode: tb-rl;
+            right: 38%;
+            top: 13%;
+            color: #fff;
+            font-size: 6vmin;
         }
     </style>
     
@@ -641,30 +492,18 @@
     
     <script>
         $(document).ready(function(){
-            var wd = parseInt($("#vs ul li").width());
-            
-            function rAni(){
-                $("#vs ul").not(":animated").animate({"margin-left" : - wd + "px"}, 2500, function(){
-                    $("#vs ul li").eq(0).appendTo($("#vs ul"));
-                    $("#vs ul").css("margin-left", "0px");
-                });
-            };
-            var intv = setInterval(function(){
-                rAni();
-            }, 5000);
+            $(".btnBox button").click(function(){
+                $(this).addClass("on").siblings().removeClass("on");
+            });
+            $(".leftItemBox ul li").hover(function(){
+                $(this).css("background-color", "#333");
+            });
+            $(".leftItemBox ul li").mouseleave(function(){
+                $(this).css("background-color", "#fff");
+            });
         });
     </script>
     
-    <script>
-        $(document).ready(function(){
-        $(".con2ConLst ul li").mouseover(function(){
-                $(this).find(".con2Hover").fadeIn(500);
-            });
-            $(".con2Hover").mouseout(function(){
-                $(".con2Hover").fadeOut(500);
-            });
-        });
-    </script>
     
 
 </head>
@@ -673,7 +512,7 @@
         <header id="hd">
             <div class="hdTop">
                <div class="hdIn">
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                     <img src="./images/desktop/logo.png" alt="로고">
                 </a>
                 
@@ -700,17 +539,17 @@
             <div class="menu">
                 <nav class="gnb">
                     <ul class="mainMenu">
-                        <li><a href="sub1.html">제품</a>
+                        <li><a href="">제품</a>
                                 <nav class="sub">
                                     <ul class="subMenu">
-                                        <li><a href="sub1.html">정수기</a></li>
-                                        <li><a href="sub1.html">공기청정기</a></li>
-                                        <li><a href="sub1.html">비데/클린워셔</a></li>
+                                        <li><a href="">정수기</a></li>
+                                        <li><a href="">공기청정기</a></li>
+                                        <li><a href="">비데/클린워셔</a></li>
                                     </ul>
                                 </nav>
                             </li>
                             
-                        <li><a href="sub1.html">서비스</a></li>
+                        <li><a href="">서비스</a></li>
                         
                         <li><a href="">혜택</a>
                                 <nav class="sub">
@@ -753,181 +592,53 @@
         
         <div class="con" id="con1">
             <div class="con1In">
-                <figure id="vs">
-                    <ul>
-                        <li>
-                            <img src="./images/desktop/vs1Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                    </ul>
-                </figure>
-                
-                <div class="slBtn">
-                    <div class="slBtnIn">
-                        <ul>
-                            <li><button>◀ Prev</button></li>
-                            <li><button>Next ▶</button></li>
-                        </ul>
+                <h2 class="con1Tit1">THE LIFE CARE COMPANY</h2>
+                <h2 class="con1Tit2">PURCHASE THIS THEME</h2>
+                <h2 class="con1Txt">코웨이 공기연구소에서 우리 집 공기를 진단하고 컨설팅 받는 서비스가 있으며, 결과에 대한 타당제품을 코웨이에서 직접 추천해 드리는 서비스를 제공해 드리고 있습니다.<br>제품에 대한 자세한 설명과 본 코웨이 제품을 구매시에는 먼저, 서비스 진단을 먼저 받아보시는 것을 추천 드리겠습니다.</h2>
+            </div>
+            
+            <div class="con1Con">
+                <div class="con1ConIn">
+                    <div class="conLeft">
+                       <div class="leftTitBox">
+                            <h2 class="con1LeftTit1">CHP-7300R</h2>
+                            <h2 class="con1LeftTit2">코웨이 시루직수 정수기</h2>
+                            <h2 class="con1LeftTit3">제대로 걸러 깨끗하고 맛있는 물을<br>직수로 풍부하게 즐기세요.</h2>
+                        </div>
+                        
+                        <div class="leftItemBox">
+                            <ul>
+                                <li><a href="">
+                                   <h2 class="itemTit">시루직수</h2>
+                                   <h2 class="itemTitEn">Shiru Direct</h2>
+                                    <img src="./images/desktop/list1_1.png" alt=""></a>
+                                    <p class="btnBox">
+                                        <button class="on"></button>
+                                        <button class="o"></button>
+                                        <button class="o"></button>
+                                    </p>
+                                </li>
+                                <li><a href="">
+                                    <h2 class="itemTit">얼음 정수기</h2>
+                                   <h2 class="itemTitEn">ICE Cool Shiru</h2>
+                                    <img src="./images/desktop/list1_2.png" alt=""></a>
+                                    <p class="btnBox">
+                                        <button class="on"></button>
+                                        <button class="o"></button>
+                                        <button class="o"></button>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="conRight">
+                        <div class="rightImgBox">
+                            <img src="./images/desktop/notiBg.png" alt="" class="img1">
+                            <h2 class="rightTxt">SHIRU DIRECT</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="con" id="con2">
-            <div class="con2In">
-                <h2 class="con2Tit1">COWAY</h2>
-                <h2 class="con2Tit2">PRODUCT</h2>
-                
-                <div class="con2Con">
-                        <ul>
-                            <li><a href="">Water Care</a></li>
-                            <li><a href="">Air Care</a></li>
-                            <li><a href="">Body Care</a></li>
-                            <li><a href="">Sleep Care</a></li>
-                            <li><a href="">Living Care</a></li>
-                        </ul>
-                </div>
-                
-                <div class="con2ConLst">
-                    <ul>
-                        <li><img src="./images/desktop/list1_1.png" alt="리스트1_1" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_2.png" alt="리스트1_2" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>정수통 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_3.png" alt="리스트1_3" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>스타일 시루직수</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_4.png" alt="리스트1_4" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>롱스타일 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_1.png" alt="리스트1_1" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_2.png" alt="리스트1_2" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_3.png" alt="리스트1_3" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_4.png" alt="리스트1_4" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="con" id="con3">
-            <div class="con3In">
-                <h2 class="con3Tit1">코웨이 소식지</h2>
-                    <div class="newsNoti">
-                       <h3 class="notiTit">공지사항</h3>
-                       <a href="#" class="notiMore">+</a>
-                       <div class="notiBox">
-                           <a href="" class="notiLink">
-                               <p class="notiLinkTit">&#91; 2018 코웨이 어워즈 모델 공유 &#93; 2018년 코웨이 직수관 정수기 판매기념, 배우 공유와 함께합니다.</p>
-                               <span class="notiLinkDate">2018-10-20</span>
-                           </a>
-                       </div>
-                   </div>
-            </div>
-        </div>
-        
-        <div class="con" id="con4">
-            <div class="con4In">
-                    <div class="newsWork">
-                       <h3 class="workTit">보도자료</h3>
-                       <a href="#" class="workMore"></a>
-                       <div class="workBox">
-                           <a href="" class="workLink">
-                              <img src="./images/desktop/workImg1.png" alt="">
-                               <p class="workLinkTit">안에서 의류 청정! 밖에서 공간 청정! ‘사계절 의류청정기’ 출시</p>
-                           </a>
-                       </div>
-
-                       <div class="workBox">
-                           <a href="" class="workLink">
-                              <img src="./images/desktop/workImg2.png" alt="">
-                               <p class="workLinkTit">"코웨이" 사람과 자연사이 청정을 그려내다. 직수관 청정 정수기 출시</p>
-                           </a>
-                       </div>
-               </div>
             </div>
         </div>
         
