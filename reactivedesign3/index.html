@@ -14,9 +14,9 @@
     <title>:: 호텔스컴바인 ::</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- 폰트링크 -->
-    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    
    
    <!-- 데스크탑 CSS -->
    <style>
@@ -48,239 +48,385 @@
         }
         #hd {
             width: 100%;
-            height: 100px;
-            position: fixed;
-            z-index: 11;
-        }
-        .hdIn {
-            max-width: 1700px;
             height: auto;
-            position: relative;
-            margin: 0 auto;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
         .logo {
             display: block;
-            height: 80px;
-            width: 326px;
-            padding: 10px 10px;
-        }
-        .menu {
-            width: 580px;
-            position: absolute;
-            top: 27px;
-            right: 0;
-        }
-        .menuLst {
-            width: 600px;
+            width: 8%;
             height: auto;
+            background-color: #2c2b31;
+            padding: 2%;
         }
-        .menuLst li {
-            float: left;
-            margin: 15px;
-        }
-        .menuLst li a {
+        .logo img {
             display: block;
-            color: #fff;
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 1.4vmin;
+            width: 100%;
+            height: auto;  
+        }
+        .menuBtn {
+            width: 9%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 12%;
+            text-align: center;
+            font-size: 1.5vmin;
+            line-height: 12vmin;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
         }
     </style>
     
     <style>
         #con1 {
             width: 100%;
-            height: 100%;
-            background-color: #158ccd;
+            height: 75%;
+            background-image: url("./images/desktop/con1Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
-        .con1Lst {
-            max-width: 1700px;
+        .con1In {
+            width: 100%;
+            height: auto;
+        }
+        .con1Tit {
+            width: 100%;
+            height: auto;
+        }
+        .con1TitIn {
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 12%;
+        }
+        .con1TitIn h2 {
+            color: #fff;
+            text-align: center;
+            line-height: 6vmin;
+            
+        }
+        .con1Tit1 {
+            font-size: 1.6vmin;
+            font-family: 'PT Serif', serif;
+            font-weight: 300;
+        }
+        .con1Tit2 {
+            font-family: 'PT Serif', serif;
+            font-weight: 300;
+            font-size: 7vmin;
+            text-shadow: 1px 1px 1px #333;
+        }
+        .con1Tit3 {
+            padding-top: 4%;
+            font-size: 3vmax;
+        }
+        .con1More {
+            width: 100%;
+            height: auto;
+        }
+        .con1More .con1MoreIn {
+            width: 30%;
+            height: auto;
+            margin: 3% auto;
+            text-align: center;
+        }
+        .more {
+            width: 100%;
+            height: auto;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 3% 7%;
+            font-size: 2vmin;
+        }
+        
+        .search {
+            width: 100%;
+            height: 15%;
+            background-color: #fff;
+        }
+        .searchIn {
+            width: 80%;
             height: auto;
             margin: 0 auto;
         }
-        .con1LstIn {
-            width: 326px;
+        .searchIn ul {
+            width: 100%;
             height: auto;
+        }
+        .searchIn ul li {
+            width: 14.66%;
+            height: 20%;
             float: left;
+            margin-left: 2%;
+            margin-top: 2.5%;
         }
-        .con1LstIn ul {
-            width: 326px;
-            height: auto;
-            margin-top: 130px;
-            
+        .searchIn ul li a {
+            border-right: 2px solid #333;
+            box-sizing: border-box;
         }
-        .con1LstIn ul li {
-            width: 150px;
-            height: auto;
-            margin: 60px auto;
+        .searchIn ul li a.scLast {
+            border: 0;
         }
-        .con1LstIn ul li a {
+        .searchIn ul li a .searchTit1 {
+            font-size: 1.5vmin;
+            font-weight: 100;
+        }
+        .searchIn ul li a .searchTit2 {
+            font-size: 3vmin;
+        }
+        .searchIn ul li a, .searchIn ul li span {
             display: block;
+            color: #333;
         }
-        .con1LstIn ul li a img {
-            display: block;
-            max-width: 150px;
+        .searchBtn {
+            width: 100%;
             height: auto;
+            padding:7%;
+            text-align: center;
+            background-color: #333;
+            border: 0;
+            color: #fff;
         }
-        .contents {
-            max-width: 1374px;
-            height: auto;
+    </style>
+    
+    <style>
+        #con2 {
+            width: 100%;
+            height: 100%;
+        }
+        .con2Box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .con2In {
+            width: 80%;
+            height: 70%;
+            margin: 0 auto;
             overflow: hidden;
         }
-        .conC {
-            width: 500%;
+        .con2In ul {
+            width: 400%;
+            height: 100%;
         }
-        .conC li {
-            width: 71.7vw;
-            height: 695px;
+        .con2In ul li {
+            width: 20%;
+            height: 100%;
             float: left;
+            margin: 1% 2.5%;
             position: relative;
-            margin-top: 130px;
-            opacity: 0;
         }
-        .conTit {
-            position: absolute;
-            top: 130px;
-            left: 197px;
-            
+        .con2In ul li h2 {
+            color: #333;
+            font-size: 4vmin;
+            font-family: 'PT Serif', serif;
         }
-        .conTit span {
+        .con2In ul li .con2More {
             display: block;
+            font-family: 'PT Serif', serif;
+            color: #333;
+            font-size: 2vmin;
+            font-weight: bold;
+            padding-bottom: 2%;
+            width: 20%;
+            border-bottom: 2px solid #333;
+            margin: 4% 0%;
+        }
+        .con2Txt1 {
+            display: block;
+            line-height: 6vmin;
+            color: #888;
+            font-weight: bold;
+            font-size: 1.9vmin;
+        }
+        .con2Txt2 {
+            display: block;
+            width: 25%;
+            height: 45%;
+            z-index: 999;
+            background-color: #333;
+            position: absolute;
+            left: 40%;
+            top: 40%;
             color: #fff;
-            font-size: 6vmax;
-            font-family: 'Black Han Sans', sans-serif;
-            font-weight: inherit;
         }
-        .tit1 {
-            opacity: 0;
-        }
-        .tit2 {
+        .con2Itmg {
             display: block;
-            width: 605px;
-            height: 144px;
-            position: absolute;
-            top: 344px;
-            left: 0;
-            opacity: 0;
-        }
-        .conC li img.conLogo {
-            display: block;
-            position: absolute;
-            width: 10vmax;
-            right: 420px;
-            top: 350px;
-        }
-        .conC li img.conCha {
-            display: block;
-            width: 30vmax;
+            width: 50%;
             height: auto;
             position: absolute;
-            bottom: 1vmax;
-            right: -100px;
-            opacity: 0;
+            right: 5%;
+            top: 10%;
         }
-        .contents .conC .item1 .vsMore {
-            display: block;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+        .con2Btn {
+            width: 10%;
+            height: auto;
             position: absolute;
-            top: 0;
-            left: 70px;
+            bottom: 37%;
+            right: 28%;
+        }
+        .con2BtnIn button {
+            border: 0;
+            background: none;
+            font-size: 3vmin;
+            color: #333;
             cursor: pointer;
         }
-        .vsMore img {
-            width: 200px;
+        .lBtn {
+            float: left;
+        }
+        .rBtn {
+            float: right;
+        }
+        .con2BtnIn span {
+            display: block;
+            float: left;
+            color: #333;
+            text-align: center;
+            font-weight: bold;
+            text-indent: 35%;
+            font-size: 2.5vmin;
+        }
+    </style>
+    
+    
+    <style>
+        #con3 {
+            width: 100%;
+            height: 100%;
+            background-color: #f8f8f8;
+        }
+        .con3Box {
+            width: 100%;
             height: auto;
+        }
+        .con3Box con3In {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con3Tit {
+            width: 100%;
+            height: auto;
+        }
+        .con3TitIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con3TitIn {
+            text-align: center;
+            color: #333;
+        }
+        .con3Tit1 {
+            font-size: 7vmin;
+            font-weight: bold;
+        }
+        .con3Tit2 {
+            font-size: 3vmin;
+            font-weight: 100;
+            font-family: 'PT Serif', serif;
+            line-height: 10vmin;
+        }
+        .con3TLst {
+            width: 100%;
+            height: auto;
+        }
+        .con3TLstIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con3TlstIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .con3TLstIn ul li {
+            width: 50%;
+            float: left;
+        }
+        .con3TLstIn ul li a {
+            display: block;
+            color: #333;
+            font-size: 3vmin;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.5s;
+        }
+        .con3TLstIn ul li a:hover {
+            padding-bottom: 5%;
+            border-bottom: 3px solid #333;
+            color: #677663;
+        }
+        
+        .con3ConLst {
+            width: 100%;
+            height: auto;
+        }
+        .con3ConLstIn {
+            width: 80%;
+            height: auto;
+            margin: 10% auto;
+        }
+        .con3ConLstIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .con3ConLstIn ul li {
+            float: left;
+            width: 20%;
+            margin: 2.5%;
+            background-color: #fff;
+        }
+        .con3ConLstIn ul li a img {
+            width: 100%;
+            height: auto;
+        }
+        .con3ItemTit {
+            display: block;
+            color: #888;
+            padding: 0% 7%;
+            font-size: 3.2vmin;
+        }
+        .con3Itemtxt1 {
+            color: #888;
+            padding: 0% 7.5%;
+            font-size: 2vmin;
+            font-weight: 100;
+        }
+        .con3ItemTxt2 {
+            color: #888;
+            font-size: 1.7vmin;
+            padding: 2% 7%;
+            font-weight: bold;
+        }
+        .won {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            padding: 2% 7%;
+            font-size: 2.9vmin;
+        }
+        .con3Day {
+            display: block;
+            color: #666;
+            padding: 1% 7%;
+            padding-bottom: 19%;
+            font-size: 2.2vmin;
+            font-weight: bold;
         }
     </style>
     
     <style>
         #ft {
             width: 100%;
-            height: 70%;
-            background-color: #2c4162;
+            height: 50%;
+            background-color: #2b2b35;
             position: relative;
-        }
-        #ft .ftLst {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .ftLst li {
-            float: left;
-            margin-right: 40px;
-            margin-top: 30px;
-        }
-        .ftLst li a {
-            display: block;
-            color: #fff;
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 1.8vmin;
-        }
-        .ftSearch {
-            width: 10%;
-            height: 30%;
-            margin: 0 auto;
-            padding-top: 10px;
-            position: relative;
-            cursor: pointer;
-        }
-        .ftSearch span {
-            display: block;
-            color: #fff;
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 1.9vmin;
-            position: absolute;
-            bottom: 50px;
-        }
-        .ftSearch img {
-            display: block;
-            height: auto;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-        .ftCon {
-            width: 80%;
-            height: 20%;
-            margin: 0 auto;
-            position: relative;
-        }
-        .ftCon h2 {
-            color: #fff;
-            font-size: 2vmin;
-            font-weight: bold;
-            font-family: 'Do Hyeon', sans-serif;
-        }
-        .ftSideTit2 {
-            text-align: right;
-        }
-        .ftCon .ftLeft {
-            width: 40%;
-            position: absolute;
-            left: 0;
-        }
-        .ftLeft  ul li {
-            float: left;
-            margin-right: 30px;
-            margin-top: 30px;
-        }
-        .ftLeft  ul li a img {
-            display: block;
-            width: 30px;
-            height: auto;
-        }
-        .ftCon .ftRight {
-            width: 40%;
-            position: absolute;
-            right: 0;
-        }
-        .ftRight img {
-            display: block;
-            width: 40%;
-            height: auto;
-            float: right;
-            margin-left: 20px;
-            margin-top: 20px;
         }
         .ftBox {
             width: 100%;
@@ -290,136 +436,183 @@
             width: 80%;
             height: auto;
             margin: 0 auto;
+             padding-top: 6%;
         }
-        .ftBoxIn ul {
-            width: 100%;
-        }
-        .ftBoxIn ul li {
-            width: 33.33%;
-            float: left;
-            color: #fff;
-            text-align: center;
-        }
-        .ftBoxTxt {
-            display: block;
-            font-weight: bold;
-            padding-top: 20px;
-        }
-        .copyright {
-            width: 400px;
-            height: auto;
-            display: block;
-            color: #fff;
-            font-size: 1.3vmax;
-            font-family: 'Do Hyeon', sans-serif;
-            margin: 0px auto;
-            text-align: center;
-            padding-top: 200px;
-        }
-        .ftBgCha {
+        .ftLogo {
             display: block;
             position: absolute;
+            width: 10%;
+            height: auto;
+            top: 5%;
+            left: 45%;
+        }
+        .ftBg {
+            display: block;
+            position: absolute;
+            width: 20%;
+            height: auto;
             bottom: 0;
-            right: 500px;
+            right: 0;
+            opacity: 0.2;
+
+        }
+        .ftBg2 {
+            display: block;
+            position: absolute;
+            width: 20%;
+            height: auto;
+            bottom: 0;
+            left: 0;
+            opacity: 0.2;
+
+        }
+        .ftSearch {
+            width: 33.33%;
+            float: left;
+            
+        }
+        .ftTextArea {
+            width: 50%;
+            height: 30px;
+            border: 0;
+            background-color: #383842;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .ftBtn {
+            width: 30%;
+            height: auto;
+            background: none;
+            border: 1px solid #fff;
+            padding: 1.75%;
+            color: #fff;
+            box-sizing: border-box;
+            font-weight: bold;
+            margin-left: 1%;
+            font-size: 2vmin;
+        }
+        
+        .sns {
+            width: 100%;
+            height: auto;
+            padding-left: 15%;
+        }
+        .snsIn {
+            width: 40%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .snsIn ul {
+            width: 70%;
+            height: auto;
+        }
+        .snsIn ul li {
+            float: left;
+            width: 9%;
+            margin: 4.5%;
+        }
+        .snsIn ul li img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .msg {
+            width: 20%;
+            height: auto;
+            float: right;
+            
+        }
+        .msgIn {
+            width: 100%;
+            height: auto;
+
+        }
+        .msgIn span {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+        }
+        .ftDown {
+            width: 100%;
+            height: auto;
+        }
+        .ftDownIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftDownIn ul {
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+        .ftDownIn ul li {
+            width: 20%;
+            height: auto;
+            float: left;
+            margin: 2.5%;
+        }
+        .ftDownIn ul li a {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 5vmin;
+            padding-bottom: 12%;
+        }
+        .ftDownIn ul li span {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 2vmin;
         }
     </style>
     
     <style>
-        .click {
-            width: 50%;
-            height: 50%;
-            background-color: #0f4665;
+        .menu {
             position: absolute;
-            top: 22%;
-            left: 25%;
-            display: none;
-        }
-        .trip {
-            width: 90%;
-            height: 33%;
-            margin: 0 auto;
-        }
-        .clickTit {
-            color: #fff;
-            font-size: 2.4vmin;
-            margin: 0.1%;
-            padding-bottom: 10px;
-        }
-        .tripSearch {
-            display: block;
+            top: 0;
+            left: -100%;
             width: 100%;
-            height: 30%;
-            color: #333;
-            border: 0;
+            height: 100%;
+            background-color: #fff;
         }
-        .check {
-            width: 90%;
-            height: 33%;
-            margin: 0 auto;
-        }
-        .checkIcon {
-            width: 30px;
+        .menu ul {
+            width: 80%;
             height: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
-        .checkIn {
-            width: 45%;
-            height: 33%;
+        .menu ul li {
+            width: 11%;
+            height: auto;
             float: left;
+            margin: 2.3%;
         }
-        .checkOut {
-            width: 45%;
-            height: 33%;
-            float: right;
-        }
-        #ckY {
-            width: 50%;
-            height: 90%;
-            border: 0;
-            border-radius: 5px;
-        }
-        #ckD {
-            width: 20%;
-            height: 90%;
-            border: 0;
-            border-radius: 5px;
-        }
-        .checkBox {
-            width: 90%;
-            height: 10%;
-            margin: 0 auto;
-        }
-        .checkBox span {
-            color: #fff;
-            font-size: 1.6vmin;
-            text-align: center;
-            padding-left: 20px;
-            font-weight: bold;
-        }
-        .ckLast {
-            width: 90%;
-            height: 33%;
-            margin: 0 auto;
-        }
-        .peopleCount {
-            width: 60%;
-            height: 33%;
-            float: left;
-        }
-        #p_count {
-            width: 30%;
-            height: 90%;
-            border: 0;
-            border-radius: 5px;
-        }
-        .clickBtn {
+        .menu ul li a {
             display: block;
-            width: 30%;
-            height: 33%;
-            border: 0;
-            background-color: cadetblue;
-            color: #fff;
+            padding-bottom: 5%;
+            padding-top: 5%;
+            color: #323232;
             font-weight: bold;
+            text-align: center;
             font-size: 2vmin;
+        }
+        .menuClose {
+            display: block;
+            width: 9%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 12%;
+            text-align: center;
+            font-size: 1.5vmin;
+            line-height: 12vmin;
+            font-weight: bold;
+            color: #323232;
+            cursor: pointer;
         }
     </style>
     <!-- MEDIA 속성 -->
@@ -438,430 +631,334 @@
     </style>
     
     <!-- 스크립트 -->
-    
-    <!-- <script>
-        $(document).ready(function(){
-            var wd = parseInt($(".conC li").width());
-            function rAni(){
-                
-                $(".conC").not(":animated").animate({"margin-left" : - wd + "px"}, 2000, function(){                
-                    $(".conC li").eq(0).appendTo($(".conC"));
-                    $(".conC").css("margin-left", "0px");    
-                });
-            };
-            
-            var intv = setInterval(function(){
-                rAni();
-            }, 5000);
-        });
-    </script> -->
-    
     <script>
         $(document).ready(function(){
-            $(".con1LstIn ul li a").removeAttr("href").css("cursor", "pointer");
-            var wd = parseInt($(".conC li").width());
-            $(".con1LstIn ul li a.click1").click(function(){
-                $(".conC").stop().not(":animated").animate({"margin-left" : "0px"}, 1000, function(){
-                    
-                    $(".conC li.item1").css("opacity", "1").siblings().css("opacity", "0");
-                    
-                    $(".conC li.item1 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
-                        $(this).children(".conC li .conTit").css("opacity", "0");
-                        
-                        $(".conC li.item1 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
-                            $(".conC li.item2 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item3 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item4 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            
-                            
-                            $(".conC li.item1 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
-                                $(".conC li.item2 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item3 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item4 img.conCha").css("opacity", "0").css("right", "-100px");
-                                
-                            });
-                        });
-                    });
+            var wd = parseInt($(".con2In").width());
+            $(".lBtn").click(function(){
+                $(".con2In ul").stop().not(":animated").animate({"margin-left": -wd +"px"}, 1200, function(){
+                    $(".con2In ul li").eq(0).appendTo(".con2In ul");
+                $(".con2In ul").css("margin-left", "0px"); 
                 });
             });
-            
-            $(".con1LstIn ul li a.click2").click(function(){
-                $(".conC").stop().not(":animated").animate({"margin-left" : - wd + "px"}, 1000, function(){
-                    
-                    $(".conC li.item2").css("opacity", "1").siblings().css("opacity", "0");
-                    
-                    $(".conC li.item2 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
-                        $(this).children(".conC li .conTit").css("opacity", "0");
-                        
-                        $(".conC li.item2 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
-                            $(".conC li.item1 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item3 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item4 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            
-                            $(".conC li.item2 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
-                                $(".conC li.item1 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item3 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item4 img.conCha").css("opacity", "0").css("right", "-100px");
-                            });
-                        });
-                    });
+            $(".rBtn").click(function(){
+                 $(".con2In ul li").eq(3).prependTo($(".con2In ul"));
+                $(".con2In ul").css("margin-left", -wd + "px");
+                $(".con2In ul").not(":animated").animate({"margin-left" : "0px"}, 1200, function(){
                 });
-            });
-            
-            $(".con1LstIn ul li a.click3").click(function(){
-                $(".conC").stop().not(":animated").animate({"margin-left" : - wd*2 + "px"}, 1000, function(){
-                    
-                    $(".conC li.item3").css("opacity", "1").siblings().css("opacity", "0");
-                    
-                    $(".conC li.item3 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
-                        $(this).children(".conC li .conTit").css("opacity", "0");
-                        
-                        $(".conC li.item3 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
-                            $(".conC li.item1 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item2 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item4 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            
-                            $(".conC li.item3 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
-                                $(".conC li.item1 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item2 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item4 img.conCha").css("opacity", "0").css("right", "-100px");
-                            });
-                        });
-                    });
-                });
-            });
-            
-            $(".con1LstIn ul li a.click4").click(function(){
-                $(".conC").stop().not(":animated").animate({"margin-left" : - wd*3 + "px"}, 1000, function(){
-                    
-                    $(".conC li.item4").css("opacity", "1").siblings().css("opacity", "0");
-                    
-                    $(".conC li.item4 .conTit .tit1").delay(300).not(":animated").animate({"opacity": "1"}, 500, function(){
-                        $(this).children(".conC li .conTit").css("opacity", "0");
-                        
-                        $(".conC li.item4 .conTit .tit2").delay(320).not(":animated").animate({"opacity": "1", "top": "144px"}, 500, function(){
-                            $(".conC li.item1 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item2 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            $(".conC li.item3 .conTit .tit2").css("opacity", "0").css("top", "344px");
-                            
-                            $(".conC li.item4 img.conCha").delay(360).not(":animated").animate({"opacity": "1", "right": "1vmax"}, 500, function(){
-                                $(".conC li.item1 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item2 img.conCha").css("opacity", "0").css("right", "-100px");
-                                $(".conC li.item3 img.conCha").css("opacity", "0").css("right", "-100px");
-                            });
-                        });
-                    });
-                });
-            });
-            $(".clickI1").click(function(){
-                $(".clickI1").attr("src", "./images/desktop/conLst1_on.png");
-                $(".clickI2").attr("src", "./images/desktop/conLst2_off.png");
-                $(".clickI3").attr("src", "./images/desktop/conLst3_off.png");
-                $(".clickI4").attr("src", "./images/desktop/conLst4_off.png");
-            });
-            $(".clickI2").click(function(){
-                $(".clickI1").attr("src", "./images/desktop/conLst1_off.png");
-                $(".clickI2").attr("src", "./images/desktop/conLst2_on.png");
-                $(".clickI3").attr("src", "./images/desktop/conLst3_off.png");
-                $(".clickI4").attr("src", "./images/desktop/conLst4_off.png");
-            });
-            $(".clickI3").click(function(){
-                $(".clickI1").attr("src", "./images/desktop/conLst1_off.png");
-                $(".clickI2").attr("src", "./images/desktop/conLst2_off.png");
-                $(".clickI3").attr("src", "./images/desktop/conLst3_on.png");
-                $(".clickI4").attr("src", "./images/desktop/conLst4_off.png");
-            });
-            $(".clickI4").click(function(){
-                $(".clickI1").attr("src", "./images/desktop/conLst1_off.png");
-                $(".clickI2").attr("src", "./images/desktop/conLst2_off.png");
-                $(".clickI3").attr("src", "./images/desktop/conLst3_off.png");
-                $(".clickI4").attr("src", "./images/desktop/conLst4_on.png");
             });
         });
     </script>
     
     <script>
         $(document).ready(function(){
-            $(".vsMore").removeAttr("href");
-            $(".vsMore").click(function(){
-                $(".click").slideToggle(500);
+            $(".con3ConLstIn ul li.con3Item1").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item1").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
+            });
+            
+             $(".con3ConLstIn ul li.con3Item2").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item2").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
+            });
+            
+             $(".con3ConLstIn ul li.con3Item3").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item3").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
+            });
+            
+             $(".con3ConLstIn ul li.con3Item4").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item4").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
             });
         });
     </script>
     
     <script>
         $(document).ready(function(){
-            $(".ftSearch").hover(function(){
-                $(".ftSearch img").attr("src", './images/desktop/ftCha_on.png');
+            $(".menuBtn").click(function(){
+                $(".menu").not(":animated").animate({"left": "0"}, 800);
             });
-            $(".ftSearch").mouseout(function(){
-                $(".ftSearch img").attr("src", './images/desktop/ftCha.png');
+            $(".menuClose").click(function(){
+                $(".menu").not(":animated").animate({"left": "-100%"}, 800);
             });
         });
     </script>
-    
-
 </head>
 <body>
     <div class="main" id="desktop">
         <header id="hd">
-           <div class="hdIn">
-                <a href="" class="logo">
-                    <img src="./images/desktop/logo.png" alt="로고">
-                </a>
-                <nav class="menu">
-                    <ul class="menuLst">
-                        <li><a href="">KOREA ▼</a></li>
-                        <li><a href="">￦</a></li>
-                        <li><a href="">핫딜</a></li>
-                        <li><a href="">♡ 위시리스트</a></li>
-                        <li><a href="">최근 검색한 호텔</a></li>
-                        <li><a href="">검색 기록</a></li>
-                        <li><a href="">로그인</a></li>
-                        <li><a href="">회원가입</a></li>
+            <a href="index.html" class="logo">
+                <img src="./images/desktop/logo.png" alt="로고">
+            </a>
+            <span class="menuBtn">MENU</span>
+            
+            <div class="menu">
+                <div class="manuIn">
+                    <ul>
+                        <li><a href="sub1.html">호텔스컴바인</a></li>
+                        <li><a href="sub1.html">예약서비스</a></li>
+                        <li><a href="sub1.html">뚜루뚜루</a></li>
+                        <li><a href="sub1.html">비즈니스 호텔</a></li>
+                        <li><a href="sub1.html">추천 호텔</a></li>
+                        <li><a href="sub1.html">회원 서비스</a></li>
                     </ul>
-                </nav>
+                    <a href="index.html" class="logo">
+                <img src="./images/desktop/logo.png" alt="로고">
+            </a>
+                   <span class="menuClose">X</span>
+                </div>
             </div>
         </header>
-        
         <div class="con" id="con1">
-            <div class="con1Lst">
-                <div class="con1LstIn">
+                <div class="con1Tit">
+                    <div class="con1TitIn">
+                        <h2 class="con1Tit1">If you can dream it, We can creat it</h2>
+                        <h2 class="con1Tit2">HOTELS COMBINED</h2>
+                        <h2 class="con1Tit3">최저가 호텔 모아보면 보인다!</h2>
+                    </div>
+                    <div class="con1More">
+                        <div class="con1MoreIn">
+                            <a href="" class="more">간편예약</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="search">
+                    <div class="searchIn">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">Place Select</span>
+                                    <span class="searchTit2">Korea ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">Detailed Area</span>
+                                    <span class="searchTit2">상세지역 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">날짜 선택</span>
+                                    <span class="searchTit2">년/월/일 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">인원 수</span>
+                                    <span class="searchTit2">인원 선택 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="scLast">
+                                    <span class="searchTit1">결제 수단</span>
+                                    <span class="searchTit2">방문 결제 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <button class="searchBtn">SEARCH</button>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+        
+        <div class="con" id="con2">
+            <div class="con2Box">
+                <div class="con2In">
                     <ul>
-                        <li><a href="" class="click1"><img src="./images/desktop/conLst1_on.png" alt="" class="clickI1"></a></li>
-                        <li><a href="" class="click2"><img src="./images/desktop/conLst2_off.png" alt="" class="clickI2"></a></li>
-                        <li><a href="" class="click3"><img src="./images/desktop/conLst3_off.png" alt="" class="clickI3"></a></li>
-                        <li><a href="" class="click4"><img src="./images/desktop/conLst4_off.png" alt="" class="clickI4"></a></li>
+                        <li>
+                            <h2 class="con2Tit">간편예약 서비스<br>Easy Booking</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
+                        <li>
+                            <h2 class="con2Tit">즐거운 여행의 시작<br>The beginning of a pleasant trip</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
+                        <li>
+                            <h2 class="con2Tit">최고의 호텔 예약<br>Best Hotel Reservation</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
+                        <li>
+                            <h2 class="con2Tit">모바일로 간편하게!<br>Easy on your mobile!</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
                     </ul>
                 </div>
                 
-                    <div class="contents">
-                    <ul class="conC">
-                        <li class="item1">
-                           <a href="" class="vsMore"><img src="./images/desktop/vsButton.png" alt=""></a>
-                            <p class="conTit">
-                                <span class="tit1">잠깐!</span>
-                                <span class="tit2">호텔 예약은 ?</span>
-                            </p>
-                            <img src="./images/desktop/conLogo.png" alt="" class="conLogo">
-                            <img src="./images/desktop/conCha1.png" alt="" class="conCha">
-                        </li>
-
-                        <li class="item2">
-                            <p class="conTit">
-                                <span class="tit1">즐거운 여행의 시작은 ?</span>
-                                <span class="tit2">컴바인 부터</span>
-                            </p>
-                            <img src="./images/desktop/conCha2.png" alt="" class="conCha">
-                        </li>
-                        <li class="item3">
-                            <p class="conTit">
-                                <span class="tit1">이번달 숙박</span>
-                                <span class="tit2">최고급 호텔!!</span>
-                            </p>
-                            <img src="./images/desktop/conCha3.png" alt="" class="conCha">
-                        </li>
-                        <li class="item4">
-                            <p class="conTit">
-                                <span class="tit1">잠깐!</span>
-                                <span class="tit2">호텔 예약은 ?</span>
-                            </p>
-                            <img src="./images/desktop/conCha4.png" alt="" class="conCha">
-                        </li>
-                    </ul>
+                <div class="con2Btn">
+                                <div class="con2BtnIn">
+                                    <button class="lBtn">←</button>
+                                    <span class="countO"> / 05</span>
+                                    <button class="rBtn">→</button>
+                                </div>
+                            </div>
+            </div>
+        </div>
+        
+        <div class="con" id="con3">
+            <div class="con3Box">
+                <div class="con3In">
+                    <div class="con3Tit">
+                       <div class="con3TitIn">
+                           <h3 class="con3Tit1">FIND YOUR PLACE</h3>
+                            <h3 class="con3Tit2">ENJOY YOUR PLANS</h3>
+                       </div>
+                    </div>
+                    
+                    <div class="con3TLst">
+                        <div class="con3TLstIn">
+                            <ul>
+                                <li><a href="">Properties for Sale</a></li>
+                                <li><a href="">Properties for Rent</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="con3ConLst">
+                        <div class="con3ConLstIn">
+                            <ul>
+                                <li class="con3Item1">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg1.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                                <li class="con3Item2">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg2.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                                <li class="con3Item3">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg3.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                                <li class="con3Item4">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg1.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <footer id="ft">
+            <div class="ftBox">
+                <div class="ftBoxIn">
+                 <img src="./images/desktop/logo.png" alt="" class="ftLogo">
+                  <img src="./images/desktop/conCha1.png" alt="" class="ftBg">
+                  <img src="./images/desktop/conCha4.png" alt="" class="ftBg2">
+                   <div class="ftSearch">
+                        <input type="text" class="ftTextArea">
+                        <button class="ftBtn">
+                            SUBSCRIBS
+                        </button>
+                    </div>
+                    
+                    <div class="sns">
+                        <div class="snsIn">
+                            <ul>
+                                <li><a href=""><img src="./images/desktop/google.png" alt=""></a></li>
+                                <li><a href=""><img src="./images/desktop/twitter.png" alt=""></a></li>
+                                <li><a href=""><img src="./images/desktop/you.png" alt=""></a></li>
+                                <li><a href=""><img src="./images/desktop/pinter.png" alt=""></a></li>
+                                <li><a href="https://www.facebook.com" target="_blank"><img src="./images/desktop/facebook.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="msg">
+                        <div class="msgIn">
+                            <span class="tell">444-4444-4444</span>
+                            <span class="mail">addgo@naver.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ftDown">
+                    <div class="ftDownIn">
+                        <ul>
+                            <li>
+                                   <a href="">GIM</a>
+                                    <span>About As</span>
+                                    <span>About Use</span>
+                                    <span>Careers</span>
+                                    <span>Contact Us</span>
+                                </li>
+                            <li><a href="">Discover</a>
+                                    <span>개인정보처리방침</span>
+                                    <span>이용약관</span>
+                                    <span>컴바인이력</span>
+                                    <span>호텔스</span>
+                                </li>
+                            <li><a href="">Genaral</a>
+                                    <span>Team</span>
+                                    <span>Privacy Policy</span>
+                                </li>
+                            <li><a href="">Address</a>
+                                    <span>대표자 : 이정욱</span>
+                                    <span style="font-weight: bold; font-size: 1.3vmin;">ⓒCOPYRIGHT HOTELS COMBINED . 이정욱</span>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    
-    <div class="click">
-       <div class="trip">
-            <h4 class="clickTit">여행지</h4>
-            <input type="textarea" class="tripSearch" value="여행지를 선택하거나 여행지 / 호텔을 입력하세요.">
-        </div>
-        
-        <div class="check">
-        <div class="checkIn">
-            <h4 class="clickTit">체크인</h4>
-            <img src="./images/desktop/dateIcon.png" alt="" class="checkIcon">
-            <select name="checkInYear" id="ckY">
-                <option value="" selected>2019년 1월</option>
-                <option value="">2019년 2월</option>
-                <option value="">2019년 3월</option>
-                <option value="">2019년 4월</option>
-                <option value="">2019년 5월</option>
-                <option value="">2019년 6월</option>
-                <option value="">2019년 7월</option>
-                <option value="">2019년 8월</option>
-                <option value="">2019년 9월</option>
-            </select>
-            <select name="checkInDate" id="ckD">
-                <option value="" selected>1일</option>
-                <option value="">2일</option>
-                <option value="">3일</option>
-                <option value="">4일</option>
-                <option value="">5일</option>
-                <option value="">6일</option>
-                <option value="">7일</option>
-                <option value="">8일</option>
-                <option value="">9일</option>
-                <option value="">10일</option>
-                <option value="">11일</option>
-                <option value="">12일</option>
-                <option value="">13일</option>
-                <option value="">14일</option>
-                <option value="">15일</option>
-                <option value="">16일</option>
-                <option value="">17일</option>
-                <option value="">18일</option>
-                <option value="">19일</option>
-                <option value="">20일</option>
-                <option value="">21일</option>
-                <option value="">22일</option>
-                <option value="">23일</option>
-                <option value="">24일</option>
-                <option value="">25일</option>
-                <option value="">26일</option>
-                <option value="">27일</option>
-                <option value="">28일</option>
-                <option value="">29일</option>
-                <option value="">30일</option>
-                <option value="">31일</option>
-            </select>
-        </div>
-        
-        <div class="checkOut">
-            <h4 class="clickTit">체크아웃</h4>
-            <img src="./images/desktop/dateIcon.png" alt="" class="checkIcon">
-            <select name="checkOutYear" id="ckY">
-                <option value="" selected>2019년 1월</option>
-                <option value="">2019년 2월</option>
-                <option value="">2019년 3월</option>
-                <option value="">2019년 4월</option>
-                <option value="">2019년 5월</option>
-                <option value="">2019년 6월</option>
-                <option value="">2019년 7월</option>
-                <option value="">2019년 8월</option>
-                <option value="">2019년 9월</option>
-            </select>
-            <select name="checkOutDate" id="ckD">
-                <option value="" selected>1일</option>
-                <option value="">2일</option>
-                <option value="">3일</option>
-                <option value="">4일</option>
-                <option value="">5일</option>
-                <option value="">6일</option>
-                <option value="">7일</option>
-                <option value="">8일</option>
-                <option value="">9일</option>
-                <option value="">10일</option>
-                <option value="">11일</option>
-                <option value="">12일</option>
-                <option value="">13일</option>
-                <option value="">14일</option>
-                <option value="">15일</option>
-                <option value="">16일</option>
-                <option value="">17일</option>
-                <option value="">18일</option>
-                <option value="">19일</option>
-                <option value="">20일</option>
-                <option value="">21일</option>
-                <option value="">22일</option>
-                <option value="">23일</option>
-                <option value="">24일</option>
-                <option value="">25일</option>
-                <option value="">26일</option>
-                <option value="">27일</option>
-                <option value="">28일</option>
-                <option value="">29일</option>
-                <option value="">30일</option>
-                <option value="">31일</option>
-            </select>
-        </div>
-        </div>
-        
-        <p class="checkBox">
-            <input type="checkbox" name="ck" class="ck"><span>숙박일 미정</span>
-        </p>
-        
-        <div class="ckLast">
-        <div class="peopleCount">
-           <h4 class="clickTit">인원</h4>
-            <select name="peopleC" id="p_count">
-                <option value="" selected>성인1인</option>
-                <option value="">성인2인</option>
-                <option value="">가족(성인3이상 포함)</option>
-                <option value="">단체</option>
-            </select>
-        </div>
-        
-        <button onClick="location.href = 'sub1.html'" class="clickBtn">검색</button>
-        </div>
-    </div>
-    
-    <footer id="ft">
-        <ul class="ftLst">
-            <li><a href="">위치별 호텔 검색</a></li>
-            <li><a href="">호텔스컴바인 소개</a></li>
-            <li><a href="">제휴 프로그램</a></li>
-            <li><a href="">숙박시설관리</a></li>
-            <li><a href="">요금알림 기능 소개</a></li>
-            <li><a href="">고객 지원</a></li>
-            <li><a href="">이용 약관</a></li>
-            <li><a href="">개인정보</a></li>
-            <li><a href="">쿠키 정책</a></li>
-        </ul>
-        
-        <p class="ftSearch">
-            <span class="ftSearchTit">최저가 호텔 검색</span>
-            <img src="./images/desktop/ftCha.png" alt="">
-        </p>
-        
-        <div class="ftCon">
-            <div class="ftLeft">
-                <h2 class="ftSideTit">SNS에서 만나는 호텔스 컴바인</h2>
-                <ul>
-                    <li><a href=""><img src="./images/desktop/facebook.png" alt=""></a></li>
-                    <li><a href=""><img src="./images/desktop/twitter.png" alt=""></a></li>
-                    <li><a href=""><img src="./images/desktop/insta.png" alt=""></a></li>
-                    <li><a href=""><img src="./images/desktop/pinter.png" alt=""></a></li>
-                    <li><a href=""><img src="./images/desktop/you.png" alt=""></a></li>
-                    <li><a href=""><img src="./images/desktop/google.png" alt=""></a></li>
-                </ul>
-            </div>
-            <div class="ftRight">
-                <h2 class="ftSideTit ftSideTit2">이제 스마트폰에서도 태블릿에서도 호텔스컴바인</h2>
-                <a href="">
-                    <img src="./images/desktop/googleDown.png" alt="">
-                </a>
-                <a href="">
-                    <img src="./images/desktop/appleDown.png" alt="">
-                </a>
-            </div>
-        </div>
-        <br><hr style="width: 80%; margin: 0 auto;"><br>
-        
-        <div class="ftBox">
-            <div class="ftBoxIn">
-                <ul>
-                    <li>
-                        <h2 class="ftBoxTit">모든호텔 한눈에 비교</h2>
-                        <span class="ftBoxTxt">전세계 241만 개의 호텔을 한번에 비교하여<br>마음에 쏙 드는 호텔을 예약하세요.</span>
-                    </li>
-                    <li>
-                        <h2 class="ftBoxTit">최저가보장</h2>
-                        <span class="ftBoxTxt">예약 수수료가 없습니다.<br>호텔스컴바인이 고객님께 드리는 약속입니다.</span>
-                    </li>
-                    <li>
-                        <h2 class="ftBoxTit">즐거운 여행의 시작</h2>
-                        <span class="ftBoxTxt">작년 4억명의 여행자가 호텔스 컴바인에서<br>최고의 호텔 상품을 검색했습니다.</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <span class="copyright">ⓒ2018 COPYRIGHT By 호텔스컴바인.</span>
-        <img src="./images/desktop/ftBgCha.png" alt="" class="ftBgCha">
-    </footer>
-
 </body>
 </html>
