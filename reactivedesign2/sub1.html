@@ -65,7 +65,6 @@
             border-bottom: 1px solid #fff;
             z-index: 1000;
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: #333;
         }
         .logo {
             position: absolute;
@@ -166,6 +165,8 @@
             left: 0;
             width: 100%;
             height: 100%;
+            overflow: hidden;
+            
         }
         .subTit {
             width: 100%;
@@ -188,54 +189,12 @@
         }
         .subArea {
             width: 100%;
-            height: 70%;
+            height: auto;
         }
         .Area1In {
             width: 80%;
             height: auto;
-            margin: 0 auto;
-            padding-top: 5%;
-        }
-        .Area1Tit {
-            text-align: center;
-            font-size: 4vmin;
-            color: #333;
-            cursor: pointer;
-            transition: 0.5s;
-        }
-        .Area1Tit:hover {
-            color: #1cccce;
-        }
-        .Area1Txt {
-            padding-top: 5%;
-            display: block;
-            text-align: center;
-            font-size: 2vmin;
-            color: #333;
-            transition: 0.5s;
-        }
-        .Area1Item {
-            width: 100%;
-            height: auto;
-        }
-        .itemIn {
-            width: 70%;
-            height: auto;
-            margin: 5% auto;
-        }
-        .itemIn ul {
-            width: 100%;
-            height: auto;
-        }
-        .itemIn ul li {
-            float: left;
-            width: 15%;
-            margin: 2.5%;
-        }
-        .itemIn ul li img {
-            width: 100%;
-            height: auto;
-            transition: 0.5s;
+            margin: 0 auto; 
         }
     </style>
     
@@ -244,7 +203,7 @@
             position: absolute;
             width: 100%;
             height: auto;
-            top: 350%;
+            top: 400%;
             left: 0;
             background-color: #393939;
         }
@@ -361,7 +320,7 @@
        
         <div class="wrap">
             <header id="hd">
-                <a href="index.html" class="logo">
+                <a href="" class="logo">
                     <img src="./images/desktop/logo_off.png" alt="로고">
                 </a>
                 <nav class="menu">
@@ -460,7 +419,6 @@
                 
                 <div class="subArea">
                     <div class="Area1In">
-                       
                         <h3 class="Area1Tit">
                             “좋은 연구 성과는 학문의 대를 이어 지속돼야 한다.”.
                         </h3>
@@ -481,99 +439,6 @@
 
 
                         </span>
-                        <div class="Area1Item">
-                            <div class="itemIn">
-                                <ul>
-                                    <li><img src="./images/desktop/sub2Item.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item13.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item12.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item14.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item1.png" alt=""></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="subArea">
-                    <div class="Area1In">
-                       
-                        <h3 class="Area1Tit">
-                            “조연우 교수, 물 속 운동체의 항력 감소 기술 개발”
-                        </h3>
-                        <span class="Area1Txt">
-                            공기에서 어떤 물체가 운동하는 경우에 물체가 받는 저항력은 동일한 물체가 물속에서 운동하는 경우의 항력보다 매우 작다.
-따라서 만약 물속에서 운동하는 어떤 물체가 공기로 완전히 감싸진 채 운동한다면 그 물체가 받는 항력을 매우 줄일 수 있을 것이다.
-연구팀은 압축 공기를 이용해 미사일 모양의 수중 운동체를 공기로 완전히 감쌀 수 있는 초공동(supercavitation) 현상을 발생 시킨 후 수중 운동체에 가해지는 항력을 측정했다.
-그 결과 동일한 속력에서 초공동으로 둘러싸인 수중 운동체가 받는 항력이 기존 수중 운동체가 받는 항력의 25% 정도로 측정됨을 확인했다.
-연구 결과는 초고속 수중 운동체 개발 및 공기윤활(air lubrication)을 이용한 초고속 선박의 개발에 응용될 수 있을 것으로 기대된다.
-이번 연구는 한국연구재단의 이공학개인기초연구지원사업의 지원으로 수행됐다.
-
-
-                        </span>
-                        <div class="Area1Item">
-                            <div class="itemIn">
-                                <ul>
-                                    <li><img src="./images/desktop/sub2Item2.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item3.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item4.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item5.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item6.png" alt=""></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="subArea">
-                    <div class="Area1In">
-                       
-                        <h3 class="Area1Tit">
-                            “김도현 교수, 2차원 나노소재 분산용액 양산 기술 개발”
-                        </h3>
-                        <span class="Area1Txt">
-                            우리 대학 생명화학공학과 김도현 교수 연구팀이 수력 공정의 전단력(剪斷力)과 혼합특성을 이용해 2차원 나노소재 분산용액을 대량생산할 수 있는 기술을 개발했다.
-
-2차원 나노소재 분산용액은 전자, 에너지 저장 및 전환 소자 개발에 사용되는 용액기반 공정에 직접 적용 가능해 소자의 다양화와 성능 개선을 실현시키는 데 기여할 것으로 기대된다.
-동국대학교 한영규 교수(제일원리 계산), 강원대학교 최봉길 교수(용액 특성 평가), 한국화학연구원 황성연 박사(물질 특성 평가) 연구팀과 공동으로 진행하고 정재민 박사가 1저자로 참여한 이번 연구 결과는 재료 분야 국제 학술지 ‘어드밴스드 펑셔널 머티리얼즈(Advanced Functional Materials)’ 8월 12일자에 온라인 게재됐고, 논문의 우수성을 인정받아 표지논문에 선정됐다. (논문명 : Hydraulic Power Manufacturing for Highly Scalable and Stable 2D Nanosheet Dispersions and Their Film Electrode Application)
-2차원 소재는 나노사이즈의 두께로 박리됐을 때 새롭고 우수한 물리, 화학적 특성이 나타나는 장점이 있어, 다양한 2차원 나노소재의 대량생산연구가 진행되고 있다.
-
-
-                        </span>
-                        <div class="Area1Item">
-                            <div class="itemIn">
-                                <ul>
-                                    <li><img src="./images/desktop/sub2Item1.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item3.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item9.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item11.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item12.png" alt=""></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="subArea">
-                    <div class="Area1In">
-                       
-                        <h3 class="Area1Tit">
-                            “KAIST 과학기술정책대학원, 남북 과학기술 협력 전문가 회의 개최”
-                        </h3>
-                        <span class="Area1Txt">
-                            첫 번째 발제자로 나선 변학문 북한과학기술연구센터 연구위원은 북한은 2000년대 초부터 과학기술 중시 정책을 본격적으로 추진해 전 인민의 과학화·정보화를 진행해왔다고 밝혔다. 관련한 과학자 우대 조치로 정보통신, 기계 산업 등 일부 분야는 나름 상당한 수준에 도달했다고 변 연구위원은 분석했다. 그는 이어, 남북 교류협력은 ‘남측의 자본·기술, 북측의 자원·인력’이라는 시대착오적 프레임에서 벗어나 일방적 지원이 아닌 상호 이익을 실현하는 방식으로 이뤄져야 한다고 강조했다.
-북한의 IT·과학기술 분야를 취재해온 강진규 NK경제 기자는 그동안 해커로만 인식되어왔던 북한 IT 개발자들의 모습을 소개했다. 강 기자는 조선컴퓨터센터(KCC) 온라인 커뮤니티를 예시로 블록체인, 머신러닝 등 최신 흐름에 발 빠르게 대응하는 북한의 변화상을 주목했다.
-
-
-                        </span>
-                        <div class="Area1Item">
-                            <div class="itemIn">
-                                <ul>
-                                    <li><img src="./images/desktop/sub2Item1.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item10.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item14.png" alt=""></li>
-                                    <li><img src="./images/desktop/sub2Item8.png" alt=""></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

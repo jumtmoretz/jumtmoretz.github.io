@@ -766,7 +766,6 @@
         .Mwrap {
             width: 100%;
             height: 100%;
-            position: relative;
         }
         #Mhd {
             width: 95%;
@@ -955,6 +954,8 @@
             position: absolute;
             width: 30px;
             height: 30px;
+            background: none;
+            border: 0;
         }
         .Mcon2Btn1 {
             top: 0;
@@ -969,11 +970,98 @@
     <style>
         #Mcon3 {
             width: 100%;
-            height: 380px;
+            height: 375px;
             position: absolute;
-            top: 760px;
+            top: 758px;
             left: 0;
-            background-color: aliceblue;
+            background-image: url("./images/mobile/con3Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .Mcon3In {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon3In .Mcon3TitArea {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon3TitIn {
+            width: 80%;
+            height: auto;
+            margin: 5% auto;
+        }
+        .Mcon3TitIn h2, .Mcon3TitIn h3 {
+            text-align: center;
+            color: #fff;
+        }
+        .Mcon3Tit1 {
+            font-weight: bold;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 7vmin;
+        }
+        .Mcon3Tit2 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 2vmin;
+        }
+        .MnewsCon {
+            width: 100%;
+            height: auto;
+        }
+        .MnewsConIn {
+            width: 80%;
+            height: 260px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .MnewsConIn ul {
+            width: 800%;
+            height: auto;
+        }
+        .MnewsConIn ul li {
+            float: left;
+            width: 12.5%;
+            position: relative;
+        }
+        .MnewsConIn ul li img {
+            display: block;
+            width: 25%;
+            height: auto;
+        }
+        .MnewsConIn ul li p {
+            width: 85%;
+            height: auto;
+            background-color: #972243;
+            position: absolute;
+            top: 40%;
+            left: 20%;
+        }
+        .MnewsTextArea span {
+            display: block;
+            width: 70%;
+            height: auto;
+            padding: 5%;
+            margin: 0 auto;
+            font-size: 2vmin;
+            color: #fff;
+            font-weight: bold;
+            line-height: 6vmin;
+        }
+        .Mcon3Btn {
+            width: 60%;
+            height: auto;
+            position: absolute;
+            bottom: 5%;
+            left: 25%;
+        }
+        .Mcon3BtnIn {
+            width: 40%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .Mcon3Bt {
+            background: none;
+            border: 0;
         }
     </style>
     
@@ -1357,6 +1445,52 @@
                 });
             });
     </script>
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".MnewsConIn ul li").width());
+            $(".Mcon3Bt1").click(function(){
+                $(".btn1").attr("src", "./images/mobile/btn_on.png");
+                $(".btn2, .btn3, .btn4, .btn5, .btn6, .btn7, .btn8").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": "0px"}, 700);
+            });
+            $(".Mcon3Bt2").click(function(){
+                $(".btn2").attr("src", "./images/mobile/btn_on.png");
+                $(".btn1, .btn3, .btn4, .btn5, .btn6, .btn7, .btn8").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": -wd + "px"}, 700);
+            });
+            $(".Mcon3Bt3").click(function(){
+                $(".btn3").attr("src", "./images/mobile/btn_on.png");
+                $(".btn2, .btn1, .btn4, .btn5, .btn6, .btn7, .btn8").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": -wd*2 + "px"}, 700);
+            });
+            $(".Mcon3Bt4").click(function(){
+                $(".btn4").attr("src", "./images/mobile/btn_on.png");
+                $(".btn2, .btn3, .btn1, .btn5, .btn6, .btn7, .btn8").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": -wd*3 + "px"}, 700);
+            });
+            $(".Mcon3Bt5").click(function(){
+                $(".btn5").attr("src", "./images/mobile/btn_on.png");
+                $(".btn2, .btn3, .btn4, .btn1, .btn6, .btn7, .btn8").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": -wd*4 + "px"}, 700);
+            });
+            $(".Mcon3Bt6").click(function(){
+                $(".btn6").attr("src", "./images/mobile/btn_on.png");
+                $(".btn2, .btn3, .btn4, .btn5, .btn1, .btn7, .btn8").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": -wd*5 + "px"}, 700);
+            });
+            $(".Mcon3Bt7").click(function(){
+                $(".btn7").attr("src", "./images/mobile/btn_on.png");
+                $(".btn2, .btn3, .btn4, .btn5, .btn6, .btn1, .btn8").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": -wd*6 + "px"}, 700);
+            });
+            $(".Mcon3Bt8").click(function(){
+                $(".btn8").attr("src", "./images/mobile/btn_on.png");
+                $(".btn2, .btn3, .btn4, .btn5, .btn6, .btn7, .btn1").attr("src", "./images/mobile/btn_off.png");
+                $(".MnewsConIn ul").not(":animated").animate({"margin-left": -wd*7 + "px"}, 700);
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="main" id="desktop">
@@ -1368,14 +1502,14 @@
                 </a>
                 <nav class="menu">
                     <ul>
-                        <li><a href="sub1.html" class="mainMenu">KAIST</a>
+                        <li><a href="" class="mainMenu">KAIST</a>
                             <div class="sub">
                                 <ul class="subMenu">
-                                    <li><a href="sub1.html">개요</a></li>
-                                    <li><a href="sub1.html">인사말</a></li>
-                                    <li><a href="sub1.html">비전</a></li>
-                                    <li><a href="sub1.html">연혁</a></li>
-                                    <li><a href="sub1.html">카이스트</a></li>
+                                    <li><a href="">개요</a></li>
+                                    <li><a href="">인사말</a></li>
+                                    <li><a href="">비전</a></li>
+                                    <li><a href="">연혁</a></li>
+                                    <li><a href="">카이스트</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -1957,15 +2091,112 @@
                 </ul>
                 
                 <div class="Mcon2Btn">
-                    <button class="Mcon2Btn1"> &#40; </button>
-                    <button class="Mcon2Btn2"> &#41; </button>
+                    <button class="Mcon2Btn1"><img src="./images/mobile/lBtn.png" alt=""> </button>
+                    <button class="Mcon2Btn2"><img src="./images/mobile/rBtn.png" alt=""></button>
                 </div>
             </div>
             
         </div>
         
         <div class="Mcon" id="Mcon3">
-            
+            <div class="Mcon3In">
+                <div class="Mcon3TitArea">
+                    <div class="Mcon3TitIn">
+                        <h2 class="Mcon3Tit1">NEWS</h2>
+                        <h3 class="Mcon3Tit2">카이스트 소식을 알려드립니다.</h3>
+                    </div>
+                </div>
+                
+                <div class="MnewsCon">
+                    <div class="MnewsConIn">
+                        <ul>
+                            <li>
+                                <img src="./images/mobile/con3Img1.png" alt="" class="MnewsImg">
+                                <p class="MnewsTextArea"><span class="MnewsTxt">깊이 있는 이론과 실제적인 응용력으로
+국가 산업 발전에 기여할 고급 과학기술 인재 양성
+
+국가 정책으로 추진하는 중·장기 연구 개발과
+국가 과학기술 저력 배양을 위한 기초·응용 연구 수행
+
+각 분야 연구 기관 및 산업계와 연계한 연구 지원</span></p>
+                            </li>
+                            <li>
+                                <img src="./images/mobile/con3Img1.png" alt="" class="MnewsImg">
+                                <p class="MnewsTextArea"><span class="MnewsTxt">깊이 있는 이론과 실제적인 응용력으로
+국가 산업 발전에 기여할 고급 과학기술 인재 양성
+
+국가 정책으로 추진하는 중·장기 연구 개발과
+국가 과학기술 저력 배양을 위한 기초·응용 연구 수행
+
+각 분야 연구 기관 및 산업계와 연계한 연구 지원</span></p>
+                            </li>
+                            <li>
+                                <img src="./images/mobile/con3Img1.png" alt="" class="MnewsImg">
+                                <p class="MnewsTextArea"><span class="MnewsTxt">깊이 있는 이론과 실제적인 응용력으로
+국가 산업 발전에 기여할 고급 과학기술 인재 양성
+
+국가 정책으로 추진하는 중·장기 연구 개발과
+국가 과학기술 저력 배양을 위한 기초·응용 연구 수행
+
+각 분야 연구 기관 및 산업계와 연계한 연구 지원</span></p>
+                            </li>
+                            <li>
+                                <img src="./images/mobile/con3Img1.png" alt="" class="MnewsImg">
+                                <p class="MnewsTextArea"><span class="MnewsTxt">깊이 있는 이론과 실제적인 응용력으로
+국가 산업 발전에 기여할 고급 과학기술 인재 양성
+
+국가 정책으로 추진하는 중·장기 연구 개발과
+국가 과학기술 저력 배양을 위한 기초·응용 연구 수행
+
+각 분야 연구 기관 및 산업계와 연계한 연구 지원</span></p>
+                            </li>
+                            <li>
+                                <img src="./images/mobile/con3Img1.png" alt="" class="MnewsImg">
+                                <p class="MnewsTextArea"><span class="MnewsTxt">깊이 있는 이론과 실제적인 응용력으로
+국가 산업 발전에 기여할 고급 과학기술 인재 양성
+
+국가 정책으로 추진하는 중·장기 연구 개발과
+국가 과학기술 저력 배양을 위한 기초·응용 연구 수행
+
+각 분야 연구 기관 및 산업계와 연계한 연구 지원</span></p>
+                            </li>
+                            <li>
+                                <img src="./images/mobile/con3Img1.png" alt="" class="MnewsImg">
+                                <p class="MnewsTextArea"><span class="MnewsTxt">깊이 있는 이론과 실제적인 응용력으로
+국가 산업 발전에 기여할 고급 과학기술 인재 양성
+
+국가 정책으로 추진하는 중·장기 연구 개발과
+국가 과학기술 저력 배양을 위한 기초·응용 연구 수행
+
+각 분야 연구 기관 및 산업계와 연계한 연구 지원</span></p>
+                            </li>
+                            <li>
+                                <img src="./images/mobile/con3Img1.png" alt="" class="MnewsImg">
+                                <p class="MnewsTextArea"><span class="MnewsTxt">깊이 있는 이론과 실제적인 응용력으로
+국가 산업 발전에 기여할 고급 과학기술 인재 양성
+
+국가 정책으로 추진하는 중·장기 연구 개발과
+국가 과학기술 저력 배양을 위한 기초·응용 연구 수행
+
+각 분야 연구 기관 및 산업계와 연계한 연구 지원</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="Mcon3Btn">
+                        <div class="Mcon3BtnIn">
+                            <button class="Mcon3Bt Mcon3Bt1"><img class="btn1" src="./images/mobile/btn_on.png" alt=""></button>
+                            <button class="Mcon3Bt Mcon3Bt2"><img class="btn2" src="./images/mobile/btn_off.png" alt=""></button>
+                            <button class="Mcon3Bt Mcon3Bt3"><img class="btn3" src="./images/mobile/btn_off.png" alt=""></button>
+                            <button class="Mcon3Bt Mcon3Bt4"><img class="btn4" src="./images/mobile/btn_off.png" alt=""></button>
+                            <button class="Mcon3Bt Mcon3Bt5"><img class="btn5" src="./images/mobile/btn_off.png" alt=""></button>
+                            <button class="Mcon3Bt Mcon3Bt6"><img class="btn6" src="./images/mobile/btn_off.png" alt=""></button>
+                            <button class=" Mcon3Bt Mcon3Bt7"><img class="btn7" src="./images/mobile/btn_off.png" alt=""></button>
+                            <button class=" Mcon3Bt Mcon3Bt8"><img class="btn8" src="./images/mobile/btn_off.png" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>
