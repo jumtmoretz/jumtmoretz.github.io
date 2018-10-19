@@ -10,7 +10,6 @@
     <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
     </script>
     <![endif]-->
-    <link rel="shortcut icon" href="" type="image/x-icon">
     <meta name="msapplication-TileColor" content="#ffffff">
     <title>::웅진코웨이::</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -83,6 +82,8 @@
             height: auto;
         }
         .leftSns li {
+            width: 25%;
+            height: auto;
             float: left;
         }
         .leftSns li a {
@@ -112,7 +113,7 @@
         }
         .rightMenu li a {
             display: block;
-            font-size: 2vmin;
+            font-size: 1vmax;
             color: #777;
             text-align: center;
         }
@@ -139,7 +140,7 @@
             display: block;
             color: #323232;
             transition: 0.9s;
-            font-size: 3vmin;
+            font-size: 1.4vmax;
             font-weight: bold;
         }
         .mainMenu li a:hover {
@@ -294,7 +295,7 @@
         }
         .con2Con ul li a {
             display: block;
-            font-size: 3vmin;
+            font-size: 1vmax;
             font-weight: bold;
             font-family: 'Oswald', sans-serif;
             color: #323232;
@@ -826,10 +827,19 @@
             }
         .MnotiBox a {
             padding: 2% 3%;
+            display: block;
+            position: relative;
+            background-color: #3c3f99;
+            color: #fff;
             }
         .MnotiBox a p.MnotiLinkTit {
-            font-size: 2vmax;
-            line-height: 7vmin;
+            font-size: 3vmin;
+            font-weight: bold;
+            line-height: 15vmin;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
             }
         .MnotiBox a span.MnotiLinkDate {
             margin-top: 0;
@@ -848,15 +858,33 @@
             padding-bottom: 10%;
         }
         .MworkBox {
+            width: 80%;
+            height: auto;
             float: none;
             margin: 5% auto;
             }
+        .MworkBox img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
         .MworkLink {
-            max-width: 100%;
+            width: 100%;
+            height: auto;
             }
         .MworkLinkTit {
-            font-size: 16px;
-            line-height: 26px;
+            background-color: #3c3f99;
+            color: #fff;
+            font-size: 2vmin;
+            line-height: 14vmin;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+            margin-top: -2%;
+            height: auto;
             }
         .MmNewsCon {
             display: block;
@@ -956,6 +984,7 @@
             top: 0;
             z-index: 999;
             background-color: palevioletred;
+            font-weight: bold;
         }
         .close {
             display: block;
@@ -991,11 +1020,13 @@
             width: 100px;
             margin: 40px;
         }
+        .MmenuSl .MmenuSlLst li a {
+            color: #fff;
+        }
         .mMenuLst li a {
             display: block;
             color: #fff;
             text-align: left;
-            padding-bottom: 10px;
         }
         
     </style>
@@ -1110,7 +1141,9 @@
                 $(".MmenuSl").not(":animated").animate({"left" : "0px"}, 800);
             });
             
-            $(".close").click
+            $(".close").click(function(){
+                $(".MmenuSl").not(":animated").animate({"left" : "-330px"}, 800);
+            });
         });
         
     </script>
@@ -1426,6 +1459,7 @@
     </div>
     
     <div class="main" id="mobile">
+              
                <header id="Mhd">
                    <div class="MhdIn">
                        <a href="" class="logo">

@@ -14,6 +14,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <title>::웅진코웨이::</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <!-- 폰트링크 -->
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
@@ -167,149 +168,6 @@
     </style>
     
     <style>
-        #con1 {
-            width: 100%;
-            height: auto;
-        }
-        .con1In {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .con1In h2 {
-            text-align: center;
-            color: #3c3f99;
-        }
-        .con1Tit1 {
-            font-size: 8vmin;
-            padding-top: 10%;
-        }
-        .con1Txt {
-            text-align: center;
-            font-weight: bold;
-            font-size: 2vmin;
-            padding-top: 3%;
-        }
-        .con1Con {
-            width: 100%;
-            height: auto;
-        }
-        .con1ConIn {
-            width: 80%;
-            height: auto;
-            margin: 5% auto;
-        }
-        .conLeft {
-            width: 30%;
-            height: auto;
-            float: left;
-        }
-        .leftTitBox {
-            width: 70%;
-            height: auto;
-            border-left: 3px solid #3c3f99;
-            border-right: 3px solid #3c3f99;
-            padding: 0% 4%;
-            margin: 0 auto;
-        }
-        .conLeft h2 {
-            color: #3c3f99;
-            text-align: center;
-        }
-        .con1LeftTit1 {
-            font-size: 1vmax;
-        }
-        .con1LeftTit2 {
-            font-size: 1.2vmax;
-        }
-        .con1LeftTit3 {
-            font-size: 1.4vmin;
-            font-weight: 600;
-        }
-        .leftItemBox {
-            width: 100%;
-            height: auto;
-            margin-top: 12%;
-        }
-        .leftItemBox ul {
-            width: 100%;
-            height: auto;
-        }
-        .leftItemBox ul li {
-            width: 45%;
-            height: auto;
-            margin: 2.5%;
-            float: left;
-            box-shadow: 4px 1px 24px #f1f1f1;
-            box-sizing: border-box;
-            background-color: #fff;
-            cursor: pointer;
-            transition: 0.5s;
-        }
-        .leftItemBox ul li a img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        .itemTit {
-            font-size: 1.2vmax;
-            font-weight: bold;
-            padding-bottom: 3%;
-        }
-        .itemTitEn {
-            font-size: 1vmin;
-            font-weight: 100;
-            font-family: 'Srisakdi', cursive;
-        }
-        .btnBox {
-            width: 30%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .leftItemBox ul li button {
-            width: 10px;
-            height: 10px;
-            background-color: #bdbdd2;
-            border: 0;
-            border-radius: 10px;
-        }
-        .leftItemBox ul li button.on {
-            background-color: #3c3f99;
-        }
-        
-        .conRight {
-            width: 60%;
-            height: 100%;
-            float: right;
-        }
-        .rightImgBox {
-            width: 100%;
-            height: 100%;
-            background-image: url("./images/desktop/subBg1.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            padding-bottom: 58%;
-            position: relative;
-        }
-        .rightImgBox .img1 {
-            width: 60%;
-            height: auto;
-            position: absolute;
-            top: 20%;
-            left: -10%;
-        }
-        .rightTxt {
-            position: absolute;
-            writing-mode: tb-rl;
-            right: 38%;
-            top: 13%;
-            color: #fff;
-            font-size: 6vmin;
-        }
-    </style>
-    
-    
-    <style>
         #ft {
             width: 100%;
             height: auto;
@@ -318,7 +176,7 @@
             width: 80%;
             height: auto;
             margin: 0 auto;
-            padding-top: 30%;
+            padding-top: 5%;
         }
         .ftTop {
             width: 100%;
@@ -470,6 +328,75 @@
             padding: 0;
         }
     </style>
+    
+    <style>
+        #mask {
+            display: none;
+            background: #ccc;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 999;
+        }
+        .login-popup {
+            display: none;
+            background: #3c3f99;
+            padding: 10px;
+            border: 2px solid #ddd;
+            float: left;
+            font-size: 1.2em;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 99999;
+            box-shadow: 0px 0px 20px #999;
+        }
+        fieldset {
+            border: none;
+        }
+
+        form.signin .textbox label {
+            display: block;
+            padding-bottom: 7px;
+        }
+
+        form.signin .textbox span {
+            display: block;
+        }
+
+        form.signin p, form.signin span {
+            color: #999;
+            font-size: 11px;
+            line-height: 18px;
+        }
+
+        form.signin .textbox input {
+            background: #fff;
+            border-bottom: 1px solid #333;
+            border-left: 1px solid #000;
+            border-right: 1px solid #333;
+            border-top: 1px solid #000;
+            color: #fff;
+            border-radius: 3px 3px 3px 3px;
+            padding: 6px 6px 4px;
+            width: 400px;
+        }
+
+        form.signin input {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+
+        form.signin input {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+    </style>
+    
     <style>
         @media screen and (min-width:768px) and (max-width:959px) {
             /* 테블릿 */
@@ -484,29 +411,36 @@
     </style>
     
     <script>
-        $(document).ready(function(){
-            $(".mainMenu li").hover(function(){
-                $(this).find(".sub").slideToggle(500);
-            });
-        });
-    </script>
-    
-    <script>
-        $(document).ready(function(){
-            $(".btnBox button").click(function(){
-                $(this).addClass("on").siblings().removeClass("on");
-            });
-            $(".leftItemBox ul li").hover(function(){
-                $(this).css("background-color", "#333");
-            });
-            $(".leftItemBox ul li").mouseleave(function(){
-                $(this).css("background-color", "#fff");
-            });
-        });
-    </script>
-    
-    
+        $(document).ready(function() {
+            $('a.login-window').click(function() {
 
+                var loginBox = $(this).attr('href');
+
+                $(loginBox).fadeIn(300);
+                var popMargTop = ($(loginBox).height() + 24) / 2; 
+                var popMargLeft = ($(loginBox).width() + 24) / 2; 
+
+                $(loginBox).css({ 
+                    'margin-top' : -popMargTop,
+                    'margin-left' : -popMargLeft
+                });
+
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+
+            $('a.close, #mask').live('click', function() { 
+              $('#mask , .login-popup').fadeOut(300 , function() {
+                $('#mask').remove();  
+            }); 
+            return false;
+            });
+        });
+    </script>
+    
+ 
 </head>
 <body>
     <div class="main" id="desktop">
@@ -528,7 +462,7 @@
 
                 <div class="rightHd">
                         <ul class="rightMenu">
-                            <li><a href="">SIGN IN</a></li>
+                            <li><a href="#login-box" class="login-window">SIGN IN</a></li>
                             <li><a href="">KOR</a></li>
                             <li><a href="">SITE MAP</a></li>
                         </ul>
@@ -591,57 +525,24 @@
             </div>
         </header>
         
-        <div class="con" id="con1">
-            <div class="con1In">
-                <h2 class="con1Tit1">THE LIFE CARE COMPANY</h2>
-                <h2 class="con1Tit2">PURCHASE THIS THEME</h2>
-                <h2 class="con1Txt">코웨이 공기연구소에서 우리 집 공기를 진단하고 컨설팅 받는 서비스가 있으며, 결과에 대한 타당제품을 코웨이에서 직접 추천해 드리는 서비스를 제공해 드리고 있습니다.<br>제품에 대한 자세한 설명과 본 코웨이 제품을 구매시에는 먼저, 서비스 진단을 먼저 받아보시는 것을 추천 드리겠습니다.</h2>
+        <div id="login-box" class="login-popup">
+              <form method="post" class="signin" action="#">
+                    <fieldset class="textbox">
+                    <label class="username">
+                    <span>아이디</span>
+                    <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                    </label>
+                    <label class="password">
+                    <span>패스워드</span>
+                    <input id="password" name="password" value="" type="password" placeholder="Password">
+                    </label>
+                    <button class="submit button" type="button">로그인</button>
+                    <button class="submit button" type="button">회원가입</button>
+                    <p>
+                    </p>        
+                    </fieldset>
+              </form>
             </div>
-            
-            <div class="con1Con">
-                <div class="con1ConIn">
-                    <div class="conLeft">
-                       <div class="leftTitBox">
-                            <h2 class="con1LeftTit1">CHP-7300R</h2>
-                            <h2 class="con1LeftTit2">코웨이 시루직수 정수기</h2>
-                            <h2 class="con1LeftTit3">제대로 걸러 깨끗하고 맛있는 물을<br>직수로 풍부하게 즐기세요.</h2>
-                        </div>
-                        
-                        <div class="leftItemBox">
-                            <ul>
-                                <li><a href="">
-                                   <h2 class="itemTit">시루직수</h2>
-                                   <h2 class="itemTitEn">Shiru Direct</h2>
-                                    <img src="./images/desktop/list1_1.png" alt=""></a>
-                                    <p class="btnBox">
-                                        <button class="on"></button>
-                                        <button class="o"></button>
-                                        <button class="o"></button>
-                                    </p>
-                                </li>
-                                <li><a href="">
-                                    <h2 class="itemTit">얼음 정수기</h2>
-                                   <h2 class="itemTitEn">ICE Cool Shiru</h2>
-                                    <img src="./images/desktop/list1_2.png" alt=""></a>
-                                    <p class="btnBox">
-                                        <button class="on"></button>
-                                        <button class="o"></button>
-                                        <button class="o"></button>
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="conRight">
-                        <div class="rightImgBox">
-                            <img src="./images/desktop/notiBg.png" alt="" class="img1">
-                            <h2 class="rightTxt">SHIRU DIRECT</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <footer id="ft">
            <div class="ftIn">
