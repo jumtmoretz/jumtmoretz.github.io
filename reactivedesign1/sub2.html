@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="코웨이, 웅진, 정수기, 공기, 청정기">
+    <meta name="Description" content="웅진코웨이만의 시루직수정수기 내관의 시루직수를 자부합니다.">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>::웅진코웨이::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
+    
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width: 1920px;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+    
+    <style>
+        .main {
+            width: 100%;
+            height: auto;
+        }
+        .con {
+            width: 100%;
+            height: 100%;
+        }
+        #hd {
+            width: 90%;
+            height: auto;
+            position: relative;
+            margin: 0 auto;
+        }
+        .hdTop {
+            text-align: center;
+            background-color: #fff;
+        }
+        .hdIn {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .logo {
+            display: block;
+            width: 15%;
+            height: auto;
+            margin: 0 auto;
+            padding: 3%;
+        }
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+        .leftHd {
+            position: absolute;
+            left: 0px;
+            top: 30%;
+            width: 30%;
+            height: auto;
+        }
+        .leftSns li {
+            float: left;
+        }
+        .leftSns li a {
+            display: block;
+            width: 70%;
+            height: auto;
+        }
+        .leftSns li a img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .rightHd {
+            position: absolute;
+            right: 0;
+            top: 35%;
+            width: 30%;
+            height: auto;
+        }
+        .rightMenu {
+            width: 100%;
+            height: auto;
+        }
+        .rightMenu li {
+            float: left;
+            width: 33.33%;
+        }
+        .rightMenu li a {
+            display: block;
+            font-size: 2vmin;
+            color: #777;
+            text-align: center;
+        }
+        
+        .menu {
+            width: 100%;
+            height: auto;
+        }
+        .gnb {
+            width: 80%;
+            height: auto;
+            margin: 1% auto;
+        }
+        .mainMenu {
+            width: 100%;
+            text-align: center;
+        }
+        .mainMenu li {
+            float: left;
+            width: 16.66%;
+            height: auto;
+        }
+        .mainMenu li a {
+            display: block;
+            color: #323232;
+            transition: 0.9s;
+            font-size: 3vmin;
+            font-weight: bold;
+        }
+        .mainMenu li a:hover {
+            color: #2e3ff0;
+        }
+        .sub {
+            clear: both;
+            width: 100%;
+            height: auto;
+            background-color: #323232;
+            position: absolute;
+            left: 0;
+            display: none;
+            z-index: 9999;
+        }
+        .subMenu li {
+            float: inherit;
+        }
+        .subMenu li a {
+            color: #fff;
+            text-align: center;
+            font-size: 3vmin;
+        }
+    </style>
+    
+    <style>
+        #con1 {
+            width: 100%;
+            height: 100%;
+        }
+        .con1In1 {
+            width: 80%;
+            height: auto;
+            margin: 6% auto;
+        }
+        .con1TitIn {
+            width: 100%;
+            height: auto;
+        }
+        .con1Tit1 {
+            font-weight: bold;
+            font-size: 3vmax;
+            color: #534d4d;
+        }
+        .con1Tit2 {
+            font-weight: bold;
+            font-size: 1.5vh;
+            color: #534d4d;
+            line-height: 3vmax;
+        }
+        .con1Con1 {
+            width: 100%;
+            height: auto;
+            background-image: url(images/desktop/sub2Item1.png);
+            background-size: 100% 100%;
+        }
+        .con1Con1Tit {
+            margin: 2%;
+            font-weight: bold;
+            font-size: 2vmax;
+            line-height: 7vmax;
+        }
+        .con1Con1Txt {
+            margin: 2%;
+            font-weight: bold;
+            font-size: 2vh;
+            color: #534d4d;
+        }
+        .con1More1 {
+            display: block;
+            width: 10%;
+            height: auto;
+            background-color: #fff;
+            color: #323232;
+            text-align: center;
+            font-weight: bold;
+            padding: 2%;
+            margin-left: 40%;
+        }
+        
+        .con1In2 {
+            width: 80%;
+            height: auto;
+            margin: 6% auto;
+            background-image: url(images/desktop/sub2Item2.png);
+            background-size: 100% 100%;
+        }
+        .con1_2TitIn {
+            width: 100%;
+            height: auto;
+            margin: 3%;
+        }
+        .con1_2Tit {
+            font-weight: bold;
+            font-size: 3vmax;
+            color: #534d4d;
+            margin-bottom: 10%;
+            line-height: 120px;
+        }
+        .con1_2Txt {
+            display: block;
+            font-weight: bold;
+            font-size: 1.5vh;
+            padding-bottom: 5%;
+            padding-left: 47%;
+            color: #fff;
+        }
+        .con1More2 {
+            display: block;
+            display: block;
+            width: 10%;
+            height: auto;
+            background-color: #fff;
+            color: #323232;
+            text-align: center;
+            font-weight: bold;
+            padding: 2%;
+            margin-left: 40%;
+        }
+    </style>
+    
+    <style>
+        .eventIn {
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            background-color: #fafafa;
+            position: relative;
+        }
+        .eventTitIn {
+            width: 100%;
+            height: auto;
+        }
+        .eventTit {
+            width: 70%;
+            height: auto;
+            font-weight: bold;
+            font-size: 3vmax;
+            color: #534d4d;
+            margin: 3%;
+        }
+        
+        .eventLst {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .eventLst ul {
+            width: 200%;
+            height: auto;
+        }
+        .eventLst ul li {
+            float: left;
+            width: 11.66%;
+            margin: 2.5%;
+        }
+        .eventItemTit {
+            color: #323232;
+            font-weight: bold;
+            font-size: 1.6vh;
+            text-align: left;
+            margin: 4% 0%;
+        }
+        .eventItemTxt {
+            color: #323232;
+            font-weight: bold;
+            font-size: 1vmax;
+            text-align: left;
+            margin: 4% 0%;
+        }
+        .Btn {
+            display: block;
+            width: 20%;
+            height: auto;
+            border: 0;
+            background: none;
+            position: absolute;
+        }
+        .lBtn {
+            top: 45%;
+            left: -5%;
+        }
+        .rBtn {
+            top: 45%;
+            right: -5%;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            width: 100%;
+            height: auto;
+        }
+        .ftIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 5%;
+        }
+        .ftTop {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .ftTop ul {
+            width: 100%;
+            height: auto;
+        }
+        .ftTop ul li {
+            float: left;
+            width: 15%;
+            height: auto;
+            margin: 2.5%;
+        }
+        .ftTopList li a {
+            display: block;
+            height: 112px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .ftTopList li a.ftItem1 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst1_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem1:hover {
+            background-image: url("images/desktop/ftLst1.png");
+        }
+        .ftTopList li a.ftItem2 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst4_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem2:hover {
+            background-image: url("images/desktop/ftLst4.png");
+        }
+        .ftTopList li a.ftItem3 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst2_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem3:hover {
+            background-image: url("images/desktop/ftLst2.png");
+        }
+        .ftTopList li a.ftItem4 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst5_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem4:hover {
+            background-image: url("images/desktop/ftLst5.png");
+        }
+        .ftTopList li a.ftItem5 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst3_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem5:hover {
+            background-image: url("images/desktop/ftLst3.png");
+        }
+        
+        .ftMenu {
+            width: 100%;
+            height: auto;
+            border-top: 1px solid #777;
+            margin-top: 20%;
+        }
+        .ftNav {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftNav li {
+            width: 15%;
+            height: auto;
+            margin: 2.5%;
+            float: left;
+            position: relative;
+        }
+        .ftNav li a {
+            display: block;
+            color: #333;
+            transition: 0.5s;
+            font-weight: bold;
+            font-size: 2vmin;
+            text-align: center;
+        }
+        .ftNav li a:hover {
+            color: #504dff;
+        }
+        .copyright {
+            width: 100%;
+            height: auto;
+            margin-top: 15%;
+        }
+        .copyright span {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.7vmin;
+            color: #3c3f99;
+            line-height: 6vmin;
+        }
+        .copyLeft {
+            width: 65%;
+            height: auto;
+            float: left;
+        }
+        .call {
+            float: right;
+        }
+        .callTit {
+            display: block;
+            font-size: 5vmin;
+        }
+        .callLink {
+            display: block;
+            font-size: 3vmin;
+            cursor: pointer;
+        }
+        .call span {
+            clear: both;
+            display: block;
+            font-size: 13px;
+            line-height: 40px;
+            text-align: right;
+            padding: 0;
+        }
+    </style>
+    
+    <style>
+        #mask {
+            display: none;
+            background: #ccc;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 999;
+        }
+        .login-popup {
+            display: none;
+            background: #fff;
+            padding: 10px;
+            border: 2px solid #ddd;
+            float: left;
+            font-size: 1.2em;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 99999;
+            box-shadow: 0px 0px 20px #999;
+        }
+        fieldset {
+            border: none;
+        }
+
+        form.signin .textbox label {
+            display: block;
+            padding-bottom: 7px;
+        }
+
+        form.signin .textbox span {
+            display: block;
+        }
+
+        form.signin p, form.signin span {
+            color: #999;
+            font-size: 11px;
+            line-height: 18px;
+        }
+
+        form.signin .textbox input {
+            background: #fff;
+            border-bottom: 1px solid #333;
+            border-left: 1px solid #000;
+            border-right: 1px solid #333;
+            border-top: 1px solid #000;
+            color: #fff;
+            border-radius: 3px 3px 3px 3px;
+            padding: 6px 6px 4px;
+            width: 400px;
+        }
+
+        form.signin input {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+
+        form.signin input {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+        .submit {
+            border: 0;
+            background: #fff;    
+            text-align: center;
+            font-weight: bold;
+            width: 30%;
+        }
+    </style>
+    
+    <style>
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+            
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+        }
+        @media screen and (min-width:1200px) {
+            
+        }
+    </style>
+    
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".eventLst ul li").width());
+            var wd2 = 33;
+            $(".lBtn").click(function(){
+                $(".eventLst ul").not(":animated").animate({"margin-left": -wd2 + "%"}, 700, function(){
+                    $(".eventLst ul li").eq(0).appendTo(".eventLst ul");
+                    $(".eventLst ul").css("margin-left", "0%");
+                });
+                
+            });
+            $(".rBtn").click(function(){
+                $(".eventLst ul li").eq(5).prependTo(".eventLst ul");
+                $(".eventLst ul").css("margin-left", -wd2 + "%");
+                $(".eventLst ul").not(":animated").animate({"margin-left": "0%"}, 700);
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+            $('a.login-window').click(function() {
+
+                var loginBox = $(this).attr('href');
+
+                $(loginBox).fadeIn(300);
+                var popMargTop = ($(loginBox).height() + 24) / 2; 
+                var popMargLeft = ($(loginBox).width() + 24) / 2; 
+
+                $(loginBox).css({ 
+                    'margin-top' : -popMargTop,
+                    'margin-left' : -popMargLeft
+                });
+
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+
+            $('.close, #mask').live('click', function() { 
+              $('#mask , .login-popup').fadeOut(300 , function() {
+                $('#mask').remove();  
+            }); 
+            return false;
+            });
+            $(".close").click(function(){
+                $('#mask , .login-popup').fadeOut(300 , function() {
+                $('#mask').remove();  
+                });
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+    <div class="main" id="desktop">
+        <header id="hd">
+            <div class="hdTop">
+               <div class="hdIn">
+                <a href="index.html" class="logo">
+                    <img src="./images/desktop/logo.png" alt="로고">
+                </a>
+                
+                <div class="leftHd">
+                    <ul class="leftSns">
+                        <li><a href=""><img src="./images/desktop/facebook.png" alt="페이스북"></a></li>
+                        <li><a href=""><img src="./images/desktop/instagram.png" alt="인스타그램"></a></li>
+                        <li><a href=""><img src="./images/desktop/blog.png" alt="블로그"></a></li>
+                        <li><a href=""><img src="./images/desktop/kakao.png" alt="블로그"></a></li>
+                    </ul>
+                </div>
+
+                <div class="rightHd">
+                        <ul class="rightMenu">
+                            <li><a href="#login-box" class="login-window">SIGN IN</a></li>
+                            <li><a href="">KOR</a></li>
+                            <li><a href="">SITE MAP</a></li>
+                        </ul>
+                </div>
+            
+                </div>
+            </div>
+            
+            <div class="menu">
+                <nav class="gnb">
+                    <ul class="mainMenu">
+                        <li><a href="">제품</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">정수기</a></li>
+                                        <li><a href="">공기청정기</a></li>
+                                        <li><a href="">비데/클린워셔</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            
+                        <li><a href="">서비스</a></li>
+                        
+                        <li><a href="">혜택</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">코웨이멤버스</a></li>
+                                        <li><a href="">SU:CLUB</a></li>
+                                        <li><a href="">이벤트</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                        <li><a href="">고객지원</a></li>
+                        
+                        <li><a href="">기업</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">기업소개</a></li>
+                                        <li><a href="">브랜드</a></li>
+                                        <li><a href="">이노베이션</a></li>
+                                        <li><a href="">지속가능경영</a></li>
+                                        <li><a href="">투자정보</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            
+                        <li><a href="">마이코웨이</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">제품서비스</a></li>
+                                        <li><a href="">결제관리</a></li>
+                                        <li><a href="">코웨이멤버스</a></li>
+                                        <li><a href="">마이쇼핑</a></li>
+                                        <li><a href="">정보관리</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="con" id="con1">
+            <div class="con1In1">
+                <div class="con1TitIn">
+                    <h2 class="con1Tit1">혜택</h2>
+                    <h2 class="con1Tit2">코웨이 멤버가 되시면 다양한 혜택이 기다립니다.</h2>
+                </div>
+                
+                <div class="con1Con1">
+                    <h2 class="con1Con1Tit">코웨이 멤버스</h2>
+                    <h2 class="con1Con1Txt">코웨이 제품을 사용하시는 고객 누구나 가입하실 수 있습니다!<br>코웨이 멤버스에 가입하시면 다양한 제휴 상품 할인과<br>포인트 적립 혜택을 누리고 적립한 포인트로<br>렌탈/멤버십 요금도 납부할 수 있습니다.</h2>
+                    <a href="" class="con1More1">자세히 보기</a>
+                </div>
+            </div>
+            
+            <div class="con1In2">
+                <div class="con1_2TitIn">
+                    <h2 class="con1_2Tit">SU:CLUB</h2>
+                    <span class="con1_2Txt">
+                        SU:CLUB은 제품 사용 실적에 따라 등급별로<br>한층 더 높은 케어 서비스 혜택을 돌려 드립니다.<br>나, 우리, 세상을 위한 진정한 라이프 케어 서비스를 만나보세요.
+                    </span>
+                    <a href="" class="con1More2">자세히 보기</a>
+                </div>
+            </div>
+            
+            <div class="eventIn">
+                <div class="eventTitIn">
+                    <h2 class="eventTit">이벤트</h2>
+                </div>
+                
+                <div class="eventLst">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="./images/desktop/eventsl1.png" alt="">
+                                <h2 class="eventItemTit">코웨이-제휴카드 렌탈료 6개월 면제</h2>
+                                <h2 class="eventItemTxt">이벤트 기간 : 2018.10.01~2018.10.31</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/desktop/eventsl2.png" alt="">
+                                <h2 class="eventItemTit">코웨이 결합 요금제</h2>
+                                <h2 class="eventItemTxt">이벤트 기간 : 2018.10.01~2018.10.31</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/desktop/eventsl3.png" alt="">
+                                <h2 class="eventItemTit">코웨이가 제안하는 매트리스 특별할...</h2>
+                                <h2 class="eventItemTxt">이벤트 기간 : 2018.10.01~2018.10.31</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/desktop/eventsl1.png" alt="">
+                                <h2 class="eventItemTit">코웨이고객님! 입장하세요~~</h2>
+                                <h2 class="eventItemTxt">이벤트 기간 : 2018.03.01~2018.10.31</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/desktop/eventsl2.png" alt="">
+                                <h2 class="eventItemTit">코웨이의 정수기 구입 행사 이벤...</h2>
+                                <h2 class="eventItemTxt">이벤트 기간 : 2018.10.01~2018.10.31</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/desktop/eventsl3.png" alt="">
+                                <h2 class="eventItemTit">코웨이 배우 공유와 함께 합니다.</h2>
+                                <h2 class="eventItemTxt">이벤트 기간 : 2018.10.01~무제한</h2>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <button class="lBtn Btn"><img src="./images/desktop/lBtn.png" alt=""></button>
+                    <button class="rBtn Btn"><img src="./images/desktop/rBtn.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="login-box" class="login-popup">
+              <form method="post" class="signin" action="#">
+                    <fieldset class="textbox">
+                    <label class="username">
+                    <span>아이디</span>
+                    <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                    </label>
+                    <label class="password">
+                    <span>패스워드</span>
+                    <input id="password" name="password" value="" type="password" placeholder="Password">
+                    </label>
+                    <button class="submit button" type="button">로그인</button>
+                    <button class="submit button" type="button">회원가입</button>
+                    <button class="submit button close" type="button">취소</button>
+                    <p>
+                    </p>        
+                    </fieldset>
+              </form>
+            </div>
+               
+        <footer id="ft">
+           <div class="ftIn">
+            <div class="ftTop">
+                <ul class="ftTopList">
+                    <li><a href="" class="ftItem1"></a></li>
+                    <li><a href="" class="ftItem2"></a></li>
+                    <li><a href="" class="ftItem3"></a></li>
+                    <li><a href="" class="ftItem4"></a></li>
+                    <li><a href="" class="ftItem5"></a></li>
+                </ul>
+            </div>
+            
+            <div class="ftMenu">
+                <ul class="ftNav">
+                    <li><a href="">사이트맵</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="" style="color: #c92c64;">개인정보처리방침</a></li>
+                    <li><a href="">법적고지</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">임직원 확인 서비스</a></li>
+                    <li><a href="">판매인 검색</a></li>
+                    <li><a href="">바코드 번호 조회</a></li>
+                    <li><a href="">윤리제보센터</a></li>
+                    <li><a href="">인증번호발급</a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+               <div class="copyLeft">
+                <span class="address">본사 : 서울특별시 중구 서소문로 88 코웨이 중앙일보 빌딩 11층~17층 | 사업장 주소 : 충남 공주시 유구읍 유구마곡사로 136-23</span>
+                <span class="ceo">대표이사 : 이해선 | 사업자등록번호 : 307-81-06054 | 통신판매번호 : 제2005-21호 </span>
+                <span class="copy">COPYRIGHT COWAYCO.,LTD. ALL RIGHTS RESERVED.</span>
+                </div>
+                <div class="call">
+                    <h2 class="callTit">고객 콜 센터</h2>
+                    <a href="" class="callLink">1588-5200</a>
+                    <span class="callTime1">평일 AM 9:00 ~ PM 6:00</span>
+                    <span class="callTime1">토요일 AM 9:00 ~ PM 2:00</span>
+                    <span class="callTime1">공휴일/일요일 AM 9:00 ~ PM 4:00</span>
+                </div>
+            </div>
+        </div>  
+        </footer>
+        
+        
+    </div>
+</body>
+</html>
