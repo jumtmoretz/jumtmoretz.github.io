@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="욱이">
+    <meta name="Description" content="나를 펼친다.">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>:: 욱이 ::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트링크 -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+   
+   <!-- 데스크탑 CSS -->
+   <style>
+       * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width:1920px;
+            overflow: hidden;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+       .main {
+           width: 100%;
+           height: 100%;
+           position: relative;
+       }
+       .con {
+           width: 100%;
+           height: 100%;
+       }
+    </style>
+    
+    <style>
+        .home {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #hd {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+        }
+        .hdIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .hdIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .hdIn ul li {
+            width: 20%;
+            height: auto;
+            margin: 2.5%;
+            float: left;
+            
+        }
+        
+        .hdIn ul li a {
+            color: #53545b;
+            position: relative;
+            display: block;
+            white-space: nowrap;
+            font-weight: bold;
+            font-size: 1.4vmax;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.5s;
+            
+        }
+        /*
+        .hdIn ul li a.intro:after {
+            content: 'INTRO';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            color: #2a4257;
+            width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: 0.41s ease-out width;
+            text-align: center;
+        }
+        .hdIn ul li a.wark:after {
+            content: 'WARK';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            color: #2a4257;
+            width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: 0.41s ease-out width;
+            text-align: center;
+        }
+        .hdIn ul li a.portfolio:after {
+            content: 'PORTFOLIO';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            color: #2a4257;
+            width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: 0.41s ease-out width;
+            text-align: center;
+        }
+        .hdIn ul li a.about:after {
+            content: 'ABOUT';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            color: #2a4257;
+            width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: 0.41s ease-out width;
+            text-align: center;
+        }
+        .hdIn ul li a:hover:after {
+            width: 100%;
+        }
+        */
+
+        .hdIn ul li a:hover {
+            animation: me 1s ease-in-out infinite alternate;
+            
+        }
+        @keyframes me {
+            from {
+              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2a4257, 0 0 70px #2a4257, 0 0 80px #2a4257, 0 0 100px #2a4257, 0 0 150px #2a4257;
+            }
+            to {
+              text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #2a4257, 0 0 35px #2a4257, 0 0 40px #2a4257, 0 0 50px #2a4257, 0 0 75px #2a4257;
+            }
+        }
+        .hdIn ul li a.on {
+            animation: me 1s ease-in-out infinite alternate;
+        }
+        @keyframes me {
+            from {
+              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2a4257, 0 0 70px #2a4257, 0 0 80px #2a4257, 0 0 100px #2a4257, 0 0 150px #2a4257;
+            }
+            to {
+              text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #2a4257, 0 0 35px #2a4257, 0 0 40px #2a4257, 0 0 50px #2a4257, 0 0 75px #2a4257;
+            }
+        }
+    </style>
+    
+    <style>
+        #con1 {
+            width: 100%;
+            height: 100%;
+            background-color: #fafafa;
+        }
+        .con1In {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 10%;
+
+        }
+        .con1Tit1 {
+            font-size: 4vmax;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            color: #53545b;
+        }
+        .con1Tit1 p {
+            display: inline-block;
+            color: #d5d5d7;
+        }
+        .con1Tit2 {
+            color: #c2c2c4;
+            font-size: 2vmax;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+        }
+        .uk {
+            display: block;
+            float: right;
+            width: 15%;
+            height: auto;
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            animation:uk ease-in-out 12s infinite;
+            transform-origin:150px 150px 0;
+            transform-style:preserve-3d;
+            display: none;
+        }
+        @keyframes uk {
+            16% {
+                transform: rotateY(-90deg);
+            }
+            33% {
+                transform: rotateY(-180deg);
+            }
+            50% {
+                transform: rotateY(-270deg);
+            }
+            66% {
+                 transform: rotateX(90deg);
+            }
+            83% {
+                transform:  rotateZ(-45deg) rotateX(270deg) rotateY(45deg);
+            }
+      }
+    </style>
+    
+    <style>
+        #con2 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url("./images/con2Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: none;
+        }
+        .con2In {
+            width: 80%;
+            height: 80%;
+            margin: 6% auto;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 1px 1px 13px #3f3f3f;
+            position: relative;
+        }
+        .con2Img {
+            width: 30%;
+            height: 100%;
+            box-sizing: border-box;
+            box-shadow: 12px 1px 13px #333;
+        }
+        .con2Img img {
+            width: 100%;
+            height: auto;
+        }
+        .conTxt {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .conTxt ul li {
+            text-align: left;
+            width: 23.33%;
+            height: auto;
+            color: #a4a1cd;
+            float: left;
+            margin: 5%;
+            font-weight: 100;
+            font-size: 1vmax;
+            font-weight: bold;
+        }
+        .conTxt ul li span {
+            display: block;
+            font-size: 2.5vmax;
+            text-align: left;
+            color: #53545b;
+            font-weight: 100;
+            font-family: 'EB Garamond', serif;
+            padding: 1.5% 0%;
+        }
+    </style>
+    
+    <style>
+        #con3 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url("./images/con3Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: none;
+        }
+    </style>
+    
+    <style>
+        #con4 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url("./images/con4Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: none;
+        }
+        .con4In {
+            width: 80%;
+            height: auto;
+            margin: 10% auto;
+        }
+        .listBox {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .listBox ul {
+            width: 100%;
+            height: auto;
+        }
+        .listBox ul li {
+            float: left;
+            width: 28.33%;
+            height: auto;
+            margin: 2.5%;
+            padding: 2.5%;
+            cursor: pointer;
+            position: relative;
+            box-sizing: border-box;
+            background: #fff;
+        }
+        .listBox ul li a {
+            display: block;
+            text-align: center;
+            cursor: pointer;
+        }
+        .reactive {
+            width: 100%;
+            height: auto;
+        }
+        .reactive ul {
+            width: 100%;
+            height: 50%;
+        }
+        .reactive ul li {
+            float: left;
+            width: 14.166%;
+            margin: 1.25%;
+        }
+        .reactive ul li a img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    
+    
+    <!--<style>
+        .wrapper1 {
+            width: 300px;
+            height: 20px;
+            border-radius: 20px;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .loader {
+          width: 95%;
+          height: 50%;
+          margin-top: -8px;
+          border-radius: inherit;
+          z-index: 100;
+        }
+        .inner {
+            width: 0%;
+          height: 100%;
+          background: #2b8095;
+          background: linear-gradient(to right, #237686, #34476f, #5b426c, #965666, #ba835c, #d0c746);
+          animation: gauge 5s ease-out;
+          animation-fill-mode:both;
+        }
+
+
+        @keyframes gauge {
+          100% {
+              width: 100%;
+            } 
+        }
+    </style>-->
+
+    <!-- MEDIA 속성 -->
+     <style>
+        @media screen and (max-width:767px) {
+            /* 모바일 */
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+        }
+        @media screen and (min-width:1200px) {
+        }
+    </style>
+    
+    <!-- 스크립트 -->
+    <script>
+        $(document).ready(function(){
+            $(".uk").fadeIn(4000);
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".hdIn ul li a").removeAttr("href");
+            $(".hdIn ul li a.intro").click(function(){
+                $("#con2").fadeIn(1500);
+                $("#con2").siblings(".con").css("display", "none");
+
+                $(this).addClass("on");
+                $(".hdIn ul li a.wark").removeClass("on");
+                $(".hdIn ul li a.portfolio").removeClass("on");
+                $(".hdIn ul li a.about").removeClass("on");
+                
+            });
+            $(".hdIn ul li a.wark").click(function(){
+                $("#con3").fadeIn(1500);
+                $("#con3").siblings(".con").css("display", "none");
+                $(this).addClass("on");
+                $(".hdIn ul li a.intro").removeClass("on");
+                $(".hdIn ul li a.portfolio").removeClass("on");
+                $(".hdIn ul li a.about").removeClass("on");
+                
+            });
+            $(".hdIn ul li a.portfolio").click(function(){
+                $("#con4").fadeIn(1500);
+                $("#con4").siblings(".con").css("display", "none");
+                $(this).addClass("on");
+                $(".hdIn ul li a.wark").removeClass("on");
+                $(".hdIn ul li a.intro").removeClass("on");
+                $(".hdIn ul li a.about").removeClass("on");
+                
+            });
+            $(".hdIn ul li a.about").click(function(){
+                $(this).addClass("on");
+                $(".hdIn ul li a.wark").removeClass("on");
+                $(".hdIn ul li a.portfolio").removeClass("on");
+                $(".hdIn ul li a.intro").removeClass("on");
+                
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".listBox ul li.desk").hover(function(){
+                $(".listBox ul li span").toggleClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main" id="desktop">
+       <header id="hd">
+          <a href="" class="home">HOME</a>
+           <div class="hdIn">
+               <ul>
+                   <li><a href="" class="intro">INTRO</a></li>
+                   <li><a href="" class="wark">WARK</a></li>
+                   <li><a href="" class="portfolio">PORTFOLIO</a></li>
+                   <li><a href="" class="about">ABOUT</a></li>
+               </ul>
+           </div>
+       </header>
+       
+        <div class="con" id="con1">
+                <div class="con1In">
+                    <h2 class="con1Tit1">I found a <p>DESIGN</p> from me.</h2>
+                    <h2 class="con1Tit2">Show me <strong>Lee Jung Uk</strong></h2>
+                    <img src="./images/uk.png" alt="" class="uk">
+                </div>
+        </div>
+        
+        <div class="con" id="con2">
+           <div class="con2In">
+               <div class="con2Img">
+                   <img src="./images/cha.png" alt="">
+                   </div>
+                   <div class="conTxt">
+                       <ul>
+                           <li><span class="name">NAME</span>이 정 욱 (LEE JAUNG UK)</li>
+                           <li><span class="day">BIRTH</span>93. 12. 16</li>
+                           <li><span class="lang">LANGUAGES</span>KOREA</li>
+                           <li><span class="">E-MAIL</span>justmoretz@naver.com</li>
+                           <li><span class="sns">SNS</span>
+                               <img src="" alt="">
+                           </li>
+                       </ul>
+                      <!-- <div class="wrapper1">
+                              <div class="loader">
+                              <div class="inner"></div>
+                          </div>
+                        </div> -->
+                    </div>
+                   </div>
+                
+           </div>
+                        
+        <div class="con" id="con3">
+            <div class="con3In">
+                
+            </div>
+        </div>
+        
+        <div class="con" id="con4">
+            <div class="con4In">
+               <div class="listBox">
+                   <ul>
+                       <li class="desk"><a>DESKTOP</a>
+                       </li>
+                       <li><a>MOBILE</a></li>
+                       <li><a>RESPONSIVE</a></li>
+                   </ul>
+               </div>
+                <div class="reactive">
+                    <ul>
+                        <li><a href=""><img src="" alt=""></a></li>
+                        <li><a href=""><img src="" alt=""></a></li>
+                        <li><a href="https://jumtmoretz.github.io/reactivedesign4" target="_blank"><img src="./images/paris.png" alt=""></a></li>
+                        <li><a href="https://jumtmoretz.github.io/reactivedesign5" target="_blank"><img src="./images/kukdong.png" alt=""></a></li>
+                        <li><a href="https://jumtmoretz.github.io/reactivedesign7" target="_blank"><img src="./images/sony.png" alt=""></a></li>
+                        <li><a href="https://jumtmoretz.github.io/reactivedesign8" target="_blank"><img src="./images/movie.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+   
+   
+    </div>
+</body>
+</html>
