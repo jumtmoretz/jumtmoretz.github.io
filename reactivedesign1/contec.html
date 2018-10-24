@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="코웨이, 웅진, 정수기, 공기, 청정기">
+    <meta name="Description" content="웅진코웨이만의 시루직수정수기 내관의 시루직수를 자부합니다.">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>::웅진코웨이::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+ 
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
+    
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width: 1920px;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+    
+    <style>
+        .main {
+            width: 100%;
+            height: auto;
+        }
+        .con {
+            width: 100%;
+            height: 100%;
+        }
+        #hd {
+            width: 90%;
+            height: auto;
+            position: relative;
+            margin: 0 auto;
+        }
+        .hdTop {
+            text-align: center;
+            background-color: #fff;
+        }
+        .hdIn {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .logo {
+            display: block;
+            width: 15%;
+            height: auto;
+            margin: 0 auto;
+            padding: 3%;
+        }
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+        .leftHd {
+            position: absolute;
+            left: 0px;
+            top: 30%;
+            width: 30%;
+            height: auto;
+        }
+        .leftSns li {
+            float: left;
+        }
+        .leftSns li a {
+            display: block;
+            width: 70%;
+            height: auto;
+        }
+        .leftSns li a img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .rightHd {
+            position: absolute;
+            right: 0;
+            top: 35%;
+            width: 30%;
+            height: auto;
+        }
+        .rightMenu {
+            width: 100%;
+            height: auto;
+        }
+        .rightMenu li {
+            float: left;
+            width: 33.33%;
+        }
+        .rightMenu li a {
+            display: block;
+            font-size: 2vmin;
+            color: #777;
+            text-align: center;
+        }
+        
+        .menu {
+            width: 100%;
+            height: auto;
+        }
+        .gnb {
+            width: 80%;
+            height: auto;
+            margin: 1% auto;
+        }
+        .mainMenu {
+            width: 100%;
+            text-align: center;
+        }
+        .mainMenu li {
+            float: left;
+            width: 16.66%;
+            height: auto;
+        }
+        .mainMenu li a {
+            display: block;
+            color: #323232;
+            transition: 0.9s;
+            font-size: 3vmin;
+            font-weight: bold;
+        }
+        .mainMenu li a:hover {
+            color: #2e3ff0;
+        }
+        .sub {
+            clear: both;
+            width: 100%;
+            height: auto;
+            background-color: #323232;
+            position: absolute;
+            left: 0;
+            display: none;
+            z-index: 9999;
+        }
+        .subMenu li {
+            float: inherit;
+        }
+        .subMenu li a {
+            color: #fff;
+            text-align: center;
+            font-size: 3vmin;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            width: 100%;
+            height: auto;
+        }
+        .ftIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 5%;
+        }
+        .ftTop {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .ftTop ul {
+            width: 100%;
+            height: auto;
+        }
+        .ftTop ul li {
+            float: left;
+            width: 15%;
+            height: auto;
+            margin: 2.5%;
+        }
+        .ftTopList li a {
+            display: block;
+            height: 112px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .ftTopList li a.ftItem1 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst1_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem1:hover {
+            background-image: url("images/desktop/ftLst1.png");
+        }
+        .ftTopList li a.ftItem2 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst4_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem2:hover {
+            background-image: url("images/desktop/ftLst4.png");
+        }
+        .ftTopList li a.ftItem3 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst2_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem3:hover {
+            background-image: url("images/desktop/ftLst2.png");
+        }
+        .ftTopList li a.ftItem4 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst5_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem4:hover {
+            background-image: url("images/desktop/ftLst5.png");
+        }
+        .ftTopList li a.ftItem5 {
+            display: block;
+            width: 120px;
+            background-image: url("images/desktop/ftLst3_off.png");
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            background-position: center center;
+            transition: 0.7s;
+        }
+        .ftTopList li a.ftItem5:hover {
+            background-image: url("images/desktop/ftLst3.png");
+        }
+        
+        .ftMenu {
+            width: 100%;
+            height: auto;
+            border-top: 1px solid #777;
+            margin-top: 20%;
+        }
+        .ftNav {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftNav li {
+            width: 15%;
+            height: auto;
+            margin: 2.5%;
+            float: left;
+            position: relative;
+        }
+        .ftNav li a {
+            display: block;
+            color: #333;
+            transition: 0.5s;
+            font-weight: bold;
+            font-size: 2vmin;
+            text-align: center;
+        }
+        .ftNav li a:hover {
+            color: #504dff;
+        }
+        .copyright {
+            width: 100%;
+            height: auto;
+            margin-top: 15%;
+        }
+        .copyright span {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.7vmin;
+            color: #3c3f99;
+            line-height: 6vmin;
+        }
+        .copyLeft {
+            width: 65%;
+            height: auto;
+            float: left;
+        }
+        .call {
+            float: right;
+        }
+        .callTit {
+            display: block;
+            font-size: 5vmin;
+        }
+        .callLink {
+            display: block;
+            font-size: 3vmin;
+            cursor: pointer;
+        }
+        .call span {
+            clear: both;
+            display: block;
+            font-size: 13px;
+            line-height: 40px;
+            text-align: right;
+            padding: 0;
+        }
+    </style>
+    
+    <style>
+        #mask {
+            display: none;
+            background: #ccc;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 999;
+        }
+        .login-popup {
+            display: none;
+            background: #fff;
+            padding: 10px;
+            border: 2px solid #ddd;
+            float: left;
+            font-size: 1.2em;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 99999;
+            box-shadow: 0px 0px 20px #999;
+        }
+        fieldset {
+            border: none;
+        }
+
+        form.signin .textbox label {
+            display: block;
+            padding-bottom: 7px;
+        }
+
+        form.signin .textbox span {
+            display: block;
+        }
+
+        form.signin p, form.signin span {
+            color: #999;
+            font-size: 11px;
+            line-height: 18px;
+        }
+
+        form.signin .textbox input {
+            background: #fff;
+            border-bottom: 1px solid #333;
+            border-left: 1px solid #000;
+            border-right: 1px solid #333;
+            border-top: 1px solid #000;
+            color: #fff;
+            border-radius: 3px 3px 3px 3px;
+            padding: 6px 6px 4px;
+            width: 400px;
+        }
+
+        form.signin input {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+
+        form.signin input {
+            color: #bbb;
+            text-shadow: 0 0 2px #000;
+        }
+        .submit {
+            border: 0;
+            background: #fff;    
+            text-align: center;
+            font-weight: bold;
+            width: 30%;
+        }
+    </style>
+    
+    <style>
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+            
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+        }
+        @media screen and (min-width:1200px) {
+            
+        }
+    </style>
+    
+    <style>
+        .pg {
+            
+            position: relative;
+            clear: both;
+            width: 100%;
+            height: auto;
+            padding: 20% 0%;
+            margin-bottom: 75%;
+        }
+        .pgWrap {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .pageTitle {
+            text-align: center;
+            color: #fff;
+            padding-top: 300px;
+            font-size: 100px;
+            text-shadow: 3px 3px 3px #000, 1px 1px 1px #333;
+            width: 100%;
+            clear: both;
+        }
+        .sub_wrap {
+            position: relative;
+            line-height: 74px;
+            text-align: center;
+        }
+        #side {
+            width: 240px;
+            margin-left: 300px;
+            position: relative;
+        }
+        .cTitle {
+            line-height: 130px;
+            background: #5875b5;
+            color: #fff;
+            text-align: center;
+        }
+        .lnb li {
+            height: 52px;
+            border: 1px solid #ddd;
+            margin: 2px 0px;
+        }
+        .lnb a {
+            padding-left: 15px;
+            color: #666;
+            display: block;
+            line-height: 52px;
+        }
+        .lnb li.active {
+            background: #16435e;
+        }
+        .lnb li.active a {
+            color: #fff;
+        }
+        .lnb a:after {
+            content: "+";
+            float: right;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        .lnb li.active a:after {
+            content: "-";
+        }
+        #con {
+            width: 1000px;
+            margin-right: 300px;
+            background-color: #fff;
+            position: absolute;
+            left: 25%;
+            margin-top: -356px;
+
+        }
+        .pgTitle {
+            padding-top: 35px;
+            text-align: left;
+            margin-left: 20px;
+            color: darkblue;
+            font-weight: bold;
+            font-size: 4vmax;
+        }
+        .brd {
+            clear: both;
+            height: 60px;
+            border-bottom: 1px solid #999;
+        }
+        .brd li {
+            float: left;
+            padding: 10px;
+            padding-left: 0;
+        }
+        .brd a, .brd span {
+            display: block;
+            line-height: 60px;
+            color: #999;
+            font-size: 14px;
+        }
+        .brd a.home {
+            padding-left: 20px;
+            background-image: url("./images/home.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+        }
+        .brd .left a:after {
+            content: ">";
+            padding-left: 15px;
+        }
+        .brd .left span {
+            color: #333;
+        }
+        .brd .right li {
+            width: 32px;
+            height: 32px;
+        }
+        .brd .right .bIco1, .brd .right .bIco2 {
+            display: block;
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            background-position: center center;
+            border: 1px solid #999;
+            border-radius: 18px;
+        }
+        .brd .right .bIco1 {
+            background-image: url("./images/sns1.png");
+            cursor: pointer;
+        }
+        .brd .right .bIco2 {
+            background-image: url("./images/print.png");
+        }
+        .brd .right li:last-child {
+            width: 100px;
+            height: 30px;
+        }
+        .brd .right .bBtn {
+            background: #666;
+            line-height: 30px;
+            border-radius: 16px;
+            text-align: center;
+            color: #fff;
+        }
+        .brd .snsBox {
+            position: absolute;
+            right: 151px;
+            top: 10ex;
+            z-index: 30;
+            display: none;
+        }
+        #sck:checked ~ .snsBox {
+            display: block;
+        }
+        #sck {
+            display: none;
+        }
+        .brd .snsBox li {
+            width: 32px;
+            height: 32px;
+        }
+        .brd .snsBox a {
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 32px;
+        }
+        .brd .snsBox .snsIco1 {
+            background-image: url("/images/facebook.png");
+        }
+        .brd .snsBox .snsIco2 {
+            background-image: url("/images/twitter.png");
+        }
+        .brd .snsBox .snsIco3 {
+            background-image: url("/images/instagram.png");
+        }
+        .brd #sClose {
+            display: block;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            background-color: #666;
+            color: #fff;
+            border-radius: 17px;
+            cursor: pointer;
+        }
+        .sch {
+            padding: 15px;
+            background-color: #eee;
+            margin: 10px 0px;
+            height: auto;
+            width: 90%;
+            margin-left: 35px;
+        }
+        #schFrm {
+            clear: both;
+            width: 410px;
+            margin: 0 auto;
+            height: 42px;
+        }
+        #sel, #schTxt, #schBtn {
+            display: block;
+            width: 103px;
+            margin-right: 4px;
+            line-height: 42px;
+            border: 1px solid #ccc;
+            height: 42px;
+            float: left;
+            line-height: 42px;
+            color: #666;
+            text-indent: 10px;
+            outline: 0;
+        }
+        #schTxt {
+            margin-right: 0;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+        }
+        #schBtn {
+            margin-right: 0;
+            width: 80px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+        }
+        .rNoti {
+            line-height: 32px;
+            padding-top: 25px;
+        }
+        .cap {
+            display: none;
+        }
+        #news {
+            font-size: 14px;
+            border-bottom: 2px solid #333;
+        }
+        #news th, #news td {
+            height: 40px;
+            line-height: 40px;
+            width: 200px;
+        }
+        #news th {
+            border-top: 2px solid #333;
+            background-color: #16435e;
+            color: #fff;
+        }
+        #news td {
+            border-top: 1px solid #999;
+            text-align: center;
+        }
+        #news td.nTitle {
+            text-align: left;
+        }
+        #news td.nTitle a {
+            color: #000;
+        }
+        #news .nDown a {
+            display: block;
+            width: 27px;
+            height: 27px;
+            background-image: url("./images/nDown.png");
+            margin: 0 auto;
+        }
+        .paging {
+            width: 480px;
+            margin: 15px auto;
+        }
+        .paging li {
+            float: left; 
+            padding: 2px;
+        }
+        .paging li a {
+            display: block;
+            width: 28px;
+            height: 28px;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 28px;
+            color: #555;
+        }
+        .paging .back a {
+            background-image: url("images/lb.png");
+        }
+        .paging .next a {
+            background-image: url("images/rb.png");
+        }
+        .paging .first a {
+            background-image: url("images/lb2.png");
+        }
+        .paging .last a {
+            background-image: url("images/rb2.png");
+        }
+        .recBox {
+            clear: both;
+        }
+        .rBox {
+            height: 40px;
+            margin-top: 15px;
+            margin-left: 130px;
+        }
+        .rBox li {
+            float: left;
+            margin-right: 15px;
+            margin-top: 1px;
+        }
+        .rBox li.right {
+            float: right;
+        }
+        .rBox li span {
+            display: block;
+            padding: 6px;
+            float: left;
+        }
+        .rBox .btxt {
+            font-weight: 900;
+            color: #333;
+            padding-left: 35px;
+            background-position: 4px center;
+            background-repeat: no-repeat;
+        }
+        .rBox .it1 {
+            background-image: url("./images/it1.png");
+        }
+        .rBox .it2 {
+            background-image: url("./images/it2.png");
+        }
+        .rBox .it3 {
+            background-image: url("./images/it3.png");
+        }
+        
+        #frm1 {
+            width: 120px;
+            border-top: 0;
+            padding: 15px;
+            box-sizing: border-box;
+            height: 10px;
+        }
+        .ftitle {
+            font-family: fantasy;
+            font-size: 14px;
+            font-weight: 900;
+        }
+        .rdoItem {
+            margin-left: 295px; 
+            height: 24px;
+        }
+        .raIt {
+            /* display: none; */
+        }
+        .rdoItem li {
+            padding: 10px;
+            float: left;
+            margin-top: -60px;
+        }
+        .rdoItem .raIt + label {
+            display: block;
+            background-position: 2px center;
+            background-repeat: no-repeat;
+            background-image: url("./images/off.png");
+            height: 32px;
+            padding-left: 32px;
+            line-height: 32px;
+            cursor: pointer;
+        }
+        .rdoItem .raIt:checked + label {
+            background-image: url("./images/on.png");
+        }
+        label:checked + .rdoItem .raIt {
+            background-image: url("./images/on.png");
+        }
+        .rFrm, .rBtn {
+            display: block;
+            height: 42px;
+            line-height: 42px;
+            float: left;
+            border: 0;
+        }
+        .rFrm {
+            width: 300px;
+            color: #666;
+            border: 1px solid #ccc;
+        }
+        .in {
+            background-image: url("./images/subtitbg.png");
+            background-repeat: no-repeat;
+            background-position: 15px center;
+        }
+        .pTit {
+            padding-left: 125px;
+            padding-top: 15;
+            font-size: 18px;
+            color: #666;
+            text-align: left;
+        }
+        .pCom {
+            line-height: 20px;
+            text-align: left;
+            margin-left: 165px;
+        }
+        .photoList {
+            clear: both;
+            width: 920px;
+            margin: 20px auto;
+            border-top: 1px solid #333;
+        }
+        .photoList li {
+            float: left;
+        }
+        .col3 {
+            width: 280px;
+            margin-right: 20px;
+            margin-top: 25px;
+        }
+        .hvBox {
+            border: 1px solid #999;
+            width: 278px;
+            cursor: pointer;
+        }
+        .hvBox:hover {
+            border: 1px solid #ff2448;
+        }
+        .phoTit {
+            font-family: fantasy;
+            font-size: 16px;
+            line-height: 40px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            border-bottom: 1px solid #494949;
+            width: 240px;
+            margin: 5px auto;
+        }
+        .hvBox img {
+            display: block;
+            width: 90%;
+            margin: 15px;
+        }
+        .phoDate {
+            padding-left: 10px;
+            background-image: url("./images/time.png");
+            background-repeat: no-repeat;
+            background-position: 20px center;
+            font-size: 14px;
+            line-height: 30px;
+            color: #666;
+        }
+        .hvBox p {
+            line-height: 32px;
+        }
+        .phoAut {
+            padding-left: 45px;
+            background-image: url("./images/hue.png");
+            background-repeat: no-repeat;
+            background-position: 25px center;
+            font-size: 14px;
+            line-height: 30px;
+            color: #666;
+        }
+        .phoBtn a {
+            display: block;
+            margin: 5px;
+            width: 28px;
+            height: 28px;
+            float: right;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+            margin-top: 0;
+            margin-right: 10px;
+        }
+        .phoBtn .sns2 {
+            background-image: url("./images/phosns1.png");
+        }
+        .phoBtn .sns1 {
+            background-image: url("./images/phosns2.png");
+        }
+        .btnFrame {
+            width: 100%;
+            clear: both;
+            height: 100px;
+            padding-top: 25px;
+        }
+        .write {
+            display: block;
+            height: 40px;
+            width: 130px;
+            line-height: 40px;
+            background: #323232;
+            margin-left: 410px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+
+    
+    <script>
+        $(document).ready(function() {
+            $('a.login-window').click(function() {
+
+                var loginBox = $(this).attr('href');
+
+                $(loginBox).fadeIn(300);
+                var popMargTop = ($(loginBox).height() + 24) / 2; 
+                var popMargLeft = ($(loginBox).width() + 24) / 2; 
+
+                $(loginBox).css({ 
+                    'margin-top' : -popMargTop,
+                    'margin-left' : -popMargLeft
+                });
+
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+            $(".close").click(function(){
+                $('#mask , .login-popup').fadeOut(300);
+            });
+            
+            $('.close, #mask').live('click', function() { 
+              $('#mask , .login-popup').fadeOut(300 , function() {
+                $('#mask').remove();  
+            }); 
+            return false;
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+    <div class="main" id="desktop">
+        <header id="hd">
+            <div class="hdTop">
+               <div class="hdIn">
+                <a href="index.html" class="logo">
+                    <img src="./images/desktop/logo.png" alt="로고">
+                </a>
+                
+                <div class="leftHd">
+                    <ul class="leftSns">
+                        <li><a href=""><img src="./images/desktop/facebook.png" alt="페이스북"></a></li>
+                        <li><a href=""><img src="./images/desktop/instagram.png" alt="인스타그램"></a></li>
+                        <li><a href=""><img src="./images/desktop/blog.png" alt="블로그"></a></li>
+                        <li><a href=""><img src="./images/desktop/kakao.png" alt="블로그"></a></li>
+                    </ul>
+                </div>
+
+                <div class="rightHd">
+                        <ul class="rightMenu">
+                            <li><a href="#login-box" class="login-window">SIGN IN</a></li>
+                            <li><a href="">KOR</a></li>
+                            <li><a href="">SITE MAP</a></li>
+                        </ul>
+                </div>
+            
+                </div>
+            </div>
+            
+            <div class="menu">
+                <nav class="gnb">
+                    <ul class="mainMenu">
+                        <li><a href="">제품</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">정수기</a></li>
+                                        <li><a href="">공기청정기</a></li>
+                                        <li><a href="">비데/클린워셔</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            
+                        <li><a href="">서비스</a></li>
+                        
+                        <li><a href="">혜택</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">코웨이멤버스</a></li>
+                                        <li><a href="">SU:CLUB</a></li>
+                                        <li><a href="">이벤트</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                        <li><a href="">고객지원</a></li>
+                        
+                        <li><a href="">기업</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">기업소개</a></li>
+                                        <li><a href="">브랜드</a></li>
+                                        <li><a href="">이노베이션</a></li>
+                                        <li><a href="">지속가능경영</a></li>
+                                        <li><a href="">투자정보</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            
+                        <li><a href="">마이코웨이</a>
+                                <nav class="sub">
+                                    <ul class="subMenu">
+                                        <li><a href="">제품서비스</a></li>
+                                        <li><a href="">결제관리</a></li>
+                                        <li><a href="">코웨이멤버스</a></li>
+                                        <li><a href="">마이쇼핑</a></li>
+                                        <li><a href="">정보관리</a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <section class="pg" id="cintent">
+            <div class="pgWrap">
+               
+                <div class="right" id="con">
+                    <h1 class="pgTitle">코웨이 갤러리</h1>
+                    <div class="brd">
+                            <ul class="snsBox">
+                                <li><a href="" class="snsIco1"></a></li>
+                                <li><a href="" class="snsIco2"></a></li>
+                                <li><a href="" class="snsIco3"></a></li>
+                                <li><label for="sck" id="sClose"></label></li>
+                            </ul>
+                    </div>
+                    <div class="in">
+                    <h1 class="pTit">웅진코웨이 이미지</h1>
+                    <p class="pCom">개인정보 노출이나 정치적 목적, 비방글, 광고, 장난성, 명예훼손의 우려가 있는 글 등과 게시판 성격에<br>부합되지 않는 게시물은 예고없이 삭제처리 될 수 있음을 알려드립니다.</p>
+                    </div>
+                    <div class="sch">
+                        <form action="" id="schFrm">
+                            <select name="" id="sel">
+                                <option value="title">제목</option>
+                                <option value="content">내용</option>
+                                <option value="anthor">작성자</option>
+                            </select>
+                            <input type="text" id="schTxt">
+                            <input type="submit" value="검색" id="schBtn">
+                        </form>
+                    </div>
+                    <div class="notiBox">
+                        <ul class="photoList">
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">첫번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자2</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">두번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자2</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">세번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자3</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">네번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자4</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">다섯번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자5</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">여섯번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자6</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">일곱번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자7</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">여덟번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자8</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="col3">
+                                <div class="hvBox">
+                                    <img src="./images/desktop/list1_1.png" alt="">
+                                    <h2 class="phoTit">아홉번째 이미지 입니다.</h2>
+                                    <p class="phoDate">2018 - 01 - 01</p>
+                                    <p class="phoBtn">
+                                        <span class="phoAut">사용자9</span>
+                                        <a href="" class="sns2"></a>
+                                        <a href="" class="sns1"></a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <!-- div.btnFrame>a.write -->
+                        <div class="btnFrame"><a href="" class="write">글쓰기</a></div>
+                        
+                        
+                        <ul class="paging">
+                            <li class="first"><a href=""></a></li>
+                            <li class="back"><a href=""></a></li>
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">9</a></li>
+                            <li><a href="">10</a></li>
+                            <li class="next"><a href=""></a></li>
+                            <li class="last"><a href=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="recBox">
+                        <ul class="rBox">
+                            <li>
+                            <span class="btxt it1">담당부서 : </span>
+                            <span>코웨이 착한마음</span>
+                            </li>
+                            <li>
+                               <span class="btxt it2">담당자 : </span>
+                               <span>코웨이 대표이사</span>
+                            </li>
+                            <li>
+                               <span class="btxt it3">연락처 : </span>
+                               <span>010 - 5400 - 1234</span>
+                            </li>
+                            <li>
+                               <span class="btxt">최종수정일 : </span>
+                               <span>2018 - 10 - 16</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div id="login-box" class="login-popup">
+              <form method="post" class="signin" action="#">
+                    <fieldset class="textbox">
+                    <label class="username">
+                    <span>아이디</span>
+                    <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                    </label>
+                    <label class="password">
+                    <span>패스워드</span>
+                    <input id="password" name="password" value="" type="password" placeholder="Password">
+                    </label>
+                    <button class="submit button" type="button">로그인</button>
+                    <button class="submit button" type="button">회원가입</button>
+                    <button class="submit button close" type="button">취소</button>
+                    <p>
+                    </p>        
+                    </fieldset>
+              </form>
+            </div>
+               
+        <footer id="ft">
+           <div class="ftIn">
+            <div class="ftTop">
+                <ul class="ftTopList">
+                    <li><a href="" class="ftItem1"></a></li>
+                    <li><a href="" class="ftItem2"></a></li>
+                    <li><a href="" class="ftItem3"></a></li>
+                    <li><a href="" class="ftItem4"></a></li>
+                    <li><a href="" class="ftItem5"></a></li>
+                </ul>
+            </div>
+            
+            <div class="ftMenu">
+                <ul class="ftNav">
+                    <li><a href="">사이트맵</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="" style="color: #c92c64;">개인정보처리방침</a></li>
+                    <li><a href="">법적고지</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">임직원 확인 서비스</a></li>
+                    <li><a href="">판매인 검색</a></li>
+                    <li><a href="">바코드 번호 조회</a></li>
+                    <li><a href="">윤리제보센터</a></li>
+                    <li><a href="">인증번호발급</a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+               <div class="copyLeft">
+                <span class="address">본사 : 서울특별시 중구 서소문로 88 코웨이 중앙일보 빌딩 11층~17층 | 사업장 주소 : 충남 공주시 유구읍 유구마곡사로 136-23</span>
+                <span class="ceo">대표이사 : 이해선 | 사업자등록번호 : 307-81-06054 | 통신판매번호 : 제2005-21호 </span>
+                <span class="copy">COPYRIGHT COWAYCO.,LTD. ALL RIGHTS RESERVED.</span>
+                </div>
+                <div class="call">
+                    <h2 class="callTit">고객 콜 센터</h2>
+                    <a href="" class="callLink">1588-5200</a>
+                    <span class="callTime1">평일 AM 9:00 ~ PM 6:00</span>
+                    <span class="callTime1">토요일 AM 9:00 ~ PM 2:00</span>
+                    <span class="callTime1">공휴일/일요일 AM 9:00 ~ PM 4:00</span>
+                </div>
+            </div>
+        </div>  
+        </footer>
+        
+        
+    </div>
+</body>
+</html>

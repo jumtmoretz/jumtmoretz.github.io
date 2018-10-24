@@ -377,6 +377,9 @@
             word-wrap: normal;
             overflow: hidden;
         }
+    </style>
+    
+    <style>
         #con4 {
             width: 100%;
             height: auto;
@@ -421,6 +424,9 @@
             width: 100%;
             height: auto;
         }
+    </style>
+    
+    <style>
         #ft {
             width: 100%;
             height: auto;
@@ -661,6 +667,9 @@
             font-family: 'Oswald', sans-serif;
             font-weight: 100;
         }
+    </style>
+    
+    <style>
         #Mcon2 {
             width: 100%;
             height: auto;
@@ -941,4 +950,34 @@
             color: #fff;
             text-align: left;
             padding-bottom: 10px;
+        }
+        @media screen and (max-width: 767px) {
+            /* 모바일 */
+            #desktop {
+                display: none;
+            }
+            #mobile {
+                display: block;
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+        }
+        @media screen and (min-width:1200px) {
+            
         }
