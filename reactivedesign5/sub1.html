@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="극동기계, 제화기술, 구두기계, 구두">
+    <meta name="Description" content="국내 최초 제화기술의 혁신">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>:: 극동기계 ::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
+    
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: auto;
+            min-width: 320px;
+            max-width: 1920px;
+            background-color: #dfdfdf;
+        }
+        img {
+            border: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        .con {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+    <style>
+        #hd {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        .hdIn {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            background-image: url("./images/desktop/hdBg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            padding-bottom: 5%;
+        }
+        .logo {
+            width: 10%;
+            height: auto;
+            display: block;
+            float: left;
+            padding: 1.5% 3.5%;
+        }
+        .logo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .menuIn {
+            width: 50%;
+            height: auto;
+            float: right;
+        }
+        .menuIn ul {
+            width: 100%;
+            height: auto;
+            padding: 1.5% 3.5%;
+        }
+        .menuIn ul li {
+            width: 20%;
+            height: auto;
+            margin: 2.5%;
+            float: left;
+        }
+        .menuIn ul li a {
+            display: block;
+            color: #fff;
+            font-size: 1.3vmax;
+            font-family: 'Passion One', cursive;
+            text-align: center;
+            transition: 0.5s;
+        }
+        .menuIn ul li a:hover {
+            color: #63767a;
+            text-shadow: 1px 1px 3px #fff;
+            transform: rotate(360deg);
+        }
+    </style>
+    
+    <style>
+        #con1 {
+            width: 100%;
+            height: 200%;
+        }
+        .con1In {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con1TitIn {
+            width: 100%;
+            height: auto;
+            margin: 7% auto;
+            padding-bottom: 2%;
+            border-bottom: 1px solid #89b9cd;
+            
+        }
+        .con1Tit1 {
+            color: #82b2c8;
+            text-align: center;
+            font-size: 4vmax;
+            font-weight: bold;
+        }
+        .con1Tit2 {
+            color: #86b7c8;
+            text-align: center;
+            font-size: 1vmax;
+            font-weight: 100;
+        }
+        
+        .con1Tit2 strong{
+            color: #4090b3;
+            font-weight: bold;
+        }
+        .con1CircleIn {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con1CircleIn ul {
+            width: 100%;
+            height: 100%;
+            margin: -5% auto;
+            position: relative;
+        }
+        .con1CircleIn ul li {
+            float: left;
+            width: 28.33%;
+            height: auto;
+            margin: 2.5%;
+            position: absolute;
+            transition: 1.5s;
+            transition-delay: 0.2s;
+        }
+        .item1 {
+            left: 33.33%;
+            top: -15vw;
+        }
+        .item1.on {
+            left: 10.33%;
+            top: 0%;
+        }
+        .item2 {
+            left: 33.33%;
+            top: -15vw;
+        }
+        .item2.on {
+            left: 33.33%;
+            top: 0%;
+        }
+        .item3 {
+            left: 33.33%;
+            top: -15vw;
+            
+        }
+        .item3.on {
+            left: 56.66%;
+            top: 0%;
+        }
+        .con1CircleIn ul li span {
+            display: block;
+            width: 50%;
+            height: 12.52vw;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 13vw;
+            opacity: 0;
+        }
+        .circleItem1 {
+            background-color: rgba(93, 239, 194, 1);
+            box-shadow: 1px 3px 13px rgba(93, 239, 194, 1);
+        }
+        .circleItem2 {
+            background-color: rgba(93, 93, 196, 1);
+            box-shadow: 1px 3px 13px rgba(93, 93, 196, 1);
+        }
+        .circleItem3 {
+            background-color: rgba(255, 36, 60, 1);
+            box-shadow: 1px 3px 13px rgba(255, 36, 60, 1);
+        }
+    </style>
+    
+    <style>
+        #ft {
+            width: 100%;
+            height: auto;
+            margin: 20% auto;
+            margin-bottom: 0%;
+            background-color: #323232;
+        }
+        .ftIn {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+        }
+        .ftLogo {
+            position: absolute;
+            display: block;
+            width: 10%;
+            height: auto;
+            top: 70%;
+            left: 1.5%;
+        }
+        .ftLogo img {
+            width: 100%;
+            height: auto;
+        }
+        .ftLink {
+            width: 100%;
+            height: auto;
+        }
+        .ftLink ul {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftLink ul li {
+            float: left;
+            width: 7.5%;
+            margin: 2.5%;
+        }
+        .ftLink ul li a {
+            display: block;
+            color: #fff;
+            font-size: 1.2vmin;
+            font-weight: bold;
+            text-align: center;
+        }
+        .addressBox {
+            width: 75%;
+            height: auto;
+            margin: 0% auto;
+            padding-top: 10%;
+        }
+        .address1, .address2 {
+            color: #fff;
+            font-size: 1.0vmax;
+            font-weight: bold;
+            font-family: 'Nanum Gothic', sans-serif;
+            text-align: center;
+        }
+        .copyright {
+            display: block;
+            text-align: center;
+            font-weight: 100;
+            color: #fff;
+            font-family: 'Jua', sans-serif;
+            padding-top: 3%;
+            padding-bottom: 1%;
+            font-size: 1vmax;
+        }
+        #familly {
+            border: 0;
+            padding: 7%;
+            text-align: center;
+            border-radius: 5vw;
+            width: 100%;
+            height: auto;
+            font-size: 1vmin;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+    </style>
+    
+    <!-- 모바일 스타일 -->
+    <style>
+        #mobile {
+            display: none;
+        }
+        .menuBtn {
+            display: block;
+            color: #fff;
+            font-size: 1.3vmax;
+            font-family: 'Passion One', cursive;
+            text-align: center;
+            transition: 0.5s;
+            background: none;
+            border: 0;
+            float: right;
+            padding: 1.5% 3.5%;
+        }
+    </style>
+    
+    <style>
+        #Mft {
+            width: 100%;
+            height: auto;
+            margin: 25% auto;
+            margin-bottom: 0%;
+            background-color: #323232;
+        }
+        .MftIn {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+        }
+        .MftLogo {
+            position: absolute;
+            display: block;
+            width: 10%;
+            height: auto;
+            top: 70%;
+            left: 1.5%;
+        }
+        .MftLogo img {
+            width: 100%;
+            height: auto;
+        }
+        .MftLink {
+            width: 100%;
+            height: auto;
+            padding-top: 5%;
+        }
+        .MftLink ul {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .MftLink ul li {
+            float: left;
+            width: 50%;
+            margin-top: 3%;
+        }
+        .MftLink ul li a {
+            display: block;
+            color: #fff;
+            font-size: 1vmin;
+            font-weight: bold;
+            text-align: center;
+        }
+        .MaddressBox {
+            width: 75%;
+            height: auto;
+            margin: 0% auto;
+            padding-top: 25vw;box-sizing: border-box;
+        }
+        .Maddress1, .Maddress2 {
+            color: #fff;
+            font-size: 1.0vmax;
+            font-weight: bold;
+            font-family: 'Nanum Gothic', sans-serif;
+            text-align: center;
+        }
+        .Mcopyright {
+            display: block;
+            text-align: center;
+            font-weight: 100;
+            color: #fff;
+            font-family: 'Jua', sans-serif;
+            padding-top: 3%;
+            padding-bottom: 1%;
+            font-size: 1vmax;
+        }
+        #Mfamilly {
+            display: block;
+            border: 0;
+            padding: 2%;
+            text-align: center;
+            border-radius: 5vw;
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+            font-size: 1vmin;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+    </style>
+    <!-- MEDIA 속성 -->
+     <style>
+        @media screen and (max-width:767px) {
+            /* 모바일 */
+            #desktop {
+                display: none;
+            }
+            #mobile {
+                display: block;
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+
+        }
+        @media screen and (min-width:1200px) {
+
+        }
+    </style>
+    
+    <!-- 데스크탑 제이쿼리 -->
+    <script>
+        $(document).ready(function(){
+            $(".con1CircleIn ul li span").not(":animated").animate({"opacity": "1"}, 1000, function(){
+                $(".item1, .item2, .item3").addClass("on");
+            });
+            
+        });
+    </script>
+    
+    <!-- 모바일 제이쿼리 -->
+    
+    
+</head>
+<body>
+    <div class="main" id="desktop">
+       
+        <header id="hd">
+            <div class="hdIn">
+                <a href="" class="logo">
+                    <img src="./images/desktop/logo.png" alt="로고">
+                </a>
+                
+                <div class="menuIn">
+                    <ul>
+                        <li><a href="">COMPANY</a></li>
+                        <li><a href="">BYSINESS AREA</a></li>
+                        <li><a href="">PRODUCT</a></li>
+                        <li><a href="">CUSTOMER</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </header>
+        
+        <div class="con" id="con1">
+            <div class="con1In">
+                <div class="con1TitIn">
+                    <h2 class="con1Tit1">COMPANY</h2>
+                    <h2 class="con1Tit2"><strong>고객감동 실현</strong>을 위해 항상 최선을 다하는 기업</h2>
+                </div>
+                
+                <div class="con1CircleIn">
+                    <ul>
+                        <li class="item1"><span class="circleItem1">신뢰</span></li>
+                        <li class="item2"><span class="circleItem2">도전</span></li>
+                        <li class="item3"><span class="circleItem3">개척</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer id="ft">
+            <div class="ftIn">
+                <a href="" class="ftLogo">
+                    <img src="./images/desktop/logo.png" alt="">
+                </a>
+                
+                <div class="ftLink">
+                    <ul>
+                        <li><a href="">서비스이용약관</a></li>
+                        <li><a href="" style="color: crimson">개인정보취급방침</a></li>
+                        <li><a href="">이메일무단수집거부</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">극동기계전략</a></li>
+                        <li><a href="">극동기계산업</a></li>
+                        <li><a href="">극동협력</a></li>
+                        <li><select name="" id="familly">
+                            <option value="">패밀리사이트</option>
+                            <option value="">극동인트라넷</option>
+                            <option value="">네이버</option>
+                        </select></li>
+                    </ul>
+                </div>
+                
+                <div class="addressBox">
+                    <h2 class="address1">부산광역시 사상구 학감대로 147번길 54</h2>
+                    <h2 class="address2">54, Hakgam-daero 147beon-gil, Sasang-gu, Busan, Korea</h2>
+                    <span class="copyright">Copyright 2014 KUKDONG Co., Ltd. All Right Reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="main" id="mobile">
+        <header id="hd">
+            <div class="hdIn">
+                <a href="" class="logo">
+                    <img src="./images/desktop/logo.png" alt="로고">
+                </a>
+                
+                <button class="menuBtn">MENU</button>
+            </div>
+        </header>
+        
+        <div class="con" id="Mcon1">
+            
+        </div>
+        
+        <footer id="Mft">
+            <div class="MftIn">
+                <a href="" class="MftLogo">
+                    <img src="./images/desktop/logo.png" alt="">
+                </a>
+                
+                <div class="MftLink">
+                    <ul>
+                        <li><a href="">서비스이용약관</a></li>
+                        <li><a href="" style="color: crimson">개인정보취급방침</a></li>
+                        <li><a href="">이메일무단수집거부</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">극동기계전략</a></li>
+                        <li><a href="">극동기계산업</a></li>
+                        <li><a href="">극동협력</a></li>
+                        <li><select name="" id="Mfamilly">
+                            <option value="">패밀리사이트</option>
+                            <option value="">극동인트라넷</option>
+                            <option value="">네이버</option>
+                        </select></li>
+                    </ul>
+                </div>
+                
+                <div class="MaddressBox">
+                    <h2 class="Maddress1">부산광역시 사상구 학감대로 147번길 54</h2>
+                    <h2 class="Maddress2">54, Hakgam-daero 147beon-gil, Sasang-gu, Busan, Korea</h2>
+                    <span class="Mcopyright">Copyright 2014 KUKDONG Co., Ltd. All Right Reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

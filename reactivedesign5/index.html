@@ -14,9 +14,11 @@
     <title>:: 극동기계 ::</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- 폰트링크 -->
-    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
     
     
     <style>
@@ -26,8 +28,10 @@
         }
         body, html {
             width: 100%;
+            height: auto;
             min-width: 320px;
             max-width: 1920px;
+            background-color: #dfdfdf;
         }
         img {
             border: 0;
@@ -38,301 +42,1735 @@
         ul {
             list-style: none;
         }
-        .main {
+        .con {
             width: 100%;
-            height: auto;
-            background-image: url("./images/desktop/con1Bg.png");
-            background-attachment: fixed;
+            height: 100%;
         }
     </style>
     
     <style>
         #hd {
             width: 100%;
-            height: 10%;
+            height: auto;
             position: fixed;
-            z-index: 999;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        #Mhd {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
         }
         .hdIn {
             width: 90%;
             height: auto;
             margin: 0 auto;
-            position: relative;
+            background-image: url("./images/desktop/hdBg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            padding-bottom: 5%;
         }
         .logo {
-            display: block;
-            width: 20%;
+            width: 10%;
             height: auto;
+            display: block;
+            float: left;
+            padding: 1.5% 3.5%;
         }
         .logo img {
             display: block;
-            width: 40%;
+            width: 100%;
             height: auto;
-            margin: 0 auto;
-            padding: 30px 0px;
-        }
-        .menu {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-            position: absolute;
-            top: 25%;
-            right: 10%;
         }
         .menuIn {
-            width: 70%;
+            width: 50%;
             height: auto;
-            margin: 0 auto;
+            float: right;
         }
         .menuIn ul {
             width: 100%;
             height: auto;
+            padding: 1.5% 3.5%;
         }
         .menuIn ul li {
-            width: 14.285%;
+            width: 20%;
+            height: auto;
+            margin: 2.5%;
             float: left;
-            text-align: center;
         }
         .menuIn ul li a {
             display: block;
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 2vmin;
             color: #fff;
+            font-size: 1.3vmax;
+            font-family: 'Passion One', cursive;
+            text-align: center;
+            transition: 0.5s;
         }
-        .menuIn ul li a span {
-            clear: both;
-            display: block;
-            font-size: 1.3vmin;
-            font-family: sans-serif;
-            color: #fff;
-            font-weight: bold;
+        .menuIn ul li a:hover {
+            color: #63767a;
+            text-shadow: 1px 1px 3px #fff;
+            transform: rotate(360deg);
         }
     </style>
     
     <style>
         #con1 {
             width: 100%;
-            height: 100%;
+            height: auto;
+        }
+        .con1In {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .con1In ul {
+            width: 300%;
+            height: auto;
+        }
+        .con1In ul li {
+            width: 33.33%;
+            float: left;
+        }
+        .con1In ul li.item1 {
+            background-image: url("./images/desktop/1.gif");
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }
-        .con1Tit {
-            width: 100%;
-            height: auto;
+        .con1In ul li.item2 {
+            background-image: url("./images/desktop/2.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .con1In ul li.item3 {
+            background-image: url("./images/desktop/789.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
         .con1TitIn {
-            width: 90%;
+            width: 100%;
             height: auto;
-            margin: 0 auto;
-            padding-top: 10%;
         }
-        .con1TitIn h2 {
-            color: #fff;
+        .con1Tit1 {
             text-align: center;
-        }
-        .con1TitIn h2.con1Tit1 {
-            font-size: 2.7vmin;
-            font-family: 'Vollkorn', serif;
+            color: #fff;
+            text-shadow: 1px 1px 14px #262d35;
+            font-family: 'Passion One', cursive;
+            font-size: 5.5vmax;
+            padding-top: 22%;
             font-weight: 100;
         }
-        .con1TitIn h2.con1Tit2 {
-            font-size: 7vmin;
-            font-weight: bold;
-            font-family: 'Do Hyeon', sans-serif;
-            
-        }
-        
-        .con1List {
-            width: 100%;
-        }
-        .con1ListIn {
-            width: 90%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .con1ListIn ul {
-            width: 70%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .con1ListIn ul li {
-            float: left;
-            width: 33.33%;
-            height: auto;
-        }
-        .con1ListIn ul li img {
-            display: block;
-            width: 70%;
-            margin: 0 auto;
-        }
-        .line {
-            display: block;
-            width: 60%;
-            height: 1%;
-            margin: 0 auto;
-            padding: 5% 0%;
-            border-bottom: 2px solid #fff;
-        }
-        .bottomTit {
-            width: 100%;
-            height: auto;
-        }
-        .bottomTitIn {
-            width: 40%;
-            height: auto;
-            margin: 1.5% auto;
+        .con1Tit2 {
             text-align: center;
-        }
-        .bottomTxt {
             color: #fff;
-            font-size: 2vmin;
-            font-family: 'Do Hyeon', sans-serif;
+            text-shadow: 1px 1px 14px #262d35;
+            font-family: 'Passion One', cursive;
+            font-size: 2vmax;
+            padding-bottom: 15%;
+            font-weight: 100;
         }
-        .con1More {
-            width: 100%;
+        .con1Btn {
+            width: 80%;
             height: auto;
+            margin: 0% auto;
+            position: relative;
+            margin-top: 23%;
         }
-        .con1MoreIn {
-            width: 6%;
-            height: auto;
-            margin: 0 auto;
-            padding: 3%;
-        }
-        .con1MoreBtn {
-            border-radius: 30px;
+        .con1Btn button {
+            position: absolute;
             display: block;
-            text-align: center;
-            color: #213a71;
-            background-color: #fff;
-            padding: 6%;
-            font-weight: bold;
-            font-size: 1.5vmin;
-            font-family: 'Vollkorn', serif;
+            border: 0;
+            background: none;
+        }
+        .lBtn {
+            left: 5%;
+        }
+        .rBtn {
+            right: 5%;
         }
     </style>
     
     <style>
         #con2 {
             width: 100%;
+            height: 800px;
+        }
+        .con2In {
+            width: 90%;
             height: 100%;
+            margin: -7% auto;
+        }
+        .con2In ul {
+            width: 100%;
+            height: 50%;
+            
+        }
+        .con2In ul li {
+            width: 50%;
+            float: left;
+            height: 100%;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .con2Item1 .con2Item1In {
+            width: 80%;
+            height: 100%;
+            margin: 3% auto;
+        }
+        .con2Item1In .con2ItemTit1 {
+            color: #323232;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.5vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .con2Item1In .con2ItemTit2 {
+            color: #323232;
+            text-align: left;
+            font-weight: 100;
+            font-size: 1vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .con2ItemTxt {
+            width: 80%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-weight: bold;
+            text-align: left;
+            font-size: 1.4vmin;
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #333222;
+        }
+        .con2Item1Master {
+            float: right;
+            color: #323232;
+            font-family: 'Jua', sans-serif;
+            font-size: 1vmax;
+        }
+        .con2Item2 .con2Item2In {
+            width: 80%;
+            height: 100%;
+            margin: 5% auto;
+        }
+        .con2Item2In .con2ItemTit1 {
+            color: #323232;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.5vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .con2Item2In .con2ItemTit2 {
+            color: #323232;
+            text-align: left;
+            font-weight: 100;
+            font-size: 1vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .con2ItemTxt {
+            width: 80%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-weight: bold;
+            text-align: left;
+            font-size: 1.4vmin;
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #333222;
+        }
+        .con2Item2Master {
+            float: right;
+            color: #323232;
+            font-family: 'Jua', sans-serif;
+            font-size: 1vmax;
+        }
+        .master {
+            font-size: 2vmax;
+        }
+        .spanTit {
+            width: 90%;
+            height: auto;
+            margin: 5% auto;
+        }
+        .topI {
+            font-family: 'Italianno', cursive;
+            font-size: 1.4vmax;
+        }
+        .heart {
+            color: #eb3564;
+            float: right;
+            cursor: pointer;
+            font-size: 1.4vmax;
+        }
+        .count {
+            display: block;
+            font-size: 1.4vmin;
+            font-weight: bold;
+            float: right;
+            padding: 1.5%;
         }
     </style>
+    
+    <style>
+        #con3 {
+            width: 100%;
+            height: auto;
+        }
+        .con3In {
+            width: 90%;
+            height: auto;
+            margin: -16% auto;
+        }
+        .con3Box {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #ffffff;
+            padding: 3% 0%;
+            transition: 0.5s;
+        }
+        .con3Box:hover {
+            box-shadow: 1px 1px 63px #665867;
+        }
+        .con3BoxTop {
+            display: block;
+            text-align: center;
+            color: #d4d4d4;
+            font-weight: bold;
+            font-size: 5vmax;
+            font-family: cursive;
+            margin-bottom: -1%;
+            padding: 0;
+        }
+        .con3BoxTxtIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con3BoxTxt1 {
+            text-align: center;
+            color: #788990;
+            font-size: 2vmax;
+            font-weight: bold;
+            font-family: 'Nanum Gothic', sans-serif;
+            padding-bottom: 3%;
+        }
+        .con3BoxTxt2 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.4vmin;
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #333222;
+            
+        }
+    </style>
+    
+    <style>
+         #con4 {
+            width: 100%;
+            height: 100%;
+        }
+        .con4In {
+            width: 90%;
+            height: auto;
+            margin: 20% auto;
+        }
+        .con4Tit1 {
+            text-align: center;
+            font-size: 5vmax;
+            color: #4793b4;
+            text-shadow: 1px 1px 30px #fff;
+        }
+        .con4Tit2 {
+            text-align: center;
+            font-size: 0.85vmax;
+            color: #4793b4;
+            text-shadow: 1px 1px 30px #fff;
+            font-weight: 100;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        .con4Tit2 strong {
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #fff;
+            color: #3c7e9a;
+        }
+        .con4BoxIn {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con4BoxIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .con4BoxIn ul li {
+            width: 100%;
+            height: auto;
+            float: left;
+            width: 7.285%;
+            margin: 2.5%;
+            background-color: #fff;
+            padding: 1%;
+            transition: 0.5s;
+        }
+        .con4BoxIn ul li.on {
+            background-color: #4793b4;
+            cursor: pointer;
+        }
+        .con4BoxIn ul li a {
+            display: block;
+            color: #4793b4;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 1px 3px 2px #ccc;
+            cursor: pointer;
+            transition: 0.5s;
+            font-size: 1vmax;
+        }
+        .con4BoxIn ul li a.on {
+            color: #fff;
+        }
+        .con4BoxItemIn1 {
+            width: 70%;
+            height: auto;
+            margin: 10% auto;
+            overflow: hidden;
+        }
+        .con4BoxItemIn1 ul {
+            width: 800%;
+            height: auto;
+        }
+        .con4BoxItemIn1 ul li {
+            width: 12.5%;
+            height: auto;
+            float: left;
+            position: relative;
+        }
+        .con4BoxItemIn1 ul li a {
+            display: block;
+            width: 45%;
+            height: auto;
+            margin: 2.5%;
+            float: left;
+        }
+        .con4BoxItemIn1 ul li a img {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con4BoxItemTxt {
+            width: 45%;
+            height: auto;
+            margin: 2.5%;
+            float: right;
+        }
+        .con4BoxItemtit1 {
+            text-align: left;
+            font-weight: bold;
+            font-size: 1vmax;
+            color: #323232;
+        }
+        .con4BoxItemtit2 {
+            font-weight: bold;
+            font-family: 'Jua', sans-serif;
+            text-shadow: 3px 3px 3px #323232;
+            color: #fff;
+            font-size: 3vmax;
+            line-height: 5vmax;
+        }
+        .con4BoxItemTxt1 {
+            color: #504d56;
+            font-weight: bold;
+            font-size: 1vmax;
+            padding: 3% 0%;
+        }
+        .con4BoxItemTxt2 {
+            padding: 5%;
+            font-weight: bold;
+            font-size: 1vmax;
+            font-family: 'Nanum Gothic', sans-serif;
+            line-height: 1.8vmax;
+        }
+        .Con4ItemMore {
+            display: block;
+            width: 15%;
+            text-align: center;
+            color: #323232;
+            font-weight: bold;
+            height: auto;
+            background-color: #fff;
+            border: 0;
+            padding: 2%;
+            font-size: 1vmax;
+            position: absolute;
+            right: 0;
+            bottom: 5%;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .Con4ItemMore:hover {
+            text-shadow: 1px 3px 2px #2b3841;
+            background-color: #627a86;
+            color: #fff;
+        }
+        .con4BoxBtn {
+            width: 100%;
+            height: auto;
+            position: relative;
+            margin-top: -30%;
+        }
+        .con4BoxBtn button {
+            display: block;
+            position: absolute;
+            background: none;
+            border: 0;
+            cursor: pointer;
+        }
+        .con4BoxBtn button img {
+            width: 100%;
+            height: auto;
+        }
+        .Con4rBtn {
+            right: 0;
+        }
+        .Con4lBtn {
+            left: 0;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            width: 100%;
+            height: auto;
+            margin: 20% auto;
+            margin-bottom: 0%;
+            background-color: #323232;
+        }
+        .ftIn {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+        }
+        .ftLogo {
+            position: absolute;
+            display: block;
+            width: 10%;
+            height: auto;
+            top: 70%;
+            left: 1.5%;
+        }
+        .ftLogo img {
+            width: 100%;
+            height: auto;
+        }
+        .ftLink {
+            width: 100%;
+            height: auto;
+        }
+        .ftLink ul {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftLink ul li {
+            float: left;
+            width: 7.5%;
+            margin: 2.5%;
+        }
+        .ftLink ul li a {
+            display: block;
+            color: #fff;
+            font-size: 1.2vmin;
+            font-weight: bold;
+            text-align: center;
+        }
+        .addressBox {
+            width: 75%;
+            height: auto;
+            margin: 0% auto;
+            padding-top: 10%;
+        }
+        .address1, .address2 {
+            color: #fff;
+            font-size: 1.0vmax;
+            font-weight: bold;
+            font-family: 'Nanum Gothic', sans-serif;
+            text-align: center;
+        }
+        .copyright {
+            display: block;
+            text-align: center;
+            font-weight: 100;
+            color: #fff;
+            font-family: 'Jua', sans-serif;
+            padding-top: 3%;
+            padding-bottom: 1%;
+            font-size: 1vmax;
+        }
+        #familly {
+            border: 0;
+            padding: 7%;
+            text-align: center;
+            border-radius: 5vw;
+            width: 100%;
+            height: auto;
+            font-size: 1vmin;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+    </style>
+    
+    <!-- 모바일 스타일 -->
+    <style>
+        #mobile {
+            display: none;
+        }
+        .menuBtn {
+            display: block;
+            color: #fff;
+            font-size: 1.3vmax;
+            font-family: 'Passion One', cursive;
+            text-align: center;
+            transition: 0.5s;
+            background: none;
+            border: 0;
+            float: right;
+            padding: 1.5% 3.5%;
+        }
+    </style>
+    
+    <style>
+        #Mcon1 {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon1In {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .Mcon1In ul {
+            width: 300%;
+            height: auto;
+        }
+        .Mcon1In ul li {
+            width: 33.33%;
+            float: left;
+        }
+        .Mcon1In ul li.Mitem1 {
+            background-image: url("./images/desktop/1.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .Mcon1In ul li.Mitem2 {
+            background-image: url("./images/desktop/2.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .Mcon1In ul li.Mitem3 {
+            background-image: url("./images/desktop/789.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .Mcon1TitIn {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon1Tit1 {
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 14px #262d35;
+            font-family: 'Passion One', cursive;
+            font-size: 3.5vmax;
+            padding-top: 22%;
+            font-weight: 100;
+        }
+        .Mcon1Tit2 {
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 14px #262d35;
+            font-family: 'Passion One', cursive;
+            font-size: 1.3vmax;
+            padding-bottom: 15%;
+            font-weight: 100;
+        }
+        .Mcon1Btn {
+            width: 90%;
+            height: auto;
+            margin: 0% auto;
+            position: relative;
+            margin-top: 23%;
+        }
+        .Mcon1Btn button {
+            position: absolute;
+            display: block;
+            border: 0;
+            background: none;
+        }
+        .MlBtn {
+            left: 2%;
+        }
+        .MrBtn {
+            right: 2%;
+        }
+    </style>
+    
+    <style>
+        #Mcon2 {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon2In {
+            width: 90%;
+            height: 100%;
+            margin: -7% auto;
+        }
+        .Mcon2In ul {
+            width: 100%;
+            height: 50%;
+            
+        }
+        .Mcon2In ul li {
+            width: 100%;
+            float: left;
+            height: 100%;
+            background-color: #fff;
+            
+        }
+        .Mcon2Item1 .Mcon2Item1In {
+            width: 80%;
+            height: 100%;
+            margin: 3% auto;
+        }
+        .Mcon2Item1In .Mcon2ItemTit1 {
+            color: #323232;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.5vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .Mcon2Item1In .Mcon2ItemTit2 {
+            color: #323232;
+            text-align: left;
+            font-weight: 100;
+            font-size: 1vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .Mcon2ItemTxt {
+            width: 80%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-weight: bold;
+            text-align: left;
+            font-size: 1.4vmin;
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #333222;
+        }
+        .Mcon2Item1Master {
+            float: right;
+            color: #323232;
+            font-family: 'Jua', sans-serif;
+            font-size: 1vmax;
+        }
+        .Mcon2Item2 .Mcon2Item2In {
+            width: 80%;
+            height: 100%;
+            margin: 5% auto;
+        }
+        .Mcon2Item2In .Mcon2ItemTit1 {
+            color: #323232;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.5vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .Mcon2Item2In .Mcon2ItemTit2 {
+            color: #323232;
+            text-align: left;
+            font-weight: 100;
+            font-size: 1vmax;
+            font-family: 'Jua', sans-serif;
+        }
+        .Mcon2ItemTxt {
+            width: 80%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-weight: bold;
+            text-align: left;
+            font-size: 1.4vmin;
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #333222;
+        }
+        .Mcon2Item2Master {
+            float: right;
+            color: #323232;
+            font-family: 'Jua', sans-serif;
+            font-size: 1vmax;
+        }
+        .Mmaster {
+            font-size: 2vmax;
+        }
+        .MspanTit {
+            width: 90%;
+            height: auto;
+            margin: 5% auto;
+        }
+        .MtopI {
+            font-family: 'Italianno', cursive;
+            font-size: 1.4vmax;
+        }
+        .Mheart {
+            color: #eb3564;
+            float: right;
+            cursor: pointer;
+            font-size: 1.4vmax;
+        }
+        .Mcount {
+            display: block;
+            font-size: 1.4vmin;
+            font-weight: bold;
+            float: right;
+            padding: 1.5%;
+        }
+    </style>
+    
+    <style>
+        #Mcon3 {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon3In {
+            width: 90%;
+            height: auto;
+            margin:0% auto;
+            margin-top: 500px;
+        }
+        .Mcon3Box {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #ffffff;
+            padding: 3% 0%;
+            transition: 0.5s;
+            box-shadow: 1px 4px 13px #323232;
+        }
+        .Mcon3BoxTop {
+            display: block;
+            text-align: center;
+            color: #d4d4d4;
+            font-weight: bold;
+            font-size: 5vmax;
+            font-family: cursive;
+            margin-bottom: -1%;
+            padding: 0;
+        }
+        .Mcon3BoxTxtIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .Mcon3BoxTxt1 {
+            text-align: center;
+            color: #788990;
+            font-size: 2vmax;
+            font-weight: bold;
+            font-family: 'Nanum Gothic', sans-serif;
+            padding-bottom: 3%;
+        }
+        .Mcon3BoxTxt2 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.4vmin;
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #333222;
+            
+        }
+    </style>
+    
+    <style>
+         #Mcon4 {
+            width: 100%;
+            height: 100%;
+        }
+        .Mcon4In {
+            width: 90%;
+            height: auto;
+            margin: 20% auto;
+        }
+        .Mcon4Tit1 {
+            text-align: center;
+            font-size: 5vmax;
+            color: #4793b4;
+            text-shadow: 1px 1px 30px #fff;
+        }
+        .Mcon4Tit2 {
+            text-align: center;
+            font-size: 0.85vmax;
+            color: #4793b4;
+            text-shadow: 1px 1px 30px #fff;
+            font-weight: 100;
+            font-family: 'Nanum Gothic', sans-serif;
+            padding-bottom: 5%;
+        }
+        .Mcon4Tit2 strong {
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #fff;
+            color: #3c7e9a;
+        }
+        .Mcon4BoxIn {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .Mcon4BoxIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon4BoxIn ul li {
+            height: auto;
+            float: left;
+            width: 12.285%;
+            background-color: #fff;
+            padding: 1%;
+            transition: 0.5s;
+        }
+        .Mcon4BoxIn ul li.Mon {
+            background-color: #4793b4;
+            cursor: pointer;
+        }
+        .Mcon4BoxIn ul li a {
+            display: block;
+            color: #4793b4;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 1px 3px 2px #ccc;
+            cursor: pointer;
+            transition: 0.5s;
+            font-size: 1vmax;
+        }
+        .Mcon4BoxIn ul li a.Mon {
+            color: #fff;
+        }
+        .Mcon4BoxItemIn1 {
+            width: 70%;
+            height: auto;
+            margin: 10% auto;
+            overflow: hidden;
+        }
+        .Mcon4BoxItemIn1 ul {
+            width: 800%;
+            height: auto;
+            
+        }
+        .Mcon4BoxItemIn1 ul li {
+            width: 12.5%;
+            height: auto;
+            float: left;
+            position: relative;
+        }
+        .Mcon4BoxItemIn1 ul li a {
+            display: block;
+            width: 45%;
+            height: auto;
+            margin: 2.5%;
+            float: left;
+        }
+        .Mcon4BoxItemIn1 ul li a img {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .Mcon4BoxItemTxt {
+            width: 45%;
+            height: auto;
+            margin: 2.5%;
+            float: right;
+        }
+        .Mcon4BoxItemtit1 {
+            text-align: left;
+            font-weight: bold;
+            font-size: 1vmax;
+            color: #323232;
+        }
+        .Mcon4BoxItemtit2 {
+            font-weight: bold;
+            font-family: 'Jua', sans-serif;
+            text-shadow: 3px 3px 3px #323232;
+            color: #fff;
+            font-size: 2vmax;
+            line-height: 5vmax;
+        }
+        .Mcon4BoxItemTxt1 {
+            color: #504d56;
+            font-weight: bold;
+            font-size: 1vmax;
+            padding: 3% 0%;
+        }
+        .MCon4ItemMore {
+            display: block;
+            width: 35%;
+            text-align: center;
+            color: #323232;
+            font-weight: bold;
+            height: auto;
+            background-color: #fff;
+            border: 0;
+            padding: 2%;
+            font-size: 1vmax;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .Mcon4BoxBtn {
+            width: 100%;
+            height: auto;
+            position: relative;
+            margin-top: -150px;
+        }
+        .Mcon4BoxBtn button {
+            display: block;
+            position: absolute;
+            background: none;
+            border: 0;
+            cursor: pointer;
+        }
+        .Mcon4BoxBtn button img {
+            width: 100%;
+            height: auto;
+        }
+        .MCon4rBtn {
+            right: 0;
+        }
+        .MCon4lBtn {
+            left: 0;
+        }
+    </style>
+    
+    <style>
+        #Mft {
+            width: 100%;
+            height: auto;
+            margin: 25% auto;
+            margin-bottom: 0%;
+            background-color: #323232;
+        }
+        .MftIn {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+        }
+        .MftLogo {
+            position: absolute;
+            display: block;
+            width: 10%;
+            height: auto;
+            top: 70%;
+            left: 1.5%;
+        }
+        .MftLogo img {
+            width: 100%;
+            height: auto;
+        }
+        .MftLink {
+            width: 100%;
+            height: auto;
+            padding-top: 5%;
+        }
+        .MftLink ul {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .MftLink ul li {
+            float: left;
+            width: 50%;
+            margin-top: 3%;
+        }
+        .MftLink ul li a {
+            display: block;
+            color: #fff;
+            font-size: 1vmin;
+            font-weight: bold;
+            text-align: center;
+        }
+        .MaddressBox {
+            width: 75%;
+            height: auto;
+            margin: 0% auto;
+            padding-top: 25vw;box-sizing: border-box;
+        }
+        .Maddress1, .Maddress2 {
+            color: #fff;
+            font-size: 1.0vmax;
+            font-weight: bold;
+            font-family: 'Nanum Gothic', sans-serif;
+            text-align: center;
+        }
+        .Mcopyright {
+            display: block;
+            text-align: center;
+            font-weight: 100;
+            color: #fff;
+            font-family: 'Jua', sans-serif;
+            padding-top: 3%;
+            padding-bottom: 1%;
+            font-size: 1vmax;
+        }
+        #Mfamilly {
+            display: block;
+            border: 0;
+            padding: 2%;
+            text-align: center;
+            border-radius: 5vw;
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+            font-size: 1vmin;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+    </style>
+    <!-- MEDIA 속성 -->
+     <style>
+        @media screen and (max-width:767px) {
+            /* 모바일 */
+            #desktop {
+                display: none;
+            }
+            #mobile {
+                display: block;
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+
+        }
+        @media screen and (min-width:1200px) {
+
+        }
+    </style>
+    
+    <!-- 데스크탑 제이쿼리 -->
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".con1In ul li").width());
+            $(".lBtn").click(function(){
+                $(".con1In ul").not(":animated").animate({"margin-left": -wd + "px"}, 1200, function(){
+                    $(".con1In ul li").eq(0).appendTo(".con1In ul");
+                    $(".con1In ul").css("margin-left", "0px");
+                });
+            });
+            $(".rBtn").click(function(){
+                $(".con1In ul li").eq(2).prependTo(".con1In ul");
+                $(".con1In ul").css("margin-left", -wd + "px");
+                $(".con1In ul").not(":animated").animate({"margin-left" : "0px"}, 1200);
+                
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con4BoxIn ul li a").removeAttr("href");
+            
+            $(".con4BoxIn ul li").click(function(){
+                $(this).addClass("on").siblings().removeClass("on");
+                $(this).find("a").addClass("on");
+                $(this).siblings().find("a").removeClass("on");
+                });
+            
+            var wd = parseInt($(".con4BoxItemIn1 ul li").width());
+            var wd2 = 100;
+            var cnt = $(".con4BoxItemIn1 ul li").length;
+            $(".Con4lBtn").click(function(){
+                $(".con4BoxItemIn1 ul").not(":animated").animate({"margin-left": -wd2 + "%"}, 1200, function(){
+                    $(".con4BoxItemIn1 ul li").eq(0).appendTo(".con4BoxItemIn1 ul");
+                    $(".con4BoxItemIn1 ul").css("margin-left", "0px");
+                });
+            });
+            $(".Con4rBtn").click(function(){
+                $(".con4BoxItemIn1 ul li").eq(cnt-1).prependTo(".con4BoxItemIn1 ul");
+                $(".con4BoxItemIn1 ul").css("margin-left", -wd2 + "%");
+                $(".con4BoxItemIn1 ul").not(":animated").animate({"margin-left": "0%"}, 1200); 
+            });
+        });
+    </script>
+    
+    <!-- 모바일 제이쿼리 -->
+    <script>
+         $(document).ready(function(){
+            var wd = parseInt($(".Mcon1In ul li").width());
+            $(".MlBtn").click(function(){
+                $(".Mcon1In ul").not(":animated").animate({"margin-left": -wd + "px"}, 1200, function(){
+                    $(".Mcon1In ul li").eq(0).appendTo(".Mcon1In ul");
+                    $(".Mcon1In ul").css("margin-left", "0px");
+                });
+            });
+            $(".MrBtn").click(function(){
+                $(".Mcon1In ul li").eq(2).prependTo(".Mcon1In ul");
+                $(".Mcon1In ul").css("margin-left", -wd + "px");
+                $(".Mcon1In ul").not(":animated").animate({"margin-left" : "0px"}, 1200);
+                
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".Mcon4BoxIn ul li a").removeAttr("href");
+            
+            $(".Mcon4BoxIn ul li").click(function(){
+                $(this).addClass("Mon").siblings().removeClass("Mon");
+                $(this).find("a").addClass("Mon");
+                $(this).siblings().find("a").removeClass("Mon");
+                });
+            
+            var wd = parseInt($(".Mcon4BoxItemIn1 ul li").width());
+            var wd2 = 100;
+            var cnt = $(".Mcon4BoxItemIn1 ul li").length;
+            $(".MCon4lBtn").click(function(){
+                $(".Mcon4BoxItemIn1 ul").not(":animated").animate({"margin-left": -wd2 + "%"}, 1200, function(){
+                    $(".Mcon4BoxItemIn1 ul li").eq(0).appendTo(".Mcon4BoxItemIn1 ul");
+                    $(".Mcon4BoxItemIn1 ul").css("margin-left", "0px");
+                });
+            });
+            $(".MCon4rBtn").click(function(){
+                $(".Mcon4BoxItemIn1 ul li").eq(cnt-1).prependTo(".Mcon4BoxItemIn1 ul");
+                $(".Mcon4BoxItemIn1 ul").css("margin-left", -wd2 + "%");
+                $(".Mcon4BoxItemIn1 ul").not(":animated").animate({"margin-left": "0%"}, 1200); 
+            });
+        });
+    </script>
+    
 </head>
 <body>
     <div class="main" id="desktop">
+       
         <header id="hd">
             <div class="hdIn">
-                <a href="index.html" class="logo">
+                <a href="" class="logo">
                     <img src="./images/desktop/logo.png" alt="로고">
                 </a>
-                <nav class="menu">
-                    <div class="menuIn">
-                        <ul>
-                            <li><a href="">회사소개<span>COMPANY</span></a></li>
-                            <li><a href="">사업분야<span>BUSINISS AREA</span></a></li>
-                            <li><a href="">제품소개<span>PRODUCT</span></a></li>
-                            <li><a href="">고객센터<span>CUSTMOMER</span></a></li>
-                            <li><a href="">채용정보<span>RECRUIT</span></a></li>
-                            <li><a href="">멤버스<span>MEMBERS</span></a></li>
-                            <li><a href="">마이페이지<span>MY PAGE</span></a></li>
-                        </ul>
-                    </div>
-                </nav>
+                
+                <div class="menuIn">
+                    <ul>
+                        <li><a href="">COMPANY</a></li>
+                        <li><a href="">BYSINESS AREA</a></li>
+                        <li><a href="">PRODUCT</a></li>
+                        <li><a href="">CUSTOMER</a></li>
+                    </ul>
+                </div>
+                
             </div>
         </header>
         
         <div class="con" id="con1">
-            <div class="con1Tit">
-                <div class="con1TitIn">
-                    <h2 class="con1Tit1">Innovation in shoe Technology</h2>
-                    <h2 class="con1Tit2">제화기술의 혁신, 그 이상을 창조하다</h2>
-                </div>
-            </div>
-            
-            <div class="con1List">
-                <div class="con1ListIn">
-                    <ul>
-                        <li><a href=""><img src="./images/desktop/con1Item1.png" alt=""></a></li>
-                        <li><a href=""><img src="./images/desktop/con1Item1.png" alt=""></a></li>
-                        <li><a href=""><img src="./images/desktop/con1Item1.png" alt=""></a></li>
-                    </ul>
-                </div>
-            </div>
-            <span class="line"></span>
-            
-            <div class="bottomTit">
-                <div class="bottomTitIn">
-                    <h2 class="bottomTxt">제화기술의 무한한 가능성을 통해<br>극동기계 제화기술의 혁신, 그 이상을 창조합니다</h2>
-                </div>
-            </div>
-            
-            <div class="con1More">
-                <div class="con1MoreIn">
-                    <a href="" class="con1MoreBtn">More</a>
+            <div class="con1In">
+               <ul>
+                   <li class="item1">
+                       <div class="con1TitIn">
+                            <h2 class="con1Tit1">INNOVATION CREATIVE</h2>
+                            <h2 class="con1Tit2">SHOE MAKING &amp; VEHICLE EQUIPMENT</h2>
+                        </div>
+                   </li>
+                   <li class="item2">
+                       <div class="con1TitIn">
+                            <h2 class="con1Tit1">INNOVATION CREATIVE</h2>
+                            <h2 class="con1Tit2">SHOE MAKING &amp; VEHICLE EQUIPMENT</h2>
+                        </div>
+                   </li>
+                   <li class="item3">
+                       <div class="con1TitIn">
+                            <h2 class="con1Tit1">INNOVATION CREATIVE</h2>
+                            <h2 class="con1Tit2">SHOE MAKING &amp; VEHICLE EQUIPMENT</h2>
+                        </div>
+                   </li>
+               </ul>
+                
+                <div class="con1Btn">
+                    <button class="lBtn"><img src="./images/desktop/lBtn.png" alt=""></button>
+                    <button class="rBtn"><img src="./images/desktop/rBtn.png" alt=""></button>
                 </div>
             </div>
         </div>
         
         <div class="con" id="con2">
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            <h2>dsalk;dsadl;adjsal;</h2> 
-            
+            <div class="con2In">
+                <ul>
+                    <li class="con2Item1">
+                        <div class="con2Item1In">
+                         <div class="spanTit">
+                               <span class="topI">Shoe Machine</span>
+                               <span class="heart">♥</span>
+                               <span class="count">1,414,996</span>
+                           </div>
+                            <h2 class="con2ItemTit1">국내 유일 제화라인 설비 제작기술 보유!</h2>
+                            <h2 class="con2ItemTit2">We have the technology of making the only shoe line equipment in Korea!</h2>
+                            <h2 class="con2ItemTxt">끊임없이 진화하고있는 제화사업시장에 걸맞는 연구 및 개발과 기술력을 기반으로 매년 괄목할 만한 성과를 올리며 고품질, 고효율을 겸비한 설비를 제작하고 있습니다. 나이키, 아디다스, 리복, 트렉스타, K2등 신발업계의 제작설비에 상당한 부분을 차지하며, 고객과 함께 만들어 나가고자 부단한 노력을 하고 있습니다.
+극동의 제화사업은 1975년을 시작으로 다양한 설비를 인증받아 왔으며 극동기계만의 노하우를 통하여 앞으로도 탄탄하고 차별화된 설비를 제공해 드리겠습니다.</h2>
+                            <h2 class="con2Item1Master">극동기계 대표이사 <span class="master">김정태</span></h2>
+                        </div>
+                    </li>
+                    <li class="con2Item2">
+                       <div class="con2Item2In">
+                         <div class="spanTit">
+                               <span class="topI">Rubber Producing Machinery</span>
+                               <span class="heart">♥</span>
+                               <span class="count">127,448</span>
+                           </div>
+                            <h2 class="con2ItemTit1">자동차 도어 'weather Srip' 생산 설비 제작!</h2>
+                            <h2 class="con2ItemTit2">Manufacture of car door 'weather Srip' production equipment!</h2>
+                            <h2 class="con2ItemTxt">2006년 이후부터, 압출기 및 HAV / UHF 가류조 라인을 위한 설비들을 설계 및 제작하면서 현재에 이르기까지 Weather Strip 생산라인용 관련 모든 설비들을 활발하게 제조공급하고 있습니다.
+극동에서는 생산하는 설비에 대해 고객의 신뢰성이 최 우선이라는 신념으로 품질 확보에 수백번의 실험 및 결과를 얻기위해 전력투구 하고 있으며, 작업자 환경 또한 고려하여 에코시스템에 의한 전력량 감소 이외에도 많은 편의사항들을 개발하고 있습니다.</h2>
+                            <h2 class="con2Item2Master">극동기계 대표이사 <span class="master">김정태</span></h2>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
+        
+        <div class="con" id="con3">
+            <div class="con3In">
+                <a href="" class="con3Box">
+                    <span class="con3BoxTop">"</span>
+                    <div class="con3BoxTxtIn">
+                        <h2 class="con3BoxTxt1">고객이 만족하고 고객이 신뢰할 수 있는 기기를 제작한다.</h2>
+                        <h2 class="con3BoxTxt2">이러한 신념 아래 고객의 신뢰와 만족을 극대화 하기 위하여 끊임없는 도전과 개척정신을 기업 이념으로 간직하며 최선을 다하여 노력할 것을 약속 드리겠습니다. 감사합니다.<br><br>
+                                Under this belief, we will promise to do our utmost to keep the constant challenge and pioneering spirit as our corporate philosophy in order to maximize customer's trust and satisfaction. Thank you.</h2>
+                            </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="con" id="con4">
+            <div class="con4In">
+                <div class="con4TitIn">
+                    <h2 class="con4Tit1">PRODUCT</h2>
+                    <h2 class="con4Tit2">지속적인 <strong>연구개발을 통한 제품 개발</strong>과 <strong>품질향상</strong>에 노력하고 있습니다.</h2>
+                </div>
+                
+                <div class="con4BoxIn">
+                    <ul>
+                        <li class="on"><a href="" class="on">Cutting</a></li>
+                        <li><a href="">Stitching</a></li>
+                        <li><a href="">Stockfit</a></li>
+                        <li><a href="">Outsole</a></li>
+                        <li><a href="">Nosew</a></li>
+                        <li><a href="">Assembly</a></li>
+                        <li><a href="">Other</a></li>
+                    </ul>
+                </div>
+                
+                <div class="con4BoxItemIn1">
+                    <ul>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item1.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>                          
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item3.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>                          
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item1.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item3.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="con4BoxItemTxt">
+                                <h2 class="con4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="con4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                           <p class="con4BoxItemTxt2">Dimension : 1,050W x 1,050L x 1,500H<br>Weight : 1,000kg<br>Working Table : 1,000 x 500mm<br>Maximum Cutting Force : 200KN<br>Cutting Stroke : 75mm<br>Electric Capacity : 2kw</p>
+                            </div>
+                            <button class="Con4ItemMore">자세히 보기</button>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="con4BoxBtn">
+                        <button class="Con4lBtn"><img src="./images/desktop/lBtn.png" alt=""></button>
+                        <button class="Con4rBtn"><img src="./images/desktop/rBtn.png" alt=""></button>
+                    </div>
+            </div>
+        </div>
+        
+        <footer id="ft">
+            <div class="ftIn">
+                <a href="" class="ftLogo">
+                    <img src="./images/desktop/logo.png" alt="">
+                </a>
+                
+                <div class="ftLink">
+                    <ul>
+                        <li><a href="">서비스이용약관</a></li>
+                        <li><a href="" style="color: crimson">개인정보취급방침</a></li>
+                        <li><a href="">이메일무단수집거부</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">극동기계전략</a></li>
+                        <li><a href="">극동기계산업</a></li>
+                        <li><a href="">극동협력</a></li>
+                        <li><select name="fm" id="familly">
+                            <option value="">패밀리사이트</option>
+                            <option value="">극동인트라넷</option>
+                            <option value="">네이버</option>
+                        </select></li>
+                    </ul>
+                </div>
+                
+                <div class="addressBox">
+                    <h2 class="address1">부산광역시 사상구 학감대로 147번길 54</h2>
+                    <h2 class="address2">54, Hakgam-daero 147beon-gil, Sasang-gu, Busan, Korea</h2>
+                    <span class="copyright">Copyright 2014 KUKDONG Co., Ltd. All Right Reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="main" id="mobile">
+        <header id="Mhd">
+            <div class="hdIn">
+                <a href="" class="logo">
+                    <img src="./images/desktop/logo.png" alt="로고">
+                </a>
+                
+                <button class="menuBtn">MENU</button>
+            </div>
+        </header>
+        
+        <div class="con" id="Mcon1">
+            <div class="Mcon1In">
+               <ul>
+                   <li class="Mitem1">
+                       <div class="Mcon1TitIn">
+                            <h2 class="Mcon1Tit1">INNOVATION CREATIVE</h2>
+                            <h2 class="Mcon1Tit2">SHOE MAKING &amp; VEHICLE EQUIPMENT</h2>
+                        </div>
+                   </li>
+                   <li class="Mitem2">
+                       <div class="Mcon1TitIn">
+                            <h2 class="Mcon1Tit1">INNOVATION CREATIVE</h2>
+                            <h2 class="Mcon1Tit2">SHOE MAKING &amp; VEHICLE EQUIPMENT</h2>
+                        </div>
+                   </li>
+                   <li class="Mitem3">
+                       <div class="Mcon1TitIn">
+                            <h2 class="Mcon1Tit1">INNOVATION CREATIVE</h2>
+                            <h2 class="Mcon1Tit2">SHOE MAKING &amp; VEHICLE EQUIPMENT</h2>
+                        </div>
+                   </li>
+               </ul>
+                
+                <div class="Mcon1Btn">
+                    <button class="MlBtn"><img src="./images/desktop/lBtn.png" alt=""></button>
+                    <button class="MrBtn"><img src="./images/desktop/rBtn.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="con" id="Mcon2">
+            <div class="Mcon2In">
+                <ul>
+                    <li class="Mcon2Item1">
+                        <div class="Mcon2Item1In">
+                         <div class="MspanTit">
+                               <span class="MtopI">Shoe Machine</span>
+                               <span class="Mheart">♥</span>
+                               <span class="Mcount">1,414,996</span>
+                           </div>
+                            <h2 class="Mcon2ItemTit1">국내 유일 제화라인 설비 제작기술 보유!</h2>
+                            <h2 class="Mcon2ItemTit2">We have the technology of making the only shoe line equipment in Korea!</h2>
+                            <h2 class="Mcon2ItemTxt">끊임없이 진화하고있는 제화사업시장에 걸맞는 연구 및 개발과 기술력을 기반으로 매년 괄목할 만한 성과를 올리며 고품질, 고효율을 겸비한 설비를 제작하고 있습니다. 나이키, 아디다스, 리복, 트렉스타, K2등 신발업계의 제작설비에 상당한 부분을 차지하며, 고객과 함께 만들어 나가고자 부단한 노력을 하고 있습니다.
+극동의 제화사업은 1975년을 시작으로 다양한 설비를 인증받아 왔으며 극동기계만의 노하우를 통하여 앞으로도 탄탄하고 차별화된 설비를 제공해 드리겠습니다.</h2>
+                            <h2 class="Mcon2Item1Master">극동기계 대표이사 <span class="Mmaster">김정태</span></h2>
+                        </div>
+                    </li>
+                    <li class="Mcon2Item2">
+                       <div class="Mcon2Item2In">
+                         <div class="MspanTit">
+                               <span class="MtopI">Rubber Producing Machinery</span>
+                               <span class="Mheart">♥</span>
+                               <span class="Mcount">127,448</span>
+                           </div>
+                            <h2 class="Mcon2ItemTit1">자동차 도어 'weather Srip' 생산 설비 제작!</h2>
+                            <h2 class="Mcon2ItemTit2">Manufacture of car door 'weather Srip' production equipment!</h2>
+                            <h2 class="Mcon2ItemTxt">2006년 이후부터, 압출기 및 HAV / UHF 가류조 라인을 위한 설비들을 설계 및 제작하면서 현재에 이르기까지 Weather Strip 생산라인용 관련 모든 설비들을 활발하게 제조공급하고 있습니다.
+극동에서는 생산하는 설비에 대해 고객의 신뢰성이 최 우선이라는 신념으로 품질 확보에 수백번의 실험 및 결과를 얻기위해 전력투구 하고 있으며, 작업자 환경 또한 고려하여 에코시스템에 의한 전력량 감소 이외에도 많은 편의사항들을 개발하고 있습니다.</h2>
+                            <h2 class="Mcon2Item2Master">극동기계 대표이사 <span class="Mmaster">김정태</span></h2>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="con" id="Mcon3">
+            <div class="Mcon3In">
+                <a href="" class="Mcon3Box">
+                    <span class="Mcon3BoxTop">"</span>
+                    <div class="Mcon3BoxTxtIn">
+                        <h2 class="Mcon3BoxTxt1">고객이 만족하고 고객이 신뢰할 수 있는 기기를 제작한다.</h2>
+                        <h2 class="Mcon3BoxTxt2">이러한 신념 아래 고객의 신뢰와 만족을 극대화 하기 위하여 끊임없는 도전과 개척정신을 기업 이념으로 간직하며 최선을 다하여 노력할 것을 약속 드리겠습니다. 감사합니다.<br><br>
+                                Under this belief, we will promise to do our utmost to keep the constant challenge and pioneering spirit as our corporate philosophy in order to maximize customer's trust and satisfaction. Thank you.</h2>
+                            </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="con" id="Mcon4">
+            <div class="Mcon4In">
+                <div class="Mcon4TitIn">
+                    <h2 class="Mcon4Tit1">PRODUCT</h2>
+                    <h2 class="Mcon4Tit2">지속적인 <strong>연구개발을 통한 제품 개발</strong>과 <strong>품질향상</strong>에 노력하고 있습니다.</h2>
+                </div>
+                
+                <div class="Mcon4BoxIn">
+                    <ul>
+                        <li class="Mon"><a href="" class="Mon">Cutting</a></li>
+                        <li><a href="">Stitching</a></li>
+                        <li><a href="">Stockfit</a></li>
+                        <li><a href="">Outsole</a></li>
+                        <li><a href="">Nosew</a></li>
+                        <li><a href="">Assembly</a></li>
+                        <li><a href="">Other</a></li>
+                    </ul>
+                </div>
+                
+                <div class="Mcon4BoxItemIn1">
+                    <ul>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item1.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="Mcon4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>                          
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="Mcon4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item3.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="Mcon4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="Mcon4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>                          
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item1.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="Mcon4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="con4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item3.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="Mcon4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                        <li><a href="">
+                            <img src="./images/desktop/con4Item2.png" alt="">
+                        </a>
+                            <div class="Mcon4BoxItemTxt">
+                                <h2 class="Mcon4BoxItemtit1">KD-P2 | Hydraulic Swing Arm Cutting Machine</h2>
+                                <h2 class="Mcon4BoxItemtit2">회전식 제단기</h2>
+                                
+                                <p class="Mcon4BoxItemTxt1">신발 산업에서 가죽, PU, 플라스틱, 고무 등의 커팅 작업을 위해 사용한다.
+한 장 또는 여러 장 커팅이 가능하다.</p>
+                            </div>
+                            <button class="MCon4ItemMore">자세히 보기</button>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="Mcon4BoxBtn">
+                        <button class="MCon4lBtn"><img src="./images/desktop/lBtn.png" alt=""></button>
+                        <button class="MCon4rBtn"><img src="./images/desktop/rBtn.png" alt=""></button>
+                    </div>
+            </div>
+        </div>
+        
+        <footer id="Mft">
+            <div class="MftIn">
+                <a href="" class="MftLogo">
+                    <img src="./images/desktop/logo.png" alt="">
+                </a>
+                
+                <div class="MftLink">
+                    <ul>
+                        <li><a href="">서비스이용약관</a></li>
+                        <li><a href="" style="color: crimson">개인정보취급방침</a></li>
+                        <li><a href="">이메일무단수집거부</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">극동기계전략</a></li>
+                        <li><a href="">극동기계산업</a></li>
+                        <li><a href="">극동협력</a></li>
+                        <li><select name="fm" id="Mfamilly">
+                            <option value="">패밀리사이트</option>
+                            <option value="">극동인트라넷</option>
+                            <option value="">네이버</option>
+                        </select></li>
+                    </ul>
+                </div>
+                
+                <div class="MaddressBox">
+                    <h2 class="Maddress1">부산광역시 사상구 학감대로 147번길 54</h2>
+                    <h2 class="Maddress2">54, Hakgam-daero 147beon-gil, Sasang-gu, Busan, Korea</h2>
+                    <span class="Mcopyright">Copyright 2014 KUKDONG Co., Ltd. All Right Reserved.</span>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
