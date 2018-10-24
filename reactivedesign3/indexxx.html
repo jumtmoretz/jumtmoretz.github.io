@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="호텔스컴바인, 호텔, 숙박, 예약, 펜션">
+    <meta name="Description" content="최저가 호텔 모아보면 보인다!">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>:: 호텔스컴바인 ::</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트링크 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    
+   
+   <!-- 데스크탑 CSS -->
+   <style>
+       * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width:1920px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+    </style>
+    
+    <style>
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        #hd {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .logo {
+            display: block;
+            width: 8%;
+            height: auto;
+            background-color: #2c2b31;
+            padding: 2%;
+        }
+        .logo img {
+            display: block;
+            width: 100%;
+            height: auto;  
+        }
+        .menuBtn {
+            width: 9%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 12%;
+            text-align: center;
+            font-size: 1.5vmin;
+            line-height: 12vmin;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+    </style>
+    
+    <style>
+        #con1 {
+            width: 100%;
+            height: 75%;
+            background-image: url("./images/desktop/con1Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .con1In {
+            width: 100%;
+            height: auto;
+        }
+        .con1Tit {
+            width: 100%;
+            height: auto;
+        }
+        .con1TitIn {
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 12%;
+        }
+        .con1TitIn h2 {
+            color: #fff;
+            text-align: center;
+            line-height: 6vmin;
+            
+        }
+        .con1Tit1 {
+            font-size: 1.6vmin;
+            font-family: 'PT Serif', serif;
+            font-weight: 300;
+        }
+        .con1Tit2 {
+            font-family: 'PT Serif', serif;
+            font-weight: 300;
+            font-size: 7vmin;
+            text-shadow: 1px 1px 1px #333;
+        }
+        .con1Tit3 {
+            padding-top: 4%;
+            font-size: 3vmax;
+        }
+        .con1More {
+            width: 100%;
+            height: auto;
+        }
+        .con1More .con1MoreIn {
+            width: 30%;
+            height: auto;
+            margin: 3% auto;
+            text-align: center;
+        }
+        .more {
+            width: 100%;
+            height: auto;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 3% 7%;
+            font-size: 2vmin;
+        }
+        
+        .search {
+            width: 100%;
+            height: 15%;
+            background-color: #fff;
+        }
+        .searchIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .searchIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .searchIn ul li {
+            width: 14.66%;
+            height: 20%;
+            float: left;
+            margin-left: 2%;
+            margin-top: 2.5%;
+        }
+        .searchIn ul li a {
+            border-right: 2px solid #333;
+            box-sizing: border-box;
+        }
+        .searchIn ul li a.scLast {
+            border: 0;
+        }
+        .searchIn ul li a .searchTit1 {
+            font-size: 1.5vmin;
+            font-weight: 100;
+        }
+        .searchIn ul li a .searchTit2 {
+            font-size: 3vmin;
+        }
+        .searchIn ul li a, .searchIn ul li span {
+            display: block;
+            color: #333;
+        }
+        .searchBtn {
+            width: 100%;
+            height: auto;
+            padding:7%;
+            text-align: center;
+            background-color: #333;
+            border: 0;
+            color: #fff;
+        }
+    </style>
+    
+    <style>
+        #con2 {
+            width: 100%;
+            height: 100%;
+        }
+        .con2Box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .con2In {
+            width: 80%;
+            height: 70%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .con2In ul {
+            width: 400%;
+            height: 100%;
+        }
+        .con2In ul li {
+            width: 20%;
+            height: 100%;
+            float: left;
+            margin: 1% 2.5%;
+            position: relative;
+        }
+        .con2In ul li h2 {
+            color: #333;
+            font-size: 4vmin;
+            font-family: 'PT Serif', serif;
+        }
+        .con2In ul li .con2More {
+            display: block;
+            font-family: 'PT Serif', serif;
+            color: #333;
+            font-size: 2vmin;
+            font-weight: bold;
+            padding-bottom: 2%;
+            width: 20%;
+            border-bottom: 2px solid #333;
+            margin: 4% 0%;
+        }
+        .con2Txt1 {
+            display: block;
+            line-height: 6vmin;
+            color: #888;
+            font-weight: bold;
+            font-size: 1.9vmin;
+        }
+        .con2Txt2 {
+            display: block;
+            width: 25%;
+            height: 45%;
+            z-index: 999;
+            background-color: #333;
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            color: #fff;
+        }
+        .con2Itmg {
+            display: block;
+            width: 50%;
+            height: auto;
+            position: absolute;
+            right: 5%;
+            top: 10%;
+        }
+        .con2Btn {
+            width: 10%;
+            height: auto;
+            position: absolute;
+            bottom: 37%;
+            right: 28%;
+        }
+        .con2BtnIn button {
+            border: 0;
+            background: none;
+            font-size: 3vmin;
+            color: #333;
+            cursor: pointer;
+        }
+        .lBtn {
+            float: left;
+        }
+        .rBtn {
+            float: right;
+        }
+        .con2BtnIn span {
+            display: block;
+            float: left;
+            color: #333;
+            text-align: center;
+            font-weight: bold;
+            text-indent: 35%;
+            font-size: 2.5vmin;
+        }
+    </style>
+    
+    
+    <style>
+        #con3 {
+            width: 100%;
+            height: 100%;
+            background-color: #f8f8f8;
+        }
+        .con3Box {
+            width: 100%;
+            height: auto;
+        }
+        .con3Box con3In {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con3Tit {
+            width: 100%;
+            height: auto;
+        }
+        .con3TitIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con3TitIn {
+            text-align: center;
+            color: #333;
+        }
+        .con3Tit1 {
+            font-size: 7vmin;
+            font-weight: bold;
+        }
+        .con3Tit2 {
+            font-size: 3vmin;
+            font-weight: 100;
+            font-family: 'PT Serif', serif;
+            line-height: 10vmin;
+        }
+        .con3TLst {
+            width: 100%;
+            height: auto;
+        }
+        .con3TLstIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con3TlstIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .con3TLstIn ul li {
+            width: 50%;
+            float: left;
+        }
+        .con3TLstIn ul li a {
+            display: block;
+            color: #333;
+            font-size: 3vmin;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.5s;
+        }
+        .con3TLstIn ul li a:hover {
+            padding-bottom: 5%;
+            border-bottom: 3px solid #333;
+            color: #677663;
+        }
+        
+        .con3ConLst {
+            width: 100%;
+            height: auto;
+        }
+        .con3ConLstIn {
+            width: 80%;
+            height: auto;
+            margin: 10% auto;
+        }
+        .con3ConLstIn ul {
+            width: 100%;
+            height: auto;
+        }
+        .con3ConLstIn ul li {
+            float: left;
+            width: 20%;
+            margin: 2.5%;
+            background-color: #fff;
+        }
+        .con3ConLstIn ul li a img {
+            width: 100%;
+            height: auto;
+        }
+        .con3ItemTit {
+            display: block;
+            color: #888;
+            padding: 0% 7%;
+            font-size: 3.2vmin;
+        }
+        .con3Itemtxt1 {
+            color: #888;
+            padding: 0% 7.5%;
+            font-size: 2vmin;
+            font-weight: 100;
+        }
+        .con3ItemTxt2 {
+            color: #888;
+            font-size: 1.7vmin;
+            padding: 2% 7%;
+            font-weight: bold;
+        }
+        .won {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            padding: 2% 7%;
+            font-size: 2.9vmin;
+        }
+        .con3Day {
+            display: block;
+            color: #666;
+            padding: 1% 7%;
+            padding-bottom: 19%;
+            font-size: 2.2vmin;
+            font-weight: bold;
+        }
+    </style>
+    
+    <style>
+        #ft {
+            width: 100%;
+            height: 50%;
+            background-color: #2b2b35;
+            position: relative;
+        }
+        .ftBox {
+            width: 100%;
+            height: auto;
+        }
+        .ftBox .ftBoxIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+             padding-top: 6%;
+        }
+        .ftLogo {
+            display: block;
+            position: absolute;
+            width: 10%;
+            height: auto;
+            top: 5%;
+            left: 45%;
+        }
+        .ftBg {
+            display: block;
+            position: absolute;
+            width: 20%;
+            height: auto;
+            bottom: 0;
+            right: 0;
+            opacity: 0.2;
+
+        }
+        .ftBg2 {
+            display: block;
+            position: absolute;
+            width: 20%;
+            height: auto;
+            bottom: 0;
+            left: 0;
+            opacity: 0.2;
+
+        }
+        .ftSearch {
+            width: 33.33%;
+            float: left;
+            
+        }
+        .ftTextArea {
+            width: 50%;
+            height: 30px;
+            border: 0;
+            background-color: #383842;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .ftBtn {
+            width: 30%;
+            height: auto;
+            background: none;
+            border: 1px solid #fff;
+            padding: 1.75%;
+            color: #fff;
+            box-sizing: border-box;
+            font-weight: bold;
+            margin-left: 1%;
+            font-size: 2vmin;
+        }
+        
+        .sns {
+            width: 100%;
+            height: auto;
+            padding-left: 15%;
+        }
+        .snsIn {
+            width: 40%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .snsIn ul {
+            width: 70%;
+            height: auto;
+        }
+        .snsIn ul li {
+            float: left;
+            width: 9%;
+            margin: 4.5%;
+        }
+        .snsIn ul li img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .msg {
+            width: 20%;
+            height: auto;
+            float: right;
+            
+        }
+        .msgIn {
+            width: 100%;
+            height: auto;
+
+        }
+        .msgIn span {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+        }
+        .ftDown {
+            width: 100%;
+            height: auto;
+        }
+        .ftDownIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftDownIn ul {
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+        .ftDownIn ul li {
+            width: 20%;
+            height: auto;
+            float: left;
+            margin: 2.5%;
+        }
+        .ftDownIn ul li a {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 5vmin;
+            padding-bottom: 12%;
+        }
+        .ftDownIn ul li span {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            font-size: 2vmin;
+        }
+    </style>
+    
+    <style>
+        .menu {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+        .menu ul {
+            width: 80%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .menu ul li {
+            width: 11%;
+            height: auto;
+            float: left;
+            margin: 2.3%;
+        }
+        .menu ul li a {
+            display: block;
+            padding-bottom: 5%;
+            padding-top: 5%;
+            color: #323232;
+            font-weight: bold;
+            text-align: center;
+            font-size: 2vmin;
+        }
+        .menuClose {
+            display: block;
+            width: 9%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 12%;
+            text-align: center;
+            font-size: 1.5vmin;
+            line-height: 12vmin;
+            font-weight: bold;
+            color: #323232;
+            cursor: pointer;
+        }
+    </style>
+    <!-- MEDIA 속성 -->
+     <style>
+        @media screen and (max-width:767px) {
+            /* 모바일 */
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+        }
+        @media screen and (min-width:960px) and(max-width:1199px) {
+            /* 데스크탑 */
+        }
+        @media screen and (min-width:1200px) {
+        }
+    </style>
+    
+    <!-- 스크립트 -->
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".con2In").width());
+            $(".lBtn").click(function(){
+                $(".con2In ul").stop().not(":animated").animate({"margin-left": -wd +"px"}, 1200, function(){
+                    $(".con2In ul li").eq(0).appendTo(".con2In ul");
+                $(".con2In ul").css("margin-left", "0px"); 
+                });
+            });
+            $(".rBtn").click(function(){
+                 $(".con2In ul li").eq(3).prependTo($(".con2In ul"));
+                $(".con2In ul").css("margin-left", -wd + "px");
+                $(".con2In ul").not(":animated").animate({"margin-left" : "0px"}, 1200, function(){
+                });
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con3ConLstIn ul li.con3Item1").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item1").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
+            });
+            
+             $(".con3ConLstIn ul li.con3Item2").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item2").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
+            });
+            
+             $(".con3ConLstIn ul li.con3Item3").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item3").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
+            });
+            
+             $(".con3ConLstIn ul li.con3Item4").hover(function(){
+                $(this).stop().not(":animated").animate({"margin-top" : "-7%"}, 700);
+            });
+            $(".con3ConLstIn ul li.con3Item4").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"margin" : "2.5%"}, 700);
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".menuBtn").click(function(){
+                $(".menu").not(":animated").animate({"left": "0"}, 800);
+            });
+            $(".menuClose").click(function(){
+                $(".menu").not(":animated").animate({"left": "-100%"}, 800);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main" id="desktop">
+        <header id="hd">
+            <a href="index.html" class="logo">
+                <img src="./images/desktop/logo.png" alt="로고">
+            </a>
+            <span class="menuBtn">MENU</span>
+            
+            <div class="menu">
+                <div class="manuIn">
+                    <ul>
+                        <li><a href="sub1.html">호텔스컴바인</a></li>
+                        <li><a href="sub1.html">예약서비스</a></li>
+                        <li><a href="sub1.html">뚜루뚜루</a></li>
+                        <li><a href="sub1.html">비즈니스 호텔</a></li>
+                        <li><a href="sub1.html">추천 호텔</a></li>
+                        <li><a href="sub1.html">회원 서비스</a></li>
+                    </ul>
+                    <a href="index.html" class="logo">
+                <img src="./images/desktop/logo.png" alt="로고">
+            </a>
+                   <span class="menuClose">X</span>
+                </div>
+            </div>
+        </header>
+        <div class="con" id="con1">
+                <div class="con1Tit">
+                    <div class="con1TitIn">
+                        <h2 class="con1Tit1">If you can dream it, We can creat it</h2>
+                        <h2 class="con1Tit2">HOTELS COMBINED</h2>
+                        <h2 class="con1Tit3">최저가 호텔 모아보면 보인다!</h2>
+                    </div>
+                    <div class="con1More">
+                        <div class="con1MoreIn">
+                            <a href="" class="more">간편예약</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="search">
+                    <div class="searchIn">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">Place Select</span>
+                                    <span class="searchTit2">Korea ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">Detailed Area</span>
+                                    <span class="searchTit2">상세지역 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">날짜 선택</span>
+                                    <span class="searchTit2">년/월/일 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="searchTit1">인원 수</span>
+                                    <span class="searchTit2">인원 선택 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="scLast">
+                                    <span class="searchTit1">결제 수단</span>
+                                    <span class="searchTit2">방문 결제 ▼</span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <button class="searchBtn">SEARCH</button>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+        
+        <div class="con" id="con2">
+            <div class="con2Box">
+                <div class="con2In">
+                    <ul>
+                        <li>
+                            <h2 class="con2Tit">간편예약 서비스<br>Easy Booking</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
+                        <li>
+                            <h2 class="con2Tit">즐거운 여행의 시작<br>The beginning of a pleasant trip</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
+                        <li>
+                            <h2 class="con2Tit">최고의 호텔 예약<br>Best Hotel Reservation</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
+                        <li>
+                            <h2 class="con2Tit">모바일로 간편하게!<br>Easy on your mobile!</h2>
+                            <a href="" class="con2More">Combined Of Easy Check →</a>
+                            <span class="con2Txt1">간편예약 서비스<br>컴바인에서 시작합니다.</span>
+                            <span class="con2Txt2">내용 넣어야함.</span>
+                            <img src="./images/desktop/ex1.png" alt="" class="con2Itmg">
+                            <a href="">CLICK!</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="con2Btn">
+                                <div class="con2BtnIn">
+                                    <button class="lBtn">←</button>
+                                    <span class="countO"> / 05</span>
+                                    <button class="rBtn">→</button>
+                                </div>
+                            </div>
+            </div>
+        </div>
+        
+        <div class="con" id="con3">
+            <div class="con3Box">
+                <div class="con3In">
+                    <div class="con3Tit">
+                       <div class="con3TitIn">
+                           <h3 class="con3Tit1">FIND YOUR PLACE</h3>
+                            <h3 class="con3Tit2">ENJOY YOUR PLANS</h3>
+                       </div>
+                    </div>
+                    
+                    <div class="con3TLst">
+                        <div class="con3TLstIn">
+                            <ul>
+                                <li><a href="">Properties for Sale</a></li>
+                                <li><a href="">Properties for Rent</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="con3ConLst">
+                        <div class="con3ConLstIn">
+                            <ul>
+                                <li class="con3Item1">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg1.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                                <li class="con3Item2">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg2.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                                <li class="con3Item3">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg3.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                                <li class="con3Item4">
+                                   <a href="">
+                                    <img src="./images/desktop/con3ItemImg1.png" alt="">
+                                        <span class="con3ItemTit">Dubai Marina</span>
+                                        <h2 class="con3Itemtxt1">HOTELS</h2>
+                                        <h2 class="con3ItemTxt2">예약진행이<br>가능한 호텔입니다.</h2>
+                                        <span class="won">AED  544,790</span>
+                                        <span class="con3Day">1P ~ 2W</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer id="ft">
+            <div class="ftBox">
+                <div class="ftBoxIn">
+                 <img src="./images/desktop/logo.png" alt="" class="ftLogo">
+                  <img src="./images/desktop/conCha1.png" alt="" class="ftBg">
+                  <img src="./images/desktop/conCha4.png" alt="" class="ftBg2">
+                   <div class="ftSearch">
+                        <input type="text" class="ftTextArea">
+                        <button class="ftBtn">
+                            SUBSCRIBS
+                        </button>
+                    </div>
+                    
+                    <div class="sns">
+                        <div class="snsIn">
+                            <ul>
+                                <li><a href=""><img src="./images/desktop/google.png" alt=""></a></li>
+                                <li><a href=""><img src="./images/desktop/twitter.png" alt=""></a></li>
+                                <li><a href=""><img src="./images/desktop/you.png" alt=""></a></li>
+                                <li><a href=""><img src="./images/desktop/pinter.png" alt=""></a></li>
+                                <li><a href="https://www.facebook.com" target="_blank"><img src="./images/desktop/facebook.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="msg">
+                        <div class="msgIn">
+                            <span class="tell">444-4444-4444</span>
+                            <span class="mail">addgo@naver.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ftDown">
+                    <div class="ftDownIn">
+                        <ul>
+                            <li>
+                                   <a href="">GIM</a>
+                                    <span>About As</span>
+                                    <span>About Use</span>
+                                    <span>Careers</span>
+                                    <span>Contact Us</span>
+                                </li>
+                            <li><a href="">Discover</a>
+                                    <span>개인정보처리방침</span>
+                                    <span>이용약관</span>
+                                    <span>컴바인이력</span>
+                                    <span>호텔스</span>
+                                </li>
+                            <li><a href="">Genaral</a>
+                                    <span>Team</span>
+                                    <span>Privacy Policy</span>
+                                </li>
+                            <li><a href="">Address</a>
+                                    <span>대표자 : 이정욱</span>
+                                    <span style="font-weight: bold; font-size: 1.3vmin;">ⓒCOPYRIGHT HOTELS COMBINED . 이정욱</span>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
