@@ -12,13 +12,18 @@
     <![endif]-->
     <meta name="msapplication-TileColor" content="#ffffff">
     <title>:: 욱이 ::</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+    
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- 폰트링크 -->
    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+   
    
    <!-- 데스크탑 CSS -->
-   <style>
+    <style>
        * {
             margin: 0;
             padding: 0;
@@ -48,14 +53,40 @@
            width: 100%;
            height: 100%;
        }
+       .uk {
+            display: block;
+            float: right;
+            width: 5%;
+            height: auto;
+            position: absolute;
+            bottom: 5%;
+            left: 47.5%;
+            animation:uk ease-in-out 3s infinite;
+            transform-origin:5% 5% 0;
+            transform-style:preserve-3d;
+            z-index: 9999;
+           cursor: pointer;
+        }
+        @keyframes uk {
+            16% {
+                transform: rotateY(0deg);
+            }
+            33% {
+                transform: rotateY(30deg);
+            }
+            50% {
+                transform: rotateY(-3deg);
+            }
+            66% {
+                 transform: rotateX(40deg);
+            }
+            83% {
+                transform:  rotateZ(-16deg) rotateX(20deg) rotateY(25deg);
+            }
+      }
     </style>
     
     <style>
-        .home {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
         #hd {
             width: 100%;
             height: auto;
@@ -159,10 +190,10 @@
         }
         @keyframes me {
             from {
-              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2a4257, 0 0 70px #2a4257, 0 0 80px #2a4257, 0 0 100px #2a4257, 0 0 150px #2a4257;
+              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #f1004d, 0 0 70px #f1004d, 0 0 80px #f1004d, 0 0 100px #f1004d, 0 0 150px #f1004d;
             }
             to {
-              text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #2a4257, 0 0 35px #2a4257, 0 0 40px #2a4257, 0 0 50px #2a4257, 0 0 75px #2a4257;
+              text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f1004d, 0 0 35px #f1004d, 0 0 40px #f1004d, 0 0 50px #f1004d, 0 0 75px #f1004d;
             }
         }
         .hdIn ul li a.on {
@@ -170,15 +201,23 @@
         }
         @keyframes me {
             from {
-              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #2a4257, 0 0 70px #2a4257, 0 0 80px #2a4257, 0 0 100px #2a4257, 0 0 150px #2a4257;
+              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #f1004d, 0 0 70px #f1004d, 0 0 80px #f1004d, 0 0 100px #f1004d, 0 0 150px #f1004d;
             }
             to {
-              text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #2a4257, 0 0 35px #2a4257, 0 0 40px #2a4257, 0 0 50px #2a4257, 0 0 75px #2a4257;
+              text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f1004d, 0 0 35px #f1004d, 0 0 40px #f1004d, 0 0 50px #f1004d, 0 0 75px #f1004d;
             }
         }
     </style>
     
     <style>
+        #con1 {
+            width: 100%;
+            height: 100%;
+            background-color: #efefef;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         #con1 {
             width: 100%;
             height: 100%;
@@ -207,36 +246,68 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 100;
         }
-        .uk {
-            display: block;
-            float: right;
-            width: 15%;
-            height: auto;
+        .box {
             position: absolute;
-            top: 20%;
-            right: 10%;
-            animation:uk ease-in-out 12s infinite;
-            transform-origin:150px 150px 0;
-            transform-style:preserve-3d;
-            display: none;
+            bottom: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 150px;
         }
-        @keyframes uk {
-            16% {
-                transform: rotateY(-90deg);
+        .box .face {
+            position: absolute;
+            width: 500px;
+            height: 70px;
+            font-size: 4em;
+            text-align: center;
+            line-height: 70px;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+        .box .face span {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: 0.5s;
+        }
+        .box .face.face1 {
+            background: #d80045;
+            color: #fff;
+            transform-origin: left;
+            left: 0;
+            transform: perspective(800px) rotateY(-64deg);
+        }
+        .box .face.face2 {
+            background: #f1004d;
+            color: #3f3f3f;
+            transform-origin: right;
+            right: 0;
+            transform: perspective(800px) rotateY(64deg);
+        }
+        .box .face.face1 span {
+            position: absolute;
+            animation: ani1 7s linear infinite;
+        }
+        @keyframes ani1 {
+            0% {
+                left: 200%;
             }
-            33% {
-                transform: rotateY(-180deg);
+            100% {
+                left: -100%;
             }
-            50% {
-                transform: rotateY(-270deg);
+        }
+        .box .face.face2 span {
+            position: absolute;
+            animation: ani2 7s linear infinite;
+        }
+        @keyframes ani2 {
+            0% {
+                left: 100%;
             }
-            66% {
-                 transform: rotateX(90deg);
+            100% {
+                left: -200%;
             }
-            83% {
-                transform:  rotateZ(-45deg) rotateX(270deg) rotateY(45deg);
-            }
-      }
+        }
     </style>
     
     <style>
@@ -244,59 +315,327 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            left: 0;
-            top: 0;
-            background-image: url("./images/con2Bg.png");
-            background-size: 100% 100%;
+            left: 0%;
+            top: -100%;
+            background-image: url("./images/Bg.png");
             background-repeat: no-repeat;
-            display: none;
         }
         .con2In {
             width: 80%;
             height: 80%;
             margin: 6% auto;
+            margin-bottom: 0;
             box-sizing: border-box;
-            background-color: #fff;
-            box-shadow: 1px 1px 13px #3f3f3f;
+            position: relative;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .con2List {
+            width: 65%;
+            height: 100%;
+            float: left;
+            box-sizing: border-box;
             position: relative;
         }
-        .con2Img {
-            width: 30%;
-            height: 100%;
-            box-sizing: border-box;
-            box-shadow: 12px 1px 13px #333;
+        .myP {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
-        .con2Img img {
+        .con2List ul.in {
+            clear: both;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 12.5%;
+            left: 2%;
+            transform: rotate(-15.5deg);
+        }
+        .con2List ul.in li {
+            float: left;
+            margin: 5%;
+        }
+        .title {
+            font-family: 'Slabo 27px', serif;
+            font-weight: bold;
+            font-size: 1vmax;
+            letter-spacing: 1vmax;
+            color: #f49e87;
+        }
+        .con2List h3 {
+            font-size: 0.7vmax;
+            color: #3f3f3f;
+        }
+        .con2List ul.in2 {
+            clear: both;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 29.5%;
+            left: 2%;
+            transform: rotate(-15.5deg);
+        }
+        .con2List ul.in2 li {
+            float: left;
+            margin: 5%;
+        }
+        .snsIcon {
+            display: inline-block;
+            width: 35%;
+            height: auto;
+        }
+        .snsIcon img {
+            display: block;
             width: 100%;
             height: auto;
         }
-        .conTxt {
-            width: 70%;
-            height: 100%;
+        .skill {
+            clear: both;
             position: absolute;
             top: 0;
-            right: 0;
+            right: 27.5%;
+            
         }
-        .conTxt ul li {
-            text-align: left;
-            width: 23.33%;
+        .skillTitIn {
+            width: 100%;
             height: auto;
-            color: #a4a1cd;
+        }
+        .skillTit {
+            text-align: left;
+            font-size: 3vmax;
+            box-sizing: border-box;
+            color: #3f3f3f;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+            letter-spacing: 0.33vmax;
+            line-height: 3vmax;
+        }
+        .skillTit strong {
+            font-size: 3.5vmax;
+        }
+        .skillTit p {
+            display: inline-block;
+            animation: ani3 1s linear infinite;
+            color: #cc4958;
+            cursor: pointer;
+        }
+        @keyframes ani3 {
+            0% {
+                transform: rotateY(360deg);
+            }
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+    </style>
+    
+    <style>
+        .skillLst {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            left: 40%;
+            display: none;
+        }
+        .skillLst2 {
+            top: 50%;
+            width: 100%;
+        }
+        .Csk {
+            width: 200px;
+            height: 200px;
+            position: relative;
             float: left;
-            margin: 5%;
-            font-weight: 100;
+            margin: 2.5%;
+            }
+        .Cout, .Cin, .Ctime {
+            z-index: 6;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+        .Cin {
+            top: 50%;
+            left: 50%;
+            width: 160px;
+            height: 160px;
+            margin-left: -80px;
+            margin-top: -80px;
+            border-radius: 100%;
+            background-color: #fff;
+            text-align: center;
+            color: #3f3f3f;
             font-size: 1vmax;
             font-weight: bold;
+            padding-top: 30%;
+            box-sizing: border-box;
         }
-        .conTxt ul li span {
-            display: block;
-            font-size: 2.5vmax;
-            text-align: left;
-            color: #53545b;
-            font-weight: 100;
-            font-family: 'EB Garamond', serif;
-            padding: 1.5% 0%;
+        .Ctime {
+            z-index: 1;
+            box-shadow: none;
         }
+/* 일번 */
+        .Cbox1 {
+            background-color: #d80045;
+        }
+        .Cbox1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            clip: rect(0px, 100px, 300px, 0px);    
+        }
+        #Cleft .Cbox1 {
+            z-index: 1;
+        }
+        #Cleft .Cbox1.on {
+            animation: ani01 2s linear both;
+        }
+        @keyframes ani01 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-130deg);
+            }
+        }
+        
+        /* ㅅ이번 */
+        .Cbox2 {
+            background-color: #b62025;
+        }
+        .Cbox2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            clip: rect(0px, 100px, 300px, 0px);    
+        }
+        #Cleft .Cbox2 {
+            z-index: 1;
+        }
+        #Cleft .Cbox2.on {
+            animation: ani02 2s linear both;
+        }
+        @keyframes ani02 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-150deg);
+            }
+        }
+        
+        /* 삼번 */
+        .Cbox3 {
+            background-color: #0868ab;
+        }
+        .Cbox3 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            clip: rect(0px, 100px, 300px, 0px);    
+        }
+        #Cleft .Cbox3 {
+            z-index: 1;
+        }
+        #Cleft .Cbox3.on {
+            animation: ani03 2s linear both;
+        }
+        @keyframes ani03 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-90deg);
+            }
+        }
+        
+        /* 4번 */
+        .Cbox4 {
+            background-color: #99ccff;
+        }
+        .Cbox4 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            clip: rect(0px, 100px, 300px, 0px);    
+        }
+        #Cleft .Cbox4 {
+            z-index: 1;
+        }
+        #Cleft .Cbox4.on {
+            animation: ani04 2s linear both;
+        }
+        @keyframes ani04 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-100deg);
+            }
+        }
+        
+        /* 5번 */
+        .Cbox5 {
+            background-color: #ffb43f;
+        }
+        .Cbox5 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            clip: rect(0px, 100px, 300px, 0px);    
+        }
+        #Cleft .Cbox5 {
+            z-index: 1;
+        }
+        #Cleft .Cbox5.on {
+            animation: ani05 2s linear both;
+        }
+        @keyframes ani05 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-72deg);
+            }
+        }
+        
+        /* 6번 */
+        .Cbox6 {
+            background-color: #3f3f3f;
+        }
+        .Cbox6 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            clip: rect(0px, 100px, 300px, 0px);    
+        }
+        #Cleft .Cbox6 {
+            z-index: 1;
+        }
+        #Cleft .Cbox6.on {
+            animation: ani06 2s linear both;
+        }
+        @keyframes ani06 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-79deg);
+            }
+        }
+        
+        
+
     </style>
     
     <style>
@@ -304,12 +643,11 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 0%;
+            top: -100%;
             background-image: url("./images/con3Bg.png");
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            display: none;
         }
     </style>
     
@@ -318,126 +656,362 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            left: 0;
-            top: 0;
-            background-image: url("./images/con4Bg.png");
+            left: 0%;
+            top: -100%;
+            background-image: url("./images/con2Bg.png");
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            display: none;
         }
         .con4In {
             width: 80%;
             height: auto;
-            margin: 10% auto;
-        }
-        .listBox {
-            width: 70%;
-            height: auto;
             margin: 0 auto;
+            margin-top: 10%;
         }
-        .listBox ul {
+        .con4TitLst {
+            width: 30%;
+            height: auto;
+            box-sizing: border-box;
+        }
+        .con4TitLst ul {
             width: 100%;
             height: auto;
         }
-        .listBox ul li {
-            float: left;
-            width: 28.33%;
+        .con4TitLst ul li {
+            width: 30.33%;
             height: auto;
-            margin: 2.5%;
-            padding: 2.5%;
-            cursor: pointer;
-            position: relative;
+            margin: 1.5%;
+            float: left;
+            padding: 5%;
             box-sizing: border-box;
-            background: #fff;
+            transform-origin: left;
         }
-        .listBox ul li a {
+        .con4TitLst ul li a {
             display: block;
+            color: #3f3f3f;
+            font-size: 1.2vmax;
+            font-weight: bold;
             text-align: center;
             cursor: pointer;
+            transition: 0.5s;
         }
-        .reactive {
+        .con4TitLst ul li a.on {
+            animation: portAni 2s infinite linear both;
+            color: #b62025;
+            text-shadow: 2px 1px 13px #fff;
+            box-sizing: border-box;
+        }
+        @keyframes portAni {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        .con4List {
+            clear: both;
             width: 100%;
             height: auto;
+            box-sizing: border-box;
+            overflow: scroll;
+            overflow: hidden;
         }
-        .reactive ul {
-            width: 100%;
-            height: 50%;
+        .con4List.off {
+            display: none;
         }
-        .reactive ul li {
+        .con4List ul.resBox {
+            width: 250%;
+            height: auto;
+            
+        }
+        .con4List ul.resBox li {
             float: left;
-            width: 14.166%;
-            margin: 1.25%;
+            width: 13.66%;
+            height: auto;
+            margin: 1.5%;
+            position: relative;
         }
-        .reactive ul li a img {
+        .con4List ul.resBox li img {
+            display: block;
             width: 100%;
             height: auto;
+            cursor: pointer;
+            transition: 0.5s;
+            z-index: 10;
         }
-    </style>
-    
-    
-    <!--<style>
-        .wrapper1 {
-            width: 300px;
+        .con4List ul.resBox li img.on {
+            transform-origin: top;
+            transform: rotate(-120deg);
+            opacity: 0.4;
+            animation: imgAni 6s infinite linear both;
+        }
+        @keyframes imgAni {
+            0% {
+                transform: rotate(-120deg);
+            }
+            20% {
+                transform: rotateX(120deg);
+            }
+            40% {
+                transform: rotateY(-60deg);
+            }
+            60% {
+                transform: rotateY(120deg);
+            }
+            80% {
+                transform: rotateY(60deg);
+            }
+            100% {
+                transform: rotate(-120deg);
+            }
+        }
+        .c4TBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 5%;
+            display: none;
+        }
+        .c4Tit {
+            font-size: 2vmax;
+            font-weight: bold;
+            color: #3f3f3f;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        .color {
+            width: 50%;
+            height: auto;
+            padding: 2% 0%;
+            display: block;
+        }
+        .color li {
+            float: left;
+            width: 20%;
+            margin: 2.5%;
+        }
+        .color li span {
+            display: block;
+            width: 20px;
             height: 20px;
             border-radius: 20px;
-            margin: 0 auto;
-            position: absolute;
-            bottom: 0;
-            right: 0;
         }
-        .loader {
-          width: 95%;
-          height: 50%;
-          margin-top: -8px;
-          border-radius: inherit;
-          z-index: 100;
+        .c4Txt {
+            clear: both;
+            display: block;
+            font-size: 0.75vmax;
+            color: #3f3f3f;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-weight: bold;
+            padding: 5% 0%;
+            line-height: 25px;
         }
-        .inner {
-            width: 0%;
-          height: 100%;
-          background: #2b8095;
-          background: linear-gradient(to right, #237686, #34476f, #5b426c, #965666, #ba835c, #d0c746);
-          animation: gauge 5s ease-out;
-          animation-fill-mode:both;
-        }
-
-
-        @keyframes gauge {
-          100% {
-              width: 100%;
-            } 
-        }
-    </style>-->
-
-    <!-- MEDIA 속성 -->
-     <style>
-        @media screen and (max-width:767px) {
-            /* 모바일 */
-        }
-        @media screen and (min-width:768px) and (max-width:959px) {
-            /* 테블릿 */
-        }
-        @media screen and (min-width:960px) and(max-width:1199px) {
-            /* 데스크탑 */
-        }
-        @media screen and (min-width:1200px) {
+        .c4More {
+            display: block;
+            background-color: #fff;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-weight: bold;
+            text-align: center;
+            margin: 3% auto;
+            position: relative;
+            width: 30%;
+            padding: 2.5%;
+            box-sizing: border-box;
         }
     </style>
     
-    <!-- 스크립트 -->
+    <style>
+        #con5 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0%;
+            top: -100%;
+            background-image: url("./images/conBg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .con5In {
+            width: 80%;
+            height: 80%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            margin-top: 5%;
+            position: relative;
+        }
+        .c5Lst {
+            width: 100%;
+            height: auto;
+        }
+        .c5Box {
+            position: absolute;
+            width: 30%;
+            height: auto;
+            box-sizing: border-box;
+        }
+        .c5Box1 {
+            left: 0;
+            top: 0%;
+        }
+        .c5Box2 {
+            left: 25%;
+            bottom: 45%;
+        }
+        .c5Box3 {
+            left: 40%;
+            bottom: 20%;
+        }
+        .c5Box4 {
+            left: 55%;
+            bottom: 0%;
+        }
+        .c5Num {
+            color: #fff;
+            font-size: 2vmax;
+            font-weight: 100;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+        }
+        .c5Num strong {
+            color: #ad1f23;
+            font-weight: bold;
+            font-size: 3vmax;
+        }
+        .c5Txt1 {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            padding: 1% 5%;
+        }
+        .c5Txt2 {
+            display: block;
+            color: #fff;
+            padding: 1% 5%;
+            font-weight: 100;
+            font-family: 'Playfair Display', serif;
+        }
+        .c5_box3Lst li {
+            float: left;
+            margin: 2.5%;
+        }
+        #map_canvas {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0.4;
+        }
+        .sendBox {
+            width: 55%;
+            height: 35%;
+            box-sizing: border-box;
+            position: absolute;
+            right: 0;
+            top: 10%;
+            opacity: 0.4;
+            transition: 0.7s;
+            cursor: pointer;
+        }
+        .sendBox:hover {
+            opacity: 1;
+        }
+        .sendtop {
+            width: 100%;
+            height: auto;
+        }
+        .sendtop li {
+            float: left;
+            width: 45%;
+            height: auto;
+            margin: 2.5%;
+        }
+        .sendtop li input {
+            width: 100%;
+            height: auto;
+            border: 1px solid #3f3f3f;
+            padding: 2.5%;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .textArea {
+            display: block;
+            width: 95%;
+            height: auto;
+            margin: 2.5% auto;
+            border: 1px solid #3f3f3f;
+            box-sizing: border-box;
+            padding: 5%;
+            cursor: pointer;
+        }
+        
+        .sendGo {
+            display: block;
+            width: 20%;
+            height: auto;
+            color: #3f3f3f;
+            background-color: #fff;
+            padding: 2.5%;
+            font-size: 1vmax;
+            font-weight: bold;
+            float: right;
+            margin: 2.5%;
+            text-align: center;
+            transition: 0.5s;
+        }
+        .sendGo:hover {
+            transform: rotateY(360deg);
+            background-color: #3f3f3f;
+            color: #fff;
+        }
+    </style>
+
     <script>
         $(document).ready(function(){
-            $(".uk").fadeIn(4000);
+            $(".hdIn ul li a.intro").click(function(){
+                $(".skillLst").delay(1000).fadeIn(1200);
+                $("#Cleft .Cbox1, #Cleft .Cbox2, #Cleft .Cbox3,#Cleft .Cbox4, #Cleft .Cbox5, #Cleft .Cbox6").addClass("on");
+                $("#Cleft .Cbox1, #Cleft .Cbox2, #Cleft .Cbox3,#Cleft .Cbox4, #Cleft .Cbox5, #Cleft .Cbox6").css("animation-delay", "1.1s, 480ms");
+            });
+            $(".hdIn ul li").find("a.wark").click(function(){
+                $(".skillLst").fadeOut(1200);
+                $("#Cleft .Cbox1, #Cleft .Cbox2, #Cleft .Cbox3,#Cleft .Cbox4, #Cleft .Cbox5, #Cleft .Cbox6").removeClass("on");
+            });
+            $(".hdIn ul li").find("a.portfolio").click(function(){
+                $(".skillLst").fadeOut(1200);
+                $("#Cleft .Cbox1, #Cleft .Cbox2, #Cleft .Cbox3,#Cleft .Cbox4, #Cleft .Cbox5, #Cleft .Cbox6").removeClass("on");
+            });
+            $(".hdIn ul li").find("a.about").click(function(){
+                $(".skillLst").fadeOut(1200);
+                $("#Cleft .Cbox1, #Cleft .Cbox2, #Cleft .Cbox3,#Cleft .Cbox4, #Cleft .Cbox5, #Cleft .Cbox6").removeClass("on");
+            });
         });
     </script>
     
     <script>
         $(document).ready(function(){
+            var ht = parseInt($(window).width());
             $(".hdIn ul li a").removeAttr("href");
+            
+            $(".uk").click(function(){
+                $(".hdIn ul li a.wark").removeClass("on");
+                $(".hdIn ul li a.portfolio").removeClass("on");
+                $(".hdIn ul li a.about").removeClass("on");
+                $(".hdIn ul li a.intro").removeClass("on");
+                $("#con1").not(":animated").animate({"top": "0"}, 1200);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
+            });
             $(".hdIn ul li a.intro").click(function(){
-                $("#con2").fadeIn(1500);
-                $("#con2").siblings(".con").css("display", "none");
-
+                
+                $("#con2").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
+                
                 $(this).addClass("on");
                 $(".hdIn ul li a.wark").removeClass("on");
                 $(".hdIn ul li a.portfolio").removeClass("on");
@@ -445,8 +1019,13 @@
                 
             });
             $(".hdIn ul li a.wark").click(function(){
-                $("#con3").fadeIn(1500);
-                $("#con3").siblings(".con").css("display", "none");
+                
+                $("#con3").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
+                
                 $(this).addClass("on");
                 $(".hdIn ul li a.intro").removeClass("on");
                 $(".hdIn ul li a.portfolio").removeClass("on");
@@ -454,8 +1033,13 @@
                 
             });
             $(".hdIn ul li a.portfolio").click(function(){
-                $("#con4").fadeIn(1500);
-                $("#con4").siblings(".con").css("display", "none");
+                
+                $("#con4").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
+                
                 $(this).addClass("on");
                 $(".hdIn ul li a.wark").removeClass("on");
                 $(".hdIn ul li a.intro").removeClass("on");
@@ -463,6 +1047,13 @@
                 
             });
             $(".hdIn ul li a.about").click(function(){
+                
+                $("#con5").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
+                
                 $(this).addClass("on");
                 $(".hdIn ul li a.wark").removeClass("on");
                 $(".hdIn ul li a.portfolio").removeClass("on");
@@ -473,91 +1064,585 @@
     </script>
     
     <script>
-        $(document).ready(function(){
-            $(".listBox ul li.desk").hover(function(){
-                $(".listBox ul li span").toggleClass("on");
+        $(document).ready(function() {
+            var wd = parseInt($("#con4 .con4In .con4List ul li").width());
+            console.log("창의너비 : " + wd);
+            $("#con4 .con4In .con4List").on("mousewheel", function(e){
+                if(e.originalEvent.wheelDelta < 0){ // 아래 스크롤
+                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "+=" + wd + "px" }, 500);
+                } else {
+                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "-=" + wd + "px"}, 500);
+                }
+                return false;
             });
         });
     </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con4TitLst ul li a").removeAttr("href");
+            $(".con4TitLst ul li a").click(function(){
+                $(this).addClass("on");
+                $(this).parent().siblings().find("a").removeClass("on");
+            });
+            $(".con4List ul li img").click(function(){
+                $(this).toggleClass("on");
+                $(this).parent().siblings().find("img").removeClass("on");
+                $(this).parent().find(".c4TBox").slideDown(600);
+                $(this).parent().siblings().find(".c4TBox").slideUp(600);
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con4TitLst .c4T_res a").click(function(){
+                $(".con4List1").delay(500).slideDown(500);
+                $(".con4List2").slideUp(500);
+                $(".con4List3").slideUp(500);
+            });
+            $(".con4TitLst .c4T_desk a").click(function(){
+                $(".con4List1").slideUp(500);
+                $(".con4List2").delay(500).slideDown(500);
+                $(".con4List3").slideUp(500);
+            });
+            $(".con4TitLst .c4T_mo a").click(function(){
+                $(".con4List1").slideUp(500);
+                $(".con4List2").slideUp(500);
+                $(".con4List3").delay(500).slideDown(500);
+            });
+        });
+    </script>
+    
+    <script>
+      function initialize() {
+       var myLatlng = new google.maps.LatLng(36.346471, 127.448502);
+       var mapOptions = {
+            zoom: 17,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+       }
+       var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+          var marker = new google.maps.Marker({
+             position: myLatlng,
+             map: map,
+             title: "우리동네"  
+            });
+          
+      }
+ </script>
+ 
+    <script>
+        $(document).ready(function(){
+            
+        });
+    </script>
+ 
 </head>
-<body>
+<body onload="initialize()">
     <div class="main" id="desktop">
-       <header id="hd">
-          <a href="" class="home">HOME</a>
-           <div class="hdIn">
-               <ul>
-                   <li><a href="" class="intro">INTRO</a></li>
-                   <li><a href="" class="wark">WARK</a></li>
-                   <li><a href="" class="portfolio">PORTFOLIO</a></li>
-                   <li><a href="" class="about">ABOUT</a></li>
-               </ul>
-           </div>
-       </header>
-       
-        <div class="con" id="con1">
-                <div class="con1In">
+         <img src="./images/uk.png" alt="" class="uk">
+          <header id="hd">
+               <div class="hdIn">
+                   <ul>
+                       <li><a href="" class="intro">INTRO</a></li>
+                       <li><a href="" class="wark">ABILITY</a></li>
+                       <li><a href="" class="portfolio">PORTFOLIO</a></li>
+                       <li><a href="" class="about">CONTECT</a></li>
+                   </ul>
+               </div>
+           </header>
+           
+       <div class="con" id="con1">
+          <div class="con1In">
                     <h2 class="con1Tit1">I found a <p>DESIGN</p> from me.</h2>
                     <h2 class="con1Tit2">Show me <strong>Lee Jung Uk</strong></h2>
-                    <img src="./images/uk.png" alt="" class="uk">
                 </div>
-        </div>
-        
-        <div class="con" id="con2">
-           <div class="con2In">
-               <div class="con2Img">
-                   <img src="./images/cha.png" alt="">
-                   </div>
-                   <div class="conTxt">
-                       <ul>
-                           <li><span class="name">NAME</span>이 정 욱 (LEE JAUNG UK)</li>
-                           <li><span class="day">BIRTH</span>93. 12. 16</li>
-                           <li><span class="lang">LANGUAGES</span>KOREA</li>
-                           <li><span class="">E-MAIL</span>justmoretz@naver.com</li>
-                           <li><span class="sns">SNS</span>
-                               <img src="" alt="">
-                           </li>
-                       </ul>
-                      <!-- <div class="wrapper1">
-                              <div class="loader">
-                              <div class="inner"></div>
-                          </div>
-                        </div> -->
-                    </div>
-                   </div>
-                
+           <div class="box">
+               <div class="face face1">
+                   <span>PORTFORIO</span>
+               </div>
+               <div class="face face2">
+                   <span>LEE JAUNG UK</span>
+               </div>
            </div>
-                        
+       </div>
+       
+       <div class="con" id="con2">
+           <div class="con2In">
+        
+               <div class="con2List">
+                  <img src="./images/inbg.png" alt="" class="myP">
+                   <ul class="in">
+                       <li>
+                           <h2 class="title">HELLO<span class="titLine"></span></h2>
+                           <h3 class="name">이정욱</h3>
+                           <h3 class="day">93. 12. 16</h3>
+                           <h3 class="phone">010 - 6227 - 4454</h3>
+                       </li>
+                       
+                       <li>
+                           <h2 class="title">EDUCATION <span class="titLine"></span></h2>
+                           <h3 class="edu">2017. 02 대전보건대학 졸업</h3>
+                           <h3 class="edu">2012. 03 충남기계공업고등학교 졸업</h3>
+                       </li>
+                   </ul>
+                   
+                   <ul class="in2">
+                       <li>
+                           <h2 class="title">LICENSE<span class="titLine"></span></h2>
+                           <h3 class="edu">SMAT 서비스 경영(실무자) 모듈A</h3>
+                           <h3 class="edu">워드프로세서</h3>
+                           <h3 class="edu">ITQ (한글, 파워포인트 A)</h3>
+                           <h3 class="edu">용접기능사</h3>
+                           <h3 class="edu">운전면허증 1종 보통</h3>
+                       </li>
+                       <li>
+                           <h2 class="title">MOTTO<span class="titLine"></span></h2>
+                           <h3 class="motto">그라운드가 바다라면 나는 상어다.<br>If the ground is the sea, I am a shark.</h3>
+                       </li>
+                   </ul>
+               </div>
+               <div class="skill">
+                       <div class="skillTitIn">
+                           <h2 class="skillTit">DESIGNER<br><strong><p>L</p>EE JAUNG UK</strong><br>PROFILE_</h2>
+                       </div>
+                   </div>
+                   
+                   <div class="skillLst skillLst1">
+                    <div class="Csk skC1">
+                        <div class="Cout"></div>
+                        <div class="Cin">HTML5<br>88%</div>
+                        <div class="Ctime">
+                            <div class="Chold" id="Cleft">
+                                <div class="Cbox1"></div>
+                            </div>
+                                       
+                            <div class="Chold" id="Cright">
+                                <div class="Cbox1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Csk skC2">
+                        <div class="Cout"></div>
+                        <div class="Cin">CSS<br>94%</div>
+                        <div class="Ctime">
+                            <div class="Chold" id="Cleft">
+                                <div class="Cbox2"></div>
+                            </div>
+                                       
+                            <div class="Chold" id="Cright">
+                                <div class="Cbox2"></div>
+                            </div>
+                        </div>
+                       </div>
+                   <div class="Csk skC3">
+                        <div class="Cout"></div>
+                        <div class="Cin">jQuery<br>82%</div>
+                        <div class="Ctime">
+                            <div class="Chold" id="Cleft">
+                                <div class="Cbox3"></div>
+                            </div>
+                                       
+                            <div class="Chold" id="Cright">
+                                <div class="Cbox3"></div>
+                            </div>
+                        </div>
+                    </div>                                
+                </div>
+                
+                <div class="skillLst skillLst2">
+                    <div class="Csk skC1">
+                        <div class="Cout"></div>
+                        <div class="Cin">PHOTOSHOP<br>81%</div>
+                        <div class="Ctime">
+                            <div class="Chold" id="Cleft">
+                                <div class="Cbox4"></div>
+                            </div>
+                                       
+                            <div class="Chold" id="Cright">
+                                <div class="Cbox4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Csk skC2">
+                        <div class="Cout"></div>
+                        <div class="Cin">ILLUST<br>72%</div>
+                        <div class="Ctime">
+                            <div class="Chold" id="Cleft">
+                                <div class="Cbox5"></div>
+                            </div>
+                                       
+                            <div class="Chold" id="Cright">
+                                <div class="Cbox5"></div>
+                            </div>
+                        </div>
+                       </div>
+                   <div class="Csk skC3">
+                        <div class="Cout"></div>
+                        <div class="Cin">GRAPIC TOOL<br>79%</div>
+                        <div class="Ctime">
+                            <div class="Chold" id="Cleft">
+                                <div class="Cbox6"></div>
+                            </div>
+                                       
+                            <div class="Chold" id="Cright">
+                                <div class="Cbox6"></div>
+                            </div>
+                        </div>
+                    </div>                                
+                </div>
+           </div>
+       </div>
+    
         <div class="con" id="con3">
             <div class="con3In">
                 
             </div>
         </div>
-        
+
         <div class="con" id="con4">
             <div class="con4In">
-               <div class="listBox">
-                   <ul>
-                       <li class="desk"><a>DESKTOP</a>
-                       </li>
-                       <li><a>MOBILE</a></li>
-                       <li><a>RESPONSIVE</a></li>
-                   </ul>
-               </div>
-                <div class="reactive">
+                <div class="con4TitLst">
                     <ul>
-                        <li><a href="https://jumtmoretz.github.io/reactivedesign1" target="_blank"><img src="./images/wongin.png" alt=""></a></li>
-                        <li><a href="https://jumtmoretz.github.io/reactivedesign2" target="_blank"><img src="./images/kaist.png" alt=""></a></li>
-                        <li><a href="https://jumtmoretz.github.io/reactivedesign4" target="_blank"><img src="./images/paris.png" alt=""></a></li>
-                        <li><a href="https://jumtmoretz.github.io/reactivedesign5" target="_blank"><img src="./images/kukdong.png" alt=""></a></li>
-                        <li><a href="https://jumtmoretz.github.io/reactivedesign7" target="_blank"><img src="./images/sony.png" alt=""></a></li>
-                        <li><a href="https://jumtmoretz.github.io/reactivedesign8" target="_blank"><img src="./images/movie.png" alt=""></a></li>
+                        <li class="c4T_res"><a href="" class="on">반응형</a></li>
+                        <li class="c4T_desk"><a href="">데스크탑</a></li>
+                        <li class="c4T_mo"><a href="">모바일</a></li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="con4List con4List1">
+                    <ul class="resBox">
+                        <li>
+                            <img src="./images/res1.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">웅진 코웨이 (COWAY)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #79d1f0;"></span></li>
+                                    <li><span style="background-color: #415b78;"></span></li>
+                                    <li><span style="background-color: #7093cc;"></span></li>
+                                    <li><span style="background-color: #00a1e0;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    웅진코웨이의 상품성을 광고콘텐츠를 주 콘텐츠로 사용<br>웅진코웨이의 상품의 다양성을 간략하지만 목록배열을 통해 다양성을 표현
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/reactivedesign1/" class="c4More">Go Check</a>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <img src="./images/res4.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">파리바게뜨 (KUKDONG)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #27397e;"></span></li>
+                                    <li><span style="background-color: #578dbd;"></span></li>
+                                    <li><span style="background-color: #c32f4d;"></span></li>
+                                    <li><span style="background-color: #3f3f3f;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    파리바게뜨의 서비스와 CF광고<br>콘텐츠 자체의 퀄리티가 생각보다 낮아 수집 사용이아닌 직접적인배너 제작 및 텍스쳐 제작
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/reactivedesign4/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/res5.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">극동기계 (KUKDONG)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #2c3a42;"></span></li>
+                                    <li><span style="background-color: #4c7778;"></span></li>
+                                    <li><span style="background-color: #4793b4;"></span></li>
+                                    <li><span style="background-color: #323232;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    "고객이 만족하고 고객이 신뢰할 수 있는 기기를 제작한다."<br>극동기계의 "신뢰"컨셉을 맞추어 회사의 컨셉트 적극 활용
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/reactivedesign5/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/res7.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">소니 (SONY)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #ec80b3;"></span></li>
+                                    <li><span style="background-color: #263240;"></span></li>
+                                    <li><span style="background-color: #2f353d;"></span></li>
+                                    <li><span style="background-color: #363638;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    디지털제품의 유려한 스타일<br>소니의 경우 대표 컬러색이 #000000 ~ #3F3F3F색을 추구하며, 색을 사용하되 배너부분의 색감을 추가하여 그라데이션 스타일 적용
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/reactivedesign7/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/res6.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">기획재정부</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #1f466a;"></span></li>
+                                    <li><span style="background-color: #d54055;"></span></li>
+                                    <li><span style="background-color: #b18088;"></span></li>
+                                    <li><span style="background-color: #000000;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    기존페이지는 레이아웃 나열형으로 되어 있어 단순함이 보여 틀을깨고 슬라이스 버튼형식과 컬럼의 나열로 직접 제작
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/reactivedesign6/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/res8.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">영화진흥위원회 (KOFIC)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #8f6b56;"></span></li>
+                                    <li><span style="background-color: #7f665d;"></span></li>
+                                    <li><span style="background-color: #4587ad;"></span></li>
+                                    <li><span style="background-color: #515c60;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    블로그형식으로 만들었지만, 콘텐츠의 확실함과 컬럼수를 고려하여 디자인 자체를 목록형식으로 나열한 블로그형 최적화
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/reactivedesign8/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
+                
+                <div class="con4List con4List2 off">
+                    <ul class="resBox">
+                        <li>
+                            <img src="./images/des1.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">커피에반하다 (COFFEE)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #140f0b;"></span></li>
+                                    <li><span style="background-color: #3c0a10;"></span></li>
+                                    <li><span style="background-color: #ce032b;"></span></li>
+                                    <li><span style="background-color: #303445;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    커피에 반한 그맛!이라는 콘셉트<br>콘셉트의 걸맞는 커피의 반하다 만의 색깔과 기존 이미지에 대한 생각을 하여, 로고와 비쥬얼배너, 콘텐츠를 직접 제작
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/design1/" class="c4More">Go Check</a>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <img src="./images/des3.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">에이프릴스킨</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #ee035a;"></span></li>
+                                    <li><span style="background-color: #b1788b;"></span></li>
+                                    <li><span style="background-color: #539591;"></span></li>
+                                    <li><span style="background-color: #ffd509;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    남녀노소 사용성 화장품의 대표브랜드<br>콘셉트 자체에서의 화장품을 사용하는 소비자에게 제품을 홍보물을 직접 수정하고 슬라이드형의 웹사이트구축
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/design3/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/des4.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">형지 (HYUNGJI)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #2d2f36;"></span></li>
+                                    <li><span style="background-color: #92979b;"></span></li>
+                                    <li><span style="background-color: #3d5a84;"></span></li>
+                                    <li><span style="background-color: #c5bcbd;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    패션그룹에 선도주자 형지<br>형지는 패션그룹에 일원으로 패션에 대한 독자적인 감각을 활용하는 것에 있어, 그것에 맞는 형지만의 특별 브랜드를 추구
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/design4/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/des5.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">가오 엑티브 태권도</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #e2daef;"></span></li>
+                                    <li><span style="background-color: #efced5;"></span></li>
+                                    <li><span style="background-color: #efefef;"></span></li>
+                                    <li><span style="background-color: #323232;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    대한민국의 국민 스포츠 태권도<br>가오엑티브태권도는 개인 학원이기때문에 직접적으로 방문하여 콘텐츠를 구하고, 지인을 통해 태권도 이미지에 대한 콘셉트 도출
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/design5/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="con4List con4List3 off">
+                    <ul class="resBox">
+                        <li>
+                            <img src="./images/mo3.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">롤렉스 (ROLEX)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #3d5a49;"></span></li>
+                                    <li><span style="background-color: #a2803e;"></span></li>
+                                    <li><span style="background-color: #c8c8c8;"></span></li>
+                                    <li><span style="background-color: #444444;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    롤렉스라는 시계명품 브랜드로써, 롤렉스만의 기존 색상을 버리지 않고 그대로 묻어나오는 롤렉스만의 고급스러움을 더 강조하여 표현
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/mobile3/" class="c4More">Go Check</a>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <img src="./images/mo5.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">카카오뱅크 (KAKAO BANK)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #2c2c35;"></span></li>
+                                    <li><span style="background-color: #95989d;"></span></li>
+                                    <li><span style="background-color: #ffe92f;"></span></li>
+                                    <li><span style="background-color: #565662;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    카카오브랜드의 기존색상 #ffe92f 컬러를 기존으로하지만, 카카오뱅크의 카드 디자인 아이덴티티의 종류를 더욱더 강조하여 표현
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/mobile5/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/mo6.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">시몬스 (SIMONS)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #3b2c2c;"></span></li>
+                                    <li><span style="background-color: #b9a8a1;"></span></li>
+                                    <li><span style="background-color: #464647;"></span></li>
+                                    <li><span style="background-color: #556e6c;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    시몬스만의 색깔을 사용하여 기존패턴보단 영상과 이미지를 더욱 활용하여 광고의 활용도를 높인 모바일 웹 디자인
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/mobile6/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/mo7.png" alt="">
+                            <div class="c4TBox">
+                                <h2 class="c4Tit">팬콧 (PANCOAT)</h2>
+                                
+                                <ul class="color">
+                                    <li><span style="background-color: #fcc850;"></span></li>
+                                    <li><span style="background-color: #efced5;"></span></li>
+                                    <li><span style="background-color: #d41d51;"></span></li>
+                                    <li><span style="background-color: #585858;"></span></li>
+                                </ul>
+                                
+                                <span class="c4Txt">
+                                    팬콧은 패션브랜드의 가치를 가지고 있으나, 브랜드 자체로는 아동상품을 추구하는 이미지이므로, 기존에 사용한 색과 색과맞는 유아적인 이미지의 색을 더 추가하여 표현
+                                </span>
+                                <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets</span>
+                                <a href="https://jumtmoretz.github.io/mobile7/" class="c4More">Go Check</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
             </div>
         </div>
         
-   
-   
+        <div class="con" id="con5">
+            <div class="con5In">
+                <div class="c5Lst">
+                   
+                    <div class="c5Box c5Box1">
+                        <h1 class="c5Num"><strong>1</strong>&nbsp;.LOCATION</h1>
+                        <span class="c5Txt1">대전광역시 동구 가양동</span>
+                        <span class="c5Txt2">Guayang-dong, Dong-gu, Daejeon, Republic of korea</span>
+                    </div>
+                    
+                    <div class="c5Box c5Box2">
+                        <h1 class="c5Num"><strong>2</strong>&nbsp;.CONTACT</h1>
+                        <span class="c5Txt1">+82 (0)10-6227-4454</span>
+                        <span class="c5Txt2">justmoretz@naver.com</span>
+                    </div>
+                    
+                    <div class="c5Box c5Box3">
+                        <h1 class="c5Num"><strong>3</strong>&nbsp;.SOCIAL</h1>
+                        <ul class="c5_box3Lst">
+                            <li><a href="" class="c5Txt1"><img src="./images/instagram.png" alt=""></a></li>
+                            <li><a href="" class="c5Txt2"><img src="./images/facebook.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="c5Box c5Box4">
+                        <h1 class="c5Num"><strong>4</strong>&nbsp;.THANK YOU</h1>
+                        <span class="c5Txt2">ⓒ&nbsp;COPYRIGHT BY LEE JAUNG UK.2018</span>
+                    </div>
+                    
+                    <div id="map_canvas"style="width:270px; height:350px;"></div>
+                    
+                    <div class="sendBox">
+                        <ul class="sendtop">
+                            <li><input type="text" placeholder="Your Name *"></li>
+                            <li><input type="text" placeholder="Your Email *"></li>
+                        </ul>
+                        <textarea class="textArea" placeholder="Your Message *" id="message" required="" data-validation-required-message="Please enter a message."></textarea>
+                        
+                        <a href="" class="sendGo">SEND MESSAGE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     </div>
 </body>
 </html>
