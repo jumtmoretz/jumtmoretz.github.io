@@ -15,7 +15,7 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 
     <!-- 폰트링크 -->
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
     
     <!-- 데스크탑 -->
     <style>
@@ -25,7 +25,6 @@
         }
         body, html {
             width: 100%;
-            height: 100%;
             min-width: 320px;
             max-width: 1920px;
         }
@@ -38,9 +37,6 @@
         a {
             text-decoration: none;
         }
-    </style>
-    
-    <style>
         .main {
             width: 100%;
             height: auto;
@@ -49,121 +45,95 @@
             width: 100%;
             height: 100%;
         }
+    </style>
+    
+    <style>
         #hd {
-            width: 90%;
+            width: 100%;
             height: auto;
-            position: relative;
-            margin: 0 auto;
+            background-color: rgba(33, 55, 86, 0.75);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: 0.5s;
         }
-        .hdTop {
-            text-align: center;
-            background-color: #fff;
+        #hd.on {
+            background-color: rgba(33, 55, 86, 1);
         }
         .hdIn {
             width: 80%;
+            height: auto;
             margin: 0 auto;
-            position: relative;
+        }
+        .hdIn ul.menu {
+            width: 100%;
+            height: auto;
+        }
+        .hdIn ul.menu li.mainMenu {
+            float: left;
+            width: 9.285%;
+            margin: 2.5%;
+        }
+        .hdIn ul.menu li.mainMenu a.mainMenuA {
+            display: block;
+            width: auto;
+            height: auto;
+            color: #fff;
+            text-align: center;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            font-size: 0.85vmax;
         }
         .logo {
             display: block;
-            width: 15%;
+            width: 100%;
             height: auto;
-            margin: 0 auto;
-            padding: 3%;
         }
         .logo img {
-            width: 100%;
-            height: auto;
-        }
-        .leftHd {
-            position: absolute;
-            left: 0px;
-            top: 30%;
-            width: 30%;
-            height: auto;
-        }
-        .leftSns li {
-            width: 25%;
-            height: auto;
-            float: left;
-        }
-        .leftSns li a {
             display: block;
-            width: 70%;
-            height: auto;
-        }
-        .leftSns li a img {
             width: 100%;
             height: auto;
-        }
-        
-        .rightHd {
-            position: absolute;
-            right: 0;
-            top: 35%;
-            width: 30%;
-            height: auto;
-        }
-        .rightMenu {
-            width: 100%;
-            height: auto;
-        }
-        .rightMenu li {
-            float: left;
-            width: 33.33%;
-        }
-        .rightMenu li a {
-            display: block;
-            font-size: 1vmax;
-            color: #777;
-            text-align: center;
-        }
-        
-        .menu {
-            width: 100%;
-            height: auto;
-        }
-        .gnb {
-            width: 80%;
-            height: auto;
-            margin: 1% auto;
-        }
-        .mainMenu {
-            width: 100%;
-            text-align: center;
-        }
-        .mainMenu li {
-            float: left;
-            width: 16.66%;
-            height: auto;
-        }
-        .mainMenu li a {
-            display: block;
-            color: #323232;
-            transition: 0.9s;
-            font-size: 1.4vmax;
-            font-weight: bold;
-        }
-        .mainMenu li a:hover {
-            color: #2e3ff0;
         }
         .sub {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .sub li {
             clear: both;
             width: 100%;
             height: auto;
-            background-color: #323232;
-            position: absolute;
-            left: 0;
-            display: none;
-            z-index: 9999;
+            float: none;
+            padding: 15.5% 0%;
+            box-sizing: border-box;
         }
-        .subMenu li {
-            float: inherit;
-        }
-        .subMenu li a {
-            color: #fff;
+        .sub li a {
+            display: block;
             text-align: center;
-            font-size: 3vmin;
+            font-size: 0.85vmax;
+            color: #6ebfde;
+            text-align: center;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            padding-bottom: 2%;
+            transition: 0.5s;
+            box-sizing: border-box;
+        }
+        .sub li a:hover {
+            transform: rotateY(360deg);
+            text-shadow: 2px 1px 13px red;
+            color: #fff;
+        }
+        .sub li a:hover > .em {
+            transform: rotateX(-360deg);
+            opacity: 1;
+        }
+        .em {
+            display: block;
+            transform: rotateX(-180deg);
+            transition: 0.5s;
+            opacity: 0.2;
         }
     </style>
     
@@ -172,81 +142,77 @@
             width: 100%;
             height: auto;
         }
-        .con1In {
-            padding-top: 2%;
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-            overflow: hidden;
-        }
         #vs {
             width: 100%;
             height: auto;
+            overflow: hidden;
         }
         #vs ul {
-            width: 500%;
+            width: 300%;
             height: auto;
         }
         #vs ul li {
             float: left;
-            width: 20%;
+            width: 33.33%;
             height: auto;
             position: relative;
         }
-        #vs ul li img {
-            display: block;
+        #vs ul li img.vsImg {
             width: 100%;
             height: auto;
         }
-        #vs ul li h2 {
+        .vsTit1_1 {
             position: absolute;
-            color: #323232;
+            left: 62%;
+            top: 35%;
+            color: #fff;
+            font-size: 3.2vmax;
+            font-weight: 400;
+            font-family: 'Gothic A1', sans-serif;
         }
-        .Tit1 {
-            font-size: 6vmax;
-            top: 20%;
-            left: 6%;
-        }
-        .Tit2 {
-            font-size: 4vmax;
-            left: 20%;
+        .vsTit2_1 {
+            position: absolute;
+            left: 62%;
             top: 45%;
-        }
-        .Tit3 {
-            top: 70%;
-            left: 15%;
-            font-size: 2vmax;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 100;
-        }
-        
-        .slBtn {
-            width: 100%;    
-            height: auto;
-        }
-        .slBtnIn {
-            width: 40%;
-            height: auto;
-        }
-        .slBtnIn ul {
-            width: 100%;
-            height: auto;
-        }
-        .slBtnIn ul li {
-            float: left;
-            width: 45%;
-            height: auto;
-            margin: 2.5%;
-        }
-        .slBtnIn ul li button {
-            display: block;
-            width: 100%;
-            height: auto;
-            background: none;
-            border: 0;
-            color: #323232;
-            font-size: 3vmin;
+            color: #fff;
+            font-size: 5vmax;
             font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .vsTit1_2 {
+            position: absolute;
+            top: 47.5%;
+            left: 20%;
+            font-size: 3vmax;
+            color: #06a7e2;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .vsTit2_2 {
+            display: block;
+            width: 15%;
+            height: auto;
+            position: absolute;
+            top: 30%;
+            left: 42.5%;
+        }
+        .vsTit1_3 {
+            position: absolute;
+            font-family: 'Gothic A1', sans-serif;
+            top: 35%;
+            left: 65%;
+            color: #fff;
+            font-size: 4vmax;
+        }
+        .vsTit2_3 {
+            position: absolute;
+            font-family: 'Gothic A1', sans-serif;
+            top: 45%;
+            left: 65%;
+            color: #fff;
+            font-size: 5vmax;
+        }
+        #Mvs {
+            display: none;
         }
     </style>
     
@@ -260,102 +226,176 @@
             height: auto;
             margin: 0 auto;
         }
-        .con2Tit1 {
-            font-size: 12vmin;
-            font-weight: bold;
-            text-align: center;
-            line-height: 30vmin;
-            color: #3c3f99;
-        }
-        .con2Tit2 {
-            font-size: 10vmin;
-            font-weight: 100;
-            text-align: center;
-            font-family: 'Oswald', sans-serif;
-            line-height: 1vmin;
-            color: #3c3f99;
-        }
-        .con2Con {
-            width: 100%;
-            height: auto;
-        }
-        .con2Con ul {
-            width: 90%;
+        .con2TitIn {
+            width: 40%;
             height: auto;
             margin: 5% auto;
+            position: relative;
         }
-        .con2Con ul li {
-            width: 15%;
-            height: auto;
-            margin: 2.5%;
-            float: left;
+        .con2Tit1 {
             text-align: center;
-            border: 1px solid #3c3f99;
-            box-sizing: border-box;
-            border-radius: 30px;
+            color: #06a7e2;
+            font-size: 3vmax;
+            font-family: 'Gothic A1', sans-serif;
         }
-        .con2Con ul li a {
-            display: block;
+        .con2Tit2 {
+            text-align: center;
+            color: #06a7e2;
             font-size: 1vmax;
-            font-weight: bold;
-            font-family: 'Oswald', sans-serif;
-            color: #323232;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: 100;  
+        }
+        .line {
+            display: block;
+            width: 20%;
+            height: auto;
+            border-bottom: 1px solid #06a7e2;
+            position: absolute;
+        }
+        .line1 {
+            left: 0%;
+            top: 32%;
+        }
+        .line2 {
+            right: 0%;
+            top: 32%;
         }
         .con2ConLst {
-            width: 80%;
-            height: auto;
-            margin: 10% auto;
-            
-        }
-        .con2ConLst ul {
             width: 100%;
             height: auto;
         }
-        .con2ConLst ul li {
-            width: 20%;
+        .con2ConLst .c2Btn {
+            width: 100%;
+            height: auto;
+        }
+        .con2ConLst .c2Btn li {
+            width: 10.66%;
             height: auto;
             float: left;
+            margin: 1.5%;
+            padding: 1.5%;
+            background-color: #06a7e2;
+            font-weight: 500;
+            text-align: center;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-family: 'Gothic A1', sans-serif;
+            cursor: pointer;
+            transition: 1.2s;
+            font-weight: bold;
+        }
+        .con2ConLst .c2Btn li:hover {
+            
+        }
+        .con2ConLst .c2Btn li.on {
+            background-color: cornflowerblue;
+            color: #fff;
+            transform: rotateZ(360deg);
+        }
+        .con2Con1 {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .con2Con1 .c2InBox {
+            width: 100%;
+            height: auto;
+        }
+        .con2Con1 .c2InBox li {
+            float: left;
+            width: 45%;
+            height: auto;
             margin: 2.5%;
             position: relative;
         }
-        .con2ConLst ul li .con2ItemImg {
+        .video {
             display: block;
             width: 100%;
             height: auto;
         }
-        
-        .con2Hover {
+        .video1Tit1 {
+            font-size: 2vmax;
+            font-weight: 100;
+            color: #06a7e2;
+            text-align: left;
+        }
+        .video1Tit2 {
+            font-weight: bold;
+            font-size: 2vmax;
+            color: #06a7e2;
+            text-align: right;
+        }
+        .tBoxTxt {
+            display: block;
+            padding: 2.5%;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            text-align: center;
+            font-size: 1vmax;
+        }
+        .con2menu1 {
+            display: block;
+            width: 15%;
+            height: auto;
+            position: absolute;
+            top: 60%;
             display: none;
         }
-        .listHover {
-            background-image: url("./images/desktop/con2hoverBg.png");
-            width: 100%;
-            height: 100%;
-            border: 1px solid #e1e1f9;
-            border-radius: 30px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .listHover .icon img {
+        .con2More {
             display: block;
             width: 40%;
             height: auto;
-            margin: 0 auto;
-            padding-top: 5%;
-        }
-        .listHover .hoverTit {
+            padding: 1.5%;
             text-align: center;
             color: #fff;
-            font-size: 3vmin;
-            line-height: 4vmin;
-            font-weight: bold;
-            padding-top: 30%;
+            background-color: cornflowerblue;
+            font-size: 1.2vmax;
+            margin: 5% auto;
+        }
+        .c2Box1 {
+            width: 600%;
+            height: auto;
+        }
+        .c2Box1 .c2BoxItems {
+            float: left;
+            width: 16.66%;
+            height: auto;
+        }
+        .btnBox {
+            width: 20%;
+            height: auto;
+            z-index: 30;
+            margin: 0 auto;
+        }
+        .btnBox li {
+            width: 11.66%;
+            margin: 2.5%;
+            float: left;
+        }
+        .btnBox li button {
+            display: block;
+            width: 0.65vmax;
+            background-color: #06a7e2;
+            height: 0.65vmax;
+            border-radius: 2vmax;
+            outline: 0;
+            border: 0;
+            transition: 0.5s;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .btnBox li button:hover {
+                cursor: pointer;
+                background-color: palevioletred;
+        }
+        .btnBox li button.active {
+                background-color: palevioletred;
         }
     </style>
     
     <style>
         #con3 {
+            clear: both;
             width: 100%;
             height: auto;
         }
@@ -363,73 +403,142 @@
             width: 80%;
             height: auto;
             margin: 0 auto;
-            padding-top: 50%;
+        }
+        .con3TitIn {
+            width: 40%;
+            height: auto;
+            margin: 5% auto;
+            position: relative;
         }
         .con3Tit1 {
-            font-size: 12vmin;
-            font-weight: bold;
             text-align: center;
-            line-height: 30vmin;
-            color: #3c3f99;
+            color: #06a7e2;
+            font-size: 3vmax;
+            font-family: 'Gothic A1', sans-serif;
         }
-        .newsNoti {
+        .con3Tit2 {
+            text-align: center;
+            color: #06a7e2;
+            font-size: 1vmax;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: 100;  
+        }
+        .line {
+            display: block;
+            width: 20%;
+            height: auto;
+            border-bottom: 1px solid #06a7e2;
+            position: absolute;
+        }
+        .line1 {
+            left: 0%;
+            top: 32%;
+        }
+        .line2 {
+            right: 0%;
+            top: 32%;
+        }
+        
+        .news {
             width: 100%;
             height: auto;
+        }
+        .news ul {
+            width: 100%;
+            height: auto;
+        }
+        .news ul li {
+            float: left;
+            width: 28.33%;
+            height: auto;
+            margin: 2.5%;
+            background-color: rgba(33, 55, 86, 1);
+            padding: 2.5%;
+            box-sizing: border-box;
             position: relative;
+            cursor: pointer;
         }
-        .notiTit {
-            font-size: 4vmin;
-            line-height: 15vmin;
-            color: #3c3f99;
-        }
-        .notiMore {
+        .news ul li img {
             display: block;
-            width: 25px;
-            height: 25px;
             position: absolute;
-            right: 0;
-            top: 20%;
-            border: 1px solid #ece;
-            background-repeat: no-repeat;
-            text-align: center;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            opacity: 1;
         }
-        .notiLink {
+        .news ul li a {
             display: block;
-            padding: 0 158px 0 35px;
-            position: relative;
-            background-color: #3c3f99;
             color: #fff;
+            font-weight: 100;
         }
-        .notiLinkTit {
-            font-size: 4vmin;
-            font-weight: bold;
-            line-height: 15vmin;
+        .newsDate {
+            display: block;
+            float: right;
+            padding: 2.5%;
+            box-sizing: border-box;
+            font-size: 0.3vmax;
+            font-weight: 100;
             text-overflow: ellipsis;
             white-space: nowrap;
             word-wrap: normal;
             overflow: hidden;
         }
+        .newsTit {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
+            font-size: 0.8vmax;
+            font-weight: bold;
+        }
     </style>
     
     <style>
         #con4 {
+            clear: both;
             width: 100%;
             height: auto;
         }
         .con4In {
             width: 80%;
             height: auto;
-            margin: 10% auto;
-        }
-        .newsWork {
-            width: 100%;
-            height: auto;
             margin: 0 auto;
         }
-        .workTit {
-            font-size: 4vmin;
-            line-height: 10vmin;
-            color: #3c3f99;
+        .con4TitIn {
+            width: 40%;
+            height: auto;
+            margin: 5% auto;
+            position: relative;
+        }
+        .con4Tit1 {
+            text-align: center;
+            color: #06a7e2;
+            font-size: 3vmax;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .con4Tit2 {
+            text-align: center;
+            color: #06a7e2;
+            font-size: 1vmax;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: 100;  
+        }
+        .line {
+            display: block;
+            width: 20%;
+            height: auto;
+            border-bottom: 1px solid #06a7e2;
+            position: absolute;
+        }
+        .line1 {
+            left: 0%;
+            top: 32%;
+        }
+        .line2 {
+            right: 0%;
+            top: 32%;
         }
         .workBox {
             float: left;
@@ -460,626 +569,426 @@
     
     <style>
         #ft {
+            clear: both;
             width: 100%;
             height: auto;
         }
         .ftIn {
+            clear: both;
             width: 80%;
             height: auto;
             margin: 0 auto;
-            padding-top: 30%;
         }
         .ftTop {
             width: 100%;
             height: auto;
-            position: relative;
+            border-bottom: 1px solid #838386;
+            
         }
         .ftTop ul {
-            width: 100%;
-            height: auto;
-        }
-        .ftTop ul li {
-            float: left;
-            width: 15%;
-            height: auto;
-            margin: 2.5%;
-        }
-        .ftTopList li a {
-            display: block;
-            height: 112px;
-            text-align: center;
-            margin: 0 auto;
-        }
-        .ftTopList li a.ftItem1 {
-            display: block;
-            width: 120px;
-            background-image: url("images/desktop/ftLst1_off.png");
-            background-repeat: no-repeat;
-            box-sizing: border-box;
-            background-position: center center;
-            transition: 0.7s;
-        }
-        .ftTopList li a.ftItem1:hover {
-            background-image: url("images/desktop/ftLst1.png");
-        }
-        .ftTopList li a.ftItem2 {
-            display: block;
-            width: 120px;
-            background-image: url("images/desktop/ftLst4_off.png");
-            background-repeat: no-repeat;
-            box-sizing: border-box;
-            background-position: center center;
-            transition: 0.7s;
-        }
-        .ftTopList li a.ftItem2:hover {
-            background-image: url("images/desktop/ftLst4.png");
-        }
-        .ftTopList li a.ftItem3 {
-            display: block;
-            width: 120px;
-            background-image: url("images/desktop/ftLst2_off.png");
-            background-repeat: no-repeat;
-            box-sizing: border-box;
-            background-position: center center;
-            transition: 0.7s;
-        }
-        .ftTopList li a.ftItem3:hover {
-            background-image: url("images/desktop/ftLst2.png");
-        }
-        .ftTopList li a.ftItem4 {
-            display: block;
-            width: 120px;
-            background-image: url("images/desktop/ftLst5_off.png");
-            background-repeat: no-repeat;
-            box-sizing: border-box;
-            background-position: center center;
-            transition: 0.7s;
-        }
-        .ftTopList li a.ftItem4:hover {
-            background-image: url("images/desktop/ftLst5.png");
-        }
-        .ftTopList li a.ftItem5 {
-            display: block;
-            width: 120px;
-            background-image: url("images/desktop/ftLst3_off.png");
-            background-repeat: no-repeat;
-            box-sizing: border-box;
-            background-position: center center;
-            transition: 0.7s;
-        }
-        .ftTopList li a.ftItem5:hover {
-            background-image: url("images/desktop/ftLst3.png");
-        }
-        
-        .ftMenu {
-            width: 100%;
-            height: auto;
-            border-top: 1px solid #777;
-            margin-top: 20%;
-        }
-        .ftNav {
-            width: 100%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .ftNav li {
-            width: 15%;
-            height: auto;
-            margin: 2.5%;
-            float: left;
-            position: relative;
-        }
-        .ftNav li a {
-            display: block;
-            color: #333;
-            transition: 0.5s;
-            font-weight: bold;
-            font-size: 2vmin;
-            text-align: center;
-        }
-        .ftNav li a:hover {
-            color: #504dff;
-        }
-        .copyright {
-            width: 100%;
-            height: auto;
-            margin-top: 15%;
-        }
-        .copyright span {
-            display: block;
-            text-align: left;
-            font-weight: bold;
-            font-size: 1.7vmin;
-            color: #3c3f99;
-            line-height: 6vmin;
-        }
-        .copyLeft {
-            width: 65%;
-            height: auto;
-            float: left;
-        }
-        .call {
-            float: right;
-        }
-        .callTit {
-            display: block;
-            font-size: 5vmin;
-        }
-        .callLink {
-            display: block;
-            font-size: 3vmin;
-            cursor: pointer;
-        }
-        .call span {
-            clear: both;
-            display: block;
-            font-size: 13px;
-            line-height: 40px;
-            text-align: right;
-            padding: 0;
-        }
-    </style>
-    
-    <!-- 모바일 -->
-    <style>
-        #mobile {
-            display: none;
-        }
-        #Mhd {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .MhdIn {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .logo {
-            display: block;
-        }
-        .MmenuBtn {
-            position: absolute;
-            width: 20%;
-            height: auto;
-            top: 30%;
-            left: 10%;
-        }
-        .Msearch {
-            position: absolute;
-            width: 15%;
-            height: auto;
-            top: 30%;
-            right: 0%;
-        }
-    </style>
-    
-    <style>
-        #Mcon1 {
-            width: 100%;
-            height: auto;
-        }
-        .Mcon1In {
-            padding-top: 2%;
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        #Mvs {
-            width: 100%;
-            height: auto;
-        }
-        #Mvs ul {
-            width: 500%;
-            height: auto;
-        }
-        #Mvs ul li {
-            float: left;
-            width: 20%;
-            height: auto;
-            position: relative;
-        }
-        #Mvs ul li img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        #Mvs ul li h2 {
-            position: absolute;
-            color: #323232;
-        }
-        .Tit1 {
-            font-size: 4vmax;
-            top: 20%;
-            left: 6%;
-        }
-        .Tit2 {
-            font-size: 2vmax;
-            left: 30%;
-            top: 45%;
-        }
-        .Tit3 {
-            top: 70%;
-            left: 15%;
-            font-size: 2vmax;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 100;
-        }
-    </style>
-    
-    <style>
-        #Mcon2 {
-            width: 100%;
-            height: auto;
-        }
-        .Mcon2In {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .Mcon2In h2 {
-            text-align: center;
-            color: #323232;
-            font-weight: bold;
-            color: #3c3f99;
-        }
-        .Mcon2Tit1 {
-            padding-top: 15%;
-            font-size: 7vmax;
-        }
-        .Mcon2Tit2 {
-            font-family: 'Oswald', sans-serif;
-        }
-        .Mcon2Con {
-            width: 100%;
-            height: auto;
-        }
-        .Mcon2Con ul {
-            padding-top: 5%;
-            width: 100%;
-            height: auto;
-        }
-        .Mcon2Con ul li {
-            width: 15%;
-            height: auto;
-            margin: 2.5%;
-            float: left;
-        }
-        .Mcon2Con ul li a {
-            display: block;
-            font-weight: bold;
-            font-size: 1.2vmax;
-            text-align: center;
-            font-family: 'Oswald', sans-serif;
-            color: #3c3f99;
-        }
-        
-        .Mcon2LstIn {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .Mcon2BtnIn {
-            width: 90%;
-            height: auto;
-            margin: 0% auto;
-            position: absolute;
-            top: 50%;
-            left: 5%;
-        }
-        .listLBtn {
-            display: block;
-            width: 8%;
-            height: auto;
-            border: 0;
-            background: none;
-            float: left;
-        }
-        .listRBtn {
-            display: block;
-            width: 8%;
-            height: auto;
-            border: 0;
-            background: none;
-            float: right;
-        }
-        .listMove img {
-            width: 100%;
-            height: auto;
-        }
-        .Mcon2BoxIn {
-            width: 100%;
-            height: auto;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        .Mcon2BoxIn ul {
-            width: 800%;
-            height: auto;
-        }
-        .Mcon2BoxIn ul li {
-            width: 12.5%;
-            height: auto;
-            float: left;
-        }
-        .Mcon2BoxIn ul li img {
-            display: block;
             width: 50%;
             height: auto;
             margin: 0 auto;
         }
-    </style>
-    
-    <style>
-        #Mcon4 {
-            padding-top: 20%;
-            }
-        .Mcon4Tit1 {
-            text-align: center;
-            font-weight: bold;
-            color: #3c3f99;
-            font-size: 8vmax;
-            }
-        .MnewsNoti {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-            }
-        .MnotiBox a {
-            padding: 2% 3%;
-            display: block;
-            position: relative;
-            background-color: #3c3f99;
-            color: #fff;
-            }
-        .MnotiBox a p.MnotiLinkTit {
-            font-size: 3vmin;
-            font-weight: bold;
-            line-height: 15vmin;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            word-wrap: normal;
-            overflow: hidden;
-            }
-        .MnotiBox a span.MnotiLinkDate {
-            margin-top: 0;
-            font-size: 1.3vmax;
-            }
-        
-        .MnewsWork {
-            width: 100%;
-            height: auto;
-            }
-        .MworkTit {
-            text-align: center;
-            font-weight: bold;
-            color: #3c3f99;
-            font-size: 8vmax;
-            padding-bottom: 10%;
-        }
-        .MworkBox {
-            width: 80%;
-            height: auto;
-            float: none;
-            margin: 5% auto;
-            }
-        .MworkBox img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        .MworkLink {
-            width: 100%;
-            height: auto;
-            }
-        .MworkLinkTit {
-            background-color: #3c3f99;
-            color: #fff;
-            font-size: 2vmin;
-            line-height: 14vmin;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            word-wrap: normal;
-            overflow: hidden;
-            text-align: center;
-            width: 100%;
-            margin-top: -2%;
-            height: auto;
-            }
-        .MmNewsCon {
-            display: block;
-            width: 70%;
-            height: auto;
-            margin: 15% auto;
-            }
-        .MmNewsCon img {
-            width: 100%;
-            height: auto;
-        }
-    </style>
-    
-    <style>
-        #Mft {
-            width: 100%;
-            height: auto;
-        }
-        .MftIn {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-            padding-top: 30%;
-        }
-        .MftMenu {
-            width: 100%;
-            height: auto;
-            border-top: 1px solid #777;
-            margin-top: 20%;
-        }
-        .MftNav {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .MftNav li {
-            width: 15%;
-            height: auto;
-            margin: 2.5%;
+        .ftTop ul li {
             float: left;
-            position: relative;
-        }
-        .MftNav li a {
-            display: block;
-            color: #333;
-            font-size: 1vmax;
-            text-align: center;
-        }
-        
-        .Mcopyright {
-            width: 80%;
+            width: 10%;
             height: auto;
-            margin: 20% auto;
+            margin: 5%;
+        }
+        .ftTop ul li img {
+            display: block;
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .ftLink {
+            clear: both;
+            width: 100%;
+            height: auto;
+        }
+        .ftLink ul {
+            width: 100%;
+            height: auto;
+        }
+        .ftLink ul li {
+            float: left;
+            width: 10%;
+            border-right: 1px solid #838386;
+            box-sizing: border-box;
+            font-size: 0.6vmax;
+            text-align: center;
+            transition: 0.5s;
+            background-color: #929295;
+        }
+        .ftLink ul li a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding: 12px 0;
+            color: #3f3f3f;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
+            font-weight: bold;
+            
+            box-sizing: border-box;
+        }
+        .ftLink ul li:hover {
+            transform: rotateY(360deg);
+            color: #b92e3a;
+            background-color: #fff;
+        }
+        .copyright {
+            float: left;
+            color: #3f3f3f;
+            font-size: 0.75vmax;
+            font-family: 'Gothic A1', sans-serif;
+            margin: 2.5% 0%;
+            font-weight: bold;
             margin-bottom: 0%;
         }
-        .Mcopyright span {
-            display: block;
-            text-align: left;
+        .copyright address {
+            display: inline-block;
+            font-style: normal;
+        }
+        .ftBtnLink {
+            display: inline-block;
+            border-bottom: 1px solid #fff;
+            font-size: 0.6vmax;
+            line-height: 14px;
+            color: #b92e3a;
             font-weight: bold;
-            font-size: 1.2vmin;
-            color: #3c3f99;
-            line-height: 4vmin;
+            border-bottom: 1px solid #b92e3a;
+            text-align: center;
+            box-sizing: border-box;
         }
-        .McopyLeft {
-            width: 65%;
-            height: auto;
-            float: left;
-           
+        .cpRight {
+            display: inline-block;
+            float: right;
+            text-align: right
         }
-        .Mcall {
-             margin: 0 auto;
-        }
-        .McallTit {
+        .callTit {
             display: block;
-            font-size: 5vmin;
+            font-size: 2vmax;
+            color: #3f3f3f;
         }
-        .McallLink {
+        .tell {
             display: block;
-            font-size: 3vmin;
-            cursor: pointer;
+            margin: 2.5% 0;
+            font-size: 1.7vamx;
+            font-weight: bold;
+            color: #3f3f3f;
+            letter-spacing: 0.1vmax;
+            cursor: default;
         }
-        .Mcall span {
+        .time {
+            margin: 20px 0 0;
+            font-size: 0.6vmax;
+            font-weight: bold;
+            color: #3f3f3f;
+        }
+        .cp {
             clear: both;
+            width: 100%;
+            height: auto;
+        }
+        .copy {
+            margin: 1% 0%;
+            color: #3f3f3f;
+            font-size: 0.7vmax;
+            font-weight: 100;
+        }
+        .ftSns {
+            float: left;
+        }
+        .ftSns ul {
+            width: 100%;
+            height: auto;
+        }
+        .ftSns ul li {
+            float: left;
+            width: 20%;
+            margin: 2.5%;
+        }
+        .ftSns ul li img {
             display: block;
-            font-size: 13px;
-            line-height: 40px;
-            padding: 0;
+            width: 100%;
+            height: auto;
         }
     </style>
     
+    <!-- 모바일 스타일 -->
     <style>
-        .MmenuSl {
-            width: 300px;
-            height: 500px;
-            position: absolute;
-            left: -330px;
-            top: 0;
-            z-index: 999;
-            background-color: palevioletred;
-            font-weight: bold;
-        }
-        .close {
-            display: block;
-            width: 30px;
-            height: 30px;
-            background-color: #fff;
-            position: absolute;
-            top: 15px;
-            left: 30px;
-            cursor: pointer;
-            
-        }
-        .Mlogin {
+        .Mhd {
             width: 100%;
-            height: 30px;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: rgba(33, 55, 86, 0.75);
+            display: none;
         }
-        .Mlogin ul {
+        .Mlogo {
+            display: block;
+            width: 7.5%;
+            height: auto;
+            margin: 0 auto;
+            padding: 2%;
+        }
+        .Mlogo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .MmenuBtn {
+            width: 5%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            box-sizing: border-box;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+            z-index: 9999;
+        }
+        .MmenuBtn span {
+            margin: 0 auto;
+            display: block;
+            width: 80%;
+            border-bottom: 2px solid #fff;
+            position: absolute;
+            transition: 0.5s;
+        }
+        .MmenuBtn.on {
+            transform: rotate(135deg);
+        }
+        .MmenuBtn span.MmeLine1 {
+            left: 10%;
+            top: 25%;
+        }
+        .MmenuBtn span.MmeLine2 {
+            left: 10%;
+            top: 45%;
+        }
+        .MmenuBtn span.MmeLine3 {
+            left: 10%;
+            top: 65%;
+        }
+        .MmenuBtn span.MmeLine1.on {
+            left: 10%;
+            top: 45%;
+            transform: rotate(90deg);
+            border-bottom: 2px solid #ffffff;
+        }
+        .MmenuBtn span.MmeLine2.on {
+            left: 10%;
+            top: 45%;
+            transform: rotate(180deg);
+            border-bottom: 2px solid #ffffff;
+        }
+        .MmenuBtn span.MmeLine3.on {
+            bottom: 20%;
+            left: 10%;
+            display: none;
+        }
+        .Mmenu {
+            width: 40%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            right: -100%;
+            transition: 0.7s;
+            background-color: rgba(33, 55, 86, 1);
+        }
+        .Mmenu.on {
+            right: 0;
+        }
+        .Mmenu ul.MmenuBox {
+            width: 100%;
+            height: auto;
+            margin: 15% auto;
+            margin-bottom: 0%;
+        }
+        .Mmenu ul.MmenuBox li a.MmenuTit {
+            display: block;
+            color: #fff;
+            padding: 5%;
+            font-weight: bold;
+            font-size: 2vmax;
+            border-bottom: 1px solid #fff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .Mmenu ul.MmenuBox li a span {
             float: right;
         }
-        .Mlogin ul li {
-            float: left;
-            margin: 20px;
+        .Msub {
+            clear: both;
+            width: 100%;
+            height: auto;
+            display: none;
         }
-        .Mlogin ul li a {
+        .Msub li a {
+            clear: both;
             display: block;
+            font-size: 1.2vmax;
             color: #fff;
+            padding: 5%;
         }
-        .MmenuSl .MmenuSlLst {
-            width: 200px;
-
-        }
-        .MmenuSl .MmenuSlLst li {
-            width: 100px;
-            margin: 40px;
-        }
-        .MmenuSl .MmenuSlLst li a {
-            color: #fff;
-        }
-        .mMenuLst li a {
-            display: block;
-            color: #fff;
-            text-align: left;
-        }
-        
     </style>
+    
+    
     <!-- 미디어 쿼리 -->
     <style>
         @media screen and (max-width: 767px) {
             /* 모바일 */
-            #desktop {
+            .Mhd {
+                display: block;
+            }
+            #hd {
                 display: none;
             }
-            #mobile {
+            .vsTit {
+                display: none;
+            }
+            #Dvs {
+                display: none;
+            }
+            #Mvs {
                 display: block;
+            }
+            .line {
+                display: none;
+            }
+            .con2ConLst .c2Btn li {
+                width: 30.33%;
+                height: auto;
+                float: left;
+                padding: 1.5%;
+                box-sizing: border-box;
+                background-color: #06a7e2;
+                font-weight: 500;
+                text-align: center;
+                color: #3f3f3f;
+                font-size: 1vmax;
+                font-family: 'Gothic A1', sans-serif;
+                cursor: pointer;
+                transition: 1.2s;
+                font-weight: bold;
+            }
+            .con2Con1 .c2InBox li {
+                float: left;
+                width: 95%;
+                height: auto;
+                margin: 2.5%;
+                position: relative;
+            }
+            .video1Tit1 {
+                font-size: 2vmax;
+                font-weight: 100;
+                color: #06a7e2;
+                text-align: center;
+            }
+            .video1Tit2 {
+                font-weight: bold;
+                font-size: 2vmax;
+                color: #06a7e2;
+                text-align: center;
+            }
+            .tBoxTxt {
+                display: block;
+                padding: 2.5%;
+                font-weight: bold;
+                font-family: 'Gothic A1', sans-serif;
+                text-align: center;
+                font-size: 1.5vmax;
+                color: #3f3f3f;
+            }
+            .news ul li {
+                float: left;
+                width: 45%;
+                height: auto;
+                margin: 2.5%;
+                background-color: rgba(33, 55, 86, 1);
+                padding: 2.5%;
+                box-sizing: border-box;
+                position: relative;
+                cursor: pointer;
+                transition: 0.5s;
+            }
+            .workBox {
+                float: none;
+                width: 95%;
+                height: auto;
+                margin: 2.5%;
+            }
+            .ftTop ul {
+                width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+            .ftLink ul li {
+                float: left;
+                width: 20%;
+                border-right: 1px solid #838386;
+                box-sizing: border-box;
+                font-size: 0.6vmax;
+                text-align: center;
+                transition: 0.5s;
+                background-color: #929295;
+            }
+            .time {
+                margin: 20px 0 0;
+                font-size: 0.6vmax;
+                font-weight: bold;
+                color: #3f3f3f;
+                display: none;
+            }
+            .cp {
+                clear: both;
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .cpRight {
+                display: inline-block;
+                float: none;
+                position: absolute;
+                text-align: right;
+                bottom: -120px;
+                right: 0;
             }
         }
         @media screen and (min-width:768px) and (max-width:959px) {
             /* 테블릿 */
-            #desktop {
-                display: block;
-            }
-            #mobile {
+            #Mvs {
                 display: none;
             }
         }
-        @media screen and (min-width:960px) and(max-width:1199px) {
+        @media screen and (min-width:959px) and(max-width:1199px) {
             /* 데스크탑 */
-            #desktop {
-                display: block;
-            }
-            #mobile {
+            #Mvs {
                 display: none;
             }
         }
-        @media screen and (min-width:1200px) {
-            
+        @media screen and (min-width:1199px) {
+            #Mvs {
+                display: none;
+            }
         }
     </style>
     
     <!-- 데스크탑 jQuery -->
     <script>
         $(document).ready(function(){
-            $(".mainMenu li").hover(function(){
-                $(this).find(".sub").slideToggle(500);
-            });
-        });
-    </script>
-    
-    <script>
-        $(document).ready(function(){
             var wd = parseInt($("#vs ul li").width());
             
             function rAni(){
-                $("#vs ul").not(":animated").animate({"margin-left" : - wd + "px"}, 2500, function(){
+                $("#vs ul").not(":animated").animate({"margin-left" : - 100 + "%"}, 2500, function(){
                     $("#vs ul li").eq(0).appendTo($("#vs ul"));
                     $("#vs ul").css("margin-left", "0px");
                 });
@@ -1088,317 +997,508 @@
                 rAni();
             }, 5000);
         });
+    </script> 
+    
+    <script>
+        $(document).ready(function(){
+            $(".con2ConLst .c2Btn li").click(function(){
+                
+                $(this).addClass("on");
+                $(this).siblings().removeClass("on");
+            });
+            
+        });
+    </script>
+    
+    <script>
+    $(document).ready(function(){
+        var wd=parseInt($(".c2Box1 li.c2BoxItems").width());
+        
+        var wd2 = 100;
+        $(".btnBox li button").click(function(){
+           var th = parseInt($(this).attr("data-val"));
+           $(".btnBox li button").removeClass("active");
+           $(this).addClass("active");
+           $(".c2Box1").not(":animated").animate({"margin-left": wd2*th*-1+"%"}, 800);
+        });
+        
+    });
     </script>
     
     <script>
         $(document).ready(function(){
-        $(".con2ConLst ul li").mouseover(function(){
-                $(this).find(".con2Hover").fadeIn(500);
+            $(".news ul li img").mouseover(function(){
+                $(this).stop().not(":animated").animate({"opacity": "0.2"}, 500);
             });
-            $(".con2Hover").mouseout(function(){
-                $(".con2Hover").fadeOut(500);
+            $(".news ul li img").mouseleave(function(){
+                $(this).stop().not(":animated").animate({"opacity": "1"}, 500);
             });
         });
     </script>
-
+    
+    <script>
+        $(document).ready(function(){
+            $(".ftItem1 img").hover(function(){
+                $(this).attr("src", "./images/desktop/ftLst1.png");
+                $(this).css("transform", "rotateX(360deg)");
+            });
+            $(".ftItem1 img").mouseleave(function(){
+                $(this).attr("src", "./images/desktop/ftLst1_off.png");
+                $(this).css("transform", "rotateX(0deg)");
+            });
+            
+            $(".ftItem2 img").hover(function(){
+                $(this).attr("src", "./images/desktop/ftLst2.png");
+                $(this).css("transform", "rotateX(360deg)");
+            });
+            $(".ftItem2 img").mouseleave(function(){
+                $(this).attr("src", "./images/desktop/ftLst2_off.png");
+                $(this).css("transform", "rotateX(0deg)");
+            });
+            
+            $(".ftItem3 img").hover(function(){
+                $(this).attr("src", "./images/desktop/ftLst3.png");
+                $(this).css("transform", "rotateX(360deg)");
+            });
+            $(".ftItem3 img").mouseleave(function(){
+                $(this).attr("src", "./images/desktop/ftLst3_off.png");
+                $(this).css("transform", "rotateX(0deg)");
+            });
+            
+            $(".ftItem4 img").hover(function(){
+                $(this).attr("src", "./images/desktop/ftLst4.png");
+                $(this).css("transform", "rotateX(360deg)");
+            });
+            $(".ftItem4 img").mouseleave(function(){
+                $(this).attr("src", "./images/desktop/ftLst4_off.png");
+                $(this).css("transform", "rotateX(0deg)");
+            });
+            
+            $(".ftItem5 img").hover(function(){
+                $(this).attr("src", "./images/desktop/ftLst5.png");
+                $(this).css("transform", "rotateX(360deg)");
+            });
+            $(".ftItem5 img").mouseleave(function(){
+                $(this).attr("src", "./images/desktop/ftLst5_off.png");
+                $(this).css("transform", "rotateX(0deg)");
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#hd").hover(function(){
+                $(this).toggleClass("on");
+                $(".sub").slideToggle(500);
+            });
+        });
+    </script> 
     
     <!-- 모바일 jQuery -->
     <script>
         $(document).ready(function(){
-            var wd = parseInt($("#Mvs ul li").width());
-            
-            function rAni(){
-                $("#Mvs ul").not(":animated").animate({"margin-left" : - wd + "px"}, 2500, function(){
-                    $("#Mvs ul li").eq(0).appendTo($("#Mvs ul"));
-                    $("#Mvs ul").css("margin-left", "0px");
-                });
-            };
-            var intv = setInterval(function(){
-                rAni();
-            }, 5000);
-        });
-    </script>
-    
-    <script>
-        $(document).ready(function(){
-            var wd = parseInt($(".Mcon2BoxIn ul li").width());
-            $(".listLBtn").click(function(){
-                $(".Mcon2BoxIn ul").not(":animated").animate({"margin-left": -wd + "px"}, 800, function(){
-                    $(".Mcon2BoxIn ul li").eq(0).appendTo(".Mcon2BoxIn ul");
-                    $(".Mcon2BoxIn ul").css("margin-left", "0px");
-                });
-                
-            });
-            $(".listRBtn").click(function(){
-                $(".Mcon2BoxIn ul li").eq(7).prependTo(".Mcon2BoxIn ul");
-                $(".Mcon2BoxIn ul").css("margin-left", -wd + "px");
-                $(".Mcon2BoxIn ul").not(":animated").animate({"margin-left" : "0px"}, 800);
-                });
-        });
-    </script>
-    
-    <script>
-        $(document).ready(function(){
             $(".MmenuBtn").click(function(){
-                $(".MmenuSl").not(":animated").animate({"left" : "0px"}, 800);
-            });
-            
-            $(".close").click(function(){
-                $(".MmenuSl").not(":animated").animate({"left" : "-330px"}, 800);
+                $(".MmenuBtn span").toggleClass("on");
+                $(".MmenuBtn").toggleClass("on");
+                $(".Mmenu").toggleClass("on");
             });
         });
-        
     </script>
     
-
+    <script>
+        $(document).ready(function(){
+            $(".Mmenu ul li a.MmenuTit").removeAttr("href");
+            $(".Mmenu ul li a.MmenuTit").click(function(){
+                $(".MmenuBox .Msub").each(function(){
+                    if($(this).css("display") == "block"){
+                        $(this).slideUp(500);
+                    }
+                });
+                $(this).next().slideDown(500);
+            });
+        });
+    </script>
+    
 </head>
 <body>
     <div class="main" id="desktop">
         <header id="hd">
-            <div class="hdTop">
-               <div class="hdIn">
-                <a href="#" class="logo">
-                    <img src="./images/desktop/logo.png" alt="로고">
-                </a>
-                
-                <div class="leftHd">
-                    <ul class="leftSns">
-                        <li><a href=""><img src="./images/desktop/facebook.png" alt="페이스북"></a></li>
-                        <li><a href=""><img src="./images/desktop/instagram.png" alt="인스타그램"></a></li>
-                        <li><a href=""><img src="./images/desktop/blog.png" alt="블로그"></a></li>
-                        <li><a href=""><img src="./images/desktop/kakao.png" alt="블로그"></a></li>
-                    </ul>
-                </div>
-
-                <div class="rightHd">
-                        <ul class="rightMenu">
-                            <li><a href="">SIGN IN</a></li>
-                            <li><a href="">KOR</a></li>
-                            <li><a href="">SITE MAP</a></li>
+            <div class="hdIn">
+                <ul class="menu">
+                    <li class="mainMenu"><a href="" class="mainMenuA">제품</a>
+                        <ul class="sub">
+                            <li><a href="">정수기<br><span class="em">Water Care</span></a></li>
+                            <li><a href="">공기청정기<br><span class="em">Air Care</span></a></li>
+                            <li><a href="">빕데/연수기<br><span class="em">Body Care</span></a></li>
+                            <li><a href="">클린워셔<br><span class="em">Clean Care</span></a></li>
+                            <li><a href="">매트리스/프레임<br><span class="em">sleep Care</span></a></li>
+                            <li><a href="">주방/리빙/건강<br><span class="em">Living Care</span></a></li>
+                            <li><a href="">MD컬렉션</a></li>
                         </ul>
-                </div>
-            
-                </div>
-            </div>
-            
-            <div class="menu">
-                <nav class="gnb">
-                    <ul class="mainMenu">
-                        <li><a href="sub1.html">제품</a>
-                                <nav class="sub">
-                                    <ul class="subMenu">
-                                        <li><a href="sub1.html">정수기</a></li>
-                                        <li><a href="sub1.html">공기청정기</a></li>
-                                        <li><a href="sub1.html">비데/클린워셔</a></li>
-                                    </ul>
-                                </nav>
-                            </li>
-                            
-                        <li><a href="sub1.html">서비스</a></li>
-                        
-                        <li><a href="">혜택</a>
-                                <nav class="sub">
-                                    <ul class="subMenu">
-                                        <li><a href="">코웨이멤버스</a></li>
-                                        <li><a href="">SU:CLUB</a></li>
-                                        <li><a href="">이벤트</a></li>
-                                    </ul>
-                                </nav>
-                            </li>
-                        <li><a href="">고객지원</a></li>
-                        
-                        <li><a href="">기업</a>
-                                <nav class="sub">
-                                    <ul class="subMenu">
-                                        <li><a href="">기업소개</a></li>
-                                        <li><a href="">브랜드</a></li>
-                                        <li><a href="">이노베이션</a></li>
-                                        <li><a href="">지속가능경영</a></li>
-                                        <li><a href="">투자정보</a></li>
-                                    </ul>
-                                </nav>
-                            </li>
-                            
-                        <li><a href="">마이코웨이</a>
-                                <nav class="sub">
-                                    <ul class="subMenu">
-                                        <li><a href="">제품서비스</a></li>
-                                        <li><a href="">결제관리</a></li>
-                                        <li><a href="">코웨이멤버스</a></li>
-                                        <li><a href="">마이쇼핑</a></li>
-                                        <li><a href="">정보관리</a></li>
-                                    </ul>
-                                </nav>
-                            </li>
-                    </ul>
-                </nav>
+                    </li>
+                    <li class="mainMenu"><a href="" class="mainMenuA">서비스</a>
+                        <ul class="sub">
+                            <li><a href="">렌탈/멤버십</a></li>
+                            <li><a href="">IoCare 서비스</a></li>
+                            <li><a href="">HEART 서비스</a></li>
+                            <li><a href="">케어서비스</a></li>
+                            <li><a href="">코웨이 케어 전문가</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu"><a href="" class="mainMenuA">혜택</a>
+                        <ul class="sub">
+                            <li><a href="">코웨이 멤버스</a></li>
+                            <li><a href="">SU : CLUB</a></li>
+                            <li><a href="">EVENT</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu">
+                        <a href="" class="logo mainMenuA">
+                            <img src="./images/desktop/logo.png" alt="로고">
+                        </a>
+                    </li>
+                    <li class="mainMenu"><a href="" class="mainMenuA">고객지원</a>
+                        <ul class="sub">
+                            <li><a href="">공지사항</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">1:1문의</a></li>
+                            <li><a href="">콜센터 이용안내</a></li>
+                            <li><a href="">B2B문의</a></li>
+                            <li><a href="">제휴제안</a></li>
+                            <li><a href="">전국매장찾기</a></li>
+                            <li><a href="">법적고지</a></li>
+                            <li><a href="">이렇게 구매하세요</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu"><a href="" class="mainMenuA">기업</a>
+                        <ul class="sub">
+                            <li><a href="">기업소개</a></li>
+                            <li><a href="">브랜드</a></li>
+                            <li><a href="">이노베이션</a></li>
+                            <li><a href="">지속가능경영</a></li>
+                            <li><a href="">무한책임위원회</a></li>
+                            <li><a href="">투자정보</a></li>
+                            <li><a href="">인재채용</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu"><a href="" class="mainMenuA">마이코웨이</a>
+                        <ul class="sub">
+                            <li><a href="">나의 제품 서비스</a></li>
+                            <li><a href="">나의 결제관리</a></li>
+                            <li><a href="">나의 코웨이 멤버스</a></li>
+                            <li><a href="">마이쇼핑</a></li>
+                            <li><a href="">나의 정보관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </header>
         
-        <div class="con" id="con1">
-            <div class="con1In">
-                <figure id="vs">
-                    <ul>
+        <div class="Mhd">
+                <a href="" class="Mlogo">
+                    <img src="./images/desktop/logo.png" alt="모바일로고">
+                </a>
+                
+                <div class="MmenuBtn">
+                    <span class="MmeLine1"></span>
+                    <span class="MmeLine2"></span>
+                    <span class="MmeLine3"></span>
+                </div>
+                <div class="Mmenu">
+                    <ul class="MmenuBox">
                         <li>
-                            <img src="./images/desktop/vs1Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
+                           <a href="" class="MmenuTit">제품<span>+</span></a>
+                           <ul class="Msub">
+                               <li><a href="">정수기</a></li>
+                                <li><a href="">공기청정기</a></li>
+                                <li><a href="">빕데/연수기</a></li>
+                                <li><a href="">클린워셔</a></li>
+                                <li><a href="">매트리스/프레임</a></li>
+                                <li><a href="">주방/리빙/건강</a></li>
+                                <li><a href="">MD컬렉션</a></li>
+                           </ul>
                         </li>
                         <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
+                            <a href="" class="MmenuTit">서비스<span>+</span></a>
+                            <ul class="Msub">
+                                <li><a href="">렌탈/멤버십</a></li>
+                                <li><a href="">IoCare 서비스</a></li>
+                                <li><a href="">HEART 서비스</a></li>
+                                <li><a href="">케어서비스</a></li>
+                                <li><a href="">코웨이 케어 전문가</a></li>
+                            </ul>
                         </li>
                         <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
+                            <a href="" class="MmenuTit">혜택<span>+</span></a>
+                            <ul class="Msub">
+                                <li><a href="">코웨이 멤버스</a></li>
+                                <li><a href="">SU : CLUB</a></li>
+                                <li><a href="">EVENT</a></li>
+                            </ul>
                         </li>
                         <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
+                            <a href="" class="MmenuTit">고객지원<span>+</span></a>
+                            <ul class="Msub">
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">FAQ</a></li>
+                                <li><a href="">1:1문의</a></li>
+                                <li><a href="">콜센터 이용안내</a></li>
+                                <li><a href="">B2B문의</a></li>
+                                <li><a href="">제휴제안</a></li>
+                                <li><a href="">전국매장찾기</a></li>
+                                <li><a href="">법적고지</a></li>
+                                <li><a href="">이렇게 구매하세요</a></li>
+                            </ul>
                         </li>
                         <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
+                            <a href="" class="MmenuTit">기업<span>+</span></a>
+                            <ul class="Msub">
+                                <li><a href="">기업소개</a></li>
+                                <li><a href="">브랜드</a></li>
+                                <li><a href="">이노베이션</a></li>
+                                <li><a href="">지속가능경영</a></li>
+                                <li><a href="">무한책임위원회</a></li>
+                                <li><a href="">투자정보</a></li>
+                                <li><a href="">인재채용</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="MmenuTit">마이코웨이<span>+</span></a>
+                            <ul class="Msub">
+                                <li><a href="">나의 제품 서비스</a></li>
+                                <li><a href="">나의 결제관리</a></li>
+                                <li><a href="">나의 코웨이 멤버스</a></li>
+                                <li><a href="">마이쇼핑</a></li>
+                                <li><a href="">나의 정보관리</a></li>
+                            </ul>
                         </li>
                     </ul>
-                </figure>
-                
-                <div class="slBtn">
-                    <div class="slBtnIn">
-                        <ul>
-                            <li><button>◀ Prev</button></li>
-                            <li><button>Next ▶</button></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
+        
+        <div class="con" id="con1">
+           <figure id="vs">
+               <ul>
+                   <li>
+                       <img src="./images/desktop/vs1.png" alt="" class="vsImg" id="Dvs">
+                       <img src="./images/mobile/vs1.png" alt="" class="vsImg" id="Mvs">
+                       <h2 class="vsTit1_1 vsTit">물이 지나는 모든곳을</h2>
+                       <h2 class="vsTit2_1 vsTit">스스로 살균</h2>
+                    </li>
+                   <li>
+                       <img src="./images/desktop/vs2.png" alt="" class="vsImg" id="Dvs">
+                       <img src="./images/mobile/vs2.png" alt="" class="vsImg" id="Mvs">
+                       <h2 class="vsTit1_2 vsTit">필요한 양의</h2>
+                       <img src="./images/desktop/31.png" alt="" class="vsTit2_2 vsTit">
+                    </li>
+                   <li>
+                       <img src="./images/desktop/vs3.png" alt="" class="vsImg" id="Dvs">
+                       <img src="./images/mobile/vs3.png" alt="" class="vsImg" id="Mvs">
+                       <h2 class="vsTit1_3 vsTit">물맛이 다르다</h2>
+                       <h2 class="vsTit2_3 vsTit">코웨이니까</h2>
+                    </li>
+               </ul>
+           </figure>
         </div>
         
         <div class="con" id="con2">
             <div class="con2In">
-                <h2 class="con2Tit1">COWAY</h2>
-                <h2 class="con2Tit2">PRODUCT</h2>
-                
-                <div class="con2Con">
-                        <ul>
-                            <li><a href="">Water Care</a></li>
-                            <li><a href="">Air Care</a></li>
-                            <li><a href="">Body Care</a></li>
-                            <li><a href="">Sleep Care</a></li>
-                            <li><a href="">Living Care</a></li>
-                        </ul>
-                </div>
-                
-                <div class="con2ConLst">
-                    <ul>
-                        <li><img src="./images/desktop/list1_1.png" alt="리스트1_1" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_2.png" alt="리스트1_2" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>정수통 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_3.png" alt="리스트1_3" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>스타일 시루직수</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_4.png" alt="리스트1_4" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>롱스타일 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_1.png" alt="리스트1_1" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_2.png" alt="리스트1_2" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_3.png" alt="리스트1_3" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                        <li><img src="./images/desktop/list1_4.png" alt="리스트1_4" class="con2ItemImg">
-                            <a href="" class="con2Hover"><div class="listHover">
-                                <span class="icon">
-                                    <img src="./images/desktop/con2Icon.png" alt="콘2아이콘">
-                                </span>
-                                <h2 class="hoverTit">코웨이<br>시루직수 정수기</h2>
-                            </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+              <div class="con2TitIn">
+                    <span class="line line1"></span>
+                    <h2 class="con2Tit1">WELCOME</h2>
+                    <span class="line line2"></span>
+                    <h2 class="con2Tit2">CWAY</h2>
+              </div>
+              
+              <div class="con2ConLst">
+                  <ul class="c2Btn">
+                      <li class="on">공기청정기</li>
+                      <li>정수기</li>
+                      <li>비데/클린워셔</li>
+                      <li>매트리스</li>
+                      <li>주방/리빙</li>
+                      <li>MD컬렉션</li>
+                  </ul>
+              </div>
+              <div class="con2Con1">
+                 <ul class="c2Box1">
+                     <li class="c2BoxItems">
+                         <ul class="c2InBox">
+                              <li>
+                                  <video src="./video/video.mp4" class="video" loop autoplay muted></video>
+                              </li>
+                              <li>
+                                 <h2 class="video1Tit1">4가지의 다이나믹 액션모드의</h2>
+                                  <h2 class="video1Tit2">코웨이 멀티액션 공기청정기</h2>
+                                  <div class="videoTBox">
+                                      <span class="tBoxTxt">공기질은 공간마다,상황마다 달라지는데 그때마다맞춤형 필터를 교체해서 사용하실수있는 신제품 맞춤형필터 시스템입니다.</span>
+                                      <img src="./images/desktop/menu1.png" alt="" class="con2menu1">
+                                      <a href="" class="con2More">자세히 보기</a>
+                                  </div>
+                              </li>
+                          </ul>
+                     </li>
+                     <li class="c2BoxItems">
+                         <ul class="c2InBox">
+                              <li>
+                                  <video src="./video/video.mp4" class="video" loop autoplay muted></video>
+                              </li>
+                              <li>
+                                 <h2 class="video1Tit1">코웨이 사계절 의류 청정기</h2>
+                                  <h2 class="video1Tit2">공간청정하는 안팎케어시스템</h2>
+                                  <div class="videoTBox">
+                                      <span class="tBoxTxt">외출 후 옷만 관리하면 끝? 한쪽만 관리하면 안되니까!피부에 닿는 옷의 집중케어는 물론, 옷의 공간까지 케어하는코웨이 사계절 의류청정기로 케어하세요.</span>
+                                      <img src="./images/desktop/menu1.png" alt="" class="con2menu1">
+                                      <a href="" class="con2More">자세히 보기</a>
+                                  </div>
+                              </li>
+                          </ul>
+                     </li>
+                     <li class="c2BoxItems">
+                         <ul class="c2InBox">
+                              <li>
+                                  <video src="./video/video.mp4" class="video" loop autoplay muted></video>
+                              </li>
+                              <li>
+                                 <h2 class="video1Tit1">코웨이 액티브액션</h2>
+                                  <h2 class="video1Tit2">공기청정기 IoCare</h2>
+                                  <div class="videoTBox">
+                                      <span class="tBoxTxt">상하좌우 자유롭게 회전하는 액티브스윙 모드가 빠르고 강력하게 실내 공기를 케어해줍니다. 특히 자동모드에서 3분 이상 실내 고오염이 지속될 경우 상하 회전 기능을 통해 강력한 순환을 도와줍니다.</span>
+                                      <img src="./images/desktop/menu1.png" alt="" class="con2menu1">
+                                      <a href="" class="con2More">자세히 보기</a>
+                                  </div>
+                              </li>
+                          </ul>
+                     </li>
+                     <li class="c2BoxItems">
+                         <ul class="c2InBox">
+                              <li>
+                                  <video src="./video/video.mp4" class="video" loop autoplay muted></video>
+                              </li>
+                              <li>
+                                 <h2 class="video1Tit1">강력한 청정 성능에 편리함까지</h2>
+                                  <h2 class="video1Tit2">핵심기능을 담다!</h2>
+                                  <div class="videoTBox">
+                                      <span class="tBoxTxt">강력한 공기청정은 물론, 꼭 필요한 편의 기능과 슬림 디자인까지 알차게 담은 합리적인 공기청정기를 만나 보세요.</span>
+                                      <img src="./images/desktop/menu1.png" alt="" class="con2menu1">
+                                      <a href="" class="con2More">자세히 보기</a>
+                                  </div>
+                              </li>
+                          </ul>
+                     </li>
+                     <li class="c2BoxItems">
+                         <ul class="c2InBox">
+                              <li>
+                                  <video src="./video/video.mp4" class="video" loop autoplay muted></video>
+                              </li>
+                              <li>
+                                 <h2 class="video1Tit1">4가지의 다이나믹 액션모드의</h2>
+                                  <h2 class="video1Tit2">코웨이 멀티액션 공기청정기</h2>
+                                  <div class="videoTBox">
+                                      <span class="tBoxTxt">공기질은 공간마다,상황마다 달라지는데 그때마다맞춤형 필터를 교체해서 사용하실수있는 신제품 맞춤형필터 시스템입니다.</span>
+                                      <img src="./images/desktop/menu1.png" alt="" class="con2menu1">
+                                      <a href="" class="con2More">자세히 보기</a>
+                                  </div>
+                              </li>
+                          </ul>
+                     </li>
+                     <li class="c2BoxItems">
+                         <ul class="c2InBox">
+                              <li>
+                                  <video src="./video/video.mp4" class="video" loop autoplay muted></video>
+                              </li>
+                              <li>
+                                 <h2 class="video1Tit1">코웨이 제습공기청정기</h2>
+                                  <h2 class="video1Tit2">강력한 제습력과 공기청정</h2>
+                                  <div class="videoTBox">
+                                      <span class="tBoxTxt">하루 8 L의 풍부한 제습용량으로 강력하게 제습하고 빠르게 실내습도를 알아서 최적습도로 조절해 언제나 상쾌한 습도를 유지합니다.</span>
+                                      <img src="./images/desktop/menu1.png" alt="" class="con2menu1">
+                                      <a href="" class="con2More">자세히 보기</a>
+                                  </div>
+                              </li>
+                          </ul>
+                     </li>
+                 </ul>
+                  <ul class="btnBox">
+                    <li><button class="active" data-val="0"></button></li>
+                    <li><button data-val="1"></button></li>
+                    <li><button data-val="2"></button></li>
+                    <li><button data-val="3"></button></li>
+                    <li><button data-val="4"></button></li>
+                    <li><button data-val="5"></button></li>
+            </ul>
+              </div>
+              
             </div>
         </div>
         
         <div class="con" id="con3">
             <div class="con3In">
-                <h2 class="con3Tit1">코웨이 소식지</h2>
-                    <div class="newsNoti">
-                       <h3 class="notiTit">공지사항</h3>
-                       <a href="#" class="notiMore">+</a>
-                       <div class="notiBox">
-                           <a href="" class="notiLink">
-                               <p class="notiLinkTit">&#91; 2018 코웨이 어워즈 모델 공유 &#93; 2018년 코웨이 직수관 정수기 판매기념, 배우 공유와 함께합니다.</p>
-                               <span class="notiLinkDate">2018-10-20</span>
-                           </a>
-                       </div>
-                   </div>
+                <div class="con3TitIn">
+                    <span class="line line1"></span>
+                    <h2 class="con2Tit1">EVENT</h2>
+                    <span class="line line2"></span>
+                    <h2 class="con3Tit2">Coway's EVENT</h2>
+                </div>
+              
+              <div class="news">
+                  <ul>
+                      <li>
+                         <img src="./images/desktop/event1.png" alt="">
+                          <a href="">
+                              <h2 class="newsTit">&#91; 단 두달간의 특별한 기회! &#93; 가격 부담은 낮추고 혜택은 높이고 집안 곳곳 빠짐없이 안심케어 하세요.</h2>
+                              <span class="newsDate">2018-10-20 ~ 총 주문 마감시까지</span>
+                          </a>
+                      </li>
+                      <li>
+                         <img src="./images/desktop/event2.png" alt="">
+                          <a href="">
+                              <h2 class="newsTit">&#91; 코웨이가 제안하는 새로운 침대생활! &#93; 편안한 꿀잠을 위해 요즘 사람이 사용하는 세상 편한 코웨이 침대로 바꿔보세요!</h2>
+                              <span class="newsDate">2018-10-20 </span>
+                          </a>
+                      </li>
+                      <li>
+                         <img src="./images/desktop/event3.png" alt="">
+                          <a href="">
+                              <h2 class="newsTit">&#91; 강력한 청정 시스템으로 상쾌한 공기를 제공하는 코웨이! &#93; 갖고 싶던 코웨이 공기청정기를 전에 없던 혜택으로 만날 수 있는 가장 좋은 기회입니다.</h2>
+                              <span class="newsDate">2018-10-20</span>
+                          </a>
+                      </li>
+                      <li>
+                         <img src="./images/desktop/event4.png" alt="">
+                          <a href="">
+                              <h2 class="newsTit">&#91; 필터가 달라 물맛이 다른 코웨이 CIROO 필터 정수기! 직수도 차원이 다른 코웨이 직수 정수기! &#93; 갖고 싶던 코웨이 정수기를 전에 없던 혜택으로 만날 수 있는 가장 좋은 기회입니다</h2>
+                              <span class="newsDate">2018-10-20</span>
+                          </a>
+                      </li>
+                      <li>
+                         <img src="./images/desktop/event5.png" alt="">
+                          <a href="">
+                              <h2 class="newsTit">&#91; 깨끗하고 맛있는 물 &#93; 편의 촬영 공유와함께 마음까지 맑아지는 바탕화면을 내 컴퓨터, 휴대폰에 지금 바로 저장하세요!</h2>
+                              <span class="newsDate">2018-10-20</span>
+                          </a>
+                      </li>
+                      <li>
+                         <img src="./images/desktop/event6.png" alt="">
+                          <a href="">
+                              <h2 class="newsTit">&#91; 차별화된 기술로 사람을 똑똑하게 케어하는 코웨이 비데! &#93; 갖고 싶던 코웨이 비데를 새로운 혜택으로 만날 수 있는 기회입니다.</h2>
+                              <span class="newsDate">2018-10-20</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
             </div>
         </div>
         
         <div class="con" id="con4">
             <div class="con4In">
-                    <div class="newsWork">
-                       <h3 class="workTit">보도자료</h3>
-                       <a href="#" class="workMore"></a>
-                       <div class="workBox">
+                    <div class="con4TitIn">
+                        <span class="line line1"></span>
+                        <h2 class="con4Tit1">WORK</h2>
+                        <span class="line line2"></span>
+                        <h2 class="con4Tit2">Coway's 보도자료</h2>
+                    </div>
+                    <div class="workBox">
                            <a href="" class="workLink">
                               <img src="./images/desktop/workImg1.png" alt="">
                                <p class="workLinkTit">안에서 의류 청정! 밖에서 공간 청정! ‘사계절 의류청정기’ 출시</p>
@@ -1411,249 +1511,75 @@
                                <p class="workLinkTit">"코웨이" 사람과 자연사이 청정을 그려내다. 직수관 청정 정수기 출시</p>
                            </a>
                        </div>
-               </div>
+                    
             </div>
         </div>
         
         <footer id="ft">
-           <div class="ftIn">
-            <div class="ftTop">
-                <ul class="ftTopList">
-                    <li><a href="" class="ftItem1"></a></li>
-                    <li><a href="" class="ftItem2"></a></li>
-                    <li><a href="" class="ftItem3"></a></li>
-                    <li><a href="" class="ftItem4"></a></li>
-                    <li><a href="" class="ftItem5"></a></li>
-                </ul>
-            </div>
-            
-            <div class="ftMenu">
-                <ul class="ftNav">
-                    <li><a href="">사이트맵</a></li>
-                    <li><a href="">이용약관</a></li>
-                    <li><a href="" style="color: #c92c64;">개인정보처리방침</a></li>
-                    <li><a href="">법적고지</a></li>
-                    <li><a href="">이메일무단수집거부</a></li>
-                    <li><a href="">임직원 확인 서비스</a></li>
-                    <li><a href="">판매인 검색</a></li>
-                    <li><a href="">바코드 번호 조회</a></li>
-                    <li><a href="">윤리제보센터</a></li>
-                    <li><a href="">인증번호발급</a></li>
-                </ul>
-            </div>
-            
-            <div class="copyright">
-               <div class="copyLeft">
-                <span class="address">본사 : 서울특별시 중구 서소문로 88 코웨이 중앙일보 빌딩 11층~17층 | 사업장 주소 : 충남 공주시 유구읍 유구마곡사로 136-23</span>
-                <span class="ceo">대표이사 : 이해선 | 사업자등록번호 : 307-81-06054 | 통신판매번호 : 제2005-21호 </span>
-                <span class="copy">COPYRIGHT COWAYCO.,LTD. ALL RIGHTS RESERVED.</span>
-                </div>
-                <div class="call">
-                    <h2 class="callTit">고객 콜 센터</h2>
-                    <a href="" class="callLink">1588-5200</a>
-                    <span class="callTime1">평일 AM 9:00 ~ PM 6:00</span>
-                    <span class="callTime1">토요일 AM 9:00 ~ PM 2:00</span>
-                    <span class="callTime1">공휴일/일요일 AM 9:00 ~ PM 4:00</span>
-                </div>
-            </div>
-        </div>  
-        </footer>
-    </div>
-    
-    <div class="main" id="mobile">
-              
-               <header id="Mhd">
-                   <div class="MhdIn">
-                       <a href="" class="logo">
-                           <img src="./images/mobile/logo.png" alt="">
-                        </a>
-                        
-                        <span class="MmenuBtn"><img src="./images/mobile/menuBtn.png" alt=""></span>
-                        <span class="Msearch"><img src="./images/mobile/search.png" alt=""></span>
-                   </div>
-               </header>
-               
-               <div class="con" id="Mcon1">
-                   <div class="Mcon1In">
-                <figure id="Mvs">
+            <div class="ftIn">
+                <div class="ftTop">
                     <ul>
-                        <li>
-                            <img src="./images/desktop/vs1Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
-                        <li>
-                            <img src="./images/desktop/vs2Bg.png" alt="">
-                            <h2 class="Tit1">웅진코웨이만의</h2>
-                            <h2 class="Tit2">시루 직수관 정수기</h2>
-                            <h2 class="Tit3">Shiru direct water pipe ice water purifier</h2>
-                        </li>
+                        <li class="ftItem1"><img src="./images/desktop/ftLst1_off.png" alt=""></li>
+                        <li class="ftItem2"><img src="./images/desktop/ftLst2_off.png" alt=""></li>
+                        <li class="ftItem3"><img src="./images/desktop/ftLst3_off.png" alt=""></li>
+                        <li class="ftItem4"><img src="./images/desktop/ftLst4_off.png" alt=""></li>
+                        <li class="ftItem5"><img src="./images/desktop/ftLst5_off.png" alt=""></li>
                     </ul>
-                </figure>
             </div>
-               </div>
-               
-               <div class="con" id="Mcon2">
-                   <div class="Mcon2In">
-                            <h2 class="Mcon2Tit1">COWAY</h2>
-                            <h2 class="Mcon2Tit2">PRODUCT</h2>
+            
+                <div class="ftLink">
+                    <ul>
+                        <li><a href="">사이트맵</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="" style="color: #b92e3a;">개인정보처리방침</a></li>
+                        <li><a href="">법적고지</a></li>
+                        <li><a href="">이메일무단수집거부</a></li>
+                        <li><a href="">임직원 확인 서비스</a></li>
+                        <li><a href="">판매인 검색</a></li>
+                        <li><a href="">바코드 번호 조회</a></li>
+                        <li><a href="">윤리제보센터</a></li>
+                        <li style="border-right: 0;"><a href="">인증번호발급</a></li>
+                    </ul>
+                </div>
+                <div class="cp">
+                    <div class="copyright">
+                        <address>본사 : 서울특별시 중구 서소문로 88 코웨이 서소문빌딩 11층~18층</address>
+                        <address> | 사업장 주소 : 충남 공주시 유구읍 유구마곡사로 136-23</address>
+                        <br>
+                            대표이사 : 이해선 | 사업자등록번호 : 307-81-06054 | 통신판매번호 : 제2005-21호 
+                            <a class="ftBtnLink" href="">사업자정보확인</a>
+                            <br>
+                            <div class="copy">
+                                COPYRIGHT COWAYCO.,LTD.
+                                <br> 
+                            </div>
+                            <div class="ftSns">
+                                <ul>
+                                    <li><a href=""><img src="./images/desktop/facebook.png" alt=""></a></li>
+                                    <li><a href=""><img src="./images/desktop/blog.png" alt=""></a></li>
+                                    <li><a href=""><img src="./images/desktop/instagram.png" alt=""></a></li>
+                                    <li><a href=""><img src="./images/desktop/kakao.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                    </div>
+                    
+                    <div class="cpRight">
+                        <h2 class="callTit">고객센터</h2>
+                        <span class="tell" href="tell: 1588-5200">1588-5200</span>
+                        <p class="time">
+                            평일 AM 9:00 ~ PM 6:00<br>
+                             토요일 AM 9:00 ~ PM 2:00<br>
+                              공휴일/일요일 AM 9:00 ~ PM 4:00
 
-                            <div class="Mcon2Con">
-                                    <ul>
-                                        <li><a href="">Water Care</a></li>
-                                        <li><a href="">Air Care</a></li>
-                                        <li><a href="">Body Care</a></li>
-                                        <li><a href="">Sleep Care</a></li>
-                                        <li><a href="">Living Care</a></li>
-                                    </ul>
-                            </div>
+                            </p>
                             
-                            <div class="Mcon2LstIn">
-                                <div class="Mcon2BtnIn">
-                                   <button class="listLBtn listMove"><img src="./images/desktop/lBtn.png" alt=""></button>
-                                   <button class="listRBtn listMove"><img src="./images/desktop/rBtn.png" alt=""></button>
-                                </div>
-                                <div class="Mcon2BoxIn">
-                    <ul>
-                        <li><img src="./images/desktop/list1_1.png" alt="리스트1_1">
-                            <h2 class="Mcon2BoxTxt">코웨이 직수관 정수기</h2>
-                        </li>
-                        <li><img src="./images/desktop/list1_2.png" alt="리스트1_2">
-                            <h2 class="Mcon2BoxTxt">코웨이 알뜰 정수기</h2>
-                        </li>
-                        <li><img src="./images/desktop/list1_3.png" alt="리스트1_3">
-                            <h2 class="Mcon2BoxTxt">코웨이 얼음 정수기</h2>
-                        </li>
-                        <li><img src="./images/desktop/list1_4.png" alt="리스트1_4">
-                            <h2 class="Mcon2BoxTxt">코웨이 리비젼 정수기</h2>
-                        </li>
-                        <li><img src="./images/desktop/list1_1.png" alt="리스트1_1">
-                            <h2 class="Mcon2BoxTxt">코웨이 베이직 정수기</h2>
-                        </li>
-                        <li><img src="./images/desktop/list1_2.png" alt="리스트1_2">
-                            <h2 class="Mcon2BoxTxt">코웨이 수동관 정수기</h2>
-                        </li>
-                        <li><img src="./images/desktop/list1_3.png" alt="리스트1_3">
-                            <h2 class="Mcon2BoxTxt">코웨이 직관 정수기</h2>
-                        </li>
-                        <li><img src="./images/desktop/list1_4.png" alt="리스트1_4">
-                            <h2 class="Mcon2BoxTxt">코웨이 유동 정수기</h2>
-                        </li>
-                    </ul>
-                           </div>
-                            </div>
-                       </div>
-                   </div>
-                   
-                <div id="Mcon4" class="news">
-           
-            <h2 class="Mcon4Tit1">코웨이 소식지</h2>
-            
-            <div class="MnewsNoti">
-               <h3 class="MnotiTit">공지사항</h3>
-               <a href="#" class="MnotiMore">+</a>
-               <div class="MnotiBox">
-                   <a href="" class="MnotiLink">
-                       <p class="MnotiLinkTit">&#91; 2018 코웨이 어워즈 모델 공유 &#93; 2018년 코웨이 직수관 정수기 판매기념, 배우 공유와 함께합니다.</p>
-                       <span class="MnotiLinkDate">2018-10-20</span>
-                   </a>
-               </div>
-           </div>
-            <div class="MmNewsCon">
-                <img src="./images/mobile/newsC.png" alt="">
-            </div>
-            
-            <div class="MnewsWork">
-               <h3 class="MworkTit">보도자료</h3>
-               <a href="#" class="MworkMore"></a>
-               <div class="MworkBox">
-                   <a href="" class="MworkLink">
-                      <img src="./images/desktop/workImg1.png" alt="">
-                       <p class="MworkLinkTit">안에서 의류 청정! 밖에서 공간 청정! ‘사계절 의류청정기’ 출시</p>
-                   </a>
-               </div>
-               
-               <div class="MworkBox">
-                   <a href="" class="MworkLink">
-                      <img src="./images/desktop/workImg2.png" alt="">
-                       <p class="MworkLinkTit">"코웨이" 사람과 자연사이 청정을 그려내다. 직수관 청정 정수기 출시</p>
-                   </a>
-               </div>
-           </div>
-        </div>
-        
-        <footer id="Mft">
-            <div id="mFt" class="mobile">
-            <div class="MftMenu">
-                <ul class="MftNav">
-                    <li><a href="">사이트맵</a></li>
-                    <li><a href="">이용약관</a></li>
-                    <li><a href="" style="color: #c92c64;">개인정보처리방침</a></li>
-                    <li><a href="">법적고지</a></li>
-                    <li><a href="">이메일무단수집거부</a></li>
-                    <li><a href="">임직원확인서비스</a></li>
-                    <li><a href="">판매인검색</a></li>
-                    <li><a href="">바코드번호조회</a></li>
-                    <li><a href="">윤리제보센터</a></li>
-                    <li><a href="">인증번호발급</a></li>
-                </ul>
-            </div>
-            
-            <div class="Mcopyright">
-                <span class="Maddress">본사 : 서울특별시 중구 서소문로 88 코웨이 중앙일보 빌딩 11층~17층<br>사업장 주소 : 충남 공주시 유구읍 유구마곡사로 136-23</span>
-                <span class="Mceo">대표이사 : 이해선 | 사업자등록번호 : 307-81-06054 | 통신판매번호 : 제2005-21호 </span>
-                <span class="Mcopy">COPYRIGHT COWAYCO.,LTD. ALL RIGHTS RESERVED.</span>
-                
-                <div class="Mcall">
-                    <h2 class="McallTit">고객 콜 센터</h2>
-                    <a href="" class="McallLink">1588-5200</a>
-                    <span class="McallTime1">평일 AM 9:00 ~ PM 6:00</span>
-                    <span class="McallTime1">토요일 AM 9:00 ~ PM 2:00</span>
-                    <span class="McallTime1">공휴일/일요일 AM 9:00 ~ PM 4:00</span>
+                            
+                    </div>
+                    
+                    
                 </div>
-            </div>
             </div>
         </footer>
-        
-        <div class="MmenuSl">
-                  <span class="close">
-                      
-                  </span>
-                   <div class="Mlogin">
-                       <ul>
-                           <li><a href="">로그인</a></li>
-                           <li><a href="">회원가입</a></li>
-                       </ul>
-                   </div>
-                    <ul class="MmenuSlLst">
-                        <li><a href="">제품</a></li>
-                        <li><a href="">서비스</a></li>
-                        <li><a href="">혜택</a></li>
-                        <li><a href="">고객지원</a></li>
-                        <li><a href="">기업</a></li>
-                        <li><a href="">마이코웨이</a></li>
-                    </ul>
-                </div>
-        
     </div>
 </body>
 </html>
