@@ -14,9 +14,7 @@
     <title>:: 영화진흥위원회 ::</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- 폰트링크 -->
-    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
    
    <!-- 데스크탑 CSS -->
    <style>
@@ -29,6 +27,7 @@
             height: 100%;
             min-width: 320px;
             max-width:1920px;
+            background-color: #f6f7fb;
         }
         ul {
             list-style: none;
@@ -47,38 +46,38 @@
            width: 100%;
            height: 100%;
        }
+       .blackBox {
+           position: fixed;
+           width: 100%;
+           height: 100%;
+           background-color: black;
+           opacity: 0.7;
+           z-index: 9992;
+           display: none;
+           
+       }
     </style>
     
     <style>
         #hd {
             width: 100%;
             height: auto;
+            background-color: #fff;
             position: fixed;
+            z-index: 9999;
             top: 0;
             left: 0;
+            padding: 1%;
         }
         .hdIn {
-            width: 90%;
+            width: 80%;
             height: auto;
             margin: 0 auto;
-            padding-top: 1.5%;
-        }
-        .hdIn .left {
-            width: 30%;
-            height: auto;
-            float: left;
-        }
-        .hdIn .left li {
-            float: left;
-            width: 45%;
-        }
-        .hdIn .left li a {
-            display: block;
-            text-align: center;
+            position: relative;
         }
         .logo {
-            display: block;
-            width: 100%;
+            display:inline-block;
+            width: 12.5%;
             height: auto;
         }
         .logo img {
@@ -87,15 +86,53 @@
             height: auto;
         }
         .menu {
-            display: inline-block;
-            color: #924952;
+            width: 70%;
+            height: auto;
+            position: absolute;
+            top: 10%;
+            right: 0;
+            background-color: #fff;
+        }
+        .menu ul.mainMenu {
+            width: 100%;
+            height: auto;
+            
+        }
+        .menu ul.mainMenu li.mainMenuLst {
+            float: left;
+            width: 12.285%;
+            margin: 0% 1%;
+        }
+        .menu ul.mainMenu li.mainMenuLst a.menuA {
+            display: block;
+            text-align: center;
+            font-size: 0.8vmax;
             font-weight: bold;
-            font-size: 1vmax;
+            font-family: 'Gothic A1', sans-serif;
+            color: #7f7f7f;
             transition: 0.5s;
         }
-        .menu:hover {
-            transform: rotateY(360deg);
-            color: #fff;
+        .menu ul.mainMenu li.mainMenuLst a:hover {
+            color: #e91c60;
+        }
+        .subMenu {
+            width: 100%;
+            height: auto;
+            padding-top: 30%;
+            display: none;
+        }
+        .subMenu li a {
+            display: block;
+            padding: 12.5%;
+            font-size: 0.45vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            color: #7f7f7f;
+            text-align: center;
+            transition: 0.5s;
+        }
+        .Mhd {
+            display: none;
         }
     </style>
     
@@ -103,21 +140,15 @@
         #con1 {
             width: 100%;
             height: auto;
-            background-image: url("./images/desktop/con1Bg.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
         }
         .con1In {
-            width: 90%;
+            width: 80%;
             height: auto;
-            margin: 0 auto;
-            padding-bottom: 5%;
-            
+            margin: 7.5% auto;
         }
         #vs {
             width: 100%;
             height: auto;
-            padding-top: 6%;
             overflow: hidden;
         }
         #vs ul {
@@ -125,700 +156,1084 @@
             height: auto;
         }
         #vs ul li {
+            float: left;
             width: 20%;
             height: auto;
-            float: left;
+            position: relative;
         }
-        #vs ul li img {
+        #vs ul li img.vsImg {
             display: block;
-            width: 25%;
+            width: 100%;
             height: auto;
-            float: right;
         }
-        .con1ItemText {
-            width: 70%;
+        .vsTit {
+            clear: both;
+            font-size: 2vmax;
+            color: #fff;
+            position: absolute;
+            bottom: 2.5%;
+            left: 2.5%;
+            text-shadow: 1px 1x 7px #3f3f3f;
+            box-sizing: border-box;
+        }
+        .con1In button {
+            display: inline-block;
+            width: 3%;
             height: auto;
-            float: left;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            margin: 5%;
+            margin-top: 2.5%;
         }
-        .con1Tit1 {
-            color: #fff;
-            font-weight: 100;
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 7vmax;
-            text-align: right;
-        }
-        .con1Tit2 {
-            color: #fff;
-            font-weight: 500;
-            font-family: 'Alegreya', serif;
-            font-size: 3vmax;
-            text-align: right;
-        }
-        .con1Code {
-            font-size: 1vmax;
-            font-weight: 100;
-            text-align: right;
-            color: #fff;
-        }
-        .con1Info {
-            font-weight: 300;
-            font-size: 1.2vmax;
-            text-align: left;
-            color: #fff;
-        }
-        .con1Genre {
-            font-weight: 100;
-            font-size: 4vmax;
-            text-align: left;
-            color: #fff;
-            font-family: 'Black Han Sans', sans-serif;
-        }
-        .con1Contents {
-            color: #fff;
-            font-size: 1vmax;
-            text-align: left;
-            font-weight: bold;
-        }
-        .conTotal {
-            color: #fff;
-            font-size: 2.5vmax;
-        }
-        .strong {
-            font-weight: bold;
-            font-size: 4vmax;
+        .con1In button img {
+            display: block;
+            width: 100%;
+            height: auto;
         }
     </style>
     
     <style>
         #con2 {
+            clear: both;
             width: 100%;
             height: auto;
         }
-        .con2In1 {
-            width: 90%;
-            height: 40%;
+        .con2In {
+            width: 80%;
+            height: auto;
             margin: 0 auto;
-            box-sizing: border-box;
-            background-image: url("./images/desktop/con2Film.png");
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            background-position: right;
+            position: relative;
         }
-        .con2Left {
-            width: 50%;
-            height: 100%;
-            box-sizing: border-box;
-            background-color: #f8f8f8;
-            padding: 5%;
-        }
-        .con2Dot {
-            display: block;
-            margin: 0 auto;
-        }
-        .con2Line {
-            display: block;
-            margin: 1.5% auto;
-        }
-        .con2LeftTit {
+        .con2TitIn {
             width: 100%;
             height: auto;
-            text-align: center;
-            font-family: 'Alegreya', serif;
+        }
+        .con2Tit {
+            text-align: left;
             font-size: 2vmax;
-            color: #3f2f3f;
+            font-family: 'Gothic A1', sans-serif;
             font-weight: 100;
+            color: #58595d;
         }
-        .con2LeftTxt {
-            text-align: center;
-            font-size: 1.2vmax;
-            font-weight: 100;
-            margin-top: 2.5%;
-            font-family: 'Do Hyeon', sans-serif;
-            color: #3f2f3f;
-        }
-        .con2LeftMore {
-            display: block;
-            margin: 5% auto;
-            text-align: center;
-            width: 20%;
-            height: auto;
-            background-color: #eba8a4;
-            color: #fff;
-            padding: 1.5%;
-        }
-        .con2In2 {
-            width: 90%;
-            height: auto;
-            margin: 0% auto;
-            box-sizing: border-box;
-            z-index: 100;
-            background-image: url("./images/desktop/con2BoxDownImg.png");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            padding-bottom: 15%;
-        }
-        .con2In2Tit {
-            text-align: center;
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.2vmax;
-            line-height: 12vh;
-            text-shadow: 1px 1px 3px #323232;
-        }
-        .con2In2Line {
-            display: block;
-            margin: 0 auto;
-            border-bottom: 1px solid #333;
-            width: 5%;
-            height: auto;
-        }
-        .con2In2Tit2 {
-            text-align: center;
-            font-weight: bold;
-            font-size: 3vmax;
-            color: #fff;
-            padding: 1.5% 0%;
-            text-shadow: 2px 2px 11px #323232;
-        }
-        .con2In2Txt {
-            text-align: center;
-            font-weight: bold;
-            color: #fff;
-            font-size: 1vmax;
-            line-height: 2vmax;
-            text-shadow: 1px 1px 11px #323232; 
-        }
-        .con2Bottom {
-            width: 60%;
-            height: auto;
-            margin: 12% auto;
-            margin-top: -12%;
-        }
-        .con2BottomIn {
+        .con2BoxAll {
             width: 100%;
             height: auto;
-            margin: 0% auto;
-            background-color: #fff;
-            box-shadow: 1px 1px 3px #323232;
-        }
-        .con2BottomIn ul {
-            width: 100%;
-            height: auto;
-        }
-        .con2BottomIn ul li {
-            width: 11.66%;
-            height: auto;
-            float: left;
-            box-sizing: border-box;
-            margin: 2.5%;
-        }
-        .con2BottomIn ul li a {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            text-align: center;
+            overflow: hidden;
             
         }
-        .con2BottomIn ul li a img {
-            display: block;
-            width: 50%;
+        .con2Box {
+            width: 400%;
             height: auto;
-            margin: 0 auto;
         }
-        .con2BottomTit {
+        .con2Box li.c2BoxLst {
+            float: left;
+            width: 25%;
+            height: auto;
+            box-sizing: border-box;
+        }
+        .con2BoxIn {
+            width: 100%;
+            height: auto;
+        }
+        .con2BoxIn li {
+            float: left;
+            width: 30.33%;
+            height: auto;
+            margin: 1.5%;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 1px 7px 13px #3f3f3f;
+            
+        }
+        .con2BoxIn li a {
+            width: 100%;
+            height: auto;
             display: block;
+        }
+        .con2BoxIn li a img {
+            display: block;
+            margin: 0 auto;
+            transition: 1s;
+            width: 80%;
+            height: auto;
+        }
+        .con2BoxIn li a img:hover {
+            transform: rotateY(360deg);
+        }
+        .c2BoxTit {
+            font-size: 1.2vmax;
             text-align: center;
-            color: #ffffff;
+            color: #3f3f3f;
+            padding: 5%;
             font-weight: bold;
-            font-size: 1vmax;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
+            padding-bottom: 2.5%;
+        }
+        .count {
+            display: block;
+            font-weight: 100;
+            font-size: 0.75vmax;
+            padding: 2.5% 7.5%;
+            text-align: left;
+            color: #3f3f3f;
+        }
+        .c2Btn {
+            display: block;
+            border: 0;
+            background: none;
+            position: absolute;
+            width: 2%;
+            height: auto;
+            cursor: pointer;
+        }
+        .c2Btn img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .con2LBtn {
+            top: 1.5%;
+            left: 20%;
+        }
+        .con2RBtn {
+            top: 1.5%;
+            left: 25%;
         }
     </style>
     
     <style>
         #con3 {
             width: 100%;
-            height: 100%;
+            height: auto;
+            clear: both;
         }
         .con3In {
-            width: 90%;
+            width: 80%;
             height: auto;
+            margin: 5% auto;
+        }
+        .call {
+            width: 80%;
+            height: auto;
+            padding-top: 2.5%;
+            background-image: url("./images/callBg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
             margin: 0 auto;
         }
-        .con3TitIn {
+        .callTit {
+            text-align: center;
+            color: #3f3f3f;
+            font-size: 2vmax;
+        }
+        .callTit span {
+            color: #007d85;
+            font-size: 2.5vmax;
+        }
+        .callNumber {
+            padding: 1.5% 0%;
+            padding-top: 0;
+            color: #df3434;
+            text-align: center;
+            font-size: 4vmax;
+        }
+    </style>
+    
+    <style>
+        #con4 {
+            width: 100%;
+            height: auto;
+            clear: both;
+        }
+        .con4In {
             width: 80%;
             height: auto;
             margin: 0 auto;
         }
-        .con3Tit1 {
-            text-align: center;
-            font-size: 5vmax;
-            color: #323232;
-            padding-top: 5%;
-            font-weight: bold;
-        }
-        .con3Tit2 {
-            text-align: center;
-            font-size: 1vmax;
-            color: #6c6c6c;
-            font-weight: 600;
-        }
-        .con3TitLine {
-            display: block;
-            width: 5%;
+        .con4TitIn {
+            width: 100%;
             height: auto;
-            border-bottom: 2px solid #d5abc0;
-            text-align: center;
-            margin: 5% auto;
-            transform: rotate(90deg);
         }
-        .con3Tit3 {
-            font-size: 1vmax;
-            color: #6c6c6c;
-            font-weight: bold;
-            text-align: center;
-        }
-        .con3Search {
-            
-        }
-        .con3SearchBox {
-            font-size: 1vmax;
-            margin: 0 auto;
-            box-sizing: border-box;
-            padding: 1.5% 15%;
-            background-color: blueviolet;
-        }
-        .con3SearchBox th {
+        .con4Tit {
             text-align: left;
-            color: #fff;
-            width: 12%;
+            font-size: 2vmax;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: 100;
+            color: #58595d;
         }
-        .input {
-            width: 90%;
+        .con4Left {
+            width: 70%;
             height: auto;
-            border: 0;
-            border-bottom: 1px solid #fff;
-            background: none;
-            color: #fff;
+            float: left;
         }
-        .btnSearch {
-            display: inline-block;
-            width: 25%;
+        .c4LeftBox {
+            width: 100%;
             height: auto;
-            padding: 0% 55%;
         }
-        .btnSearch img {
+        .c4LeftBox li.c4lList {
+            float: none;
+            box-sizing: border-box;
+        }
+        .c4ListBox {
+            width: 100%;
+            height: auto;
+        }
+        .c4ListBox li {
+            width: 47%;
+            margin: 1.5%;
+            float: left;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 1px 1px 11px #3f3f3f;
+        }
+        .c4ListBox li img {
             display: block;
+            float: left;
+        }
+        .c4Tit {
+            color: #3f3f3f;
+            padding: 5%;
+            font-size: 2.2vmax;
+        }
+        .c4Txt {
+            clear: both;
+            display: block;
+            font-size: 0.72vmax;
+            padding: 5%;
+        }
+        .con4Right {
+            width: 27.5%;
+            height: auto;
+            float: right;
+        }
+        .con4RightIn {
             width: 100%;
             height: auto;
         }
-        .con3News {
+        .c4rBox {
             width: 100%;
             height: auto;
+            box-sizing: border-box;
         }
-        .con3NewsT {
-            text-align: center;
+        .c4rBox li.c4rBoxLst {
+            float: none;
+            width: 100%;
+            height: auto;
+            margin: 3.5%;
+            background-color: #fff;
+            box-shadow: 1px 1px 11px #3f3f3f;
+            box-sizing: border-box;
+        }
+        .c4r1Tit {
+            text-align: left;
+            font-size: 2vmax;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            color: #3f3f3f;
+            padding: 5%;
+            box-sizing: border-box;
+            float: left;
+        }
+        .c4More {
+            display: block;
+            color: #333333;
+            font-size: 2vmax;
+            font-weight: bold;
+            float: right;
+            padding: 2.5%;
+        }
+        .c4rBox li.c4rBoxLst ul.c4rBox_ {
+            width: 100%;
+            height: auto;
+            clear: both;
+        }
+        .c4rBox li.c4rBoxLst ul.c4rBox_ li {
+            width: 80%;
+            float: none;
+            margin: 5% auto;
+            clear: both;
+        }
+        .c4LstMore {
+            display: block;
+            color: #fff;
+            width: 100%;
             font-size: 1vmax;
             font-weight: bold;
-            padding: 1.5%;
+            color: #c3c;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
         }
-        .con3News ul {
-            width: 100%;
+        .c4Line {
+            display: block;
+            width: 60%;
             height: auto;
+            margin: 0 auto;
+            border-bottom: 1px solid #ffffff;
         }
-        .con3News ul li {
+        .c4Icon {
+            display: block;
             float: left;
             width: 20%;
             height: auto;
+            margin: 5%;
         }
-        .con3News ul li a {
+        .c4r2Tit {
+            font-size: 1vmax;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            color: #3f3f3f;
+        }
+        .c4span {
+            font-size: 0.65vmax;
+            font-weight: 100;
+            color: #333;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .mo {
+            display: block;
+            margin: 0% auto;
+        }
+        .c4A {
+            
+            width: 80%;
+            height: auto;
+            margin: 2.5% auto;
+        }
+        .c4A ul.c4AList {
+            width: 100%;
+            height: auto;
+        }
+        .c4A ul.c4AList li {
+            float: left;
+            width: 45%;
+            height: auto;
+            margin: 2.5%;
+        }
+        .c4LastMore {
             display: block;
             width: 100%;
             height: auto;
         }
-        .con3News ul li a img {
-            display: block;
+        .c4LastMore img {
+             display: block;
             width: 100%;
             height: auto;
         }
-        
     </style>
     
     <style>
         #ft {
-            width: 100%;
-            height: 35%;
-            background-color: #56595e;
-            position: relative;
-            bottom: 0;
-        }
-        .ftLeft {
-            width: 30%;
-            height: 100%;
-            background-color: #141414;
-            position: relative;
-            display: inline-block;
-        }
-        .ftLogo {
-            display: block;
-            width: 40%;
-            height: auto;
-            position: absolute;
-            right: 10%;
-            top: 45%;
-            color: #fff;
-            font-weight: bold;
-            font-size: 1vmax;
-        }
-        .ftLogo img {
-            display: block;
+            clear: both;
             width: 100%;
             height: auto;
-            
+            background-color: #fff;
         }
-        .ftRight {
-            width: 70%;
-            height: auto;
-            position: absolute;
-            top: 0%;
-            left: 30%;
-        }
-        .ftLink {
+        .ftIn {
             width: 80%;
             height: auto;
-            margin: 3% auto;
+            margin: 0 auto;
         }
-        .ftLink li {
-            float: left;
-            width: 20%;
-        }
-        .ftLink li a {
-            display: block;
-            text-align: center;
-            color: #fff;
-            font-weight: bold;
-            font-size: 1vmax;
-            transition: 0.7s;
-            width: 100%;
+        .ftIn ul {
+            width: 50%;
             height: auto;
         }
-        .ftLink li a:hover {
-            transform: rotate(360deg);
-            color: #ee2c67;
+        .ftIn ul li {
+            float: left;
+            width: 15%;
+            margin: 2.5%;
         }
-        .address {
-            text-align: left;
-            padding: 7%;
-            font-size: 1vmax;
+        .ftIn ul li a {
+            display: block;
+            text-align: center;
+            font-size: 0.65vmax;
+            color: #3f3f3f;
             font-weight: bold;
-            color: #fff;
+        }
+        .add {
+            clear: both;
+            text-align: left;
+            font-size: 0.95vmax;
+            font-weight: bold;
         }
         .copy {
-            text-align: center;
+            clear: both;
+            font-size: 1vmax;
+            text-align: left;
+            font-family: 'Gothic A1', sans-serif;
+            color: #3f3f3f;
+            padding: 2.5% 0%;
             font-weight: bold;
-            color: #fff;
-            font-size: 1.5vmax;
-            margin-top: -3%;
+        }
+        #sel {
+            display: inline-block;
+            width: 25%;
+            height: auto;
+            padding: 1%;
+            font-size: 11px;
+            margin-top: 2%;
         }
     </style>
+    
+    
     <!-- MEDIA 속성 -->
      <style>
         @media screen and (max-width:767px) {
             /* 모바일 */
+            
+            .con4Left {
+                width: 100%;
+                height: auto;
+            }
+            .c4ListBox li {
+                width: 94%;
+                margin: 1.5%;
+                float: left;
+                box-sizing: border-box;
+                background-color: #fff;
+                box-shadow: 1px 1px 11px #3f3f3f;
+            }
+            .con2BoxIn li {
+                float: left;
+                width: 30.33%;
+                height: auto;
+                margin: 1.5%;
+                box-sizing: border-box;
+                background:none;
+                box-shadow: 0px 0px 0px #fff;
+            }
+            .c2BoxTit {
+                font-size: 1.2vmax;
+                text-align: center;
+                color: #3f3f3f;
+                padding: 5%;
+                font-weight: bold;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                word-wrap: normal;
+                overflow: hidden;
+                padding-bottom: 2.5%;
+                display: none;
+            }
+            .count {
+                display: none;
+                font-weight: 100;
+                font-size: 0.75vmax;
+                padding: 2.5% 7.5%;
+                text-align: left;
+                color: #3f3f3f;
+            }
+            .con4Right {
+                width: 100%;
+                height: auto;
+                float: none;
+                clear: both;
+            }
+            .c4rBox li.c4rBoxLst {
+                float: none;
+                width: 100%;
+                height: auto;
+
+                margin: 0;
+                background-color: #fff;
+                box-shadow: 0px 0px 0px #3f3f3f;
+                box-sizing: border-box;
+            }
+            .c4Icon {
+                display: block;
+                float: left;
+                width: 10%;
+                height: auto;
+                margin: 0%;
+                margin-right: 15%;
+            }
+            .ftIn ul {
+                width: 100%;
+                height: auto;
+            }
+            .ftIn ul li {
+                float: left;
+                width: 15%;
+                margin: 2.5%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                word-wrap: normal;
+                overflow: hidden;
+            }
+            .hdIn {
+                display: none;
+            }
+            .Mhd {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .Mlogo {
+                display: block;
+                width: 25%;
+                height: auto;
+                margin: 0 auto;
+                padding: 2%;
+            }
+            .Mlogo img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+            .MmenuBtn {
+                display: block;
+                background: none;
+                border: 0;
+                width: 18.5%;
+                height: auto;
+                position: absolute;
+                padding: 5%;
+                box-sizing: border-box;
+                background-color: #fff;
+                top: 0%;
+                right: -18.5%;
+            }
+            .MmenuBtn img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+            .MmenuBox {
+                position: absolute;
+                top: 0;
+                left: -50%;
+                background-color: #fff;
+                width: 50%;
+                height: auto;
+                transition: 0.5s;
+                z-index: 9999;
+            }
+            .MmenuBox.on {
+                left: 0%;
+            }
+            .MmenuBox ul {
+                width: 100%;
+                height: auto;
+            }
+            .MmenuBox ul li {
+                margin: 5%;
+            }
+            .MmenuBox ul li a {
+                display: block;
+                color: #3f3f3f;
+                font-weight: bold;
+                font-size: 2vmax;
+                width: 90%;
+                border: 1px solid #3f3f3f;
+                padding: 5%;
+                
+            }
         }
         @media screen and (min-width:768px) and (max-width:959px) {
             /* 테블릿 */
+            .blackBox {
+                display: none;
+            }
         }
         @media screen and (min-width:960px) and(max-width:1199px) {
             /* 데스크탑 */
+            .blackBox {
+                display: none;
+            }
         }
         @media screen and (min-width:1200px) {
+            .blackBox {
+                display: none;
+            }
         }
     </style>
     
     <!-- 스크립트 -->
+    
+    <script>
+        $(document).ready(function(){
+            $(".menu").hover(function(){
+                $(".subMenu").slideToggle(700);
+            });
+        });
+    </script>
+    
     <script>
         $(document).ready(function(){
             var wd = parseInt($("#vs ul li").width());
-            var wd2 = 100;
             
             function rAni(){
-                $("#vs ul").not(":animated").animate({"margin-left" : - wd2 + "%"}, 1200, function(){
+                $("#vs ul").not(":animated").animate({"margin-left" : - 100 + "%"}, 2500, function(){
                     $("#vs ul li").eq(0).appendTo($("#vs ul"));
                     $("#vs ul").css("margin-left", "0px");
                 });
             };
             var intv = setInterval(function(){
                 rAni();
-            }, 3500);
+            }, 5000);
+        });
+    </script> 
+    
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(".con2Box li.c2BoxLst").width());
+            var wd2 = 100;
+            $(".con2LBtn").click(function(){
+                $(".con2Box").not(":animated").animate({"margin-left": -wd2 + "%"}, 800, function(){
+                    $(".con2Box li.c2BoxLst").eq(0).appendTo(".con2Box");
+                    $(".con2Box").css("margin-left", "0%");
+                });
+            });
+            $(".con2RBtn").click(function(){
+                $(".con2Box li.c2BoxLst").eq(2).prependTo(".con2Box");
+                $(".con2Box").css("margin-left", -wd2 + "%");
+                $(".con2Box").not(":animated").animate({"margin-left": "0%"}, 800);
+            });
         });
     </script>
     
     <script>
-        $(document).ready(function() {
-            var ht = parseInt($(window).height());
-            console.log("창의높이 : " + ht);
-            $(window).on("mousewheel", function(e){
-                if(e.originalEvent.wheelDelta < 0){ // 아래 스크롤
-                    $("html, body").not(":animated").animate({scrollTop: "+=" + ht + "px" }, 500);
-                } else {
-                    $("html, body").not(":animated").animate({scrollTop: "-=" + ht + "px"}, 500);
-                }
-                return false;
+        
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".MmenuBtn").click(function(){
+                $(".MmenuBox").toggleClass("on");
+                $(".blackBox").slideToggle(400);
             });
         });
     </script>
-
 </head>
 <body>
     <div class="main" id="desktop">
+       <div class="blackBox"></div>
         <header id="hd">
             <div class="hdIn">
-               <ul class="left">
-                   <li><a href="" class="logo">
-                       <img src="./images/desktop/logo_off.png" alt="">
-                   </a></li>
-                   <li><a href="" class="menu">
-                       MENU
-                   </a></li>
-               </ul>
+                <a href="index.html" class="logo">
+                    <img src="./images/logo.png" alt="">
+                </a>
+                
+                <div class="menu">
+                    <ul class="mainMenu">
+                        <li class="mainMenuLst">
+                            <a href="" class="menuA">진흥사업안내</a>
+                            <ul class="subMenu">
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">진흥사업개요</a></li>
+                                <li><a href="">세부진흥사업</a></li>
+                                <li><a href="">진흥사업자료실</a></li>
+                            </ul>
+                        </li>
+                        <li class="mainMenuLst">
+                            <a href="" class="menuA">조사연구통계</a>
+                            <ul class="subMenu">
+                                <li><a href="">정책연구</a></li>
+                                <li><a href="">산업통계</a></li>
+                                <li><a href="">해외진출포털</a></li>
+                                <li><a href="">발간자료</a></li>
+                            </ul>
+                        </li>
+                        <li class="mainMenuLst">
+                            <a href="" class="menuA">영화정보센터</a>
+                            <ul class="subMenu">
+                                <li><a href="">박스오피스</a></li>
+                                <li><a href="">영화DB검색</a></li>
+                                <li><a href="">정보등록창구</a></li>
+                                <li><a href="">영화제작현황</a></li>
+                                <li><a href="">영화계소식</a></li>
+                                <li><a href="">영화계구인정보</a></li>
+                            </ul>
+                        </li>
+                        <li class="mainMenuLst">
+                            <a href="" class="menuA">알림마당</a>
+                            <ul class="subMenu">
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">KOFIC뉴스</a></li>
+                                <li><a href="">입찰공고</a></li>
+                                <li><a href="">보도자료</a></li>
+                                <li><a href="">규정예고</a></li>
+                                <li><a href="">뉴스레터</a></li>
+                            </ul>
+                        </li>
+                        <li class="mainMenuLst">
+                            <a href="" class="menuA">정보공개</a>
+                            <ul class="subMenu">
+                                <li><a href="">정보공개</a></li>
+                                <li><a href="">묻고답하기</a></li>
+                                <li><a href="">전자민원</a></li>
+                                <li><a href="">국민제안</a></li>
+                            </ul>
+                        </li>
+                        <li class="mainMenuLst">
+                            <a href="" class="menuA">열린경영</a>
+                            <ul class="subMenu">
+                                <li><a href="">경영공시</a></li>
+                                <li><a href="">고객가치경영</a></li>
+                                <li><a href="">윤리경영</a></li>
+                                <li><a href="">클린신고센터</a></li>
+                                <li><a href="">사회공헌</a></li>
+                            </ul>
+                        </li>
+                        <li class="mainMenuLst">
+                            <a href="" class="menuA">KOFIC소개</a>
+                            <ul class="subMenu">
+                                <li><a href="">일반현황</a></li>
+                                <li><a href="">위원장소개</a></li>
+                                <li><a href="">위원회운영</a></li>
+                                <li><a href="">조직안내</a></li>
+                                <li><a href="">채용안내</a></li>
+                                <li><a href="">사이버홍보실</a></li>
+                                <li><a href="">오시는 길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Mhd">
+                <a href="" class="Mlogo">
+                    <img src="./images/logo.png" alt="">
+                </a>
+                
+                
+                <div class="MmenuBox">
+                   <button class="MmenuBtn"><img src="./images/menuBtn.png" alt=""></button>
+                    <ul>
+                        <li><a href="">진흥사업안내</a></li>
+                        <li><a href="">조사연구통계</a></li>
+                        <li><a href="">영화정보센터</a></li>
+                        <li><a href="">알림마당</a></li>
+                        <li><a href="">정보공개</a></li>
+                        <li><a href="">열린경영</a></li>
+                        <li><a href="">KOFIC소개</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
         
         <div class="con" id="con1">
             <div class="con1In">
                 <figure id="vs">
-               <ul>
-                   <li>
-                     <div class="con1ItemText">
-                         <h2 class="conTotal">영화관 입장권<br>통합 전산망 <strong class="strong">1위</strong></h2>
-                          <h2 class="con1Tit1">암수살인</h2>
-                          <h2 class="con1Tit2">Dark Figure of Crime</h2>
-                          <p class="con1Code">CODE : 20179189</p>
-                          <h2 class="con1Info">장편 | 일반영화 | 범죄, 드라마 | 109분 59초 | 15세이상관람가 | 한국</h2>
-                          <h2 class="con1Genre">범죄실화극</h2>
-                          <span class="con1Contents">“일곱, 총 일곱 명 입니다. 제가 죽인 사람들예.”
-    수감된 살인범 강태오(주지훈)는 형사 김형민(김윤석)에게 추가 살인을 자백한다.
-    형사의 직감으로 자백이 사실임을 확신하게 된 형민은, 
-    태오가 적어준 7개의 살인 리스트를 믿고 수사에 들어간다. 
-
-    “이거 못 믿으면 수사 못한다. 일단 무조건 믿고, 끝까지 의심하자.” 
-    태오의 추가 살인은 신고도, 수사도 없어 세상에 알려지지 않은 암수사건 
-    형민은 태오가 거짓과 진실을 교묘히 뒤섞고 있다는 걸 알게 되지만 수사를 포기하지 않는다. 
-    그러나 다가오는 공소시효와 부족한 증거로 인해 수사는 난항을 겪게 되는데…</span>     
-                                        
-                     </div>
-
-                       <img src="./images/desktop/con1Img.png" alt="">
-                    </li>
-                   
-                   <li>
-                     <div class="con1ItemText">
-                         <h2 class="conTotal">영화관 입장권<br>통합 전산망 <strong class="strong">2위</strong></h2>
-                          <h2 class="con1Tit1">베놈</h2>
-                          <h2 class="con1Tit2">Venom</h2>
-                          <p class="con1Code">CODE : 20177221</p>
-                          <h2 class="con1Info">장편 | 일반영화 | 액션, SF, 스릴러 | 107분 0초 | 15세이상관람가 | 미국</h2>
-                          <h2 class="con1Genre">액션 스릴러</h2>
-                          <span class="con1Contents">영웅인가, 악당인가
-진실을 위해서라면 몸을 사리지 않는 정의로운 열혈 기자 '에디 브록' 
-거대 기업 라이프 파운데이션의 뒤를 쫓던 그는 
-이들의 사무실에 잠입했다가 실험실에서 
-외계 생물체 '심비오트'의 기습 공격을 받게 된다. 
-
-'심비오트'와 공생하게 된 '에디 브록'은 
-마침내 한층 강력한 '베놈'으로 거듭나고, 
-악한 존재만을 상대하려는 '에디 브록'의 의지와 달리 
-'베놈'은 난폭한 힘을 주체하지 못하는데…! 
-
-지배할 것인가, 지배당할 것인가
-10월, 마블 역사상 가장 강렬한 빌런 히어로의 등장을 확인하라!</span>     
-                                        
-                     </div>
-
-                       <img src="./images/desktop/con1Img4.png" alt="">
-                    </li>
-                    <li>
-                     <div class="con1ItemText">
-                         <h2 class="conTotal">영화관 입장권<br>통합 전산망 <strong class="strong">3위</strong></h2>
-                          <h2 class="con1Tit1">미쓰 백</h2>
-                          <h2 class="con1Tit2">Miss Baek</h2>
-                          <p class="con1Code">CODE : 20189067</p>
-                          <h2 class="con1Info">장편 | 일반영화 | 드라마 | 97분 55초 | 15세이상관람가 | 한국</h2>
-                          <h2 class="con1Genre">드라마</h2>
-                          <span class="con1Contents">“아무리 열심히 살아도 매 순간 날 배신하는 게 인생이야”
-
-스스로를 지키려다 어린 나이에 전과자가 되어 외롭게 살아가던 ‘백상아’
-누구도 믿지 않고 아무것도 마음에 두지 않던 어느 날
-나이에 비해 작고 깡마른 몸, 홑겹 옷을 입은 채
-가혹한 현실에서 탈출하려는 아이 ‘지은’을 만나게 된다.
-
-왠지 자신과 닮은 듯한 아이 ‘지은’을 외면할 수 없는 ‘상아’는
-‘지은’을 구하기 위해 세상과 맞서기로 결심하는데…</span>     
-                                        
-                     </div>
-
-                       <img src="./images/desktop/con1Img5.png" alt="">
-                    </li>
-                    <li>
-                     <div class="con1ItemText">
-                         <h2 class="conTotal">영화관 입장권<br>통합 전산망 <strong class="strong">4위</strong></h2>
-                          <h2 class="con1Tit1">스타 이즈 본</h2>
-                          <h2 class="con1Tit2">A Star Is Born</h2>
-                          <p class="con1Code">CODE : 20180523</p>
-                          <h2 class="con1Info">장편 | 일반영화 | 드라마, 멜로/로맨스 | 135분 36초 | 15세이상관람가 | 미국</h2>
-                          <h2 class="con1Genre">뮤직드라마</h2>
-                          <span class="con1Contents">나도 몰랐던 내 안의 빛을 찾아낸 그대
-우리 모습 이대로 영원히 기억할 거야…
-
-노래에 놀라운 재능을 가졌지만 외모에는 자신이 없는 무명가수 앨리(레이디 가가)는
-공연을 하던 바에서 우연히 톱스타 잭슨 메인(브래들리 쿠퍼)을 만나게 된다.
-자신의 모든 것을 사랑해주는 잭슨의 도움으로 앨리는 자기 안의 열정을 폭발시키며 최고의 스타로 거듭나지만,
-잭슨은 어린 시절의 상처와 예술가적 고뇌 속에서 점점 무너져가는데…</span>     
-                                        
-                     </div>
-
-                       <img src="./images/desktop/con1Img2.png" alt="">
-                    </li>
-                    <li>
-                     <div class="con1ItemText">
-                         <h2 class="conTotal">영화관 입장권<br>통합 전산망 <strong class="strong">5위</strong></h2>
-                          <h2 class="con1Tit1">안시성</h2>
-                          <h2 class="con1Tit2">The Great Battle</h2>
-                          <p class="con1Code">CODE : 20176122</p>
-                          <h2 class="con1Info">장편 | 일반영화 | 사극, 액션 | 135분 29초 | 12세이상관람가 | 한국</h2>
-                          <h2 class="con1Genre">범죄실화극</h2>
-                          <span class="con1Contents">우리는 물러서는 법을 배우지 못했다! 
-우리는 무릎 꿇는 법을 배우지 못했다! 
-우리는 항복이라는 걸 배우지 못했다! 
-
-천하를 손에 넣으려는 당 태종은 수십만 대군을 동원해 고구려의 변방 안시성을 침공한다. 
-20만 당나라 최강 대군 VS 5천명의 안시성 군사들. 
-40배의 전력 차이에도 불구하고, 안시성 성주 양만춘과 전사들은 당나라에 맞서 싸우기로 결심하는데… 
-
-동아시아 역사상 가장 위대한 승리를 이끈 안시성 전투가 시작된다!</span>     
-                                        
-                     </div>
-
-                       <img src="./images/desktop/con1Img3.png" alt="">
-                    </li>
-               </ul>
-           </figure>
+                    <ul>
+                        <li>
+                            <img src="./images/vs1.png" alt="" class="vsImg">
+                            <h2 class="vsTit">퍼스트맨 (First Man)</h2>
+                        </li>
+                        <li>
+                            <img src="./images/vs2.png" alt="" class="vsImg">
+                            <h2 class="vsTit">암수살인 (Dark Figure of Crime)</h2>
+                        </li>
+                        <li>
+                            <img src="./images/vs3.png" alt="" class="vsImg">
+                            <h2 class="vsTit">베놈 (Venom)</h2>
+                        </li>
+                        <li>
+                            <img src="./images/vs4.png" alt="" class="vsImg">
+                            <h2 class="vsTit">미스백 (Miss Baek)</h2>
+                        </li>
+                        <li>
+                            <img src="./images/vs5.png" alt="" class="vsImg">
+                            <h2 class="vsTit">스타 이즈 본 (A Star Is Born)</h2>
+                        </li>
+                    </ul>
+                    <!--
+                    <button class="lBtn"><img src="./images/lBtn.png" alt=""></button>
+                    <button class="rBtn"><img src="./images/Rbtn.png" alt=""></button>
+                    -->
+                </figure>
             </div>
         </div>
         
         <div class="con" id="con2">
-            <div class="con2In1">
-                <div class="con2Left">
-                    <img src="./images/desktop/con2Dot.png" alt="" class="con2Dot">
-                    <img src="./images/desktop/con2Line.png" alt="" class="con2Line">
-                    <h2 class="con2LeftTit">Korean Film Council</h2>
-                    <h2 class="con2LeftTxt1 con2LeftTxt">한국영화 진흥을 통한 국민의 문화행복 실현<br>Cultural Happiness of the People through Korean Film Promotion<br>융성하는 영화산업, 세계로 향하는 한국영화<br>The flourishing movie industry, Korean films to the world</h2>
-                    <a href="" class="con2LeftMore">View</a>
+            <div class="con2In">
+                <div class="conTitIn">
+                    <h2 class="con2Tit">KOFIC NEWS</h2>
                 </div>
-            </div>
-            
-            <div class="con2In2">
-                <h2 class="con2In2Tit">N&nbsp;&nbsp;O&nbsp;&nbsp;T&nbsp;&nbsp;I&nbsp;&nbsp;C&nbsp;&nbsp;E</h2>
-                <span class="con2In2Line"></span>
-                <h2 class="con2In2Tit2">COUNCIL NOTICE SELECT</h2>
-                <h2 class="con2In2Txt">한국영화진흥위원회 에서는 한국영화발전에 큰 기여를 두고 있습니다.<br>
-The Korean Film Commission has made a great contribution to the development of Korean films.</h2>
-            </div>
-            
-            <div class="con2Bottom">
-                <div class="con2BottomIn">
-                    <ul>
-                        <li><a href=""><img src="./images/desktop/con2BottomItem1.png" alt="">
-                            <span class="con2BottomTit">보도자료</span>
-                        </a></li>
-                        <li><a href=""><img src="./images/desktop/con2BottomItem2.png" alt="">
-                            <span class="con2BottomTit">보도자료</span>
-                        </a></li>
-                        <li><a href=""><img src="./images/desktop/con2BottomItem3.png" alt="">
-                            <span class="con2BottomTit">보도자료</span>
-                        </a></li>
-                        <li><a href=""><img src="./images/desktop/con2BottomItem4.png" alt="">
-                            <span class="con2BottomTit">보도자료</span>
-                        </a></li>
-                        <li><a href=""><img src="./images/desktop/con2BottomItem5.png" alt="">
-                            <span class="con2BottomTit">보도자료</span>
-                        </a></li>
-                        <li><a href=""><img src="./images/desktop/con2BottomItem6.png" alt="">
-                            <span class="con2BottomTit">보도자료</span>
-                        </a></li>
+                <div class="con2BoxAll">
+                    <ul class="con2Box">
+                        <li class="c2BoxLst">
+                            <ul class="con2BoxIn">
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg1.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg2.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg3.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c2BoxLst">
+                            <ul class="con2BoxIn">
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg1.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg2.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg3.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c2BoxLst">
+                            <ul class="con2BoxIn">
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg1.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg2.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg3.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c2BoxLst">
+                            <ul class="con2BoxIn">
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg1.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg2.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="./images/NewsItemImg3.png" alt="">
+                                        <h2 class="c2BoxTit">영화진흥위원회, 한국영화 99주년 기념 세미나 개최</h2>
+                                        <span class="count">1,325,123</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
+                    
+                    <button class="con2LBtn c2Btn"><img src="./images/lBtn.png" alt=""></button>
+                    <button class="con2RBtn c2Btn"><img src="./images/rBtn.png" alt=""></button>
                 </div>
             </div>
         </div>
         
         <div class="con" id="con3">
             <div class="con3In">
-                <div class="con3TitIn">
-                    <h2 class="con3Tit1">NEWS</h2>
-                    <h2 class="con3Tit2">영화진흥위원회의 최신 보도자료 제공과 위원회 각종 사업활동 소식 등을 생생하게 제공합니다.</h2>
-                    <h2 class="con3Tit3">KOFIC뉴스는 "공공누리"의 공공저작물 자유이용허락 표시제도에 따라 누구나 이용할 수 있습니다.</h2>
-                    <span class="con3TitLine"></span>
-                    </div>
-                    <div class="con3Search">
-                       <table collpading="0" cellpacing="0" class="con3SearchBox">
-                           <tbody>
-                                <tr>
-                                    <th>
-                                        <label for="searchTitle">제 목</label>
-                                    </th>
-                                    <td>
-                                        <input type="text" id="searchTitle" name="searchTitle" vlaue class="input" title="제목">
-                                    </td>
-                                    <th>
-                                        <label for="searchUser">작성자</label>
-                                    </th>
-                                    <td>
-                                        <input type="text" id="searchUser" name="searchUser" value class="input" title="작성자">
-                                    </td>
-                                    <th>
-                                        <a href="" id="searchButton" class="btnSearch">
-                                            <img src="./images/desktop/searchBtn.png" alt="조회">
-                                        </a>
-                                    </th>
-                                </tr>
-                        </tbody>
-                       </table>
-                        
-                    </div>
-                    
-                    <div class="con3News">
-                       <h2 class="con3NewsT">총 검색된 수 : 5</h2>
-                        <ul>
-                            <li><a href=""><img src="./images/desktop/newsItemImg1.png" alt=""></a></li>
-                            <li><a href=""><img src="./images/desktop/newsItemImg2.png" alt=""></a></li>
-                            <li><a href=""><img src="./images/desktop/newsItemImg3.png" alt=""></a></li>
-                            <li><a href=""><img src="./images/desktop/newsItemImg4.png" alt=""></a></li>
-                            <li><a href=""><img src="./images/desktop/newsItemImg5.png" alt=""></a></li>
+                <div class="call">
+                    <h2 class="callTit">영화산업<span>불공정행위</span> 상담 및 신고 접수</h2>
+                    <h2 class="callNumber">1855 - 0511</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="con" id="con4">
+            <div class="con4In">
+               <div class="con4TitIn">
+                   <h2 class="con4Tit">통합전산망 영화 DB</h2>
+               </div>
+                <div class="con4Left">
+                    <ul class="c4LeftBox">
+                        <li class="c4lList">
+                            <ul class="c4ListBox">
+                                <li>
+                                    <img src="./images/con4Img1.png" alt="">
+                                    <h2 class="c4Tit">영화</h2>
+                                    <h2 class="c4Txt">영화명, 제작연도, 제작국가, 유형 등의 상세한 영화정보 조회가 가능한 영화 정보 관리 서비스 입니다.</h2>
+                                </li>
+                                <li>
+                                    <img src="./images/con4Img2.png" alt="">
+                                    <h2 class="c4Tit">영화인</h2>
+                                    <h2 class="c4Txt">영화화인명, 분야, 국적, 필모그래피 등의 상세한 영화인 정보 조회가 가능한 영화인정보 관리 서비스 입니다.</h2>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c4lList">
+                            <ul class="c4ListBox">
+                                <li>
+                                    <img src="./images/con4Img3.png" alt="">
+                                    <h2 class="c4Tit">영화사</h2>
+                                    <h2 class="c4Txt">영화사명, 분류, 대표자, 홈페이지 ,필모그래피 등의 상세한 영화사정보 조회가 가능한 영화사정보 관리 서비스 입니다.</h2>
+                                </li>
+                                <li>
+                                    <img src="./images/con4Img4.png" alt="">
+                                    <h2 class="c4Tit">영화단체</h2>
+                                    <h2 class="c4Txt">영화사명, 분류, 대표자, 홈페이지 ,필모그래피 등의 상세한 영화단체정보 조회가 가능한 영화단체정보 관리 서비스 입니다.</h2>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c4lList">
+                            <ul class="c4ListBox">
+                                <li>
+                                    <img src="./images/con4Img5.png" alt="">
+                                    <h2 class="c4Tit">극장</h2>
+                                    <h2 class="c4Txt">극장명, 광역단체, 기초단체, 극장코드, 좌석수 등의 상세한 극장정보 조회가 가능한 극장정보 관리 서비스 입니다.</h2>
+                                </li>
+                                <li>
+                                    <img src="./images/con4Img6.png" alt="">
+                                    <h2 class="c4Tit">영화제</h2>
+                                    <h2 class="c4Txt">영화제명, 국가, 도시, 장르, 주요영화제, 홈페이지, 등의 상세한 영화제정보 조회가 가능한 영화제정보 관리 서비스 입니다.</h2>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c4lList">
+                            <ul class="c4ListBox">
+                                <li>
+                                    <img src="./images/con4Img7.png" alt="">
+                                    <h2 class="c4Tit">영화제(월별/지역별)</h2>
+                                    <h2 class="c4Txt">국내, 국제영화제/마켓 목록을 월별, 지역별 또는 세계별 내용을 데이터별로 서비스합니다.</h2>
+                                </li>
+                                <li>
+                                    <img src="./images/con4Img8.png" alt="">
+                                    <h2 class="c4Tit">출품 및 수상현황</h2>
+                                    <h2 class="c4Txt">역대(2000년 이후) 한국영화의 출품 및 수상현황을 일목요연하게 제공합니다.</h2>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="con4Right">
+                    <div class="con4RightIn">
+                        <ul class="c4rBox">
+                            <li class="c4rBoxLst">
+                                <h2 class="c4r1Tit">조사연구통계</h2>
+                                <a href="" class="c4More">+</a>
+                                <ul class="c4rBox_">
+                                    <li><a href="" class="c4LstMore">2018년 9월 한국 영화산업 결산 보고서</a></li>
+                                    <li><a href="" class="c4LstMore">월간 이용순위(TOP 200)_IPTV 및 디지털케이블TV 영화 </a></li>
+                                    <li><a href="" class="c4LstMore">2018년 8월 한국 영화산업 결산 보고서</a></li>
+                                </ul>
+                                <span class="c4Line"></span>
+                            </li>
+                            
+                            <li class="c4rBoxLst">
+                                <h2 class="c4r1Tit">QUICK</h2>
+                                <ul class="c4rBox_">
+                                    <li><a href="">
+                                            <img src="./images/c4Icon1.png" alt="" class="c4Icon">
+                                            <h2 class="c4r2Tit">보도자료</h2>
+                                            <span class="c4span">영화인 여러분께 보도자료를 알려 드립니다.</span>
+                                        </a></li>
+                                    <li><a href="">
+                                            <img src="./images/c4Icon2.png" alt="" class="c4Icon">
+                                            <h2 class="c4r2Tit">진흥사업</h2>
+                                            <span class="c4span">선진국에서 벤치마킹 하고 있는 한국 영화 진흥 정책</span>
+                                        </a></li>
+                                    <li><a href="">
+                                            <img src="./images/c4Icon3.png" alt="" class="c4Icon">
+                                            <h2 class="c4r2Tit">경영공시</h2>
+                                            <span class="c4span">경영의 효율성, 투명성을 제고 합니다.</span>
+                                        </a></li>
+                                    <li><a href="">
+                                            <img src="./images/c4Icon4.png" alt="" class="c4Icon">
+                                            <h2 class="c4r2Tit">사전정보공개</h2>
+                                            <span class="c4span">사전정보공개로 공표목록과 항목을 확인하실 수 있습니다.</span>
+                                        </a></li>
+                                    <li><a href="">
+                                            <img src="./images/c4Icon5.png" alt="" class="c4Icon">
+                                            <h2 class="c4r2Tit">입찰정보</h2>
+                                            <span class="c4span">영화진흥위원회 입찰정보를 제공하고 알려드립니다.</span>
+                                        </a></li>
+                                    <li><a href="">
+                                            <img src="./images/c4Icon6.png" alt="" class="c4Icon">
+                                            <h2 class="c4r2Tit">심사위원 후보 등록</h2>
+                                            <span class="c4span">심사위원 후보자군(풀)을 전면적으로 새롭게 구성하였습니다.</span>
+                                        </a></li>
+                                </ul>
+                                <span class="c4Line"></span>
+                            </li>
+                            <li class="c4rBoxLst">
+                                <h2 class="c4r1Tit">홍보영상</h2>
+                                <iframe width="90%" height="auto" src="https://www.youtube.com/embed/aukwi4VYIP0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loop class="mo"></iframe>
+                                <div class="c4A">
+                                   <ul class="c4AList">
+                                       <li>
+                                           <a href="" class="c4LastMore"><img src="./images/snsTw.png" alt=""></a>
+                                       </li>
+                                       <li>
+                                           <a href="" class="c4LastMore"><img src="./images/centerLink.png" alt=""></a>
+                                       </li>
+                                   </ul>
+                                </div>
+                                
+                            </li>
                         </ul>
                     </div>
+                </div>
             </div>
         </div>
         
         <footer id="ft">
-            <div class="ftLeft">
-                <a href="" class="ftLogo">
-                    <img src="./images/desktop/logo_off.png" alt="">
-                    Korean Film Council
-                </a>
-            </div>
-            
-            <div class="ftRight">
-                <ul class="ftLink">
-                    <li><a href="">이용안내</a></li>
-                    <li><a href="">저작권정책</a></li>
-                    <li><a href="" style="color: #4167b1; text-shadow: 1px 1px 1px #323232;">개인정보처리방침</a></li>
-                    <li><a href="">홈페이지불편신고</a></li>
-                    <li><a href="">오시는길</a></li>
-                </ul>
-                
-                <h2 class="address">우) 48058 부산광역시 해운대구 센텀중앙로 55(우동) 경남정보대 센텀산학캠퍼스 13층, 14층 <br>E-mail : webmaster@kofic.or.kr <br>대표전화 : 051-720-4700</h2>
+            <div class="ftIn">
+               <ul>
+                   <li><a href="">이용안내</a></li>
+                   <li><a href="">저작권정책</a></li>
+                   <li><a href="">개인정보처리방침</a></li>
+                   <li><a href="">홈페이지불편신고</a></li>
+                   <li><a href="">오시는길</a></li>
+               </ul>
+                <h2 class="add">우) 48058 부산광역시 해운대구 센텀중앙로 55(우동) 경남정보대 센텀산학캠퍼스 13층, 14층 E-mail : webmaster@kofic.or.kr 대표전화 : 051-720-4700</h2>
+                <select name="fam" id="sel">
+                   <option value="F0">패밀리사이트 홈페이지</option>
+                    <option value="F1">남양주종합촬영소</option>
+                    <option value="F2">한국영화아카데미</option>
+                    <option value="F3">서울영상미디어센터</option>
+                    <option value="F4">한국영화시나리오마켓</option>
+                    <option value="F5">KOBIS(영화관입장권통합전산망)</option>
+                    <option value="F6">KOBIZ(온라인비즈니스센터)</option>
+                    <option value="F7">영사국가기술자격검정</option>
+                    <option value="F8">ISAN KOREA(국제표준시청각자료)</option>
+                </select>
                 <h2 class="copy">COPYRIGHTS (C) 2012 BY KOFIC. ALL RIGHTS RESERVED.</h2>
+                
+                
             </div>
         </footer>
     </div>
