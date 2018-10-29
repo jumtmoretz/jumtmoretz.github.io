@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #262626
+        }
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .loader h1 {
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: 10em;
+            color: rgba(255, 255, 255, 0.1);
+            background-image: url("./images/con4Bg.png");
+            background-repeat: repeat-x;
+            animation: aniC3T 15s linear infinite;
+        }
+        @keyframes aniC3T {
+            0% {
+                background-position: left 0px top 80px;
+            }
+            40% {
+                background-position: left 800px top -50px;
+            }
+            40% {
+                background-position: left 1800px top -50px;
+            }
+            40% {
+                background-position: left 2400px top 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <h1>water</h1>
+    </div>
+</body>
+</html>

@@ -12,7 +12,8 @@
     <![endif]-->
     <meta name="msapplication-TileColor" content="#ffffff">
     <title>:: 욱이 ::</title>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
     
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!-- 폰트링크 -->
@@ -20,6 +21,7 @@
    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
    
    
    <!-- 데스크탑 CSS -->
@@ -707,6 +709,7 @@
             overflow: hidden;
             position: absolute;
             bottom: 30%;
+            box-sizing: border-box;
         }
         .c3Box ul.c3BoxLst {
             width: 300%;
@@ -715,7 +718,7 @@
         }
         .c3Box ul.c3BoxLst li.c3BoxList {
             float: left;
-            width: 8.5%;
+            width: 10.285%;
             height: 65%;
             margin: 2%;
             box-sizing: border-box;
@@ -729,15 +732,29 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #f1004d;
             cursor: pointer;
             transition: 0.5s;
             padding-top: 40%;
             box-sizing: border-box;
+            background-color: #f1004d;
         }
+
         .c3Box ul li .c3BoxBtn.on {
             transform-origin: top;
-            transform: rotate(120deg);
+            transform: rotate(-170deg);
+            background-color: #fff;
+        }
+        .c3BoxCon {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .c3BoxConTxt {
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            font-size: 1vmax;
+            padding-top: 10%;
+            box-sizing: border-box;
         }
     </style>
     
@@ -998,7 +1015,7 @@
         }
         .c5Box2 {
             left: 25%;
-            bottom: 45%;
+            bottom: 50%;
         }
         .c5Box3 {
             left: 40%;
@@ -1042,6 +1059,13 @@
             bottom: 0;
             left: 0;
             opacity: 0.4;
+            width: 23%;
+            height: 80%;
+            display: block;
+            transition: 0.5s;
+        }
+        #map_canvas:hover {
+            opacity: 1;
         }
         .sendBox {
             width: 55%;
@@ -1474,7 +1498,7 @@
                 <div class="c3Box">
                         <ul class="c3BoxLst">
                             <li class="c3BoxList">
-                                <div class="c3BoxBtn">
+                                <div class="c3BoxBtn off">
                                     <ul>
                                       <li>H</li>
                                       <li>T</li>
@@ -1486,9 +1510,15 @@
                                       <li>S</li>
                                     </ul>
                                 </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">태그 구조 설계, 시멘틱 태그, 멀티미디어 관련 태그, 링크 관련 태그, 목록 관련 태그, 문단 관련 태그, 테이블 관련 태그, 폼 관련 태그, 기본 선택자(태그, 아이디, 클래스), 복합 선택자, 부모 자식, 조상 후손, 형제, 속성, 상태 선택자, 반응 선택자, 부정 선택자, 포지션 관련 속성, 화면 표시 관련 속성, 배경 관련 속성, 글자 모양 관련 속성, 문단 모양 관련 속성, 애니메이션 관련 속성, 화면 전환 관련 속성, 변형 관련 속성</p>
+                                    </div>
+                                    
+                                    
                             </li>
                             <li class="c3BoxList">
-                                <div class="c3BoxBtn">
+                                <div class="c3BoxBtn off">
                                     <ul>
                                       <li>j</li>
                                       <li>Q</li>
@@ -1498,9 +1528,14 @@
                                       <li>y</li>
                                     </ul>
                                 </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt"> 변수, 배열, 객체, 함수, 메서드, 속성, 사용자 정의 객체, 데이터형 객체, BOM 객체, DOM 객체, DOM 선택자, 기본 메서드와 속성, DOM 탐색 메서드, DOM 조작 메서드, DOM 이벤트 메서드, DOM 효과 메서드, 플러그인 제작, jQuery UI, jQuery Mobile, 정부프레임워크에 의한 하이브리드 앱 개발</p>
+                                    </div>
+                                    
                             </li>
                             <li class="c3BoxList">
-                                <div class="c3BoxBtn">
+                                <div class="c3BoxBtn off">
                                     <ul>
                                       <li>P</li>
                                       <li>H</li>
@@ -1513,23 +1548,15 @@
                                       <li>P</li>
                                     </ul>
                                 </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt"> 이미지 편집, 이미지 합성, 이미지 보정, 레이어 작업, 필터, 효과, 스타일, 벡터 툴</p>
+                                    </div>
+                                    
                             </li>
+                            
                             <li class="c3BoxList">
-                                <div class="c3BoxBtn">
-                                    <ul>
-                                      <li>H</li>
-                                      <li>T</li>
-                                      <li>M</li>
-                                      <li>L</li>
-                                      <li>/</li>
-                                      <li>C</li>
-                                      <li>S</li>
-                                      <li>S</li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="c3BoxList">
-                                <div class="c3BoxBtn">
+                                <div class="c3BoxBtn off">
                                     <ul>
                                       <li>I</li>
                                       <li>L</li>
@@ -1544,9 +1571,14 @@
                                       <li>R</li>
                                     </ul>
                                 </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">이미지 제작, 브러시, 타이포, 벡터 드로잉, 패스파인더, 블렌딩 기능, 그라디언트, 심볼 편집,  도형 편집, 마스크, 자유 변형 등</p>
+                                    </div>
+                                    
                             </li>
                             <li class="c3BoxList">
-                                <div class="c3BoxBtn">
+                                <div class="c3BoxBtn off">
                                     <ul>
                                       <li>프</li>
                                       <li>레</li>
@@ -1555,9 +1587,14 @@
                                       <li>크</li>
                                     </ul>
                                 </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">css 프레임워크 : 부트스트랩, 벌마, 파운데이션, 푸어, 스켈레톤 등<br>javascript 프레임워크 : jQuery, angular, Vue, react 등</p>
+                                    </div>
+                                    
                             </li>
                             <li class="c3BoxList">
-                                <div class="c3BoxBtn">
+                                <div class="c3BoxBtn off">
                                     <ul>
                                       <li>T</li>
                                       <li>O</li>
@@ -1565,9 +1602,14 @@
                                       <li>L</li>
                                     </ul>
                                 </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">웹 프로그래밍 가능 언어 : HTML, javascript, 간단php 등<br>프로토타입 툴 : balsamiq, OVEN, ProtoNow, Fluid UI<br>에디터 : Breakets, Edit plus</p>
+                                    </div>
+                                    
                             </li>
                             <li class="c3BoxList">
-                                <div class="c3BoxBtn">
+                                <div class="c3BoxBtn off">
                                     <ul>
                                       <li>사</li>
                                       <li>무</li>
@@ -1575,6 +1617,11 @@
                                       <li>력</li>
                                     </ul>
                                 </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">한글, 엑셀, 파워포인트</p>
+                                    </div>
+                                    
                             </li>
                         </ul>
                 </div>                 
@@ -1617,7 +1664,7 @@
                         <li>
                             <img src="./images/res4.png" alt="">
                             <div class="c4TBox">
-                                <h2 class="c4Tit">파리바게뜨 (KUKDONG)</h2>
+                                <h2 class="c4Tit">파리바게뜨 (PARIS BAGUETTE)</h2>
                                 
                                 <ul class="color">
                                     <li><span style="background-color: #27397e;"></span></li>
@@ -1750,7 +1797,7 @@
                                     남녀노소 사용성 화장품의 대표브랜드<br>콘셉트 자체에서의 화장품을 사용하는 소비자에게 제품을 홍보물을 직접 수정하고 슬라이드형의 웹사이트구축
                                 </span>
                                 <span class="c4Toll">사용 언어 : HTML5 / CSS3 / Jquery<br>사용 툴 : Photoshop / illustrator / Brackets<br>최적화 : 1920 X 1080</span>
-                                <a href="https://jumtmoretz.github.io/design3/" target="_blank" class="c4More">Go Check</a>
+                                <a href="https://jumtmoretz.github.io/design3/index.html" target="_blank" class="c4More">Go Check</a>
                             </div>
                         </li>
                         <li>
@@ -1908,7 +1955,7 @@
                         <span class="c5Txt2">ⓒ&nbsp;COPYRIGHT BY LEE JAUNG UK.2018</span>
                     </div>
                     
-                    <div id="map_canvas" style="width:270px; height:350px;"></div>
+                    <div id="map_canvas"></div>
                     
                     <div class="sendBox">
                         <ul class="sendtop">
