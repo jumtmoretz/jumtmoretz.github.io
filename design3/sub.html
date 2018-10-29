@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>에이프릴스킨 서브</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./sl.css">
+    
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+        .wrap {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hd_wrap, .ft {
+            width: 1600px;
+            margin: 0 auto;
+            
+        }
+        
+        .hd {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            left: 0;
+            z-index: 1000;
+            
+        }
+        .openBtn {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-image: url("images/menubtn.png");
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-position: center center;
+            float: left;
+            margin-top: 40px;
+            transition: 0.5s;
+        }
+        .openBtn:hover {
+            box-shadow: 0px 0px 0 2px #fff;
+	  	    color:#015294;
+            cursor: pointer;
+        }
+        .logo {
+            display: block;
+            background-image: url("images/logo.png");
+            background-size: 200px 60px;
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 60px;
+            float: left;
+            margin-left: 25px;
+            margin-top: 40px;
+        }
+        .ckItem {
+            display: none;
+            margin: 10px;
+        }
+        .colmenu {
+            display: block;
+            position: fixed;
+            top: 0;
+            margin-left: 520px;
+            
+        }
+        .colmenu li {
+            margin: 80px;
+            margin-left: 100px;
+        }
+        .colmenu li a {
+            color: #cf222c;
+        }
+        .colmenu li a:hover {
+            color: #ffcf56;
+            transition: 0.5s;
+        }
+        
+        #menuslide {
+            position: fixed;
+            top: 0;
+            left: -1300px;
+            z-index: 1001;
+            transition: 0.6s;
+            background: #fff;
+            width: 1300px;
+            height: 800px;
+        }
+        #menuslide label {
+            margin: 40px;
+            margin-left: 150px;
+        }
+    
+        #ck1:checked ~ #menuslide {
+            left: 0;
+        }
+        .mainmenu {
+            float: right;
+        }
+        .mainmenu ul {
+            clear: both;
+            float: right;
+        }
+        .mainmenu li {
+            float: left;
+        }
+        .tgnb li {
+            padding-left: 30px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            margin-right: 30px;
+        }
+        .mainmenu a {
+            color: #333;   
+        }
+        .mainmenu a:hover {
+            color: #ffc71f;
+            transition: 0.5s;
+        }
+        .close {
+            display: block;
+            background-image: url("images/xbtn.png");
+            background-repeat: no-repeat;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: 0.4s;
+            transform: rotate(0deg);
+        }
+        .close:hover {
+            transform: rotate(180deg);
+        }
+        .logo0 {
+            display: block;
+            background-image: url("images/logo.png");
+            background-size: 200px 60px;
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 60px;
+            float: left;
+            margin-left: 230px;
+            margin-top: -90px;
+        }
+
+        .next, .prev {
+            z-index:999;
+            position:absolute;
+            display:block;
+            width:50px;
+            height:50px;
+            top:10%;
+            background-repeat:no-repeat; 
+            cursor:pointer;
+        }
+        .next, .prev {
+            width:58px;
+            height:58px;
+            text-indent:-9999px;
+            margin-top: 300px;
+        }
+        .next {
+            background-image: url("images/rbtn.png");
+            right:5%;
+        }
+        .prev {
+            background-image: url("images/lbtn.png");
+            left:5%;
+        }
+        .imgSlide {
+            position:relative;
+
+        }
+        .gallery {
+            width: 500%;
+            height: 100%;
+        }
+        .gallery img {
+            display: block;
+            float: left;
+            width: 1920px;
+            height: 1080px;
+        }
+        .banTit {
+            font-size: 40px;
+            color: #fff;
+            margin-top: 100px;
+            margin-left: -30px;
+        }
+        .banTit.exsub {
+            font-size: 30px;
+        }
+         
+    </style>
+    
+    <style>
+        .menuex {
+            width: 100%;
+        }
+        .menuFrameex {
+            clear: both;
+            height: 72px;
+        }
+        .menuex li{
+            float: left;
+        }
+        .menuex a {
+            color: #222ff1;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            transition: 0.5s;
+        }
+        #gnb3 a {
+            color: #000;
+            overflow: hidden;
+            text-shadow: 1px 1px 1px #fff;
+            width: 120px;
+        }
+        #gnb3 a span {
+            display: block;
+            transition: 0.5s;
+            margin-top: 0;
+        }
+        
+        #gnb3 a:hover .en {
+            margin-top: -40px;
+        }
+        #gnb3 a:hover .ko {
+            color: #ffc71f;
+        }
+        
+    </style>
+    
+    <style>
+        .ft, #footer {
+            position: relative;
+            width: 100%;
+        }
+        #footer .ftmenu {
+            position: relative;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            height: 50px;
+        }
+        .ftinner {
+            position: relative;
+            margin-left: 100px;
+        }
+        .ftservice li {
+            float: left;
+            margin-left: 23px;
+            padding-left: 38px;
+            font-size: 20px;
+            padding-top: 10px;
+            
+        }
+        .ftservice li a {
+            display: block;
+            color: #ccc;
+        }
+        .ft .ftservice .ask1 > a:after {
+            content: " ";
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 10px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            background-image: url("images/check.png");
+            background-repeat: no-repeat;
+        }
+        .ft .ftservice .ask2 > a:after {
+            content: " ";
+            position: absolute;
+            margin-top: 7px;
+            margin-left: 10px;
+            top: 4px;
+            width: 26px;
+            height: 26px;
+            background-image: url("images/email.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        #footer .ftBtn {
+            margin-top: 35px;
+            font-size: 9px;
+            line-height: 1.5;
+            white-space: nowrap;
+            color: #555;
+            text-align: center;
+            position: relative;
+        }
+        #footer .ftBtn .fm2 {
+            color: #005295;
+        }
+        #footer .ftBtn .fm2:before {
+            content: "|";
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #footer .address {
+            margin-top: 10px;
+        }
+        #footer .f_logo {
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 194px;
+            height: 25px;
+            background-image: url("./images/logo.png");
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+    </style>
+    
+    <style>
+        .pageNation {
+            position: fixed;
+            left: 0;
+            top: 38%;
+            width: 80px;
+            z-index: 1030;
+        }
+        .pageBtn {
+            display: block;
+            width: 10px;
+            height: 10px;
+            margin: 10px auto; 
+        border: 0;
+            outline: 0;
+            border-radius: 9px;
+            border: 1px solid #222;
+            cursor:pointer;
+        }
+        .pageBtn.act {
+            background: #ff4a68;
+            border:2px solid #fff;
+        }
+
+    </style>
+    
+    <style>
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+        #page1 {
+            width: 80%;
+            margin: 0 auto;
+            height: 50%;
+        }
+        .title {
+            text-align: center;
+            margin-top: 200px;
+            padding: 33px 16.66% 16px;
+            border-bottom: 1px solid #ddd;
+            font-family: 'Roboto', sans-serif;
+            
+        }
+        .mTit {
+            font-size: 70px;
+            font-family: 'Playfair Display', serif;
+        }
+        .comTit {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .submenu {
+            margin: 0 auto;
+        }
+        .submenu ul {
+            margin-left: 520px;
+        }
+        .submenu ul li {
+            float: left;
+            cursor: pointer;
+            margin: 30px;
+        }
+        .cc:after {
+            content: "|";
+            margin-left: 65px;
+        }
+        .bgImg {
+            display: block;
+            clear: both;
+            margin-left: -188px;
+            position: absolute;
+            margin-top: 100px;
+            
+        }
+        .imCom {
+            display: block;
+            position: relative;
+            font-size: 75px;
+            color: #fff;
+            margin-top: 200px;
+            margin-left: 680px;
+            text-shadow: 1px 1px 1px #000;
+        }
+        .cmTit {
+            margin: 100px;
+        }
+        .cMenu {
+            display: block;
+            font-size: 14px;
+            
+        }
+        .cMenu li {
+            float: left;
+            margin: 20px;
+        }
+        .cMenu li a {
+            color: #000;
+        }
+        .cMenu li:after {
+            content: ">";
+            margin-left: 35px;
+        }
+        .cMenu li.m3:after {
+            content: " ";
+            
+        }
+        .cMenu li.m3 a {
+            padding: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e91f99;
+        }
+        .title2 {
+            font-size: 35px;
+        }
+        .title2 .titTit {
+            position: relative;
+        }
+
+        .title2 .titTit li {
+            float: left;
+            border: 2px solid #847fff;
+            width: 20%;
+            padding: 30px;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 120px;
+        }
+        .titTit .titCom.t3, .titTit .titCom.t2{
+            border-left: 0;
+        }
+        .titTit .titCom.t1 {
+            border-bottom: 0;
+        }
+        .titTit .titCom.t2, .titTit .titCom.t3 {
+            border-top: 0;
+            border-right: 0;
+        }
+        
+        .title2 .titTit li a {
+            display: block;
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+            
+        }
+        .title2 .titTit li a:hover {
+            color: #847ffc;
+            transition: 0.5s;
+            text-shadow: 1px 1px 1px #000;
+        }
+    </style>
+    
+    <style>
+        .page2 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .subLst {
+            width: 300%;
+            height: auto;
+        }
+        .subLst li {
+            position: absolute;
+            float: left;
+            left: 500px;
+            top: 800px;
+            opacity: 0;
+            z-index: 25;
+        }
+        .subLst li[data-value="1"] {
+            opacity: 1;
+        }
+        .subConTitImg {
+            z-index: 30;
+            position: absolute;
+            left: 70px;
+            top: 70px;
+        }
+        .subConTit {
+            position: absolute;
+            left: -200px;
+            top: 150px;
+            font-size: 27px;
+            color: #fff;
+            text-shadow: 3px 3px 1px #333;
+        }
+        .subTxt {
+            position: absolute;
+            text-align: center;
+            top: 0;
+            left: 160px;
+            color: #333;
+        }
+        .subTxt1 {
+            top: 250px;
+        }
+        .subTxt2 {
+            top: 350px;
+            left: 170px;
+        }
+        .subTxt3 {
+            top: 450px;
+            left: 165px;
+        }
+        .blackTit {
+            position: absolute;
+            z-index: 30;
+            top: 295px;
+            left: 23px;
+        }
+        .subBottom {
+            position: absolute;
+            bottom: -150px;
+            left: -285px;
+            display: block;
+            width: 1500px;
+            height: 500px;
+            z-index: -1;
+        }
+        .subBottom h2 {
+            position: absolute;
+            color: #333;
+            bottom: 25px;
+            left: 330px;
+            font-size: 19px;
+        }
+        .btn {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            position: absolute;
+            background: none;
+            z-index: 9999;
+        }
+        .subLeft {
+            top: 1410px;
+            left: 430px;
+            background-image: url("./images/subLBtn.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .subRight {
+            top: 1410px;
+            left: 955px;
+            background-image: url("./images/subRBtn.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            var cnt = $(".subLst li").length;
+            var n = 0;
+            $(".subLst li").eq(0).css("z-index", "30").css("opacity", "1");
+            $(".subLst li").eq(0).siblings().css("z-index", "25").css("opacity", "0");
+            
+            var intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 3000);
+
+            function nAni(i){
+                $(".subLst li").eq(i).siblings().css("z-index", "25");
+                $(".subLst li").eq(i).css("z-index", "30").not(":animated").animate({"opacity" : "1"}, 800, function(){
+                    $(".subLst li").eq(i).siblings().css("opacity", "0");
+                });
+            }
+            $(".subLeft").click(function(){
+                clearInterval(intv);
+                if(n>0) {
+                    n=n-1;
+                    nAni(n);
+                } else {
+                    n=cnt-1;
+                    nAni(n);
+                }
+                intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 3000);
+            });
+            $(".subRight").click(function(){
+                clearInterval(intv);
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                intv = setInterval(function(){
+                if(n<cnt-1){
+                    n=n+1;
+                    nAni(n);
+                } else {
+                    n=0;
+                    nAni(n);
+                }
+                }, 3000);
+            });
+            
+        });
+    </script>
+
+
+</head>
+<body>
+    <div class="col">
+       <input type="checkbox" id="ck1" class="ckItem">
+        <header class="hd">
+            <div class="hd_wrap">
+                <label for="ck1" class="openBtn"></label>
+                <a href="./index.html" class="logo"></a>
+                <nav class="mainmenu">
+                    <ul class="tgnb">
+                        <li><a href="">한국어</a></li>
+                        <li><a href="">ENGLISH</a></li>
+                    </ul>
+                    <!--
+                <nav class="gnb">
+                    <ul class="dgnb">
+                        <li><a href="">LOGIN</a></li>
+                        <li><a href="">JOIN</a></li>
+                        <li><a href="">SEARCH</a></li>
+                        <li><a href="">CART</a></li>
+                    </ul>
+                    </nav>
+                    -->
+                    <nav id="gnb3" class="menuex">
+        <ul class="menuFrameex">
+            <li>
+            <a href="login.html">
+                <span class="en">LOGIN</span>
+                <span class="ko">로그인</span>
+            </a>
+            </li>
+            <li>
+            <a href="">
+                <span class="en">JOIN</span>
+                <span class="ko">회원가입</span>
+            </a>
+            </li>
+            <li>
+            <a href="">
+                <span class="en">SEARCH</span>
+                <span class="ko">검색</span>
+            </a>
+            </li>
+            <li>
+            <a href="">
+                <span class="en">CART</span>
+                <span class="ko">장바구니</span>
+            </a>
+            </li>
+        </ul>
+    </nav>
+                </nav>
+            </div>
+        </header>
+        <nav id="menuslide">
+            <label for="ck1" class="close"></label>
+            <a href="" class="logo0"></a>
+            <div class="menu">
+                <ul class="colmenu">
+                    <li><a href="sub.html">About Us</a></li>
+                    <li><a href="sub.html">에이프릴스킨 상품</a></li>
+                    <li><a href="sub.html">History</a></li>
+                    <li><a href="sub.html">뷰티 인사이드</a></li>
+                    <li><a href="sub.html">에이프릴스킨 센터</a></li>
+                </ul>
+            </div>
+        </nav>
+</div>
+   
+   
+    <div class="page" id="page1">
+        <div class="title">
+            <p class="mTit">About Us</p>
+            <h3 class="comTit">우리만이 창조할 수 있는 아름다움으로 여성의 삶을 아름답게 하는 것을 우리의 소명으로 생각합니다.<br>
+‘APRILSKIN’라는 비전 아래 모든 여성들이 저마다 꿈꾸는 삶을 누리며 더 아름다운 세상을 만들어 갈 수 있도록 여성의 아름다운 삶에 기여합니다.</h3>
+        </div>
+        <div class="submenu">
+            <ul class="cmenu">
+                <li class="cmenu1 cc">Vision</li>
+                <li class="cmenu2 cc">Commitment</li>
+                <li class="cmenu3">공익재단</li>
+            </ul>
+        </div>
+        <img src="./images/subex1.jpg" alt="" class="bgImg">
+        <p class="imCom">Vision</p>
+    </div>
+    
+    <div class="page" id="page2">
+        <ul class="subLst">
+            <li data-value="1">
+                <img src="./images/subConImg1.png" alt="" class="subConImg1">
+                <img src="./images/subTit1.png" alt="" class="subConTitImg">
+                <h2 class="subConTit">에이프릴스킨은 설립시기부터 실시한 컨셉을 잃지 않습니다.</h2>
+                <span class="subTxt1 subTxt">에이프릴스킨은<br>피부 저자극을 실시합니다.</span>
+                <span class="subTxt2 subTxt">에이프릴스킨은<br>피부개선을 실천합니다.</span>
+                <span class="subTxt3 subTxt">소비자만족도1위 브랜드<br>에이프릴스킨 입니다.</span>
+                <img src="./images/subConTitBg.png" alt="" class="blackTit">
+                <span class="subBottom" style="background-color: yellow;"><h2>피부에 안좋은 유해성분은 넣지않고, 지친 피부 속부터 개선해<br>피부의 생기를 불어넣고, 이에 대한 제품의 테스트는<br>까다로은 테스트를 통해 보다 더 좋은 제품으로 다가가는 에이프릴스킨 입니다.</h2></span>
+            </li>
+            <li data-value="2">
+                <img src="./images/subConImg2.png" alt="" class="subConImg1">
+                <img src="./images/subTit2.png" alt="" class="subConTitImg">
+                <h2 class="subConTit">에이프릴스킨만의 노하우 고객님에게 바칩니다.</h2>
+                <!--
+                <span class="subTxt1 subTxt">에이프릴스킨은<br>피부 저자극을 실시합니다.</span>
+                <span class="subTxt2 subTxt">에이프릴스킨은<br>피부개선을 실천합니다.</span>
+                <span class="subTxt3 subTxt">소비자만족도1위 브랜드<br>에이프릴스킨 입니다.</span>
+                -->
+                <img src="./images/subConTitBg2.png" alt="" class="blackTit">
+                <span class="subBottom"style="background-color: skyblue";><h2>에이프릴스킨은 친환경을 추구하는 브랜드로,<br>소비자에게 전달해 드리는 입장에서<br>제품의 안정감을 최상치로 올려드릴것을 노력할 것이며, 서비스 만족도 1위로 더 앞서가겠습니다.</h2></span>
+            </li>
+            <li data-value="3">
+                <img src="./images/subConImg3.png" alt="" class="subConImg1">
+                <img src="./images/subTit3.png" alt="" class="subConTitImg">
+                <h2 class="subConTit">에이프릴스킨을 사용하는 이유 바로 에이프릴스킨에 있습니다.</h2>
+                <span class="subTxt1 subTxt">에이프릴스킨은<br>사랑을 전하여 나눔합니다.</span>
+                <span class="subTxt2 subTxt">에이프릴스킨은<br>친환경적을 추구합니다.</span>
+                <span class="subTxt3 subTxt">기부금고금도1위 브랜드<br>에이프릴스킨 입니다.</span>
+                <img src="./images/subConTitBg3.png" alt="" class="blackTit">
+                <span class="subBottom" style="background-color: pink";><h2>사회공원 최다갱신한 에이프릴스킨에서는<br>제품에 대한 사용도가 낮아도<br>먼저다가가는 최상의 서비스로 고객에게 먼저 더 다가가 손내밀겠습니다.</h2></span>
+            </li>
+        </ul>
+        
+        <button class="subLeft btn" data-value="0"></button>
+        <button class="subRight btn" data-value="0"></button>
+    </div>
+    
+    <footer class="ft">
+          <div id="footer">
+           <div class="ftmenu">
+               <div class="ftinner">
+                   <ul class="ftservice">
+                       <li class="ask1"><a href="" class="ftmenuBtn">Meet US</a></li>
+                       <li class="ask2"><a href="" class="ftmenuBtn">뉴스레터 구독</a></li>
+                   </ul>
+               </div>
+           </div>
+           
+            <div class="ftBtn">
+                <a href="" class="fm1">개인정보 처리 방침</a>
+                <a href="" class="fm2">임직원 포털</a>
+                <address class="address">상호. 주식회사 에이피알 | 대표. 이주광, 김병훈 | 전화. 02-6335-0574 | 주소. 서울 강남구 영동대로 96길 8-8(삼성동 168-20) 영보2빌딩 4층</address>
+                <p class="copyright">(c) APR. all right reserved. Hosted by Simplex internet</p>
+                <div class="f_logo"><a href="#"></a></div>
+                </div>
+            </div>
+            
+        </footer>
+    
+
+
+
+</body>
+</html>

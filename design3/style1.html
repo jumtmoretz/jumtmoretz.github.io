@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>스타일가이드</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html. body {
+            width: 100%;
+            height: 100%;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            list-style: none;
+        }
+        .page {
+            clear: both;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            margin: 20px;
+        }
+        .row {
+            width: 100%;
+            height: 100%;
+        }
+        .row2 {
+            width: 100%;
+            height: 100%;
+        }  
+        .sgTitle {
+            color: #fff;
+            background: #f9dadf;
+            border-radius: 20px;
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 20px;
+        }
+        #page2 .sgTitle {
+            margin-top: 330px;
+        }
+        .stName {
+            clear: both;
+            text-align: center;
+        }
+        
+        
+        .col8 {
+            float: left;
+            border: 1px solid #ccc;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .box1 {
+            display: block;
+            width: 150px;
+            height: 200px;
+            margin: 30px;
+            margin-bottom: 1px;
+            background-repeat: no-repeat;
+        }
+        .box2 {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            margin-bottom: 1px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        .box3 {
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin: 30px;
+            margin-left: 42px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+        }
+        .colorCode {
+            display: block;
+            text-indent: 60px;
+        }
+        
+        .bg1 {
+            background: #005295;
+        }
+        .bg2 {
+            background: #ffffff;
+        }
+        .bg3 {
+            background: #bf94ff;
+        }
+        .bg4 {
+            background: #faf4f4;
+        }
+        .bg5 {
+            background: #f4eaf5;
+        }
+        .bg6 {
+            background: #e8dde5;
+        }
+        .bg7 {
+            background: #bf94ff;
+        }
+        .bg8 {
+            background: #a0a2a5;
+        }
+        
+        .tc1 {
+            background: #a5a38c;
+        }
+        .tc2 {
+            background: #1fa1ff;
+        }
+        .tc3 {
+            background: #393939;
+        }
+        .tc4 {
+            background: #d5b9a4;
+        }
+        .tc5 {
+            background: #8a838a;
+        }
+        .tc6 {
+            background: #e498b4;
+        }
+        .tc7 {
+            background: #8eb5f0;
+        }
+        .tc8 {
+            background: #dbe8f1;
+        }
+        
+        
+        .fnt1 { 
+            font-family: 'Nanum Gothic Coding', monospace;
+        }
+        .fnt3 { 
+            font-family: 'Amatic SC', cursive;
+        }
+        #page2 ul {
+            float: left;
+            margin: 50px auto;
+            text-align: center;
+            padding-left: 130px;
+        }
+        .tit1 {
+            font-size: 60px;
+            color: #333;
+            letter-spacing: -5px;
+            line-height: 120px;
+            padding: 15px;
+        }
+        #page3 .col8 {
+            margin-left: 63px;
+        }
+        .logoimg {
+            background-size: 64px 34px;
+        }
+        .small {
+            background-size: 32px 32px;
+        }
+        .button {
+            background-size: 12px 12px;
+        }
+        .won {
+            background-size: 78px 78px;
+        }
+        .menu {
+            background-size: 100px 100px;
+        }
+        .ico1 {
+            background-image: url("./logo.png");
+        }
+        .ico2 {
+            background-image: url("./32insta.png");
+        }
+        .ico3 {
+            background-image: url("./32face.png");
+        }
+        .ico4 {
+            background-image: url("./32twitter.png");
+        }
+        .ico5 {
+            background-image: url("./play.png");
+        }
+        .ico6 {
+            background-image: url("./32x32on.png");
+        }
+        .ico7 {
+            background-image: url("./32x32off.png");
+        }
+        .ico8 {
+            background-image: url("./32x32.png");
+        }
+        
+        .ico11 {
+            background-image: url("./img/1.png");
+        }
+        .ico12 {
+            background-image: url("./img/2.png");
+        }
+        .ico13 {
+            background-image: url("./img/3.png");
+        }
+        .ico14 {
+            background-image: url("./img/4.png");
+        }
+        .ico15 {
+            background-image: url("./img/5.png");
+        }
+        .ico16 {
+            background-image: url("./img/6.png");
+        }
+        .ico17 {
+            background-image: url("./img/7.png");
+        }
+        .ico18 {
+            background-image: url("./img/8.png");
+        }
+        
+        .ico21 {
+            background-image: url("./img/image/g1.jpg");
+        }
+        .ico22 {
+            background-image: url("./img/image/g2.jpg");
+        }
+        .ico23 {
+            background-image: url("./img/image/g3.jpg");
+        }
+        .ico24 {
+            background-image: url("./img/image/g4.jpg");
+        }
+        .ico25 {
+            background-image: url("./img/image/g5.jpg");
+        }
+        .ico26 {
+            background-image: url("./img/image/g6.jpg");
+        }
+        .ico27 {
+            background-image: url("./img/image/g8.jpg");
+        }
+
+    
+    </style>
+</head>
+<body>
+    <section class="page" id="page1">
+        <h3 class="sgTitle">Color Schema</h3>
+        <div class="row">
+            <h4 class="stName">BackGround-Color</h4>
+            <div class="col8">
+                <span class="box1 bg1"></span>
+                <span class="colorCode">HEX #005295</span>
+            </div>
+            <div class="col8">
+                <span class="box1 bg2"></span>
+                <span class="colorCode">HEX #ffffff</span>
+            </div>
+            <div class="col8">
+                <span class="box1 bg3"></span>
+                <span class="colorCode">HEX #bf94ff</span>
+            </div>
+            <div class="col8">
+                <span class="box1 bg4"></span>
+                <span class="colorCode">HEX #faf4f4</span>
+            </div>
+            <div class="col8">
+                <span class="box1 bg5"></span>
+                <span class="colorCode">HEX #f4eaf5</span>
+            </div>
+            <div class="col8">
+                <span class="box1 bg6"></span>
+                <span class="colorCode">HEX #e8dde5</span>
+            </div>
+            <div class="col8">
+                <span class="box1 bg7"></span>
+                <span class="colorCode">HEX #bf94ff</span>
+            </div>
+            <div class="col8">
+                <span class="box1 bg8"></span>
+                <span class="colorCode">HEX #a0a2a5</span>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="stName">Text Color</h4>
+                <div class="col8">
+                <span class="box1 tc1"></span>
+                <span class="colorCode">HEX #a5a38c</span>
+            </div>
+                <div class="col8">
+                <span class="box1 tc2"></span>
+                <span class="colorCode">HEX #1fa1ff</span>
+            </div>
+                <div class="col8">
+                <span class="box1 tc3"></span>
+                <span class="colorCode">HEX #393939</span>
+            </div>
+                <div class="col8">
+                <span class="box1 tc4"></span>
+                <span class="colorCode">HEX #d5b9a4</span>
+            </div>
+                <div class="col8">
+                <span class="box1 tc5"></span>
+                <span class="colorCode">HEX #8a838a</span>
+            </div>
+                <div class="col8">
+                <span class="box1 tc6"></span>
+                <span class="colorCode">HEX #e498b4</span>
+            </div>
+                <div class="col8">
+                <span class="box1 tc7"></span>
+                <span class="colorCode">HEX #8eb5f0</span>
+            </div>
+                <div class="col8">
+                <span class="box1 tc8"></span>
+                <span class="colorCode">HEX #dbe8f1</span>
+            </div>
+        </div>
+    </section>
+    
+    
+<section class="page" id="page2">
+        <h3 class="sgTitle">Typo Schema</h3>
+        <div class="row2">
+            <ul class="pyo">
+                <li class="first">
+                    <p class="sch">전체 대표 폰트</p>
+                </li>
+                <li class="last">
+                    <p class="fnt fnt1 tit1">에이프릴스킨</p>42px | 나눔고딕 | 'Nanum Gothic Coding'
+                </li>
+            </ul>
+            <ul class="pyo">
+                <li class="first">
+                    <p class="sch">광고로고 폰트</p>
+                </li>
+                <li class="last">
+                    <p class="fnt fnt1 tit1">APRILSKIN</p>24px | 나눔고딕 | 'Open Sans Condensed'
+                </li>
+            </ul>
+            <ul class="pyo">
+                <li class="first">
+                    <p class="sch">로고 폰트</p>
+                </li>
+                <li class="last">
+                    <p class="fnt fnt3 tit1">APRILSKIN</p>24px | Amatic SC체 | 'Amatic SC'
+                </li>
+            </ul>
+            <ul class="pyo">
+                <li class="first">
+                    <p class="sch">배너 디자인 폰트</p>
+                </li>
+                <li class="last">
+                    <p class="fnt fnt3 tit1">APRILSKIN</p>40px | Great Vibes체 | 'Great Vibes'
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="page" id="page3">
+        <h3 class="sgTitle">Ico Schema</h3>
+        <div class="row">
+            <h4 class="stName">기본아이콘</h4>
+            <div class="col8">
+            <span class="box2 large ico1 logoimg"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico2 small"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico3 small"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico4 small"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico5 small"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico6"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico7 small"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico8 small"></span>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="stName">성분에 대한 아이콘</h4>
+            <div class="col8">
+            <span class="box2 large ico11 won"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico12 won"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico13 won"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico14 won"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico15 won"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico16 won"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico17 won"></span>
+            </div>
+            <div class="col8">
+            <span class="box2 large ico18 won"></span>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="stName">광고에 대한 이미지</h4>
+            <div class="col8">
+            <span class="box3 large ico21 menu"></span>
+            </div>
+            <div class="col8">
+            <span class="box3 large ico22 menu"></span>
+            </div>
+            <div class="col8">
+            <span class="box3 large ico23 menu"></span>
+            </div>
+            <div class="col8">
+            <span class="box3 large ico24 menu"></span>
+            </div>
+            <div class="col8">
+            <span class="box3 large ico25 menu"></span>
+            </div>
+            <div class="col8">
+            <span class="box3 large ico26 menu"></span>
+            </div>
+            <div class="col8">
+            <span class="box3 large ico27 menu"></span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
