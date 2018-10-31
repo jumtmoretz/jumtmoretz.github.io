@@ -30,7 +30,6 @@
    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
    
    
    <!-- 데스크탑 CSS -->
@@ -83,16 +82,16 @@
                 transform: rotateY(0deg);
             }
             33% {
-                transform:  rotateZ(36deg) rotateX(10deg) rotateY(-15deg);
+                transform: rotateY(30deg);
             }
             50% {
-                transform:  rotateZ(-36deg) rotateX(-10deg) rotateY(15deg);
+                transform: rotateY(-3deg);
             }
             66% {
-                 transform:  rotateZ(36deg) rotateX(10deg) rotateY(-15deg);
+                 transform: rotateX(40deg);
             }
             83% {
-                transform:  rotateZ(-36deg) rotateX(-10deg) rotateY(15deg);
+                transform:  rotateZ(-16deg) rotateX(20deg) rotateY(25deg);
             }
       }
     </style>
@@ -124,7 +123,7 @@
         }
         
         .hdIn ul li a {
-            color: #fff;
+            color: #53545b;
             position: relative;
             display: block;
             white-space: nowrap;
@@ -165,46 +164,16 @@
     <style>
         #con1 {
             width: 100%;
-            height: 100%;
-            background-color: #36465d;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: 2s;
-        }
-        .con1Back {
-            position: absolute;
-            animation: bgAni 20s linear infinite;
-            opacity: 0.2;
-            top: 0;
-            left: 0;
-            width: 30%;
             height: auto;
-            display: block;
+            background-color: #efefef;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
-        @keyframes bgAni {
-            16% {
-                transform: rotateY(0deg);
-                left: 20%;
-                top: 30%;
-            }
-            33% {
-                transform: rotateY(130deg);
-                left: 70%;
-                top: 0%;
-            }
-            50% {
-                transform: rotateY(-333deg);
-                bottom: 50%;
-            }
-            66% {
-                 transform: rotateY(0deg);
-                left: 80%;
-                top: 10%;
-            }
-            83% {
-                transform:  rotateZ(-16deg) rotateX(20deg) rotateY(325deg);
-            }
+        #con1 {
+            width: 100%;
+            height: 100%;
+            background-color: #fafafa;
         }
         .con1In {
             width: 80%;
@@ -216,10 +185,8 @@
             font-size: 4vmax;
             font-family: 'Roboto', sans-serif;
             font-weight: bold;
-            color: #fff;
+            color: #53545b;
             text-align: center;
-            position: sticky;
-            z-index: 9999;
         }
         .con1Tit1 strong {
             display: inline-block;
@@ -228,7 +195,7 @@
             font-family: 'Roboto', sans-serif;
         }
         .con1Tit2 {
-            color: #fff;
+            color: #c2c2c4;
             font-size: 2vmax;
             font-family: 'Roboto', sans-serif;
             font-weight: 100;
@@ -236,7 +203,7 @@
         }
         .box {
             position: absolute;
-            bottom: 10%;
+            bottom: 15%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 1000px;
@@ -302,49 +269,51 @@
         #con2 {
             width: 100%;
             height: 100%;
-            background-color: #36465d;
             position: absolute;
-            top: 0%;
-            left: 0;
-            clear: both;
-            transition: 2s;
+            left: 0%;
+            top: -100%;
+            background-image: url("./images/Bg.png");
+            background-repeat: no-repeat;
         }
         .con2In {
             width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .c2Img {
-            width: 40%;
-            height: auto;
+            height: 80%;
+            margin: 6% auto;
+            margin-bottom: 0;
             box-sizing: border-box;
-            margin-top: 10%;
+            position: relative;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .con2List {
+            width: 50%;
+            height: 100%;
+            float: left;
+            box-sizing: border-box;
             position: relative;
         }
-        .c2Img img {
+        .myP {
             display: block;
-            width: 80%;
+            width: 60%;
             height: auto;
         }
-        .c2Txt {
+        .c2InTxt {
+            width: 100%;
+            height: auto;
             position: absolute;
-            transform: rotate(-15deg);
+            top: 17.5%;
+            left: -5%;
         }
-        .c2Txt1 {
-            top: 37.5%;
-            left: 0;
+        .con2List ul.in {
+            clear: both;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-15.5deg);
         }
-        .c2Txt2 {
-            top: 25%;
-            right: 5%;
-        }
-        .c2Txt3 {
-            top: 57.5%;
-            left: 0;
-        }
-        .c2Txt4 {
-            top: 45%;
-            right: 5%;
+        .con2List ul.in li {
+            float: left;
+            margin: 5%;
+            margin-bottom: 0;
         }
         .title {
             font-family: 'Slabo 27px', serif;
@@ -353,11 +322,71 @@
             letter-spacing: 1vmax;
             color: #f49e87;
         }
-        .name, .day, .phone, .edu, .motto {
-            font-weight: bold;
+        .con2List h3 {
             font-size: 0.7vmax;
-            color: #fff;
+            color: #3f3f3f;
         }
+        .con2List ul.in2 {
+            clear: both;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-15.5deg);
+        }
+        .con2List ul.in2 li {
+            float: left;
+            margin: 5%;
+        }
+        .snsIcon {
+            display: inline-block;
+            width: 35%;
+            height: auto;
+        }
+        .snsIcon img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .skill {
+            clear: both;
+            position: absolute;
+            top: 0;
+            right: 27.5%;
+            
+        }
+        .skillTitIn {
+            width: 100%;
+            height: auto;
+        }
+        .skillTit {
+            text-align: left;
+            font-size: 3vmax;
+            box-sizing: border-box;
+            color: #3f3f3f;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+            letter-spacing: 0.33vmax;
+            line-height: 3vmax;
+        }
+        .skillTit strong.st1 {
+            font-size: 3.5vmax;
+        }
+        .skillTit strong.st2 {
+            display: inline-block;
+            animation: ani3 1s linear infinite;
+            color: #cc4958;
+            cursor: pointer;
+            
+        }
+        @keyframes ani3 {
+            0% {
+                transform: rotateY(360deg);
+            }
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+        
+        
     </style>
     
     <style>
@@ -375,8 +404,8 @@
             height: auto;
         }
         .Csk {
-            width: 10vmax;
-            height: 10vmax;
+            width: 200px;
+            height: 200px;
             position: relative;
             float: left;
             margin: 2.5%;
@@ -389,10 +418,12 @@
             border-radius: 100%;
         }
         .Cin {
-            top: 10%;
-            left: 10%;
-            width: 8vmax;
-            height: 8vmax;
+            top: 50%;
+            left: 50%;
+            width: 160px;
+            height: 160px;
+            margin-left: -80px;
+            margin-top: -80px;
             border-radius: 100%;
             background-color: #fff;
             text-align: center;
@@ -415,7 +446,7 @@
             width: 100%;
             height: 100%;
             border-radius: 100%;
-            clip: rect(0px, 5vmax, 11vmax, 0px);      
+            clip: rect(0px, 100px, 300px, 0px);    
         }
         .Cleft .Cbox1 {
             z-index: 1;
@@ -441,7 +472,7 @@
             width: 100%;
             height: 100%;
             border-radius: 100%;
-            clip: rect(0px, 5vmax, 11vmax, 0px);     
+            clip: rect(0px, 100px, 300px, 0px);    
         }
         .Cleft .Cbox2 {
             z-index: 1;
@@ -467,7 +498,7 @@
             width: 100%;
             height: 100%;
             border-radius: 100%;
-            clip: rect(0px, 5vmax, 11vmax, 0px);      
+            clip: rect(0px, 100px, 300px, 0px);    
         }
         .Cleft .Cbox3 {
             z-index: 1;
@@ -493,7 +524,7 @@
             width: 100%;
             height: 100%;
             border-radius: 100%;
-            clip: rect(0px, 5vmax, 11vmax, 0px);      
+            clip: rect(0px, 100px, 300px, 0px);    
         }
         .Cleft .Cbox4 {
             z-index: 1;
@@ -519,7 +550,7 @@
             width: 100%;
             height: 100%;
             border-radius: 100%;
-            clip: rect(0px, 5vmax, 11vmax, 0px);     
+            clip: rect(0px, 100px, 300px, 0px);    
         }
         .Cleft .Cbox5 {
             z-index: 1;
@@ -538,14 +569,14 @@
         
         /* 6번 */
         .Cbox6 {
-            background-color: #5478ff;
+            background-color: #3f3f3f;
         }
         .Cbox6 {
             position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 100%;
-            clip: rect(0px, 5vmax, 11vmax, 0px);     
+            clip: rect(0px, 100px, 300px, 0px);    
         }
         .Cleft .Cbox6 {
             z-index: 1;
@@ -569,155 +600,125 @@
         #con3 {
             width: 100%;
             height: 100%;
-            background-color: #36465d;
             position: absolute;
-            top: 0%;
-            left: 0;
-            transition: 2s;
+            left: 0%;
+            top: -100%;
+            background-image: url("./images/con3Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
         .con3In {
             width: 80%;
-            height: 70%;
-            margin: 7.5% auto;
-            margin-bottom: 0;
-            overflow: hidden;
-        }
-        .con3In ul {
-            width: 315%;
             height: 100%;
+            margin: 10% auto;
             box-sizing: border-box;
-        }
-        .con3In ul li {
-            float: left;
-            width: 9.285%;
-            height: 85%;
-            margin: 0.5% 2.5%;
-            box-sizing: border-box;
+            margin-bottom: 0%;
             position: relative;
         }
-        .con3In ul li a {
-            display: block;
+        
+        .c3Box {
             width: 100%;
-            height: 100%;
-            background-color: #fff;
-            cursor: pointer;
+            height: 70%;
+            overflow: scroll;
+            overflow: hidden;
+            position: absolute;
             box-sizing: border-box;
+        }
+        .c3Box ul.c3BoxLst {
+            width: 300%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .c3Box ul.c3BoxLst li.c3BoxList {
+            float: left;
+            width: 10.285%;
+            height: 65%;
+            margin: 2%;
+            box-sizing: border-box;
+            border: 1px solid #fff;
             position: relative;
-            transition: 1.5s;
-            z-index: 9999;
         }
-        .con3In ul li a.on {
-            transform-origin: top;
-            transform:  rotateZ(-960deg) rotateX(10deg) rotateY(125deg);
-        }
-        .c3Border {
+        .c3Box ul.c3BoxLst li.c3BoxList .c3BoxBtn {
             display: block;
             position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
             transition: 0.5s;
-        }
-        .c3Border1 {
-            left: 0;
-            top: 0;
-            width: 0%;
-            height: 2%;
-            background-color: #de7e7e;
-        }
-        .c3Border2 {
-            right: 0;
-            top: 0;
-            width: 2%;
-            height: 0%;
-            background-color: #de7e7e;
-        }
-        .c3Border3 {
-            right: 0;
-            bottom: 0;
-            width: 0%;
-            height: 2%;
-            background-color: #de7e7e;
-        }
-        .c3Border4 {
-            left: 0;
-            bottom: 0;
-            width: 2%;
-            height: 0%;
-            background-color: #de7e7e;
-        }
-        
-        .c3Border1.on {
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 2%;
-            background-color: #de7e7e;
-        }
-        .c3Border2.on {
-            right: 0;
-            top: 0;
-            width: 2%;
-            height: 100%;
-            background-color: #de7e7e;
-        }
-        .c3Border3.on {
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2%;
-            background-color: #de7e7e;
-        }
-        .c3Border4.on {
-            left: 0;
-            bottom: 0;
-            width: 2%;
-            height: 100%;
-            background-color: #de7e7e;
-        }
-        
-        .c3BoxTit1 {
-            display: block;
-            text-align: center;
-            color: #3f3f3f;
-            padding-top: 20%;
-            padding-bottom: 5%;
+            padding-top: 40%;
             box-sizing: border-box;
-            font-size: 2vmax;
-            font-weight: bold;
-            font-family: 'Slabo 27px', serif;
-            text-decoration: underline;
+            background-color: #f1004d;
         }
-        .c3BoxTit2 {
-            color: #3f3f3f;
-            text-align: center;
-            font-weight: bold;
-            font-size: 3vmax;
-            color: #de7e7e;
-        }
-        .c3Line {
-            display: block;
-            width: 30%;
-            height: auto;
-            margin: 10% auto;
-            border-bottom: 0.3vmax solid #de7e7e;
-        }
-        .c3BoxTxt1 {
-            text-align: center;
-            font-weight: 100;
-            font-size: 1.2vmax;
-            font-family: 'Lora', serif;
+
+        .c3Box ul li .c3BoxBtn.on {
+            transform-origin: top;
+            transform: rotate(-170deg);
+            background-color: #fff;
         }
         .c3BoxCon {
-            width: 100%;
+            width: 90%;
             height: auto;
-            position: absolute;
-            top: 30%;
-            right: 0;
+            margin: 0 auto;
         }
         .c3BoxConTxt {
             font-family: 'Gothic A1', sans-serif;
             font-weight: bold;
             font-size: 1vmax;
+            padding-top: 10%;
             box-sizing: border-box;
-            color: #fff;
+        }
+    </style>
+    
+    <style>
+        .c3BoxBtn ul {
+            position: absolute;
+            top:50%;
+            left:50%;
+            display: flex;
+            transform: translate(-50% ,-50%);
+        }
+        .c3BoxBtn ul li{
+            list-style: none;
+            font-size: 1.4vmax;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            color: #3f3f3f;
+            animation: aniC3 6.2s linear infinite;
+            text-align: center;
+        }
+        .c3BoxBtn ul li:nth-child(1){
+            animation-delay: .2s;
+        }
+        .c3BoxBtn ul li:nth-child(2){
+            animation-delay: .6s;
+        }
+        .c3BoxBtn ul li:nth-child(3){
+            animation-delay: .8s;
+        }
+        .c3BoxBtn ul li:nth-child(4){
+            animation-delay: 1.0s;
+        }
+        .c3BoxBtn ul li:nth-child(5){
+            animation-delay: 1.4s;
+        }
+        .c3BoxBtn ul li:nth-child(6){
+            animation-delay: 1.8s;
+        }
+        .c3BoxBtn ul li:nth-child(7){
+            animation-delay: 1.12s;
+        }
+        @keyframes aniC3 {
+          0%{
+             color:#c99aaf;
+          }
+          90%{
+             color:#fff;
+          }
+          100%{
+             color:#f1004d;
+          }
         }
     </style>
     
@@ -725,11 +726,12 @@
         #con4 {
             width: 100%;
             height: 100%;
-            background-color: #36465d;
             position: absolute;
-            top: 0%;
-            left: 0;
-            transition: 2s;
+            left: 0%;
+            top: -100%;
+            background-image: url("./images/con2Bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
         .con4In {
             width: 80%;
@@ -757,7 +759,7 @@
         }
         .con4TitLst ul li a {
             display: block;
-            color: #fff;
+            color: #3f3f3f;
             font-size: 1.2vmax;
             font-weight: bold;
             text-align: center;
@@ -846,7 +848,7 @@
         .c4Tit {
             font-size: 2vmax;
             font-weight: bold;
-            color: #fff;
+            color: #3f3f3f;
             font-family: 'Nanum Gothic', sans-serif;
         }
         .color {
@@ -870,16 +872,11 @@
             clear: both;
             display: block;
             font-size: 0.75vmax;
-            color: #fff;
+            color: #3f3f3f;
             font-family: 'Nanum Gothic', sans-serif;
             font-weight: bold;
             padding: 5% 0%;
             line-height: 25px;
-        }
-        .c4Toll {
-            color: #fff;
-            font-size: 0.7vmax;
-            font-weight: bold;
         }
         .c4More {
             display: block;
@@ -900,78 +897,46 @@
         #con5 {
             width: 100%;
             height: 100%;
-            background-color: #36465d;
             position: absolute;
-            top: 0%;
-            left: 0;
-            transition: 2s;
+            left: 0%;
+            top: -100%;
+            background-image: url("./images/conBg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
         .con5In {
             width: 80%;
-            height: auto;
+            height: 80%;
             margin: 0 auto;
+            box-sizing: border-box;
+            margin-top: 5%;
+            position: relative;
         }
-        .con5TitIn {
+        .c5Lst {
             width: 100%;
             height: auto;
-        }
-        .c5TitAni {
-            height: auto;
-            position: absolute;
-            left: 37.5%;
-            top: 20%;
-            transform: translateX(-50%) translateY(-50%);
-            box-sizing: border-box;
-        }
-        .c5TitAni li {
-            display: inline-block;
-            font-size: 7vmax;
-            font-weight: bold;
-            color: #fff;
-            opacity: 1;
-            transition: 2.5s ease all;
-            
-        }
-        .c5TitAni.off {
-            opacity: 0;
-        }
-        .c5TitAni.off li:nth-child(1) {
-            transform: translateX(-140%) translateY(-140%);
-        }
-        .c5TitAni.off li:nth-child(2) {
-            transform: translateX(121%) translateY(125%);
-        }
-        .c5TitAni.off li:nth-child(3) {
-            transform: translateX(-132%) translateY(-44%);
-        }
-        .c5TitAni.off li:nth-child(4) {
-            transform: translateX(-74%) translateY(-165%);
-        }
-        .c5TitAni.off li:nth-child(5) {
-            transform: translateX(-164%) translateY(127%);
-        }
-        .c5TitAni.off li:nth-child(6) {
-            transform: translateX(177%) translateY(124%);
-        }
-        .c5TitAni.off li:nth-child(7) {
-            transform: translateX(-139%) translateY(-130%);
         }
         .c5Box {
-            width: 100%;
+            position: absolute;
+            width: 30%;
             height: auto;
             box-sizing: border-box;
-            clear: both;
-            padding-top: 20%;
         }
-        .c5Box ul.c5Box1 {
-            width: 100%;
-            height: auto;
+        .c5Box1 {
+            left: 0;
+            top: 0%;
         }
-        .c5Box ul.c5Box1 li {
-            float: left;
-            width: 23%;
-            height: auto;
-            margin: 1%;
+        .c5Box2 {
+            left: 25%;
+            bottom: 50%;
+        }
+        .c5Box3 {
+            left: 40%;
+            bottom: 20%;
+        }
+        .c5Box4 {
+            left: 55%;
+            bottom: 0%;
         }
         .c5Num {
             color: #fff;
@@ -997,7 +962,6 @@
             padding: 1% 5%;
             font-weight: 100;
             font-family: 'Playfair Display', serif;
-            font-size: 0.7vmax;
         }
         .c5_box3Lst li {
             float: left;
@@ -1005,11 +969,11 @@
         }
         #map_canvas {
             position: absolute;
-            bottom: 15%;
-            left: 10%;
+            bottom: 0;
+            left: 0;
             opacity: 0.4;
-            width: 35%;
-            height: 32.5%;
+            width: 23%;
+            height: 80%;
             display: block;
             transition: 0.5s;
         }
@@ -1017,17 +981,15 @@
             opacity: 1;
         }
         .sendBox {
-            width: 35%;
-            height: 32.5%;
+            width: 55%;
+            height: 35%;
             box-sizing: border-box;
+            position: absolute;
+            right: 0;
+            top: 10%;
             opacity: 0.4;
             transition: 0.7s;
             cursor: pointer;
-
-            position: absolute;
-            bottom: 15%;
-            right: 10%;
-            
         }
         .sendBox:hover {
             opacity: 1;
@@ -1063,12 +1025,11 @@
         
         .sendGo {
             display: block;
-            width: 95%;
+            width: 20%;
             height: auto;
             color: #3f3f3f;
             background-color: #fff;
             padding: 2.5%;
-            box-sizing: border-box;
             font-size: 1vmax;
             font-weight: bold;
             float: right;
@@ -1082,129 +1043,7 @@
             color: #fff;
         }
     </style>
-    
-    <style>
-        #con1.off {
-            transform:  rotateZ(-136deg) rotateX(320deg) rotateY(125deg);
-            top: -200%;
-        }
-        #con2.off {
-            transform:  rotateZ(-16deg) rotateX(20deg) rotateY(325deg);
-            top: -200%;
-        }
-        #con3.off {
-            transform:  rotateZ(-16deg) rotateX(-220deg) rotateY(55deg);
-            top: -200%;
-        }
-        #con4.off {
-            transform:  rotateZ(234deg) rotateX(10deg) rotateY(-225deg);
-            top: -200%;
-        }
-        #con5.off {
-            transform:  rotateZ(316deg) rotateX(-120deg) rotateY(-325deg);
-            top: -200%;
-        }
-    </style>
-    
-    <style>
-        @media screen and (max-width:767px) {
-            /* 모바일 */
-            .c2Img {
-                width: 80%;
-                height: auto;
-                box-sizing: border-box;
-                margin-top: 10%;
-                position: relative;
-                margin: 0 auto;
-                padding-top: 20%;
-            }
-            .c2Img img {
-                display: block;
-                width: 100%;
-                height: auto;
-                margin: 0 auto;
-            }
-            .c2Txt1 {
-                top: 52.5%;
-                left: -20%;
-            }
-            .c2Txt2 {
-                top: 42.5%;
-                right: 0;
-            }
-            .c2Txt3 {
-                top: 65%;
-                left: -20%;
-            }
-            .c2Txt4 {
-                top: 55%;
-                right: -20%;
-            }
-            .skillLst {
-                position: static;
-                display: none;
-                margin: 5%;
-                margin-top: 20%;
-            }
-            .Csk {
-                width: 10vmax;
-                height: 10vmax;
-                position: relative;
-                float: left;
-                margin: 1%;
-                margin-top: 5%;
-            }
 
-        }
-        @media screen and (min-width:768px) and (max-width:959px) {
-            /* 테블릿 */
-            .c2Img {
-                padding-top: 20%;
-                width: 80%;
-                height: auto;
-                box-sizing: border-box;
-                margin-top: 10%;
-                position: relative;
-                margin: 0 auto;
-            }
-            .c2Img img {
-                display: block;
-                width: 70%;
-                height: auto;
-                margin: 0 auto;
-            }
-            .c2Txt1 {
-                top: 40%;
-                left: 10%;
-            }
-            .c2Txt3 {
-                top: 57.5%;
-                left: 10%;
-            }
-            .skillLst {
-                position: static;
-                display: none;
-                margin-top: 10%;
-            }
-            .Csk {
-                width: 10vmax;
-                height: 10vmax;
-                position: relative;
-                float: left;
-                margin: 1%;
-                margin-top: 5%;
-            }
-        }
-        @media screen and (min-width:960px) and(max-width:1199px) {
-            /* 데스크탑 */
-
-        }
-        @media screen and (min-width:1200px) {
-
-        }
-    </style>
-    
-    
     <script>
         $(document).ready(function(){
             $(".hdIn ul li a.intro").click(function(){
@@ -1237,19 +1076,19 @@
                 $(".hdIn ul li a.portfolio").removeClass("on");
                 $(".hdIn ul li a.about").removeClass("on");
                 $(".hdIn ul li a.intro").removeClass("on");
-                $("#con1").removeClass("off");
-                $("#con2").addClass("off")
-                $("#con3").addClass("off")
-                $("#con4").addClass("off")
-                $("#con5").addClass("off")
+                $("#con1").not(":animated").animate({"top": "0"}, 1200);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
             });
             $(".hdIn ul li a.intro").click(function(){
                 
-                $("#con2").removeClass("off");
-                $("#con1").addClass("off")
-                $("#con3").addClass("off")
-                $("#con4").addClass("off")
-                $("#con5").addClass("off")
+                $("#con2").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
                 
                 $(this).addClass("on");
                 $(".hdIn ul li a.wark").removeClass("on");
@@ -1259,11 +1098,11 @@
             });
             $(".hdIn ul li a.wark").click(function(){
                 
-                $("#con3").removeClass("off");
-                $("#con1").addClass("off")
-                $("#con2").addClass("off")
-                $("#con4").addClass("off")
-                $("#con5").addClass("off")
+                $("#con3").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
                 
                 $(this).addClass("on");
                 $(".hdIn ul li a.intro").removeClass("on");
@@ -1273,11 +1112,11 @@
             });
             $(".hdIn ul li a.portfolio").click(function(){
                 
-                $("#con4").removeClass("off");
-                $("#con1").addClass("off")
-                $("#con3").addClass("off")
-                $("#con2").addClass("off")
-                $("#con5").addClass("off")
+                $("#con4").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con5").animate({"top": "-100%"}, 600);
                 
                 $(this).addClass("on");
                 $(".hdIn ul li a.wark").removeClass("on");
@@ -1287,40 +1126,17 @@
             });
             $(".hdIn ul li a.about").click(function(){
                 
-                $("#con5").removeClass("off");
-                $("#con1").addClass("off")
-                $("#con2").addClass("off")
-                $("#con3").addClass("off")
-                $("#con4").addClass("off")
+                $("#con5").not(":animated").animate({"top": "0"}, 1200);
+                $("#con1").animate({"top": "-100%"}, 600);
+                $("#con2").animate({"top": "-100%"}, 600);
+                $("#con3").animate({"top": "-100%"}, 600);
+                $("#con4").animate({"top": "-100%"}, 600);
                 
                 $(this).addClass("on");
                 $(".hdIn ul li a.wark").removeClass("on");
                 $(".hdIn ul li a.portfolio").removeClass("on");
                 $(".hdIn ul li a.intro").removeClass("on");
                 
-            });
-        });
-    </script>
-    
-    <script>
-        $(document).ready(function() {
-            $("#con3 .con3In ul li a").removeAttr("href");
-            var wd = parseInt($("#con3 .con3In ul li").width());
-            console.log("창의너비 : " + wd);
-            $("#con3 .con3In").on("mousewheel", function(e){
-                if(e.originalEvent.wheelDelta < 0){ // 아래 스크롤
-                    $("#con3 .con3In").not(":animated").animate({scrollLeft: "+=" + 600 + "px"}, 500);
-                } else {
-                    $("#con3 .con3In").not(":animated").animate({scrollLeft: "-=" + 600 + "px"}, 500);
-                }
-                return false;
-            });
-            
-            $("#con3 .con3In ul li a").hover(function(){
-                $(this).find(".c3Border").toggleClass("on");
-            });
-            $("#con3 .con3In ul li a").click(function(){
-                $(this).toggleClass("on");
             });
         });
     </script>
@@ -1331,9 +1147,9 @@
             console.log("창의너비 : " + wd);
             $("#con4 .con4In .con4List").on("mousewheel", function(e){
                 if(e.originalEvent.wheelDelta < 0){ // 아래 스크롤
-                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "+=" + 500 + "px" }, 500);
+                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "+=" + wd + "px" }, 500);
                 } else {
-                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "-=" + 500 + "px"}, 500);
+                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "-=" + wd + "px"}, 500);
                 }
                 return false;
             });
@@ -1377,20 +1193,6 @@
     </script>
     
     <script>
-        $(document).ready(function(){
-            $(".about").click(function(){
-                setTimeout(function(){
-                    $(".c5TitAni").removeClass("off");
-                }, 500);
-            $(this).parent().siblings().find("a").click(function(){
-                    $(".c5TitAni").addClass("off");
-                });
-            });
-            
-        });
-    </script>
-    
-    <script>
       function initialize() {
        var myLatlng = new google.maps.LatLng(36.346471, 127.448502);
        var mapOptions = {
@@ -1407,7 +1209,41 @@
           
       }
  </script>
+ 
+    <script>
+        $(document).ready(function(){
+            $(".wark").click(function(){
+                $(".con3TitIn").delay(1500).fadeIn(1500);
+            });
+            $(".intro, .portfolio, .about").click(function(){
+                $(".con3TitIn").fadeOut(500);
+            });
+        });
+    </script>
     
+    <script>
+        $(document).ready(function() {
+            var wd = parseInt($("#con3 .con3In .c3Box ul li").width());
+            console.log("창의너비 : " + wd);
+            $("#con3 .con3In .c3Box").on("mousewheel", function(e){
+                if(e.originalEvent.wheelDelta < 0){ // 아래 스크롤
+                    $("#con3 .con3In .c3Box").not(":animated").animate({scrollLeft: "+=" + wd + "px" }, 500);
+                } else {
+                    $("#con3 .con3In .c3Box").not(":animated").animate({scrollLeft: "-=" + wd + "px"}, 500);
+                }
+                return false;
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".c3Box ul li .c3BoxBtn").click(function(){
+                $(this).toggleClass("on");
+            });
+        });
+    </script>
+ 
 </head>
 <body onload="initialize()">
     <div class="main" id="desktop">
@@ -1424,10 +1260,9 @@
            </header>
            
         <div class="con" id="con1">
-         <img src="./img/1.gif" alt="" class="con1Back">
           <div class="con1In">
                     <h2 class="con1Tit1">I found a <strong>DESIGN</strong> from me.</h2>
-                    <h2 class="con1Tit2">Show me Lee Jaung Uk</h2>
+                    <h2 class="con1Tit2">Show me Lee Jung Uk</h2>
                 </div>
            <div class="box">
                <div class="face face1">
@@ -1439,40 +1274,49 @@
            </div>
        </div>
        
-       <div class="con off" id="con2">
-          <div class="con2In">
-              <div class="c2Img">
-                  <img src="./img/inbg.png" alt="">
-                  
-                  <div class="c2Txt c2Txt1">
-                      <h2 class="title">HELLO<span class="titLine"></span></h2>
-                      <h3 class="name">이정욱</h3>
-                      <h3 class="day">93. 12. 16</h3>
-                      <h3 class="phone">010 - 6227 - 4454</h3>
-                  </div>
-                  
-                  <div class="c2Txt c2Txt2">
-                      <h2 class="title">EDUCATION <span class="titLine"></span></h2>
-                      <h3 class="edu">2017. 02 대전보건대학 졸업</h3>
-                      <h3 class="edu">2012. 03 충남기계공업고등학교 졸업</h3>
-                  </div>
-                  
-                  <div class="c2Txt c2Txt3">
-                      <h2 class="title">LICENSE<span class="titLine"></span></h2>
-                      <h3 class="edu">SMAT 서비스 경영(실무자) 모듈A</h3>
-                      <h3 class="edu">워드프로세서</h3>
-                      <h3 class="edu">ITQ (한글, 파워포인트 A)</h3>
-                      <h3 class="edu">용접기능사</h3>
-                      <h3 class="edu">운전면허증 1종 보통</h3>
-                  </div>
-                  
-                  <div class="c2Txt c2Txt4">
-                      <h2 class="title">MOTTO<span class="titLine"></span></h2>
-                      <h3 class="motto">그라운드가 바다라면 나는 상어다.<br>If the ground is the sea, I am a shark.</h3>
-                  </div>
-              </div>
-              
-              <div class="skillLst skillLst1">
+        <div class="con" id="con2">
+           <div class="con2In">
+        
+               <div class="con2List">
+                  <img src="./images/inbg.png" alt="" class="myP">
+                  <div class="c2InTxt">
+                   <ul class="in">
+                       <li>
+                           <h2 class="title">HELLO<span class="titLine"></span></h2>
+                           <h3 class="name">이정욱</h3>
+                           <h3 class="day">93. 12. 16</h3>
+                           <h3 class="phone">010 - 6227 - 4454</h3>
+                       </li>
+                       
+                       <li>
+                           <h2 class="title">EDUCATION <span class="titLine"></span></h2>
+                           <h3 class="edu">2017. 02 대전보건대학 졸업</h3>
+                           <h3 class="edu">2012. 03 충남기계공업고등학교 졸업</h3>
+                       </li>
+                   </ul>
+                   
+                   <ul class="in2">
+                       <li>
+                           <h2 class="title">LICENSE<span class="titLine"></span></h2>
+                           <h3 class="edu">SMAT 서비스 경영(실무자) 모듈A</h3>
+                           <h3 class="edu">워드프로세서</h3>
+                           <h3 class="edu">ITQ (한글, 파워포인트 A)</h3>
+                           <h3 class="edu">용접기능사</h3>
+                           <h3 class="edu">운전면허증 1종 보통</h3>
+                       </li>
+                       <li>
+                           <h2 class="title">MOTTO<span class="titLine"></span></h2>
+                           <h3 class="motto">그라운드가 바다라면 나는 상어다.<br>If the ground is the sea, I am a shark.</h3>
+                       </li>
+                   </ul>
+                </div>
+               </div>
+               <div class="skill">
+                       <div class="skillTitIn">
+                           <h2 class="skillTit">DESIGNER<br><strong class="st1"><strong class="st2">L</strong>EE JAUNG UK</strong><br>PROFILE_</h2>
+                       </div>
+                   </div>
+                   <div class="skillLst skillLst1">
                     <div class="Csk skC1">
                         <div class="Cout"></div>
                         <div class="Cin">HTML5<br>88%</div>
@@ -1555,143 +1399,147 @@
                         </div>
                     </div>                                
                 </div>
-              
-          </div>
+           </div>
        </div>
-       
-       <div class="con off" id="con3">
-          <div class="con3In">
-              <ul>
-                  <li>
-                      <a href="">
-                        <span class="c3Border c3Border1"></span>
-                        <span class="c3Border c3Border2"></span>
-                        <span class="c3Border c3Border3"></span>
-                        <span class="c3Border c3Border4"></span>
-                        
-                         <span class="c3BoxTit1">Guide MyAability To</span>
-                          <h2 class="c3BoxTit2">HTML / CSS</h2>
-                          <span class="c3Line"></span>
-                          <h2 class="c3BoxTxt1">Let us know about the<br>HTML and CSS Usage!</h2>
-                        </a>
-                        
-                        <div class="c3BoxCon">
-                            <p class="c3BoxConTxt">태그 구조 설계, 시멘틱 태그, 멀티미디어 관련 태그, 링크 관련 태그, 목록 관련 태그, 문단 관련 태그, 테이블 관련 태그, 폼 관련 태그, 기본 선택자(태그, 아이디, 클래스), 복합 선택자, 부모 자식, 조상 후손, 형제, 속성, 상태 선택자, 반응 선택자, 부정 선택자, 포지션 관련 속성, 화면 표시 관련 속성, 배경 관련 속성, 글자 모양 관련 속성, 문단 모양 관련 속성, 애니메이션 관련 속성, 화면 전환 관련 속성, 변형 관련 속성</p>
-                        </div>
-                    </li>
-                    <li>
-                      <a href="">
-                        <span class="c3Border c3Border1"></span>
-                        <span class="c3Border c3Border2"></span>
-                        <span class="c3Border c3Border3"></span>
-                        <span class="c3Border c3Border4"></span>
-                        
-                         <span class="c3BoxTit1">Guide MyAability To</span>
-                          <h2 class="c3BoxTit2">jQuery</h2>
-                          <span class="c3Line"></span>
-                          <h2 class="c3BoxTxt1">Let us know about the<br>jQuery Usage!</h2>
-                        </a>
-                        
-                        <div class="c3BoxCon">
-                            <p class="c3BoxConTxt"> 변수, 배열, 객체, 함수, 메서드, 속성, 사용자 정의 객체, 데이터형 객체, BOM 객체, DOM 객체, DOM 선택자, 기본 메서드와 속성, DOM 탐색 메서드, DOM 조작 메서드, DOM 이벤트 메서드, DOM 효과 메서드, 플러그인 제작, jQuery UI, jQuery Mobile, 정부프레임워크에 의한 하이브리드 앱 개발</p>
-                        </div>
-                    </li>
-                    <li>
-                      <a href="">
-                        <span class="c3Border c3Border1"></span>
-                        <span class="c3Border c3Border2"></span>
-                        <span class="c3Border c3Border3"></span>
-                        <span class="c3Border c3Border4"></span>
-                        
-                         <span class="c3BoxTit1">Guide MyAability To</span>
-                          <h2 class="c3BoxTit2">PHOTOSHOP</h2>
-                          <span class="c3Line"></span>
-                          <h2 class="c3BoxTxt1">Let us know about the<br>PHOTOSHOP Usage!</h2>
-                        </a>
-                        
-                        <div class="c3BoxCon">
-                            <p class="c3BoxConTxt"> 이미지 편집, 이미지 합성, 이미지 보정, 레이어 작업, 필터, 효과, 스타일, 벡터 툴</p>
-                        </div>
-                                    
-                    </li>
-                    <li>
-                      <a href="">
-                        <span class="c3Border c3Border1"></span>
-                        <span class="c3Border c3Border2"></span>
-                        <span class="c3Border c3Border3"></span>
-                        <span class="c3Border c3Border4"></span>
-                        
-                         <span class="c3BoxTit1">Guide MyAability To</span>
-                          <h2 class="c3BoxTit2">ILLUSTRATOR</h2>
-                          <span class="c3Line"></span>
-                          <h2 class="c3BoxTxt1">Let us know about the<br>ILLUSTRATOR Usage!</h2>
-                        </a>
-                        
-                        <div class="c3BoxCon">
-                            <p class="c3BoxConTxt">이미지 제작, 브러시, 타이포, 벡터 드로잉, 패스파인더, 블렌딩 기능, 그라디언트, 심볼 편집,  도형 편집, 마스크, 자유 변형 등</p>
-                        </div>
-                                    
-                    </li>
-                    <li>
-                      <a href="">
-                        <span class="c3Border c3Border1"></span>
-                        <span class="c3Border c3Border2"></span>
-                        <span class="c3Border c3Border3"></span>
-                        <span class="c3Border c3Border4"></span>
-                        
-                         <span class="c3BoxTit1">Guide MyAability To</span>
-                          <h2 class="c3BoxTit2">프레임워크</h2>
-                          <span class="c3Line"></span>
-                          <h2 class="c3BoxTxt1">Let us know about the<br>FRAMEWORK Usage!</h2>
-                        </a>
-                        
-                        <div class="c3BoxCon">
-                            <p class="c3BoxConTxt">css 프레임워크 : 부트스트랩, 벌마, 파운데이션, 푸어, 스켈레톤 등<br>javascript 프레임워크 : jQuery, angular, Vue, react 등</p>
-                        </div>
+    
+        <div class="con" id="con3">
+            <div class="con3In">
+
+            
+                <div class="c3Box">
+                        <ul class="c3BoxLst">
+                            <li class="c3BoxList">
+                                <div class="c3BoxBtn off">
+                                    <ul>
+                                      <li>H</li>
+                                      <li>T</li>
+                                      <li>M</li>
+                                      <li>L</li>
+                                      <li>/</li>
+                                      <li>C</li>
+                                      <li>S</li>
+                                      <li>S</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">태그 구조 설계, 시멘틱 태그, 멀티미디어 관련 태그, 링크 관련 태그, 목록 관련 태그, 문단 관련 태그, 테이블 관련 태그, 폼 관련 태그, 기본 선택자(태그, 아이디, 클래스), 복합 선택자, 부모 자식, 조상 후손, 형제, 속성, 상태 선택자, 반응 선택자, 부정 선택자, 포지션 관련 속성, 화면 표시 관련 속성, 배경 관련 속성, 글자 모양 관련 속성, 문단 모양 관련 속성, 애니메이션 관련 속성, 화면 전환 관련 속성, 변형 관련 속성</p>
+                                    </div>
                                     
                                     
-                    </li>
-                    <li>
-                      <a href="">
-                        <span class="c3Border c3Border1"></span>
-                        <span class="c3Border c3Border2"></span>
-                        <span class="c3Border c3Border3"></span>
-                        <span class="c3Border c3Border4"></span>
-                        
-                         <span class="c3BoxTit1">Guide MyAability To</span>
-                          <h2 class="c3BoxTit2">TOOL</h2>
-                          <span class="c3Line"></span>
-                          <h2 class="c3BoxTxt1">Let us know about the<br>TOOL Usage!</h2>
-                        </a>
-                        
-                        <div class="c3BoxCon">
-                            <p class="c3BoxConTxt">웹 프로그래밍 가능 언어 : HTML, javascript, 간단php 등<br>프로토타입 툴 : balsamiq, OVEN, ProtoNow, Fluid UI<br>에디터 : Breakets, Edit plus</p>
-                        </div>
+                            </li>
+                            <li class="c3BoxList">
+                                <div class="c3BoxBtn off">
+                                    <ul>
+                                      <li>j</li>
+                                      <li>Q</li>
+                                      <li>u</li>
+                                      <li>e</li>
+                                      <li>r</li>
+                                      <li>y</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt"> 변수, 배열, 객체, 함수, 메서드, 속성, 사용자 정의 객체, 데이터형 객체, BOM 객체, DOM 객체, DOM 선택자, 기본 메서드와 속성, DOM 탐색 메서드, DOM 조작 메서드, DOM 이벤트 메서드, DOM 효과 메서드, 플러그인 제작, jQuery UI, jQuery Mobile, 정부프레임워크에 의한 하이브리드 앱 개발</p>
+                                    </div>
                                     
-                    </li>
-                    <li>
-                      <a href="">
-                        <span class="c3Border c3Border1"></span>
-                        <span class="c3Border c3Border2"></span>
-                        <span class="c3Border c3Border3"></span>
-                        <span class="c3Border c3Border4"></span>
-                        
-                         <span class="c3BoxTit1">Guide MyAability To</span>
-                          <h2 class="c3BoxTit2">사무능력</h2>
-                          <span class="c3Line"></span>
-                          <h2 class="c3BoxTxt1">Let us know about the<br>OFFICE CAPACITY Usage!</h2>
-                        </a>
-                        
-                        <div class="c3BoxCon">
-                            <p class="c3BoxConTxt">한글, 엑셀, 파워포인트</p>
-                        </div>
+                            </li>
+                            <li class="c3BoxList">
+                                <div class="c3BoxBtn off">
+                                    <ul>
+                                      <li>P</li>
+                                      <li>H</li>
+                                      <li>O</li>
+                                      <li>T</li>
+                                      <li>O</li>
+                                      <li>S</li>
+                                      <li>H</li>
+                                      <li>O</li>
+                                      <li>P</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt"> 이미지 편집, 이미지 합성, 이미지 보정, 레이어 작업, 필터, 효과, 스타일, 벡터 툴</p>
+                                    </div>
                                     
-                    </li>
-              </ul>
-          </div>
-       </div>
-       
-       <div class="con off" id="con4">
+                            </li>
+                            
+                            <li class="c3BoxList">
+                                <div class="c3BoxBtn off">
+                                    <ul>
+                                      <li>I</li>
+                                      <li>L</li>
+                                      <li>L</li>
+                                      <li>U</li>
+                                      <li>S</li>
+                                      <li>T</li>
+                                      <li>R</li>
+                                      <li>A</li>
+                                      <li>T</li>
+                                      <li>O</li>
+                                      <li>R</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">이미지 제작, 브러시, 타이포, 벡터 드로잉, 패스파인더, 블렌딩 기능, 그라디언트, 심볼 편집,  도형 편집, 마스크, 자유 변형 등</p>
+                                    </div>
+                                    
+                            </li>
+                            <li class="c3BoxList">
+                                <div class="c3BoxBtn off">
+                                    <ul>
+                                      <li>프</li>
+                                      <li>레</li>
+                                      <li>임</li>
+                                      <li>워</li>
+                                      <li>크</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">css 프레임워크 : 부트스트랩, 벌마, 파운데이션, 푸어, 스켈레톤 등<br>javascript 프레임워크 : jQuery, angular, Vue, react 등</p>
+                                    </div>
+                                    
+                            </li>
+                            <li class="c3BoxList">
+                                <div class="c3BoxBtn off">
+                                    <ul>
+                                      <li>T</li>
+                                      <li>O</li>
+                                      <li>O</li>
+                                      <li>L</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">웹 프로그래밍 가능 언어 : HTML, javascript, 간단php 등<br>프로토타입 툴 : balsamiq, OVEN, ProtoNow, Fluid UI<br>에디터 : Breakets, Edit plus</p>
+                                    </div>
+                                    
+                            </li>
+                            <li class="c3BoxList">
+                                <div class="c3BoxBtn off">
+                                    <ul>
+                                      <li>사</li>
+                                      <li>무</li>
+                                      <li>능</li>
+                                      <li>력</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="c3BoxCon">
+                                        <p class="c3BoxConTxt">한글, 엑셀, 파워포인트</p>
+                                    </div>
+                                    
+                            </li>
+                        </ul>
+                </div>                 
+            </div>
+        </div>
+
+        <div class="con" id="con4">
             <div class="con4In">
                 <div class="con4TitLst">
                     <ul>
@@ -1988,49 +1836,39 @@
                 
             </div>
         </div>
-       
-       <div class="con off" id="con5">
-          <div class="con5In">
-             <div class="con5TitIn">
-                 <ul class="c5TitAni off">
-                      <li>C</li>
-                      <li>O</li>
-                      <li>N</li>
-                      <li>T</li>
-                      <li>E</li>
-                      <li>N</li>
-                      <li>T</li>
-                  </ul>
-             </div>
-              
-              <div class="c5Box">
-                  <ul class="c5Box1">
-                      <li>
-                          <h1 class="c5Num"><strong>1</strong>&nbsp;.LOCATION</h1>
-                          <span class="c5Txt1">대전광역시 동구 가양동</span>
-                          <span class="c5Txt2">Guayang-dong, Dong-gu, Daejeon, Republic of korea</span>
-                      </li>
-                      <li>
-                          <h1 class="c5Num"><strong>2</strong>&nbsp;.CONTACT</h1>
-                          <span class="c5Txt1">+82 (0)10-6227-4454</span>
-                          <span class="c5Txt2">justmoretz@naver.com</span>
-                      </li>
-                      <li>
-                          <h1 class="c5Num"><strong>3</strong>&nbsp;.SOCIAL</h1>
-                          <ul class="c5_box3Lst">
-                              <li><a href="" class="c5Txt1"><img src="./images/instagram.png" alt=""></a></li>
-                              <li><a href="" class="c5Txt2"><img src="./images/facebook.png" alt=""></a></li>
-                          </ul>
-                      </li>
-                      <li>
-                          <h1 class="c5Num"><strong>4</strong>&nbsp;.THANK YOU</h1>
-                          <span class="c5Txt2">ⓒ&nbsp;COPYRIGHT BY LEE JAUNG UK.2018</span>
-                      </li>
-                  </ul>
-                  
-                  <div id="map_canvas"></div>
-                  
-                  <div class="sendBox">
+        
+        <div class="con" id="con5">
+            <div class="con5In">
+                <div class="c5Lst">
+                   
+                    <div class="c5Box c5Box1">
+                        <h1 class="c5Num"><strong>1</strong>&nbsp;.LOCATION</h1>
+                        <span class="c5Txt1">대전광역시 동구 가양동</span>
+                        <span class="c5Txt2">Guayang-dong, Dong-gu, Daejeon, Republic of korea</span>
+                    </div>
+                    
+                    <div class="c5Box c5Box2">
+                        <h1 class="c5Num"><strong>2</strong>&nbsp;.CONTACT</h1>
+                        <span class="c5Txt1">+82 (0)10-6227-4454</span>
+                        <span class="c5Txt2">justmoretz@naver.com</span>
+                    </div>
+                    
+                    <div class="c5Box c5Box3">
+                        <h1 class="c5Num"><strong>3</strong>&nbsp;.SOCIAL</h1>
+                        <ul class="c5_box3Lst">
+                            <li><a href="" class="c5Txt1"><img src="./images/instagram.png" alt=""></a></li>
+                            <li><a href="" class="c5Txt2"><img src="./images/facebook.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="c5Box c5Box4">
+                        <h1 class="c5Num"><strong>4</strong>&nbsp;.THANK YOU</h1>
+                        <span class="c5Txt2">ⓒ&nbsp;COPYRIGHT BY LEE JAUNG UK.2018</span>
+                    </div>
+                    
+                    <div id="map_canvas"></div>
+                    
+                    <div class="sendBox">
                         <ul class="sendtop">
                             <li><input type="text" placeholder="Your Name *"></li>
                             <li><input type="text" placeholder="Your Email *"></li>
@@ -2039,9 +1877,10 @@
                         
                         <a href="" class="sendGo">SEND MESSAGE</a>
                     </div>
-              </div>
-          </div>
-       </div>
+                </div>
+            </div>
+        </div>
+    
     </div>
 </body>
 </html>
