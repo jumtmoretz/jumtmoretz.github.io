@@ -765,9 +765,9 @@
             transition: 0.5s;
         }
         .con4TitLst ul li a.on {
-            animation: portAni 2s infinite linear both;
-            color: #b62025;
-            text-shadow: 2px 1px 13px #fff;
+            animation: portAni 4s infinite linear both;
+            color: #de7e7e;
+            text-shadow: 2px 1px 7px #3f3f3f;
             box-sizing: border-box;
         }
         @keyframes portAni {
@@ -1089,20 +1089,20 @@
             top: -200%;
         }
         #con2.off {
-            transform:  rotateZ(-16deg) rotateX(20deg) rotateY(325deg);
-            top: -200%;
+            transform:  rotateZ(162deg) rotateX(320deg) rotateY(325deg);
+            left: -100%;
         }
         #con3.off {
             transform:  rotateZ(-16deg) rotateX(-220deg) rotateY(55deg);
             top: -200%;
         }
         #con4.off {
-            transform:  rotateZ(234deg) rotateX(10deg) rotateY(-225deg);
-            top: -200%;
+            transform:  rotateZ(-134deg) rotateX(330deg) rotateY(-125deg);
+            left: 100%;
         }
         #con5.off {
-            transform:  rotateZ(316deg) rotateX(-120deg) rotateY(-325deg);
-            top: -200%;
+            transform:  rotateZ(16deg) rotateX(-120deg) rotateY(-135deg);
+            top: 200%;
         }
     </style>
     
@@ -1309,9 +1309,9 @@
             console.log("창의너비 : " + wd);
             $("#con3 .con3In").on("mousewheel", function(e){
                 if(e.originalEvent.wheelDelta < 0){ // 아래 스크롤
-                    $("#con3 .con3In").not(":animated").animate({scrollLeft: "+=" + 600 + "px"}, 500);
+                    $("#con3 .con3In").not(":animated").animate({scrollLeft: "+=" + 800 + "px"}, 500);
                 } else {
-                    $("#con3 .con3In").not(":animated").animate({scrollLeft: "-=" + 600 + "px"}, 500);
+                    $("#con3 .con3In").not(":animated").animate({scrollLeft: "-=" + 800 + "px"}, 500);
                 }
                 return false;
             });
@@ -1331,9 +1331,9 @@
             console.log("창의너비 : " + wd);
             $("#con4 .con4In .con4List").on("mousewheel", function(e){
                 if(e.originalEvent.wheelDelta < 0){ // 아래 스크롤
-                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "+=" + 500 + "px" }, 500);
+                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "+=" + 800 + "px" }, 500);
                 } else {
-                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "-=" + 500 + "px"}, 500);
+                    $("#con4 .con4In .con4List").not(":animated").animate({scrollLeft: "-=" + 800 + "px"}, 500);
                 }
                 return false;
             });
