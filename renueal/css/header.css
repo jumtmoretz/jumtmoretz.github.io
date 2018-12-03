@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+        #hd {
+            width: 100%;
+            height: auto;
+            z-index: 9999;
+            position: fixed;
+            top: 2.5%;
+            left: 0;
+        }
+        .hdIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+            z-index: 9999;
+        }
+        .snsBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15%;
+            height: auto;
+        }
+        .snsBox li {
+            float: left;
+            width: 20%;
+            margin: 2.5% 2.5%;
+        }
+        .snsBox li img {
+            display: block;
+            width: 30%;
+            height: auto;
+            transition: 0.5s;
+            transform: rotateY(0deg);
+        }
+        .snsBox li img:hover {
+            transform: rotateY(360deg);
+        }
+        .logo {
+            display: block;
+            width: 13.5%;
+            height: auto;
+            margin: 0% auto;
+            padding: 1% 0%;
+        }
+        .logo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .menu {
+            width: 100%;
+            height: auto;
+            margin: 1.5% 0%;
+            
+        }
+        .menu:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .menu .menuLst {
+            float: left;
+            width: 14.285%;
+            height: auto;
+        }
+        .menu .menuLst a {
+            display: block;
+            text-align: center;
+            color: #fff;
+            font-family: 'Text Me One', sans-serif;
+            font-size: 1vmax;
+            font-weight: bold;
+            padding: 5% 0%;
+            transition: 0.51s;
+        }
+        .menu .menuLst a:hover {
+            background-color: #fff;
+            color: #3f3f3f;
+        }

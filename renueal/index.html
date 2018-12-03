@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="IFT, 기술, 교육, 무한, 메이커스페이스, 가온누리, 퍼블릭에듀">
+    <meta name="Description" content="Global Education Company - EduTech">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+
+    <!-- Firefox, opera (Chrome and safari say thanks but no thanks) -->
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>:: IFT ::</title>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Text+Me+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amethysta" rel="stylesheet">
+    
+    <!-- 기본 -->
+    <style>
+        #particles {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(35, 38, 53, 1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width:1920px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        .con {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script type='text/javascript' src='./js/demo.js'></script>
+    <script type='text/javascript' src='./js/jquery.particleground.js'></script>
+    <!-- 헤더 -->
+    <link rel="stylesheet" href="./css/header.css">
+    
+    
+    <!-- 비쥬얼배너 -->
+    <style>
+        #con1 {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        #vs {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        #vs ul {
+            width: 400%;
+            height: auto;
+        }
+        #vs ul li {
+            float: left;
+            width: 25%;
+            height: auto;
+            position: relative;
+        }
+        #vs ul li img {
+            display: block;
+            width: 100%;
+            height: auto;
+            opacity: 0.5;
+        }
+        .vsTit1 {
+            font-size: 3vmax;
+            font-weight: 200;
+            color: #fff;
+            position: absolute;
+            top: 35%;
+            left: 10%;
+            font-family: 'Do Hyeon', sans-serif;
+            display: block;
+            opacity: 0;
+        }
+        .vsTit2 {
+            display: block;
+            font-size: 5vmax;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 42%;
+            left: 10%;
+            opacity: 0;
+        }
+        .vsTxt {
+            position: absolute;
+            font-size: 0.7vmax;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 57.5%;
+            left: 10%;
+            font-family: 'Gothic A1', sans-serif;
+            letter-spacing: 0.4vw;
+            text-shadow: 1px 1px 15px #fff;
+            opacity: 0;
+        }
+        .btnBox {
+            width: 40%;
+            height: auto;
+            position: absolute;
+            top: 65%;
+            left: 10%;
+        }
+        .btnBox ul {
+            width: 100%;
+            height: auto;
+        }
+        .btnBox ul li {
+            float: left;
+            width: 25%;
+            height: auto;
+        }
+        .btnBox ul li button {
+            width: 9vw;
+            height: 9vw;
+            cursor: pointer;
+            border: 1px solid #fff;
+            background: none;
+            display: none;
+        }
+        .btnBox ul li button.on {
+            background: #fff;   
+        }
+        .plus {
+            display: block;
+            font-size: 2vmax;
+            font-weight: bold;
+            color: #fff;
+        }
+        .plus.on {
+            color: #3f3f3f;
+        }
+        .btnTxt {
+            display: block;
+            color: #fff;
+            text-align: left;
+            padding: 15%;
+            box-sizing: border-box;
+            font-size: 0.8vmax;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .btnTxt.on {
+            color: #3f3f3f;
+        }
+        .btnTxt strong {
+            text-shadow: 1px 1px 20px #fff;
+            line-height: 2vw;
+        }
+    </style>
+    
+    <!-- vs script -->
+    <script>
+        $(document).ready(function(){
+            $(".vsTit1").stop().delay(100).not(":animated").animate({"opacity": "1"}, 800);
+            $(".vsTit2").stop().delay(800).not(":animated").animate({"opacity": "1"}, 800);
+            $(".vsTxt").stop().delay(1500).not(":animated").animate({"opacity": "1"}, 800);
+            $(".btn1").delay(2000).slideDown(500);
+            $(".btn2").delay(2200).slideDown(500);
+            $(".btn3").delay(2400).slideDown(500);
+            $(".btn4").delay(2600).slideDown(500);
+            
+            $(".btnBox ul li button").click(function(){
+                $(this).addClass("on");
+                $(this).find("span").addClass("on");
+                $(this).parent().siblings().find("button").removeClass("on");
+                $(this).parent().siblings().find("button span").removeClass("on");
+            });
+            
+            $(".btn1").click(function(){
+                $(".vsTit1, .vsTit2, .vsTxt").stop().css("opacity", "0");
+                $("#vs ul").stop().not(":animated").animate({"margin-left": "-0%"}, 500);
+                $(".vsTit1").stop().delay(300).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTit2").stop().delay(1000).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTxt").stop().delay(1700).not(":animated").animate({"opacity": "1"}, 800);
+            });
+            $(".btn2").click(function(){
+                $(".vsTit1, .vsTit2, .vsTxt").stop().css("opacity", "0");
+                $("#vs ul").stop().not(":animated").animate({"margin-left": "-100%"}, 500);
+                $(".vsTit1").stop().delay(300).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTit2").stop().delay(1000).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTxt").stop().delay(1700).not(":animated").animate({"opacity": "1"}, 800);
+            });
+            $(".btn3").click(function(){
+                $(".vsTit1, .vsTit2, .vsTxt").stop().css("opacity", "0");
+                $("#vs ul").stop().not(":animated").animate({"margin-left": "-200%"}, 500);
+                $(".vsTit1").stop().delay(300).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTit2").stop().delay(1000).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTxt").stop().delay(1700).not(":animated").animate({"opacity": "1"}, 800);
+            });
+            $(".btn4").click(function(){
+                $(".vsTit1, .vsTit2, .vsTxt").stop().css("opacity", "0");
+                $("#vs ul").stop().not(":animated").animate({"margin-left": "-300%"}, 500);
+                $(".vsTit1").stop().delay(300).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTit2").stop().delay(1000).not(":animated").animate({"opacity": "1"}, 800);
+                $(".vsTxt").stop().delay(1700).not(":animated").animate({"opacity": "1"}, 800);
+            });
+        });
+    </script>
+    
+    <!-- con2 -->
+    <style>
+        #con2 {
+            width: 100%;
+            height: auto;
+            clear: both;
+        }
+        .con2In {
+            width: 80%;
+            height: auto;
+            margin: 10% auto;
+        }
+        .conTit1 {
+            text-align: center;
+            font-size: 4vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+        }
+        .conTit2 {
+            text-align: center;
+            font-size: 1.2vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 2%;
+            box-sizing: border-box;
+        }
+        
+        .con2In ul {
+            width: 100%;
+            height: auto;
+            margin-top: 7.5%;
+        }
+        .con2In ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .con2In ul li {
+            float: left;
+            width: 20%;
+            height: 30vw;
+        }
+        .con2In ul li.con2Item1 {
+            display: none;
+        }
+        .con2In ul li.con2Item2 {
+            display: none;
+        }
+        .con2In ul li.con2Item3 {
+            display: block;
+            opacity: 0;
+        }
+        .con2In ul li.con2ItemPlus {
+            display: none;
+        }
+        .con2In ul li.con2ItemNull {
+            display: none;
+            
+        }
+        .con2In ul li img {
+            display: block;
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .con2In ul li.con2ItemPlus img, .con2In ul li.con2ItemNull img {
+            display: block;
+            width: 20%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 50%;
+        }
+        .con2ItemTit {
+            color: #50c3c8;
+            font-size: 1.3vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            text-align: center;
+            margin: 15% 0%;
+        }
+        .con2ItemTxt {
+            display: block;
+            color: #fff;
+            font-size: 0.7vmax;
+            text-align: center;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con2In").hover(function(){
+                $(".con2Item1").delay(500).slideDown(1000);
+                $(".con2ItemPlus").delay(1000).slideDown(1000);
+                $(".con2Item2").delay(1500).slideDown(1000);
+                $(".con2ItemNull").delay(2000).slideDown(1000);
+                $(".con2Item3").delay(2500).not(":animated").animate({"opacity": "1"}, 1500);
+            });
+        });
+    </script>
+    
+    <!-- con3 -->
+    <style>
+        #con3 {
+            width: 100%;
+            height: auto;
+            transition: 0.5s;
+            clear: both;
+        }
+        #con3:after {
+            display: block;
+            content: " ";
+            clear: both;
+        }
+        .con3In {
+            width: 80%;
+            height: auto;
+            margin: 0% auto;
+        }
+        .con3TitIn {
+            width: 100%;
+            height: auto;
+        }
+        .con3Box {
+            width: 100%;
+            height: auto;
+        }
+        .con3Box li.con3BoxLst {
+            display: block;
+            float: left;
+            width: 15%;
+            height: auto;
+            margin: 5%;
+            box-sizing: border-box;
+            padding-bottom: 1%;
+            cursor: pointer;
+            position: relative;
+        }
+        .con3Box li.con3BoxLst a.c3Link {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .c3BoxTit1 {
+            text-align: center;
+            font-size: 3vmax;
+            color: #fff;
+            font-family: 'Amethysta', serif;
+            font-weight: 100;
+            padding-top: 20%;
+        }
+        .c3BoxTit2 {
+            text-align: center;
+            font-size: 1vmax;
+            color: #fff;
+            font-weight: 10;
+            font-family: 'Amethysta', serif;
+        }
+        .c3Line {
+            display: block;
+            position: absolute;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        .c3Line.l1 {
+            width: 0%;
+            height: auto;
+            border-bottom: 2px solid #c82050;
+            top: 0;
+            left: 0;
+        }
+        .c3Line.l2 {
+            width: auto;
+            height: 0%;
+            border-right: 2px solid #c82050;
+            top: 0;
+            right: 0;
+        }
+        .c3Line.l3 {
+            width: 0%;
+            height: auto;
+            border-bottom: 2px solid #c82050;
+            bottom: 0;
+            right: 0;
+        }
+        .c3Line.l4 {
+            width: auto;
+            height: 0%;
+            border-left: 2px solid #c82050;
+            bottom: 0;
+            left: 0;
+        }
+        .con3IHover, .con3IHover2, .con3IHover3, .con3IHover4 {
+            width: 100%;
+            height: 20%;
+            box-sizing: border-box;
+            clear: both;
+            margin: 0;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .con3IHover.on, .con3IHover2.on, .con3IHover3.on, .con3IHover4.on {
+            opacity: 1;
+        }
+        h2.con3HoverTxt {
+            text-align: center;
+            color: #fff;
+            font-size: 1vmax;
+            padding-top: 20%;
+            box-sizing: border-box;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .c3More {
+            display: block;
+            width: 10%;
+            height: auto;
+            margin: 20% auto;
+        }
+        .c3More img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    
+    <!-- con3 script -->
+    <script>
+        $(document).ready(function(){
+            $(".con3Box li.con3BoxLst").css("opacity", "0");
+            $(".con3In").hover(function(){
+                $(".con3Box li.con3BoxLst1").delay(650).not(":animated").animate({"opacity": "1"}, 800);
+                $(".con3Box li.con3BoxLst2").delay(950).not(":animated").animate({"opacity": "1"}, 800);
+                $(".con3Box li.con3BoxLst3").delay(1250).not(":animated").animate({"opacity": "1"}, 800);
+                $(".con3Box li.con3BoxLst4").delay(1550).not(":animated").animate({"opacity": "1"}, 800);
+            });
+            $(".con3Box li.con3BoxLst1").hover(function(){
+                $(this).css("background", "none");
+                $(".con3IHover").toggleClass("on");
+                $(".line1").fadeIn(500);
+                $(".con3Box li.con3BoxLst1 .c3Line.l1").css("width", "100%");
+                $(".con3Box li.con3BoxLst1 .c3Line.l2").css("height", "100%");
+                $(".con3Box li.con3BoxLst1 .c3Line.l3").css("width", "100%");
+                $(".con3Box li.con3BoxLst1 .c3Line.l4").css("height", "100%");
+                
+            });
+            $(".con3Box li.con3BoxLst1").mouseleave(function(){
+                $(".con3Box li.con3BoxLst1 .c3Line.l1").css("width", "0%");
+                $(".con3Box li.con3BoxLst1 .c3Line.l2").css("height", "0%");
+                $(".con3Box li.con3BoxLst1 .c3Line.l3").css("width", "0%");
+                $(".con3Box li.con3BoxLst1 .c3Line.l4").css("height", "0%");
+            });
+            
+            $(".con3Box li.con3BoxLst2").hover(function(){
+                $(this).css("background", "none");
+                $(".con3IHover2").toggleClass("on");
+                $(".line1").fadeIn(500);
+                $(".con3Box li.con3BoxLst2 .c3Line.l1").css("width", "100%");
+                $(".con3Box li.con3BoxLst2 .c3Line.l2").css("height", "100%");
+                $(".con3Box li.con3BoxLst2 .c3Line.l3").css("width", "100%");
+                $(".con3Box li.con3BoxLst2 .c3Line.l4").css("height", "100%");
+                
+            });
+            $(".con3Box li.con3BoxLst2").mouseleave(function(){
+                $(".con3Box li.con3BoxLst2 .c3Line.l1").css("width", "0%");
+                $(".con3Box li.con3BoxLst2 .c3Line.l2").css("height", "0%");
+                $(".con3Box li.con3BoxLst2 .c3Line.l3").css("width", "0%");
+                $(".con3Box li.con3BoxLst2 .c3Line.l4").css("height", "0%");
+            });
+            
+            $(".con3Box li.con3BoxLst3").hover(function(){
+                $(this).css("background", "none");
+                $(".con3IHover3").toggleClass("on");
+                $(".line1").fadeIn(500);
+                $(".con3Box li.con3BoxLst3 .c3Line.l1").css("width", "100%");
+                $(".con3Box li.con3BoxLst3 .c3Line.l2").css("height", "100%");
+                $(".con3Box li.con3BoxLst3 .c3Line.l3").css("width", "100%");
+                $(".con3Box li.con3BoxLst3 .c3Line.l4").css("height", "100%");
+                
+            });
+            $(".con3Box li.con3BoxLst3").mouseleave(function(){
+                $(".con3Box li.con3BoxLst3 .c3Line.l1").css("width", "0%");
+                $(".con3Box li.con3BoxLst3 .c3Line.l2").css("height", "0%");
+                $(".con3Box li.con3BoxLst3 .c3Line.l3").css("width", "0%");
+                $(".con3Box li.con3BoxLst3 .c3Line.l4").css("height", "0%");
+            });
+            
+            $(".con3Box li.con3BoxLst4").hover(function(){
+                $(this).css("background", "none");
+                $(".con3IHover4").toggleClass("on");
+                $(".line1").fadeIn(500);
+                $(".con3Box li.con3BoxLst4 .c3Line.l1").css("width", "100%");
+                $(".con3Box li.con3BoxLst4 .c3Line.l2").css("height", "100%");
+                $(".con3Box li.con3BoxLst4 .c3Line.l3").css("width", "100%");
+                $(".con3Box li.con3BoxLst4 .c3Line.l4").css("height", "100%");
+                
+            });
+            $(".con3Box li.con3BoxLst4").mouseleave(function(){
+                $(".con3Box li.con3BoxLst4 .c3Line.l1").css("width", "0%");
+                $(".con3Box li.con3BoxLst4 .c3Line.l2").css("height", "0%");
+                $(".con3Box li.con3BoxLst4 .c3Line.l3").css("width", "0%");
+                $(".con3Box li.con3BoxLst4 .c3Line.l4").css("height", "0%");
+            });
+            
+            
+        });
+    </script>
+    
+    <!-- con4 -->
+    <style>
+        #con4 {
+            width: 100%;
+            height: auto;
+        }
+        .con4In {
+            width: 100%;
+            height: auto;
+        }
+        .con4In ul {
+            width: 100%;
+            height: auto;
+            margin-bottom: 5%;
+        }
+        .con4In ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .con4In ul li {
+            float: left;
+            width: 50%;
+            height: 37vw;
+        }
+        .con4In ul li.con4Item1 {
+            background-image: url("./images/con4Item1Bg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+        .con4In ul li.con4Item2 {
+            background-color: #d91e3b;
+        }
+        .con4BoxTit {
+            text-align: center;
+            padding: 5%;
+            box-sizing: border-box;
+            color: #fff;
+            font-size: 3vmax;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+        }
+        .con4BoxTxt {
+            display: block;
+            text-align: center;
+            padding: 1.5%;
+            box-sizing: border-box;
+            color: #fff;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #3f3f3f;
+        }
+        .con4More {
+            display: block;
+            text-align: center;
+            color: #fff;
+            font-family: 'Text Me One', sans-serif;
+            font-size: 1vmax;
+            font-weight: bold;
+            padding: 2.5% 0%;
+            transition: 0.51s;
+            width: 20%;
+            margin: 10% auto;
+        }
+        .con4More:hover {
+            background-color: #fff;
+            color: #3f3f3f;
+        }
+        #map_canvas {
+            clear: both;
+            width: 70%;
+            height: 12.5vw;
+            margin: 5% auto;
+            display: block;
+        }
+        .con4Item2Img {
+            display: block;
+            width: 100%;
+            height: 12.5vw;
+            margin: 5% auto;
+        }
+    </style>
+    
+    <!-- google Map -->
+    <script>
+      function initialize() {
+       var myLatlng = new google.maps.LatLng(36.356626, 127.341945);
+       var mapOptions = {
+            zoom: 17,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+       }
+       var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+          var marker = new google.maps.Marker({
+             position: myLatlng,
+             map: map,
+             title: "한진오피스텔 1515호 IFT"
+            });
+          
+      }
+ </script>
+    
+    <!-- footer -->
+    <style>
+        #ft {
+            width: 100%;
+            height: auto;
+            clear: both;
+            padding: 2.5% 0%;
+            background-color: #fff;
+        }
+        .ftIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .ftLogo {
+            display: inline-block;
+            width: 45%;
+            height: auto;
+            
+        }
+        .ftLogo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .ftLeft {
+            width: 30%;
+            height: auto;
+            float: left;
+        }
+        .addPlus {
+            width: 100%;
+            height: auto;
+            margin: 2.5% 0%;
+        }
+        .addPlus:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .addPlus li.ftLst {
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+        .addPlus li.ftLst .add {
+            text-align: left;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 2.5% 0%;
+        }
+        .addPlus li.ftLst .call {
+            display: block;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 2.5% 0%;
+        }
+        .addPlus li.ftLst .mail {
+            display: block;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .ftSnsBox {
+            width: 50%;
+            height: auto;
+            padding: 2.5% 0%;
+        }
+        .ftSnsBox li {
+            float: left;
+            width: 25%;
+            height: auto;
+        }
+        .ftSnsBox li img {
+            display: block;
+            width: 50%;
+            height: auto;
+        }
+        .ftLst2 {
+            width: 70%;
+            height: auto;
+            float: right;
+        }
+        .ftLst2 ul {
+            width: 100%;
+            height: auto;
+        }
+        .ftLst2 ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .ftLst2 ul li {
+            float: left;
+            width: 25%;
+            height: auto;
+        }
+        .ftLst2 ul li a {
+            display: block;
+            color: #3f3f3f;
+            font-size: 0.9vmax;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.4s;
+            margin: 5% auto;
+        }
+        .ftLst2 ul li a:hover {
+            color: #c90230;
+        }
+        .famTit {
+            display: block;
+            text-align: center;
+            font-size: 1.2vmax;
+            font-weight: bold;
+            font-family: 'Text Me One', sans-serif;
+            color: #3f3f3f;
+            margin-bottom: 7.5%;
+            padding-bottom: 5%;
+            border-bottom: 2px solid #3f3f3f;
+        }
+        .copyright {
+            clear: both;
+            display: block;
+            text-align: center;
+            color: #3f3f3f;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            padding: 1.5% 0%;
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            margin-top: 5%;
+        }
+    </style>
+    
+    <!-- 모바일 css -->
+    <!-- vs 포함 -->
+    <style>
+        #mobile {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        #Mhd {
+            width: 100%;
+            height: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: 0.5s;
+        }
+        #Mhd.on {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: 0.5s;
+        }
+        .MhdIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .Mlogo {
+            display: block;
+            width: 40%;
+            height: auto;
+            margin: 5% auto;
+        }
+        .Mlogo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        #Mvs {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        #Mvs ul {
+            width: 400%;
+            height: auto;
+        }
+        #Mvs ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        #Mvs ul li {
+            float: left;
+            width: 25%;
+            height: auto;
+        }
+        #Mvs ul li img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .Mmenu {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: -70%;
+            width: 70%;
+            height: auto;
+            background-color: #fff;
+            transition: 0.5s;
+            z-index: 9999;
+        }
+        .Mmenu.on {
+            left: 0;
+        }
+        .MmenuBtn {
+            display: block;
+            width: 10vw;
+            height: 10vw;
+            background-image: url("./images/MmenuBtn.png");
+            border: 0;
+            position: absolute;
+            right: -10vw;
+            top: 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 9999;
+        }
+        .MmenuBtn.on {
+            background-image: url("./images/MmenuX.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .Mmenu ul {
+            width: 100%;
+            height: auto;
+            z-index: 9999;
+        }
+        .Mmenu ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .Mmenu ul li {
+            float: left;
+            width: 75%;
+            height: auto;
+            margin: 5% 2.5%;
+            border-bottom: 1px solid #005871;
+            padding-bottom: 5%;
+            z-index: 9999;
+        }
+        .Mmenu ul li a {
+            display: inline-block;
+            color: #005871;
+            font-weight: bold;
+            font-size: 1.7vmax;
+            font-family: 'Text Me One', sans-serif;
+        }
+        .Mmenu ul li a.Mclick {
+            display: inline-block;
+            float: right;
+            padding-right: 5%;
+            padding-top: 1%;
+            font-weight: 100;
+            font-family: 'Amethysta', serif;
+            font-size: 1.7vmax;
+        }
+    </style>
+    
+    <!-- vs script -->
+    <script>
+        $(document).ready(function() {
+            var wd = parseInt($(window).width());
+            function rAni(){
+                $("#Mvs ul").not(":animated").animate({"margin-left" : "-100%"}, 1800, function(){
+                    $("#Mvs ul li").eq(0).appendTo($("#Mvs ul"));
+                    $("#Mvs ul").css("margin-left", "0px");
+                });
+            };
+            var intv = setInterval(function(){
+                rAni();
+            }, 2000);
+        });
+    </script>
+    
+    <!-- Mmenu -->
+    <script>
+        $(document).ready(function(){
+            $(".MmenuBtn").click(function(){
+                $("#Mhd").toggleClass("on");
+                $(this).toggleClass("on");
+                $(".Mmenu").toggleClass("on");
+            });
+            
+        });
+    </script>
+    
+    <!-- Mcon2 -->
+    <style>
+        #Mcon2 {
+            width: 100%;
+            height: auto;
+            clear: both;
+        }
+        #Mcon2:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .Mcon2In {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .MconTit1 {
+            padding-top: 20%;
+            text-align: center;
+            font-size: 3vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+        }
+        .MconTit2 {
+            text-align: center;
+            font-size: 0.2vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 2%;
+            box-sizing: border-box;
+        }
+        
+        .Mcon2In ul {
+            width: 100%;
+            height: auto;
+            margin-top: 7.5%;
+        }
+        .Mcon2In ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .Mcon2In ul li {
+            float: left;
+            width: 60%;
+            height: 30vw;
+            margin: 20%;
+            margin-bottom: 15%;
+        }
+        .Mcon2In ul li img {
+            display: block;
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .Mcon2In ul li.Mcon2ItemPlus img, .Mcon2In ul li.Mcon2ItemNull img {
+            display: block;
+            width: 20%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 50%;
+        }
+        .Mcon2ItemTit {
+            color: #50c3c8;
+            font-size: 1.3vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            text-align: center;
+            margin: 15% 0%;
+        }
+        .Mcon2ItemTxt {
+            display: block;
+            color: #fff;
+            font-size: 0.7vmax;
+            text-align: center;
+        }
+    </style>
+    
+    <!-- Mcon3 -->
+    <style>
+        #Mcon3 {
+            width: 100%;
+            height: auto;
+            transition: 0.5s;
+            clear: both;
+        }
+        #Mcon3:after {
+            display: block;
+            content: " ";
+            clear: both;
+        }
+        .Mcon3In {
+            width: 80%;
+            height: auto;
+            margin: 0% auto;
+            margin-top: 30%;
+            padding-top: 20%;
+        }
+        .Mcon3Box {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon3Box:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .Mcon3Box li.Mcon3BoxLst {
+            display: block;
+            float: left;
+            width: 100%;
+            height: auto;
+            margin: 10% 0%;
+            box-sizing: border-box;
+            padding-bottom: 1%;
+            cursor: pointer;
+            position: relative;
+        }
+        .Mcon3Box li.Mcon3BoxLst a.Mc3Link {
+            display: block;
+            width: 100%;
+            height: auto;
+            z-index: -1;
+        }
+        .Mc3BoxTit1 {
+            text-align: center;
+            font-size: 3vmax;
+            color: #fff;
+            font-family: 'Amethysta', serif;
+            font-weight: 100;
+            padding-top: 20%;
+        }
+        .Mc3BoxTit2 {
+            text-align: center;
+            font-size: 1vmax;
+            color: #fff;
+            font-weight: 10;
+            font-family: 'Amethysta', serif;
+        }
+        .Mcon3Box li.Mcon3BoxLst1 {
+            background-image: url("./images/c3Item1Bg1.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .Mcon3Box li.Mcon3BoxLst2 {
+            background-image: url("./images/c3Item1Bg4.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .Mcon3Box li.Mcon3BoxLst3 {
+            background-image: url("./images/c3Item1Bg2.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .Mcon3Box li.Mcon3BoxLst4 {
+            background-image: url("./images/c3Item1Bg3.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+    
+    <!-- Mcon4 -->
+    <style>
+        #Mcon4 {
+            width: 100%;
+            height: auto;
+        }
+        .Mcon4In {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .Mcon4In ul li.Mcon4Item2 {
+            background-color: #d91e3b;
+        }
+        .Mcon4BoxTit {
+            text-align: center;
+            padding: 5%;
+            box-sizing: border-box;
+            color: #fff;
+            font-size: 3vmax;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+        }
+        .Mcon4BoxTxt {
+            display: block;
+            text-align: center;
+            padding: 1.5%;
+            box-sizing: border-box;
+            color: #fff;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #3f3f3f;
+        }
+        .Mcon4More {
+            display: block;
+            text-align: center;
+            color: #3f3f3f;
+            font-family: 'Gothic A1', sans-serif;
+            font-size: 2vmax;
+            font-weight: bold;
+            padding: 2.5% 0%;
+            transition: 0.51s;
+            width: 60%;
+            margin: 10% auto;
+            background-color: #fff;
+        }
+    </style>
+    
+    <!-- Mft -->
+    <style>
+        #Mft {
+            width: 100%;
+            height: auto;
+            clear: both;
+            padding: 2.5% 0%;
+            background-color: #fff;
+        }
+        .MftIn {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .MftLogo {
+            display: inline-block;
+            width: 40%;
+            height: auto; 
+        }
+        .MftLogo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .MftLeft {
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+        .MaddPlus {
+            width: 100%;
+            height: auto;
+            margin: 2.5% 0%;
+        }
+        .MaddPlus:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .MaddPlus li.MftLst {
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+        .MaddPlus li.MftLst .Madd {
+            text-align: left;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 2.5% 0%;
+        }
+        .MaddPlus li.MftLst .Mcall {
+            display: block;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 2.5% 0%;
+        }
+        .MaddPlus li.MftLst .Mmail {
+            display: block;
+            color: #3f3f3f;
+            font-size: 1vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        .MftSnsBox {
+            width: 50%;
+            height: auto;
+            padding: 2.5% 0%;
+        }
+        .MftSnsBox li {
+            float: left;
+            width: 25%;
+            height: auto;
+            
+        }
+        .MftSnsBox li img {
+            display: block;
+            width: 50%;
+            height: auto;
+        }
+        
+        .MftLst2 {
+            width: 100%;
+            height: auto;
+            clear: both;
+        }
+        .MftLst2 ul {
+            width: 100%;
+            height: auto;
+        }
+        .MftLst2 ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .MftLst2 ul li {
+            float: left;
+            width: 50%;
+            height: auto;
+            margin-top: 10%;
+        }
+        .MftLst2 ul li a {
+            display: block;
+            color: #3f3f3f;
+            font-size: 0.9vmax;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.4s;
+            margin: 5% auto;
+        }
+        .MftLst2 ul li a:hover {
+            color: #c90230;
+        }
+        .MfamTit {
+            display: block;
+            text-align: center;
+            font-size: 1.2vmax;
+            font-weight: bold;
+            font-family: 'Text Me One', sans-serif;
+            color: #3f3f3f;
+            margin-bottom: 7.5%;
+            padding-bottom: 5%;
+            border-bottom: 2px solid #3f3f3f;
+        }
+        .Mcopyright {
+            clear: both;
+            display: block;
+            text-align: center;
+            color: #3f3f3f;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            padding: 1.5% 0%;
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            margin-top: 5%;
+        }
+    </style>
+
+    
+    <style>
+        @media screen and (max-width: 767px) {
+            /* 모바일 */ 
+            #desktop {
+                display: none;
+            }
+            #mobile {
+                display: block;
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:959px) {
+            /* 테블릿 */
+            
+        }
+        
+        @media screen and (min-width:959px) and (max-width:1199px) {
+            /* 데스크탑 */
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width:1199px) {
+            #desktop {
+                display: block;
+            }
+            #mobile {
+                display: none;
+            }
+        }
+    </style>
+    
+    
+</head>
+<body onload="initialize()">
+   <div id="particles"></div>
+    <div class="main" id="desktop">
+       
+        <header id="hd">
+           <div class="hdIn">
+               <ul class="snsBox">
+                   <li><a href=""><img src="./images/skype.png" alt="전호"></a></li>
+                   <li><a href=""><img src="./images/twitter.png" alt="트위터"></a></li>
+                   <li><a href=""><img src="./images/insta.png" alt="인스타그램"></a></li>
+                   <li><a href=""><img src="./images/google.png" alt="구글"></a></li>
+               </ul>
+               
+               
+               <a href="index.html" class="logo">
+                   <img src="./images/logo_off.png" alt="로고">
+                </a>
+                
+                <ul class="menu">
+                    <li class="menuLst">
+                        <a href="./intro.html">INTRO</a>
+                    </li>
+                    <li class="menuLst">
+                        <a href="./makerspace.html">MAKER SPACE</a>
+
+                    </li>
+                    <li class="menuLst">
+                        <a href="./public.html">PUBLIC EDU</a>
+                    </li>
+                    <li class="menuLst">
+                        <a href="./rd.html">R &amp; D</a>
+
+                    </li>
+                    <li class="menuLst">
+                        <a href="./franchise.html">FRANCHISE</a>
+  
+                    </li>
+                    <li class="menuLst">
+                        <a href="./social.html">SOCIAL CONTRIBUTION</a>
+
+                    </li>
+                    <li class="menuLst">
+                        <a href="./shooping.html">SHOPPING MALL</a>
+                    </li>
+                </ul>
+           </div>
+       </header>
+            <div class="con" id="con1">
+                <figure id="vs">
+                    <ul>
+                        <li>
+                            <img src="./images/vs1.png" alt="">
+                            <span class="vsTit1">미래에는 과연</span>
+                            <span class="vsTit2">무엇이 있을까 ?</span>
+                            <h2 class="vsTxt">끊임없이 성장하는 미래<br>미래를 향한 움직임 IFT에서 실천하겠습니다.</h2>
+                        </li>
+                        <li>
+                            <img src="./images/vs2.png" alt="">
+                            <span class="vsTit1">미래를 향한 움직임</span>
+                            <span class="vsTit2">메이커 운동 !</span>
+                            <h2 class="vsTxt">구상하고 개발하는 혁신시대<br>세계적인 제조업 혁신이 연계된 창작운동 IFT가함께합니다.</h2>
+                        </li>
+                        <li>
+                            <img src="./images/vs3.png" alt="">
+                            <span class="vsTit1">참여 기반의 확대</span>
+                            <span class="vsTit2">메이커 창작활동 지원 ?</span>
+                            <h2 class="vsTxt">메이커의 자기주도적 창작활동에<br>필요한 서비스 IFT에서 책임지겠습니다.</h2>
+                        </li>
+                        <li>
+                            <img src="./images/vs4.png" alt="">
+                            <span class="vsTit1">성적이 아닌</span>
+                            <span class="vsTit2">미래에 대한 성장</span>
+                            <h2 class="vsTxt">배움의 향상은 성적<br>하지만 성적보단 성장이 중요한 시점 IFT가 시작합니다.</h2>
+                        </li>
+                    </ul>
+                </figure>
+                
+                <div class="btnBox">
+                        <ul>
+                            <li>
+                                <button class="btn1 on">
+                                   <span class="plus on">→</span>
+                                    <span class="btnTxt on"><strong>미래에는 과연?</strong><br>The Future and Indeed?</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn2">
+                                   <span class="plus">→</span>
+                                    <span class="btnTxt"><strong>메이커 운동?</strong><br>MAKER MOVEMENT?</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn3">
+                                   <span class="plus">→</span>
+                                    <span class="btnTxt"><strong>창작활동?</strong><br>Creative Activities?</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn4">
+                                   <span class="plus">→</span>
+                                    <span class="btnTxt"><strong>미래 성장?</strong><br>Future growth?</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            
+            <div class="con" id="con2">
+                <div class="con2In">
+                   <h2 class="conTit1">미래를 향한 움직임</h2>
+                   <h2 class="conTit2">MAKER MOVEMENT</h2>
+                    
+                    <ul>
+                        <li class="con2Item1">
+                            <img src="./images/con2Icon1.png" alt="" class="con2Img1">
+                            <h2 class="con2ItemTit">계속 해왔던 것</h2>
+                            <span class="con2ItemTxt">인류의 오랜 역사 속에서<br>생활의 필요에 의해<br>이루어 지던 개인 D.I.Y 활동</span>
+                        </li>
+                        <li class="con2ItemPlus">
+                            <img src="./images/con2Plus.png" alt="" class="con2Img2">
+                        </li>
+                        <li class="con2Item2" >
+                            <img src="./images/con2Icon2.png" alt="" class="con2Img3">
+                            <h2 class="con2ItemTit">새로운 것</h2>
+                            <span class="con2ItemTxt">공유문화, 디지털 제작기술,<br>메이커스페이스 등<br>발전된 기술과 환경</span>
+                        </li>
+                        <li class="con2ItemNull">
+                            <img src="./images/con2Null.png" alt=""  class="con2Img4">
+                        </li>
+                        <li class="con2Item3">
+                            <img src="./images/con2Icon3.png" alt=""  class="con2Img5">
+                            <h2 class="con2ItemTit">새롭게 형성된 대중문화</h2>
+                            <span class="con2ItemTxt">새로운것과 새롭지 않은것이<br>합쳐져 형성된 사회문화적<br>현상으로, 그범위와 영향력이 제조업<br>전 영역, 전세계적으로 확대</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="con" id="con3">
+            <div class="con3In">
+                <div class="con3TitIn">
+                    <h2 class="conTit1">주요사업</h2>
+                    <h2 class="conTit2">C a r r y  &nbsp;&nbsp;&nbsp;  F o r w a r d</h2>
+                </div>
+            </div>
+            
+            <ul class="con3Box">
+                <li class="con3BoxLst con3BoxLst1">
+                    <a href="" class="c3Link">
+                        <h2 class="c3BoxTit1">FUTURE</h2>
+                        <h2 class="c3BoxTit2">IFT Maker Space</h2>
+                        <div class="con3IHover">
+                            <h2 class="con3HoverTxt">
+                                미래의 움직임<br>미래를 고집이 아닌,<br>형성해가는 미래<br>IFT가 추진합니다.
+                            </h2>
+                            <span class="c3More">
+                                <img src="./images/plus.png" alt="플러스">
+                            </span>
+                        </div>
+                    </a>
+                    <span class="c3Line l1"></span>
+                    <span class="c3Line l2"></span>
+                    <span class="c3Line l3"></span>
+                    <span class="c3Line l4"></span>
+                </li>
+                <li class="con3BoxLst con3BoxLst2">
+                    <a href="" class="c3Link">
+                        <h2 class="c3BoxTit1">B&nbsp;2&nbsp;B</h2>
+                        <h2 class="c3BoxTit2">Business to Business</h2>
+                        <div class="con3IHover2">
+                            <h2 class="con3HoverTxt">
+                                믿을 수 있는 사업<br>믿음을 주는 사업<br>글로벌 시대<br>IFT가 함께 합니다.
+                            </h2>
+                            <span class="c3More">
+                                <img src="./images/plus.png" alt="플러스">
+                            </span>
+                        </div>
+                    </a>
+                    <span class="c3Line l1"></span>
+                    <span class="c3Line l2"></span>
+                    <span class="c3Line l3"></span>
+                    <span class="c3Line l4"></span>
+                </li>
+                <li class="con3BoxLst con3BoxLst3">
+                    <a href="" class="c2Link">
+                        <h2 class="c3BoxTit1">R&nbsp;&amp;&nbsp;D</h2>
+                        <h2 class="c3BoxTit2">Research And Development</h2>
+                        <div class="con3IHover3">
+                            <h2 class="con3HoverTxt">
+                                4차 산업의 중심<br>IFT 연구와 개발을 위한<br>연구소 설립을 통해<br>앞서가는 기업
+                            </h2>
+                            <span class="c3More">
+                                <img src="./images/plus.png" alt="플러스">
+                            </span>
+                        </div>
+                    </a>
+                    <span class="c3Line l1"></span>
+                    <span class="c3Line l2"></span>
+                    <span class="c3Line l3"></span>
+                    <span class="c3Line l4"></span>
+                </li>
+                <li class="con3BoxLst con3BoxLst4">
+                    <a href="" class="c3Link">
+                        <h2 class="c3BoxTit1">S&nbsp;H&nbsp;O&nbsp;P</h2>
+                        <h2 class="c3BoxTit2">Shopping Mall</h2>
+                        <div class="con3IHover4">
+                            <h2 class="con3HoverTxt">
+                                원하는것을 만들고<br>스스로 배울 수 있는<br>발달에 도움을<br>IFT가 함께 합니다.
+                            </h2>
+                            <span class="c3More">
+                                <img src="./images/plus.png" alt="플러스">
+                            </span>
+                        </div>
+                    </a>
+                    <span class="c3Line l1"></span>
+                    <span class="c3Line l2"></span>
+                    <span class="c3Line l3"></span>
+                    <span class="c3Line l4"></span>
+                </li>
+            </ul>
+            
+        </div>
+           
+            <div class="con" id="con4">
+                <div class="con4In">
+                   <h2 class="conTit1">IFT 기업</h2>
+                    <h2 class="conTit2">A brief introduction</h2>
+                    <ul>
+                        <li class="con4Item1">
+                            <h2 class="con4BoxTit">오시는 길</h2>
+                            <span class="con4BoxTxt">대전광역시 유성구 대학로 31 한진오피스텔 1515호<br>31, Daehak-ro, Yuseong-gu, 1515room, Daejeon, Republic of Korea</span>
+                            <div class="ciBox mapBox">
+                                  <div id="map_canvas"></div>
+                              </div>
+                            <a href="" class="con4More">INTRO</a>
+                        </li>
+                        <li class="con4Item2">
+                            <h2 class="con4BoxTit">아이디어 제안하기</h2>
+                            <span class="con4BoxTxt">로봇과 코딩에 관련하여 협력 및 제안 등을 받고있습니다.<br>인재 양성을 위한 참신한 아이디어를 기다립니다.</span>
+                            <img src="./images/con4Item2Img.png" alt="" class="con4Item2Img">
+                            <a href="mailTo:rococup@naver.com" class="con4More">메일 보내기</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <footer id="ft">
+                <div class="ftIn">
+                    
+                    <div class="ftLeft">
+                       <a href="index.html" class="ftLogo">
+                        <img src="./images/logo_on.png" alt="">
+                        </a>
+                            <ul class="addPlus">
+                            <li class="ftLst">
+                                <span class="add">대전광역시 유성구 대학로 31 한진오피스텔 1515호</span>
+                            </li>
+                            <li class="ftLst">
+                                <a href="call:070-4185-7272" class="call">전화 : 070-4185-7272</a>
+                            </li>
+                            <li class="ftLst">
+                                <a href="mailTo:rococup@naver.com" class="mail">이메일 : rococup@naver.com</a>
+                            </li>
+                            <li class="ftLst">
+                                    <ul class="ftSnsBox">
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/kakao.png" alt="ftSns"></a></li>
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/instagram.png" alt="ftSns"></a></li>
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/facebook.png" alt="ftSns"></a></li>
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/blog.png" alt="ftSns"></a></li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ftLst2">
+                        <ul>
+                            <li>
+                                <span class="famTit">ABOUT US</span>
+                                <a href="">인사말</a>
+                                <a href="">회사소개</a>
+                                <a href="">안내말</a>
+                                <a href="">찾아오시는 길</a>
+                            </li>
+                            <li>
+                                <span class="famTit">FAMILLY SITE</span>
+                                <a href="">한국로봇연합회</a>
+                                <a href="">대전 가온누리</a>
+                                <a href="">세종 가온누리</a>
+                                <a href="">유비테크</a>
+                            </li>
+                            <li>
+                                <span class="famTit">CUSTOMER SUPPORT</span>
+                                <a href="">1:1 문의</a>
+                                <a href="">상담 예약</a>
+                                <a href="">메일 보내기</a>
+                            </li>
+                            <li>
+                                <span class="famTit">SITE REGULATIONS</span>
+                                <a href="">개인정보처리방침</a>
+                                <a href="">홈페이지이용약관</a>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                        <span class="copyright">Copyright ⓒ IFT All Rights Reserved</span>
+                </div>
+            </footer>
+    </div>
+    
+    <div class="main" id="mobile">
+        <header id="Mhd">
+        <div class="MhdIn">
+            <a href="" class="Mlogo">
+                  <img src="./images/logo_off.png" alt="">
+                </a>
+            <div class="Mmenu">
+                <button class="MmenuBtn">
+                    
+                </button>
+                
+                <ul>
+                    <li class="">
+                        <a href="./intro.html">INTRO</a>
+                        <a href="./intro.html" class="Mclick">></a>
+
+                    </li>
+                    <li class="">
+                        <a href="./makerspace.html">MAKER SPACE</a>
+                        <a href="./makerspace.html" class="Mclick">></a>
+
+                    </li>
+                    <li class="">
+                        <a href="./public.html">PUBLIC EDU</a>
+                        <a href="./public.html" class="Mclick">></a>
+                    </li>
+                    <li class="">
+                        <a href="./rd.html">R &amp; D</a>
+                        <a href="./rd.html" class="Mclick">></a>
+
+                    </li>
+                    <li class="">
+                        <a href="./franchise.html">FRANCHISE</a>
+                        <a href="./franchise.html" class="Mclick">></a>
+  
+                    </li>
+                    <li class="">
+                        <a href="./social.html">SOCIAL CONTRIBUTION</a>
+                        <a href="./social.html" class="Mclick">></a>
+
+                    </li>
+                    <li class="">
+                        <a href="./sopping.html">SHOPPING MALL</a>
+                        <a href="./sopping.html" class="Mclick">></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+     </header>
+       
+        <figure id="Mvs">
+            <ul>
+                <li>
+                    <img src="./images/vs1.png" alt="">
+                </li>
+                <li>
+                    <img src="./images/vs1.png" alt="">
+                </li>
+                <li>
+                    <img src="./images/vs1.png" alt="">
+                </li>
+                <li>
+                    <img src="./images/vs1.png" alt="">
+                </li>
+            </ul>
+        </figure>
+        
+        <div class="con" id="Mcon2">
+            <div class="Mcon2In">
+                <h2 class="MconTit1">미래를 향한 움직임</h2>
+                <h2 class="MconTit2">MAKER MOVEMENT</h2>
+                
+                <ul>
+                        <li class="Mcon2Item1">
+                            <img src="./images/con2Icon1.png" alt="">
+                            <h2 class="Mcon2ItemTit">계속 해왔던 것</h2>
+                            <span class="Mcon2ItemTxt">인류의 오랜 역사 속에서<br>생활의 필요에 의해<br>이루어 지던 개인 D.I.Y 활동</span>
+                        </li>
+                        <li class="Mcon2ItemPlus">
+                            <img src="./images/con2Plus.png" alt="">
+                        </li>
+                        <li class="Mcon2Item2" style="margin-top: 2.5%;">
+                            <img src="./images/con2Icon2.png" alt="">
+                            <h2 class="Mcon2ItemTit">새로운 것</h2>
+                            <span class="Mcon2ItemTxt">공유문화, 디지털 제작기술,<br>메이커스페이스 등<br>발전된 기술과 환경</span>
+                        </li>
+                        <li class="Mcon2ItemNull">
+                            <img src="./images/con2Null.png" alt="">
+                        </li>
+                        <li class="Mcon2Item3" style="margin-top: 2.5%;">
+                            <img src="./images/con2Icon3.png" alt="">
+                            <h2 class="Mcon2ItemTit">새롭게 형성된 대중문화</h2>
+                            <span class="Mcon2ItemTxt">새로운것과 새롭지 않은것이<br>합쳐져 형성된 사회문화적<br>현상으로, 그범위와 영향력이 제조업<br>전 영역, 전세계적으로 확대</span>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        
+        <div class="con" id="Mcon3">
+            <div class="Mcon3In">
+               <h2 class="MconTit1">주요사업</h2>
+                <h2 class="MconTit2">C a r r y     F o r w a r d</h2>
+                
+                <ul class="Mcon3Box">
+                <li class="Mcon3BoxLst Mcon3BoxLst1">
+                    <a href="" class="Mc3Link">
+                        <h2 class="Mc3BoxTit1">FUTURE</h2>
+                        <h2 class="Mc3BoxTit2">IFT Maker Space</h2>
+                        
+                    </a>
+                </li>
+                <li class="Mcon3BoxLst Mcon3BoxLst2">
+                    <a href="" class="Mc3Link">
+                        <h2 class="Mc3BoxTit1">B&nbsp;2&nbsp;B</h2>
+                        <h2 class="Mc3BoxTit2">Business to Business</h2>
+                        
+                    </a>
+
+                </li>
+                <li class="Mcon3BoxLst Mcon3BoxLst3">
+                    <a href="" class="Mc2Link">
+                        <h2 class="Mc3BoxTit1">R&nbsp;&amp;&nbsp;D</h2>
+                        <h2 class="Mc3BoxTit2">Research And Development</h2>
+                        
+                    </a>
+                </li>
+                <li class="Mcon3BoxLst Mcon3BoxLst4">
+                    <a href="" class="Mc3Link">
+                        <h2 class="Mc3BoxTit1">S&nbsp;H&nbsp;O&nbsp;P</h2>
+                        <h2 class="Mc3BoxTit2">Shopping Mall</h2>
+                        
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        
+        <div class="con" id="Mcon4">
+            <div class="Mcon4In">
+                    <ul>
+                        <li class="Mcon4Item2">
+                            <h2 class="Mcon4BoxTit">아이디어 제안하기</h2>
+                            <span class="Mcon4BoxTxt">로봇과 코딩에 관련하여 협력 및 제안 등을 받고있습니다.<br>인재 양성을 위한 참신한 아이디어를 기다립니다.</span>
+                            <a href="mailTo:rococup@naver.com" class="Mcon4More">메일 보내기</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        
+        <footer id="Mft">
+            <div class="MftIn">
+                <div class="MftLeft">
+                       <a href="index.html" class="MftLogo">
+                        <img src="./images/logo_on.png" alt="">
+                        </a>
+                            <ul class="MaddPlus">
+                            <li class="MftLst">
+                                <span class="Madd">대전광역시 유성구 대학로 31 한진오피스텔 1515호</span>
+                            </li>
+                            <li class="MftLst">
+                                <a href="call:070-4185-7272" class="Mcall">전화 : 070-4185-7272</a>
+                            </li>
+                            <li class="MftLst">
+                                <a href="mailTo:rococup@naver.com" class="Mmail">이메일 : rococup@naver.com</a>
+                            </li>
+                            <li class="MftLst">
+                                    <ul class="MftSnsBox">
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/kakao.png" alt="ftSns"></a></li>
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/instagram.png" alt="ftSns"></a></li>
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/facebook.png" alt="ftSns"></a></li>
+                                        <li><a href="" style="z-index: 9999;"><img src="./images/blog.png" alt="ftSns"></a></li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="MftLst2">
+                        <ul>
+                            <li>
+                                <span class="MfamTit">ABOUT US</span>
+                                <a href="">인사말</a>
+                                <a href="">회사소개</a>
+                                <a href="">안내말</a>
+                                <a href="">찾아오시는 길</a>
+                            </li>
+                            <li>
+                                <span class="MfamTit">FAMILLY SITE</span>
+                                <a href="">한국로봇연합회</a>
+                                <a href="">대전 가온누리</a>
+                                <a href="">세종 가온누리</a>
+                                <a href="">유비테크</a>
+                            </li>
+                            <li>
+                                <span class="MfamTit">CUSTOMER SUPPORT</span>
+                                <a href="">1:1 문의</a>
+                                <a href="">상담 예약</a>
+                                <a href="">메일 보내기</a>
+                            </li>
+                            <li>
+                                <span class="MfamTit">SITE REGULATIONS</span>
+                                <a href="">개인정보처리방침</a>
+                                <a href="">홈페이지이용약관</a>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                        <span class="Mcopyright">Copyright ⓒ IFT All Rights Reserved</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
