@@ -73,8 +73,6 @@
     <!-- 헤더 -->
     <link rel="stylesheet" href="./css/header.css">
     
-    
-    
     <!-- footer -->
     <style>
         #ft {
@@ -518,17 +516,117 @@
         }
     </style>
     
+    <!-- vs -->
+    <style>
+        #vs {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .vs {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .vs ul {
+            width: 200%;
+            height: auto;
+        }
+        .vs ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .vs ul li {
+            float: left;
+            width: 50%;
+            height: auto;
+            position: relative;
+        }
+        .vs ul li img {
+            display: block;
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+        .vsTit1 {
+            font-size: 4vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+            position: absolute;
+            top: 35%;
+            left: 10%;
+        }
+        .vsTit2 {
+            font-size: 1.2vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+            position: absolute;
+            top: 50%;
+            left: 10%;
+        }
+        .vsTxt {
+            display: block;
+            font-size: 0.7vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+            position: absolute;
+            top: 70%;
+            left: 10%;
+        }
+        .vsBtnBox {
+            width: 10%;
+            height: auto;
+            position: absolute;
+            bottom: 5%;
+            left: 47.5%;
+        }
+        .vsBtn1, .vsBtn2 {
+            display: inline-block;
+            background: none;
+            border: 0;
+            width: 12%;
+            height: auto;
+            margin: 5%;
+            cursor: pointer;
+        }
+        .vsBtn1 img, .vsBtn2 img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $(".vsBtn1").click(function(){
+                $("#vs .vs ul").not(":animated").animate({"margin-left": "0%"}, 1200);
+                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
+                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
+            });
+            $(".vsBtn2").click(function(){
+                $("#vs .vs ul").not(":animated").animate({"margin-left": "-100%"}, 1200);
+                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
+                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
+            });
+        });
+    </script>
+    
+    
     <!-- con1 -->
     <style>
         #con1 {
             width: 100%;
             height: auto;
-            margin-top: 20%;
         }
         .con1In {
-            width: 80%;
+            width: 100%;
             height: auto;
-            margin: 0 auto;
+            margin: 10% auto;
+            overflow: hidden;
         }
         .conTit1 {
             text-align: center;
@@ -546,285 +644,410 @@
             box-sizing: border-box;
             display: block;
         }
-        .con1Box {
+        
+        .con1Vs {
             width: 100%;
-            height: auto;
-            margin-top: 5%;
-        }
-        .con1Box:after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-        .con1Box li.con1BoxLst {
-            height: auto;
-            float: left;
-            overflow: hidden;
-        }
-        .con1Box li.con1BoxLst1 {
-            width: 70%;
-            height: auto;
-        }
-        .con1Box li.con1BoxLst2 {
-            width: 30%;
-            height: auto;
-        }
-        .rightBox_In {
-            width: 100%;
-            height: auto;
-        }
-        .rightBox_In:after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-        .rightBox_In li {
-            width: 100%;
-            height: auto;
-            float: left;
-            margin: 5% -5%;
-            
-        }
-        .rightBox_In li a {
-            display: block;
-            color: #fff;
-            font-size: 2vmax;
-            font-weight: bold;
-            font-family: 'Gothic A1', sans-serif;
-            padding-bottom: 5%;
-            height: auto;
-            cursor: pointer;
-            text-align: right;
-            transition: 0.5s;
-        }
-        .rightBox_In li a.on {
-            border-bottom: 1px solid #63688e;
-            box-sizing: border-box;
-            color: #fff;
-            text-shadow: 3px 2px 13px #63688e;
-        }
-        .leftBox {
-            width: 400%;
-            height: auto;
-            background-image: url("./images/public/con1BoxBg.png");
+            height: 60vw;
+            background-image: url("./images/rd/vsBg.png");
             background-size: 100% 100%;
             background-repeat: no-repeat;
-        }
-        .leftBox:after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-        .leftBox li {
-            float: left;
-            width: 25%;
-            height: auto;
-        }
-        .leftTit {
-            font-size: 3vmax;
-            font-weight: bold;
-            color: #fff;
-            padding: 5%;
-            padding-bottom: 2%;
-            text-shadow: 2px 3px 13px #3f3f3f;
-            padding-left: 20%;
-        }
-        .leftLine {
-            display: block;
-            width: 10%;
-            height: auto;
-            border-bottom: 2px solid #fff;
-            margin: 5%;
-            margin-left: 20%;
-            
-        }
-        .leftTxt {
-            display: block;
-            color: #fff;
-            padding: 5%;
-            width: 60%;
-            height: auto;
-            font-size: 1vmax;
-            font-weight: bold;
-            font-family: 'Gothic A1', sans-serif;
-            padding-left: 20%;
-            
-        }
-        
-        .vs {
-            width: 100%;
-            height: auto;
-            margin-top: 10%;
-        }
-        #vs {
-            width: 100%;
-            height: auto;
-            overflow: hidden;
             position: relative;
         }
-        #vs ul {
+        .con1Vs ul {
             width: 500%;
             height: auto;
         }
-        #vs ul:after {
+        .con1Vs ul:after {
             content: " ";
             display: block;
             clear: both;
         }
-        #vs ul li {
+        .con1Vs ul li {
             float: left;
             width: 20%;
-            height: auto;
+            height: 60vw;
+            position: relative;
         }
-        #vs ul li img {
+        .con1Vs ul li img {
             display: block;
-            width: 100%;
+            width: 20%;
             height: auto;
-        }
-        .vsBtnL, .vsBtnR {
-            display: block;
             position: absolute;
+            top: 75%;
+            left: 10%;
+            opacity: 0;
+        }
+        .con1VsTit {
+            display: block;
+            color: #3f3f3f;
+            position: absolute;
+            top: 05%;
+            left: 15.5%;
+            text-align: left;
+            font-size: 2vmax;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            opacity: 0;
+        }
+        .con1VsTit strong {
+            text-align: left;
+            font-size: 4vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #3f3f3f; 
+        }
+        .con1VsTxt {
+            font-size: 1.5vmax;
+            color: #3f3f3f;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #ccc; 
+            position: absolute;
+            right: -50%;
+            top: 90%;
+            opacity: 0;
+            transform: rotateY(1270deg);
+            transition: 1.5s;
+        }
+        .con1VsTxt.on {
+            transform: rotateY(0deg);
+        }
+        .con1Btn {
+            position: absolute;
+            width: 30%;
+            height: auto;
+            top: 55%;
+            left: 25%;
+        }
+        .con1Btn button {
+            display: inline-block;
             border: 0;
             background: none;
-            z-index: 9999;
-            width: 3.5%;
+            width: 7.5%;
             height: auto;
             cursor: pointer;
         }
-        .vsBtnL img {
+        .con1Btn button img {
             display: block;
             width: 100%;
             height: auto;
         }
-        .vsBtnR img {
+        .con1RBtn {
+            float: right;
+        }
+    </style>
+    
+    <script>
+     $(document).ready(function(){
+         $(".con1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "55.5%"}, 1500);
+         $(".con1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
+         $(".con1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "60%", "right": "7.5%"}, 500, function(){
+             $(".con1VsTxt").stop().addClass("on");
+         });
+         
+         $(".con1LBtn").click(function(){
+             $(".con1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
+             $(".con1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
+             $(".con1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
+             $(".con1VsTxt").stop().removeClass("on");
+             
+             $(".con1Vs ul").stop().not(":animated").animate({"margin-left": "-100%"}, 800, function(){
+                 $(".con1Vs ul li").stop().eq(0).appendTo(".con1Vs ul");
+                 $(".con1Vs ul").stop().css("margin-left", "0%");
+
+                 $(".con1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "55.5%"}, 1500);
+                 $(".con1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
+                 $(".con1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "60%", "right": "7.5%"}, 500, function(){
+             $(".con1VsTxt").stop().addClass("on");
+         });
+                 
+             });
+         });
+         $(".con1RBtn").click(function(){
+             $(".con1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
+             $(".con1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
+             $(".con1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
+             $(".con1VsTxt").stop().removeClass("on");
+             
+             $(".con1Vs ul li").stop().eq(4).prependTo(".con1Vs ul");
+             $(".con1Vs ul").stop().css("margin-left", "-100%");
+             $(".con1Vs ul").stop().not(":animated").animate({"margin-left": "0%"}, 800);
+             
+             $(".con1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "55.5%"}, 1500);
+                 $(".con1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
+                 $(".con1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "60%", "right": "7.5%"}, 500, function(){
+             $(".con1VsTxt").stop().addClass("on");
+         });
+         });
+     });
+    </script>
+    
+    <!-- 모바일 -->
+    <!-- 모바일 vs -->
+    <style>
+        #Mvs {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .Mvs {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .Mvs ul {
+            width: 200%;
+            height: auto;
+        }
+        .Mvs ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .Mvs ul li {
+            float: left;
+            width: 50%;
+            height: auto;
+            position: relative;
+        }
+        .Mvs ul li img {
             display: block;
             width: 100%;
             height: auto;
+            opacity: 0.8;
         }
-        .vsBtnL {
-            top: 42.5%;
-            left: 0;
-        }
-        .vsBtnR {
-            top: 42.5%;
-            right: 0;
-        }
-        
-        .con1_3 {
-            width: 100%;
-            height: auto;
-            margin: 10% auto;
-        }
-        .txtBox {
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .txtBoxTxt {
-            display: block;
-            color: #fff;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1vmax;
-            font-family: 'Gothic A1', sans-serif;
-            
-        }
-        .txtBoxTxt strong {
-            display: block;
+        .MvsTit1 {
             font-size: 3vmax;
-            text-align: center;
             color: #fff;
             font-family: 'Gothic A1', sans-serif;
             text-shadow: 1px 1px 20px #fff;
+            position: absolute;
+            top: 35%;
+            left: 10%;
+        }
+        .MvsTit2 {
+            font-size: 1.2vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+            position: absolute;
+            top: 55%;
+            left: 10%;
+        }
+        .MvsTxt {
+            display: block;
+            font-size: 1.2vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+            position: absolute;
+            top: 70%;
+            left: 10%;
+        }
+        .MvsBtnBox {
+            width: 10%;
+            height: auto;
+            position: absolute;
+            bottom: 5%;
+            left: 46%;
+        }
+        .MvsBtn1, .MvsBtn2 {
+            display: inline-block;
+            background: none;
+            border: 0;
+            width: 12%;
+            height: auto;
+            margin: 5%;
+            cursor: pointer;
+        }
+        .MvsBtn1 img, .MvsBtn2 img {
+            display: block;
+            width: 100%;
+            height: auto;
         }
     </style>
     
     <script>
         $(document).ready(function(){
-            $(".rightBox_In li a").removeAttr("href");
-            $(".rightBtn1").click(function(){
-                $(this).addClass("on");
-                $(this).parent().siblings().find("a").removeClass("on");
-                $(".leftBox").stop().not(":animated").animate({"margin-left": "0%"}, 800);
+            $(".MvsBtn1").click(function(){
+                $("#Mvs .Mvs ul").not(":animated").animate({"margin-left": "0%"}, 1200);
+                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
+                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
             });
-            $(".rightBtn2").click(function(){
-                $(this).addClass("on");
-                $(this).parent().siblings().find("a").removeClass("on");
-                $(".leftBox").stop().not(":animated").animate({"margin-left": "-100%"}, 800);
-            });
-            $(".rightBtn3").click(function(){
-                $(this).addClass("on");
-                $(this).parent().siblings().find("a").removeClass("on");
-                $(".leftBox").stop().not(":animated").animate({"margin-left": "-200%"}, 800);
-            });
-            $(".rightBtn4").click(function(){
-                $(this).addClass("on");
-                $(this).parent().siblings().find("a").removeClass("on");
-                $(".leftBox").stop().not(":animated").animate({"margin-left": "-300%"}, 800);
-            });
-            
-            $(".vsBtnL").click(function(){
-                $(".vs #vs ul").not(":animated").animate({"margin-left": "-100%"}, 1200, function(){
-                    $(".vs #vs ul li").eq(0).appendTo(".vs #vs ul");
-                    $(".vs #vs ul").css("margin-left", "0%");
-                });
-            });
-            $(".vsBtnR").click(function(){
-                $(".vs #vs ul li").eq(4).prependTo(".vs #vs ul");
-                $(".vs #vs ul").css("margin-left", "-100%");
-                $(".vs #vs ul").not(":animated").animate({"margin-left": "0%"}, 1200);
+            $(".MvsBtn2").click(function(){
+                $("#Mvs .Mvs ul").not(":animated").animate({"margin-left": "-100%"}, 1200);
+                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
+                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
             });
         });
     </script>
     
     <style>
-        #con2 {
+        #Mcon1 {
             width: 100%;
             height: auto;
-            background-image: url("./images/public/con3Img.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            clear: both;
-            position: relative;
-            box-sizing: border-box;
-            padding: 2.5% 0%;
-            margin-top: 10%;
         }
-        .con2In {
-            width: 80%;
+        .Mcon1In {
+            width: 100%;
             height: auto;
-            margin: 0% auto;
+            margin: 10% auto;
+            overflow: hidden;
         }
-        .con2More {
-            clear: both;
-            display: block;
+        .MconTit1 {
             text-align: center;
-            background-color: #fff;
-            font-size: 2vmax;
-            color: #3f3f3f;
+            font-size: 4vmax;
+            color: #fff;
             font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #fff;
+        }
+        .MconTit2 {
+            text-align: center;
+            font-size: 1.2vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 2%;
+            box-sizing: border-box;
+            display: block;
+        }
+        
+        .Mcon1Vs {
+            width: 100%;
+            height: 60vw;
+            background-image: url("./images/rd/vsBg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .Mcon1Vs ul {
+            width: 500%;
+            height: auto;
+        }
+        .Mcon1Vs ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .Mcon1Vs ul li {
+            float: left;
+            width: 20%;
+            height: 60vw;
+            position: relative;
+        }
+        .Mcon1Vs ul li img {
+            display: block;
             width: 20%;
             height: auto;
-            margin: 2% auto;
-            padding: 2%;
+            position: absolute;
+            top: 75%;
+            left: 10%;
+            opacity: 0;
+        }
+        .Mcon1VsTit {
+            display: block;
+            color: #3f3f3f;
+            position: absolute;
+            top: 05%;
+            left: 15.5%;
+            text-align: left;
+            font-size: 1vmax;
             font-weight: bold;
-            transition: 0.2s;
+            font-family: 'Gothic A1', sans-serif;
+            opacity: 0;
+        }
+        .Mcon1VsTit strong {
+            text-align: left;
+            font-size: 2vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #3f3f3f; 
+        }
+        .Mcon1VsTxt {
+            font-size: 0.5vmax;
+            color: #3f3f3f;
+            font-family: 'Gothic A1', sans-serif;
+            text-shadow: 1px 1px 20px #ccc; 
+            position: absolute;
+            right: -50%;
+            top: 90%;
+            opacity: 0;
+            transform: rotateY(1270deg);
+            transition: 1.5s;
+        }
+        .Mcon1VsTxt.on {
+            transform: rotateY(0deg);
+        }
+        .Mcon1Btn {
+            position: absolute;
+            width: 30%;
+            height: auto;
+            top: 55%;
+            left: 25%;
+        }
+        .Mcon1Btn:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .Mcon1Btn button {
+            display: inline-block;
+            border: 0;
+            background: none;
+            width: 7.5%;
+            height: auto;
             cursor: pointer;
         }
-        .con2More:hover {
-            color: #ffffff;
-            background-color: #ee094a;
+        .Mcon1Btn button img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .Mcon1RBtn {
+            
         }
     </style>
     
     <script>
-        $(document).ready(function(){
-            $(".con2More").removeAttr("href");
-            $(".con2More").click(function(){
-                $(".popBox").removeClass("off");
-            });
-        });
+     $(document).ready(function(){
+         $(".Mcon1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "50%"}, 1500);
+         $(".Mcon1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
+         $(".Mcon1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "80%", "right": "7.5%"}, 500, function(){
+             $(".Mcon1VsTxt").stop().addClass("on");
+         });
+         
+         $(".Mcon1LBtn").click(function(){
+             $(".Mcon1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
+             $(".Mcon1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
+             $(".Mcon1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
+             $(".Mcon1VsTxt").stop().removeClass("on");
+             
+             $(".Mcon1Vs ul").stop().not(":animated").animate({"margin-left": "-100%"}, 800, function(){
+                 $(".Mcon1Vs ul li").stop().eq(0).appendTo(".Mcon1Vs ul");
+                 $(".Mcon1Vs ul").stop().css("margin-left", "0%");
+
+                 $(".Mcon1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "50%"}, 1500);
+                 $(".Mcon1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
+                 $(".Mcon1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "80%", "right": "7.5%"}, 500, function(){
+             $(".Mcon1VsTxt").stop().addClass("on");
+         });
+                 
+             });
+         });
+         $(".Mcon1RBtn").click(function(){
+             $(".Mcon1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
+             $(".Mcon1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
+             $(".Mcon1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
+             $(".Mcon1VsTxt").stop().removeClass("on");
+             
+             $(".Mcon1Vs ul li").stop().eq(4).prependTo(".Mcon1Vs ul");
+             $(".Mcon1Vs ul").stop().css("margin-left", "-100%");
+             $(".Mcon1Vs ul").stop().not(":animated").animate({"margin-left": "0%"}, 800);
+             
+             $(".Mcon1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "50%"}, 1500);
+                 $(".Mcon1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
+                 $(".Mcon1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "80%", "right": "7.5%"}, 500, function(){
+             $(".Mcon1VsTxt").stop().addClass("on");
+         });
+         });
+     });
     </script>
     
     
@@ -856,11 +1079,11 @@
 
                     </li>
                     <li class="menuLst">
-                        <a href="./public.html" style="background-color: #fff;
-            color: #3f3f3f;">PUBLIC EDU</a>
+                        <a href="./public.html">PUBLIC EDU</a>
                     </li>
                     <li class="menuLst">
-                        <a href="./rd.html">R &amp; D</a>
+                        <a href="./rd.html" style="background-color: #fff;
+            color: #3f3f3f;">R &amp; D</a>
 
                     </li>
                     <li class="menuLst">
@@ -877,96 +1100,75 @@
                 </ul>
            </div>
        </header>
-        
-        <div class="con" id="con1">
-            <div class="con1In">
-                <h2 class="conTit1">B 2 B</h2>
-                <h2 class="conTit2">IFT에서 추진하는 B2B사업은 공교육시스템을 기반으로 기업대 기업으로 한 비즈니스 컴퍼니 이며,<br>공교육을 통해 성장해 나가는 모습을 볼 수 있는 사업을 추진하고 있습니다.</h2>
-                <ul class="con1Box">
-                    <li class="con1BoxLst con1BoxLst1">
-                        <ul class="leftBox">
-                            <li>
-                                <h2 class="leftTit">SUMMARY</h2>
-                                <span class="leftLine"></span>
-                                <span class="leftTxt">미래를 향해 현재의 교육을 디자인한다IFT는 급변하는 기술과 미래의 직업을 고려하여 교육 현장에서 필요로 하는 사항들을 파악하여 최상의 콘텐츠를 제공하기 위해 빠르게 움직입니다.우리는 미래를 향해 현재의 교육을 다자인하고, 당장의 필요만 채우는 것에서 나아가 미래를 바라보는 눈으로 현재의 교육을 구상하며 지원합니다.</span>
-                            </li>
-                            <li>
-                                <h2 class="leftTit">VISION</h2>
-                                <span class="leftLine"></span>
-                                <span class="leftTxt">청소년들에게 자신의 적성을 찾을 수 있도록 돕고,스스로 지속적인 관심이 제일 중요한 시기이므로 멘토링을 실시하고 있으며, 발전된 미래를 자신이 개발하고 개척하는 정신을 심어 줄 수 있도록 산학 협력을 통하여 지원하고 있으며, 실제적인 미래의 직업체험을 제공하고 있습니다.</span>
-                            </li>
-                            <li>
-                                <h2 class="leftTit">ACTIVITY</h2>
-                                <span class="leftLine"></span>
-                                <span class="leftTxt">진로탐색 직업체험, 중단기&연간 프로그램 개설그리고 캠프 세미나와 로봇코딩컵대회 또한, 자유학기제 동아리활동과 여러프로그램을 개설등과 같이이러한 활동들을 통해 공교육시스템에 더욱 기여하는 모습을 보여주고 있습니다.</span>
-                            </li>
-                            <li>
-                                <h2 class="leftTit">PROCESSING</h2>
-                                <span class="leftLine"></span>
-                                <span class="leftTxt">체계적인 프로그램을 가지고 있는 교육기관과 연계하여빠르게 변화하는 IT교육 분야의 전문적인 서비스를 제공하여 최신의 교육이 가능하도록 지원하고 있으며, 또한 방과후 학교 및 로봇과 코딩에 관련된 콘텐츠 개발, 진로탐색, 미래의 직업 체험 프로그램이 구축되어 있기에공교육에서 원하는 사항을 IFT에 요청하면 지원을 받을 수 있습니다.</span>
-                            </li>
-                        </ul>
+           
+        <figure id="vs">
+            <div class="vs">
+                <ul>
+                    <li>
+                        <img src="./images/rd/vs1.png" alt="">
+                        <h2 class="vsTit1">IFT R &amp; D 개발</h2>
+                        <h2 class="vsTit2">4차 산업혁명 시대에 맞는 교육을 위한 개발</h2>
+                        <span class="vsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
                     </li>
-                    <li class="con1BoxLst con1BoxLst2">
-                        <ul class="rightBox_In">
-                            <li><a href="" class="rightBtn1 on">개요</a></li>
-                            <li><a href="" class="rightBtn2">미래</a></li>
-                            <li><a href="" class="rightBtn3">활동</a></li>
-                            <li><a href="" class="rightBtn4">개발</a></li>
-                        </ul>
+                    <li>
+                        <img src="./images/rd/vs2.png" alt="">
+                        <h2 class="vsTit1">IFT R &amp; D 연구</h2>
+                        <h2 class="vsTit2">연구를 위한 투자</h2>
+                        <span class="vsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
                     </li>
                 </ul>
-                
-                <div class="con1_3">
-                    <h2 class="conTit1">COMPANY VISION</h2>
-                    <h2 class="conTit2">IFT 미래를 향해 현재의 교육을 디자인한다!</h2>
-                    <div class="txtBox">
-                        <span class="txtBoxTxt"><strong>IFT는</strong><br>급변하는 기술과 미래의 직업을 고려하여 교육 현장에서 필요로 하는 사항들을 파악하여 최상의 콘텐츠를 제공하기 위해<br>빠르게 움직이고 있습니다.<br><br><br>IFT는 미래를 향해 현재의 교육을 다자인하며, 당장의 필요만 채우는 것에서 나아가 미래를 바라보는 눈으로 <br>현재의 교육을 구상하며 지원합니다.</span>
-                    </div>
-                    
+                <div class="vsBtnBox">
+                    <button class="vsBtn1"><img src="./images/rd/vsBtnOn.png" alt=""></button>
+                    <button class="vsBtn2"><img src="./images/rd/vsBtnOff.png" alt=""></button>
                 </div>
-                
-                <div class="con1_3">
-                    <h2 class="conTit1" style="margin-top: 10%;">SERVICE INTRODUCE</h2>
-                    <div class="txtBox">
-                        <span class="txtBoxTxt" style="margin-top: 5%;">청소년들에게 자신의 적성을 찾을 수 있도록 돕고 있다. 스스로 지속적인 관심을 갖을 수 있는 체계적인 멘토링을 실시하고 있다. 더 발전 된 미래를 자신이 개발하고 개척하는 정신을 심어 줄 수 있도록 산학 협력을 통하여 지원하고 있다. 학교와의 연계를 통하여 실제적인 미래의 직업체험을 제공하고 있다. 앞으로 산업체와의 연결을 통하여 관심이 있는 직업을 현장에서 체험하도록 준비 중에 있다. 직업에 대한 단순한 정보를 전달하는 차원을 넘어서 자신의 꿈과 희망을 설계하기 위해서 필요한 것이 무엇인지를 알아보고 준비할 수 있는 기회를 부여하려고 한다. 기업체는 미래의 인재를 확보하기 위해서 어떠한 지원이 필요한지를 분석하여 교육계에 관심을 갖는 기회가 될 것이다.
-</span>
-                    </div>
-                </div>
-                
-                
-                <div class="vs">
-                   <h2 class="conTit1">활동 사진</h2>
-                    <h2 class="conTit2">IFT에서 추진하는 B2B사업의 활동 사진입니다.</h2>
-                    <figure id="vs">
-                        <ul>
-                            <li><img src="./images/public/vs1.png" alt=""></li>
-                            <li><img src="./images/public/vs2.png" alt=""></li>
-                            <li><img src="./images/public/vs3.png" alt=""></li>
-                            <li><img src="./images/public/vs4.png" alt=""></li>
-                            <li><img src="./images/public/vs5.png" alt=""></li>
-                        </ul>
-                        
-                        <button class="vsBtnL"><img src="./images/intro/leftBtn.png" alt=""></button>
-                        <button class="vsBtnR"><img src="./images/intro/rightBtn.png" alt=""></button>
-                    </figure>
-                    
-                </div>
-                
-                
                 
             </div>
-        </div>
-        
-        <div class="con" id="con2">
-           <div class="con2In">
-               <h2 class="conTit1" style="color: #3f3f3f;">공교육 콘텐츠</h2>
-               <span class="conTit2" style="color: #3f3f3f;">Public Education Contents</span>
-               <span class="conTit2" style="color: #3f3f3f;">IFT에서 추구하는 공교육 콘텐츠 B2B사업을 함께 성장해 나갑니다.</span>
-               <a href="" class="con2More">신청하기</a>
+        </figure>
+           
+           <div class="con" id="con1">
+               <div class="con1In">
+                   <h2 class="conTit1">R &amp; D</h2>
+                    <h2 class="conTit2">Research &amp; Development</h2>
+                    
+                    <div class="con1Vs">
+                        <ul>
+                            <li>
+                                <img src="./images/rd/con1VsImg1.png" alt="">
+                                <span class="con1VsTit">1. 공교육에서 필요로 하는<br><strong>교육 콘텐츠 개발</strong></span>
+                                <h2 class="con1VsTxt">4차 산업혁명에 걸맞는 교육 콘텐츠를 기반으로<br>공교육에서 실천 가능한 콘텐츠를 개발합니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg2.png" alt="">
+                                <span class="con1VsTit">2. 모든IT기술의 기초가 되는 코딩<br><strong>학습을 위한 기자재 개발</strong></span>
+                                <h2 class="con1VsTxt">코딩학습을 위한 기자재를 위해,<br>IFT만의 기술 코딩 학습 기자재를 개발합니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg3.png" alt="">
+                                <span class="con1VsTit">3. 융복합 인재의 양성을 위한<br><strong>국정 과제 연구</strong></span>
+                                <h2 class="con1VsTxt">IFT는 인재양성을 위해 국제 과제 연구를 통하여<br>융복합 인재를 양성합니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg4.png" alt="">
+                                <span class="con1VsTit">4. 메이커교육에 필요한<br><strong>교육 솔루션 연구</strong></span>
+                                <h2 class="con1VsTxt">IFT 메이커 교육에 필요한 교육 솔루션을 연구하고<br>교육에 대한 인식을 일깨워 줍니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg5.png" alt="">
+                                <span class="con1VsTit">5. 새로운 교육 트렌드를 연구 &amp; 개발하여<br><strong>IT기술과의 접목</strong></span>
+                                <h2 class="con1VsTxt">다양한 트렌드를 연구하여 해당 트렌드의 컨셉으로 개발하고<br>IT기술과의 접목을 통해 미래를 향해 갑니다.</h2>
+                            </li>
+                        </ul>
+                        
+                        <div class="con1Btn">
+                            <button class="con1LBtn"><img src="./images/rd/lBtn.png" alt=""></button>
+                            <button class="con1RBtn"><img src="./images/rd/rBtn.png" alt=""></button>
+                        </div>
+                    </div>
+                    
+               </div>
            </div>
-       </div>
-        
+            
+            
         <footer id="ft">
                 <div class="ftIn">
                     
@@ -1082,6 +1284,73 @@
             </div>
         </div>
      </header>
+       
+       <figure id="Mvs">
+            <div class="Mvs">
+                <ul>
+                    <li>
+                        <img src="./images/rd/vs1.png" alt="">
+                        <h2 class="MvsTit1">IFT R &amp; D 개발</h2>
+                        <h2 class="MvsTit2">4차 산업혁명 시대에 맞는 교육을 위한 개발</h2>
+                        <span class="MvsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
+                    </li>
+                    <li>
+                        <img src="./images/rd/vs2.png" alt="">
+                        <h2 class="MvsTit1">IFT R &amp; D 연구</h2>
+                        <h2 class="MvsTit2">연구를 위한 투자</h2>
+                        <span class="MvsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
+                    </li>
+                </ul>
+                <div class="MvsBtnBox">
+                    <button class="MvsBtn1"><img src="./images/rd/vsBtnOn.png" alt=""></button>
+                    <button class="MvsBtn2"><img src="./images/rd/vsBtnOff.png" alt=""></button>
+                </div>
+                
+            </div>
+        </figure>
+        
+        <div class="con" id="Mcon1">
+               <div class="Mcon1In">
+                   <h2 class="MconTit1">R &amp; D</h2>
+                    <h2 class="MconTit2">Research &amp; Development</h2>
+                    
+                    <div class="Mcon1Vs">
+                        <ul>
+                            <li>
+                                <img src="./images/rd/con1VsImg1.png" alt="">
+                                <span class="Mcon1VsTit">1. 공교육에서 필요로 하는<br><strong>교육 콘텐츠 개발</strong></span>
+                                <h2 class="Mcon1VsTxt">4차 산업혁명에 걸맞는 교육 콘텐츠를 기반으로<br>공교육에서 실천 가능한 콘텐츠를 개발합니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg2.png" alt="">
+                                <span class="Mcon1VsTit">2. 모든IT기술의 기초가 되는 코딩<br><strong>학습을 위한 기자재 개발</strong></span>
+                                <h2 class="Mcon1VsTxt">코딩학습을 위한 기자재를 위해,<br>IFT만의 기술 코딩 학습 기자재를 개발합니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg3.png" alt="">
+                                <span class="Mcon1VsTit">3. 융복합 인재의 양성을 위한<br><strong>국정 과제 연구</strong></span>
+                                <h2 class="Mcon1VsTxt">IFT는 인재양성을 위해 국제 과제 연구를 통하여<br>융복합 인재를 양성합니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg4.png" alt="">
+                                <span class="Mcon1VsTit">4. 메이커교육에 필요한<br><strong>교육 솔루션 연구</strong></span>
+                                <h2 class="Mcon1VsTxt">IFT 메이커 교육에 필요한 교육 솔루션을 연구하고<br>교육에 대한 인식을 일깨워 줍니다.</h2>
+                            </li>
+                            <li>
+                                <img src="./images/rd/con1VsImg5.png" alt="">
+                                <span class="Mcon1VsTit">5. 새로운 교육 트렌드를 연구 &amp; 개발하여<br><strong>IT기술과의 접목</strong></span>
+                                <h2 class="Mcon1VsTxt">다양한 트렌드를 연구하여 해당 트렌드의 컨셉으로 개발하고<br>IT기술과의 접목을 통해 미래를 향해 갑니다.</h2>
+                            </li>
+                        </ul>
+                        
+                        <div class="Mcon1Btn">
+                            <button class="Mcon1LBtn"><img src="./images/rd/lBtn.png" alt=""></button>
+                            <button class="Mcon1RBtn"><img src="./images/rd/rBtn.png" alt=""></button>
+                        </div>
+                    </div>
+                    
+               </div>
+           </div>
         
         <footer id="Mft">
             <div class="MftIn">
