@@ -482,7 +482,7 @@
     </style>
 
     
-    <!-- <style>
+    <style>
         @media screen and (max-width: 767px) {
             /* 모바일 */ 
             #desktop {
@@ -515,7 +515,7 @@
                 display: none;
             }
         }
-    </style> -->
+    </style>
     
     <!-- con1 -->
     <style>
@@ -905,6 +905,8 @@
     <!-- con2 hover -->
     <script>
         $(document).ready(function(){
+            $(".callMove").removeAttr("href");
+            $(".callMove2").removeAttr("href");
             $(".callMove").hover(function(){
                 $(".callMove").toggleClass("on");
                 $(".callMove span").toggleClass("on");
@@ -1641,6 +1643,169 @@
     
     
     <!-- popBox -->
+    <style>
+        .popBox {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.8);
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            display: none;
+        }
+        .popIn {
+            width: 80%;
+            height: 80%;
+            position: fixed;
+            top: 10%;
+            left: 10%;
+        }  
+        
+        form {
+          width: 100%;
+        }
+        form h1 {
+          font-size: 2em;
+          text-align: center;
+          color: #2196F3;
+          margin: 5%;
+        }
+        form h5 {
+          text-align: center;
+          text-transform: uppercase;
+          color: #c6c6c6;
+        }
+        form .emoji {
+          font-size: 1.2em;
+        }
+
+        .group {
+          position: relative;
+            margin: 0 auto;
+           
+        }
+
+        textarea {
+          resize: none;
+        }
+
+        input,
+        textarea {
+          background: none;
+          color: #c6c6c6;
+          font-size: 1vmax;
+            padding: 2%;
+          display: block;
+          width: 30%;
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid #c6c6c6;
+          margin: 0 auto;
+        }
+        input:focus, textarea:focus {
+             border-bottom: 2px solid #2196F3;
+        }
+        input:focus,
+        textarea:focus {
+          outline: none;
+        }
+        input:focus ~ label, input:valid ~ label,
+        textarea:focus ~ label,
+        textarea:valid ~ label {
+          top: 5%;
+          font-size: 0.7vmax;
+          color: #2196F3;
+           
+        }
+
+        label {
+          color: #fff;
+          font-size: 1.3vmax;
+          font-weight: normal;
+          position: absolute;
+          pointer-events: none;
+          left: 5px;
+          top: 25%;
+          -webkit-transition: 300ms ease all;
+          transition: 300ms ease all;
+          margin-left: 33%;
+        }
+
+        .btn {
+          background: #fff;
+          color: #959595;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 3px;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          text-decoration: none;
+          outline: none;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .btn.btn-submit {
+          background: #2196F3;
+          color: #bce0fb;
+        }
+        .btn.btn-submit:hover {
+          background: #0d8aee;
+          color: #deeffd;
+        }
+        .btn.btn-cancel {
+          background: #eee;
+        }
+        .btn.btn-cancel:hover {
+          background: #e1e1e1;
+          color: #8b8b8b;
+        }
+
+        .btn-box {
+          text-align: center;
+          margin: 50px 0;
+        }
+        .popC {
+            display: block;
+            width: 20%;
+            height: auto;
+            margin: 5% auto;
+            padding: 2.5%;
+            color: #fff;
+            border: 0;
+            border-bottom: 1px solid #fff;
+            background: none;
+            text-align: center;
+            font-size: 1.2vmax;
+        }
+        .popre {
+            cursor: pointer;
+            display: block;
+            width: 15%;
+            height: auto;
+            margin: 5% auto;
+            padding: 2.5%;
+            color: #3f3f3f;
+            border: 1px solid #3f3f3f;
+            background-color: #fff;
+            text-align: center;
+            font-size: 1.2vmax;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            $(".callMove").click(function(){
+                $(".popBox").fadeIn(500);
+            });
+            $(".popre").removeAttr("href");
+            $(".popre").click(function(){
+                $(".popBox").fadeOut(500);
+            });
+        });
+    </script>
     
 </head>
 <body onload="initialize()">
@@ -1790,13 +1955,53 @@
                  </li>
              </ul>
              
-             <a href="mailto:rococup@naver.com?subject=제목을 꼭 적어주시기 바랍니다.&body= 이름 : %0D%0A 성별 : %0D%0A 나이 : %0D%0A 이메일 : %0D%0A 주소 : %0D%0A 연락처 : %0D%0A 개설희망지역 : %0D%0A 희망상담시간 : %0D%0A"  class="callMove">개설 문의 하기
+             <a href="" class="callMove">개설 문의 하기
                  <span class="c1Move"></span>
                  <span class="c2Move"></span>
                  <span class="c3Move"></span>
                  <span class="c4Move"></span>
              </a>
          </div>
+       </div>
+       
+       <div class="popBox">
+           <div class="popIn">
+              <form name="formmail" method="get" action="./data.php" onSubmit="return chkMailFrm()">
+<a name=01></a>    
+<h1>가맹사업문의</h1>
+                    <h5>아래 양식에 맞게 작성해 주시고 완료버튼을 누르시면<br>이메일 화면으로 자동이동 됩니다.</h5>
+                    <div class="group">
+                      <input type="text" required="required" name="name"/><span class="highlight"></span>
+                      <label>이름</label>
+                    </div>
+                    <div class="group">
+                      <input type="text" required="required" name="age"/><span class="highlight"></span>
+                      <label>나이</label>
+                    </div>
+                    <div class="group">
+                      <input type="text" required="required" name="email"/><span class="highlight"></span>
+                      <label>이메일</label>
+                    </div>
+                    <div class="group">
+                      <input type="text" required="required" name="add"/><span class="highlight"></span>
+                      <label>주소</label>
+                    </div>
+                    <div class="group">
+                      <input type="text" required="required" name="call"/><span class="highlight"></span>
+                      <label>연락처</label>
+                    </div>
+                    <div class="group">
+                      <textarea type="textarea" rows="5" required="required" name="wantarea"></textarea><span class="highlight"></span>
+                      <label>개설 희망 지역</label>
+                    </div>
+                    <div class="group">
+                      <textarea type="textarea" rows="5" required="required" name="wanttime"></textarea><span class="highlight"></span>
+                      <label>희망 상담 가능시간</label>
+                    </div>
+             <button class="popC" type="submit" style="cursor: pointer;">문의보내기</button>
+             <a href="" class="popre">닫기</a>
+</form>
+           </div>
        </div>
        
        <div class="con" id="con3">
@@ -1982,23 +2187,23 @@
                         <ul>
                             <li>
                                 <span class="famTit">ABOUT US</span>
-                                <a href="./intro.html">인사말</a>
-                                <a href="./intro.html">회사소개</a>
-                                <a href="intro.html">안내말</a>
-                                <a href="intro.html">찾아오시는 길</a>
+                                <a href="">인사말</a>
+                                <a href="">회사소개</a>
+                                <a href="">안내말</a>
+                                <a href="">찾아오시는 길</a>
                             </li>
                             <li>
                                 <span class="famTit">FAMILLY SITE</span>
-                                <a href="https://www.kref.kr/">한국로봇연합회</a>
-                                <a href="https://www.facebook.com/1734220990233930/photos/">대전 가온누리</a>
-                                <a href="https://blog.naver.com/gaonnuri0628/221234887469">세종 가온누리</a>
-                                <a href="https://www.ubtrobot.com/">유비테크</a>
+                                <a href="">한국로봇연합회</a>
+                                <a href="">대전 가온누리</a>
+                                <a href="">세종 가온누리</a>
+                                <a href="">유비테크</a>
                             </li>
                             <li>
                                 <span class="famTit">CUSTOMER SUPPORT</span>
-                                <a href="mailto:rococup@naver.com?subject=문의의 제목을 입력해 주세요&body= 내용을 꼭 기입해 주시기 바랍니다.%0D%0A">1:1 문의</a>
-                                <a href="mailto:rococup@naver.com?subject=상담하는 분의 성함 또는 기업이름을 기입해주세요.&body= 상담자 연락처 : %0D%0A 상담가능 시간 : %0D%0A">상담 예약</a>
-                                <a href="mailto:rococup@naver.com">메일 보내기</a>
+                                <a href="">1:1 문의</a>
+                                <a href="">상담 예약</a>
+                                <a href="">메일 보내기</a>
                             </li>
                             <li>
                                 <span class="famTit">SITE REGULATIONS</span>
@@ -2016,7 +2221,7 @@
             </footer>
     </div>
     
-    <div class="main" id="mobile" style="none">
+    <div class="main" id="mobile">
         <header id="Mhd">
         <div class="MhdIn">
             <a href="" class="Mlogo">
@@ -2154,7 +2359,7 @@
              </ul>
              
              
-             <a href="mailto:rococup@naver.com?subject=제목을 꼭 적어주시기 바랍니다.&body= 이름 : %0D%0A 성별 : %0D%0A 나이 : %0D%0A 이메일 : %0D%0A 주소 : %0D%0A 연락처 : %0D%0A 개설희망지역 : %0D%0A 희망상담시간 : %0D%0A" class="McallMove">개설 문의 하기
+             <a href="" class="McallMove">개설 문의 하기
              </a>
          </div>
        </div>

@@ -32,7 +32,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: rgba(35, 38, 53, 1);
+            background-color: rgba(53, 188, 169, 1);
             position: fixed;
             top: 0;
             left: 0;
@@ -68,11 +68,11 @@
             height: 100%;
         }
     </style>
-    <script type='text/javascript' src='./js/demo.js'></script>
+    <script type='text/javascript' src='./js/demo_social.js'></script>
     <script type='text/javascript' src='./js/jquery.particleground.js'></script>
     <!-- 헤더 -->
     <link rel="stylesheet" href="./css/header.css">
-    
+
     <!-- footer -->
     <style>
         #ft {
@@ -480,8 +480,8 @@
         }
     </style>
 
-    
-    <!-- <style>
+    <!-- Media query -->
+    <style>
         @media screen and (max-width: 767px) {
             /* 모바일 */ 
             #desktop {
@@ -514,40 +514,41 @@
                 display: none;
             }
         }
-    </style> -->
+    </style>
     
-    <!-- vs -->
+    <!-- con1 -->
     <style>
+        #con1 {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
         #vs {
             width: 100%;
             height: auto;
             overflow: hidden;
         }
-        .vs {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .vs ul {
-            width: 200%;
+        #vs ul {
+            width: 300%;
             height: auto;
         }
-        .vs ul:after {
+        #vs ul:after {
             content: " ";
             display: block;
             clear: both;
         }
-        .vs ul li {
+        #vs ul li {
             float: left;
-            width: 50%;
+            width: 33.33%;
             height: auto;
             position: relative;
         }
-        .vs ul li img {
-            display: block;
-            width: 100%;
-            height: auto;
+        #vs ul li img {
             opacity: 0.8;
+            display: block;
+            width: 80%;
+            height: auto;
+            margin: 5% auto;
         }
         .vsTit1 {
             font-size: 4vmax;
@@ -555,502 +556,190 @@
             font-family: 'Gothic A1', sans-serif;
             text-shadow: 1px 1px 20px #fff;
             position: absolute;
-            top: 35%;
+            top: 40%;
             left: 10%;
         }
         .vsTit2 {
-            font-size: 1.2vmax;
+            display: block;
+            font-size: 1vmax;
             color: #fff;
             font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #fff;
+            font-weight: bold;
             position: absolute;
             top: 50%;
             left: 10%;
         }
         .vsTxt {
+            width: 40%;
+            height: auto;
+            color: #fff;
+            font-size: 1.4vmax;
+            font-family: 'Gothic A1', sans-serif;
+            position: absolute;
+            top: 65%;
+            left: 10%;
+        }
+        .more {
             display: block;
-            font-size: 0.7vmax;
+            width: 15%;
+            height: auto;
+            color: #3f3f3f;
+            text-align: center;
+            background-color: #fff;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 1%;
+            position: absolute;
+            bottom: 5%;
+            left: 10%;
+        }
+        .vsTit1_L {
+            font-size: 4vmax;
             color: #fff;
             font-family: 'Gothic A1', sans-serif;
             text-shadow: 1px 1px 20px #fff;
             position: absolute;
-            top: 70%;
-            left: 10%;
+            top: 40%;
+            right: 10%;
         }
-        .vsBtnBox {
-            width: 10%;
+        .vsTit2_L {
+            display: block;
+            font-size: 1vmax;
+            color: #fff;
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            right: 10%;
+        }
+        .vsTxt_L {
+            width: 40%;
             height: auto;
+            color: #fff;
+            font-size: 1.4vmax;
+            font-family: 'Gothic A1', sans-serif;
+            position: absolute;
+            top: 65%;
+            right: 10%;
+        }
+        .more_L {
+            display: block;
+            width: 15%;
+            height: auto;
+            color: #3f3f3f;
+            text-align: center;
+            background-color: #fff;
+            font-weight: bold;
+            font-family: 'Gothic A1', sans-serif;
+            padding: 1%;
             position: absolute;
             bottom: 5%;
-            left: 47.5%;
+            right: 10%;
         }
-        .vsBtn1, .vsBtn2 {
-            display: inline-block;
-            background: none;
-            border: 0;
-            width: 12%;
+        .con1Btn {
+            width: 30%;
             height: auto;
-            margin: 5%;
+            position: fixed;
+            top: 65.5%;
+            right: 10%;
+            z-index: 0;
+        }
+        .con1Btn ul {
+            width: 100%;
+            height: auto;
+        }
+        .con1Btn ul:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .con1Btn ul li {
+            float: left;
+            width: 31.33%;
+            height: auto;
+            margin: 1%;
+        }
+        .con1Btn ul li button {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 0;
+            background: none;
             cursor: pointer;
         }
-        .vsBtn1 img, .vsBtn2 img {
+        .con1Btn ul li button img {
             display: block;
             width: 100%;
             height: auto;
         }
     </style>
-
+    <!-- con1 script -->
     <script>
         $(document).ready(function(){
-            $(".vsBtn1").click(function(){
-                $("#vs .vs ul").not(":animated").animate({"margin-left": "0%"}, 1200);
-                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
-                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
+            $(".btn1 button").click(function(){
+                $("#vs ul").stop().not(":animated").animate({"margin-left": "0%"}, 800, function(){
+                    $("#con2 .con2Box").stop().not(":animated").animate({"margin-left": "0%"}, 800);
+                });
             });
-            $(".vsBtn2").click(function(){
-                $("#vs .vs ul").not(":animated").animate({"margin-left": "-100%"}, 1200);
-                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
-                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
+            $(".btn2 button").click(function(){
+                $("#vs ul").stop().not(":animated").animate({"margin-left": "-100%"}, 800, function(){
+                    $("#con2 .con2Box").stop().not(":animated").animate({"margin-left": "-100%"}, 800);
+                });
+            });
+            $(".btn3 button").click(function(){
+                $("#vs ul").stop().not(":animated").animate({"margin-left": "-200%"}, 800, function(){
+                    $("#con2 .con2Box").stop().not(":animated").animate({"margin-left": "-200%"}, 800);
+                });
             });
         });
     </script>
     
-    
-    <!-- con1 -->
     <style>
-        #con1 {
+        #con2 {
             width: 100%;
             height: auto;
         }
-        .con1In {
-            width: 100%;
+        .con2In {
+            width: 80%;
             height: auto;
             margin: 10% auto;
             overflow: hidden;
         }
         .conTit1 {
-            text-align: center;
+            text-align: left;
             font-size: 4vmax;
             color: #fff;
             font-family: 'Gothic A1', sans-serif;
             text-shadow: 1px 1px 20px #fff;
         }
         .conTit2 {
-            text-align: center;
+            text-align: left;
             font-size: 1.2vmax;
             color: #fff;
             font-family: 'Gothic A1', sans-serif;
             padding: 2%;
             box-sizing: border-box;
-            display: block;
         }
-        
-        .con1Vs {
-            width: 100%;
-            height: 60vw;
-            background-image: url("./images/rd/vsBg.png");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-        .con1Vs ul {
-            width: 500%;
+        .con2In ul.con2Box {
+            width: 300%;
             height: auto;
         }
-        .con1Vs ul:after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-        .con1Vs ul li {
+        .con2In ul.con2Box li.con2BoxLst {
             float: left;
-            width: 20%;
-            height: 60vw;
-            position: relative;
-        }
-        .con1Vs ul li img {
-            display: block;
-            width: 20%;
+            width: 33.33%;
             height: auto;
-            position: absolute;
-            top: 75%;
-            left: 10%;
-            opacity: 0;
         }
-        .con1VsTit {
-            display: block;
-            color: #3f3f3f;
-            position: absolute;
-            top: 05%;
-            left: 15.5%;
-            text-align: left;
-            font-size: 2vmax;
-            font-weight: bold;
-            font-family: 'Gothic A1', sans-serif;
-            opacity: 0;
-        }
-        .con1VsTit strong {
-            text-align: left;
-            font-size: 4vmax;
-            color: #fff;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #3f3f3f; 
-        }
-        .con1VsTxt {
-            font-size: 1.5vmax;
-            color: #3f3f3f;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #ccc; 
-            position: absolute;
-            right: -50%;
-            top: 90%;
-            opacity: 0;
-            transform: rotateY(1270deg);
-            transition: 1.5s;
-        }
-        .con1VsTxt.on {
-            transform: rotateY(0deg);
-        }
-        .con1Btn {
-            position: absolute;
-            width: 30%;
-            height: auto;
-            top: 55%;
-            left: 25%;
-        }
-        .con1Btn button {
-            display: inline-block;
-            border: 0;
-            background: none;
-            width: 7.5%;
-            height: auto;
-            cursor: pointer;
-        }
-        .con1Btn button img {
-            display: block;
+        .c2Box_2Box {
             width: 100%;
             height: auto;
         }
-        .con1RBtn {
-            float: right;
+        .c2Box_2Box li {
+            float: left;
+            width: 45%;
+            height: auto;
+            margin: 2.5%;
         }
     </style>
-    
-    <script>
-     $(document).ready(function(){
-         $(".con1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "55.5%"}, 1500);
-         $(".con1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
-         $(".con1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "60%", "right": "7.5%"}, 500, function(){
-             $(".con1VsTxt").stop().addClass("on");
-         });
-         
-         $(".con1LBtn").click(function(){
-             $(".con1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
-             $(".con1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
-             $(".con1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
-             $(".con1VsTxt").stop().removeClass("on");
-             
-             $(".con1Vs ul").stop().not(":animated").animate({"margin-left": "-100%"}, 800, function(){
-                 $(".con1Vs ul li").stop().eq(0).appendTo(".con1Vs ul");
-                 $(".con1Vs ul").stop().css("margin-left", "0%");
-
-                 $(".con1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "55.5%"}, 1500);
-                 $(".con1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
-                 $(".con1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "60%", "right": "7.5%"}, 500, function(){
-             $(".con1VsTxt").stop().addClass("on");
-         });
-                 
-             });
-         });
-         $(".con1RBtn").click(function(){
-             $(".con1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
-             $(".con1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
-             $(".con1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
-             $(".con1VsTxt").stop().removeClass("on");
-             
-             $(".con1Vs ul li").stop().eq(4).prependTo(".con1Vs ul");
-             $(".con1Vs ul").stop().css("margin-left", "-100%");
-             $(".con1Vs ul").stop().not(":animated").animate({"margin-left": "0%"}, 800);
-             
-             $(".con1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "55.5%"}, 1500);
-                 $(".con1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
-                 $(".con1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "60%", "right": "7.5%"}, 500, function(){
-             $(".con1VsTxt").stop().addClass("on");
-         });
-         });
-     });
-    </script>
-    
-    <!-- 모바일 -->
-    <!-- 모바일 vs -->
-    <style>
-        #Mvs {
-            width: 100%;
-            height: auto;
-            overflow: hidden;
-        }
-        .Mvs {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .Mvs ul {
-            width: 200%;
-            height: auto;
-        }
-        .Mvs ul:after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-        .Mvs ul li {
-            float: left;
-            width: 50%;
-            height: auto;
-            position: relative;
-        }
-        .Mvs ul li img {
-            display: block;
-            width: 100%;
-            height: auto;
-            opacity: 0.8;
-        }
-        .MvsTit1 {
-            font-size: 3vmax;
-            color: #fff;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #fff;
-            position: absolute;
-            top: 35%;
-            left: 10%;
-        }
-        .MvsTit2 {
-            font-size: 1.2vmax;
-            color: #fff;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #fff;
-            position: absolute;
-            top: 55%;
-            left: 10%;
-        }
-        .MvsTxt {
-            display: block;
-            font-size: 1.2vmax;
-            color: #fff;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #fff;
-            position: absolute;
-            top: 70%;
-            left: 10%;
-        }
-        .MvsBtnBox {
-            width: 10%;
-            height: auto;
-            position: absolute;
-            bottom: 5%;
-            left: 46%;
-        }
-        .MvsBtn1, .MvsBtn2 {
-            display: inline-block;
-            background: none;
-            border: 0;
-            width: 12%;
-            height: auto;
-            margin: 5%;
-            cursor: pointer;
-        }
-        .MvsBtn1 img, .MvsBtn2 img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-    </style>
-    
-    <script>
-        $(document).ready(function(){
-            $(".MvsBtn1").click(function(){
-                $("#Mvs .Mvs ul").not(":animated").animate({"margin-left": "0%"}, 1200);
-                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
-                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
-            });
-            $(".MvsBtn2").click(function(){
-                $("#Mvs .Mvs ul").not(":animated").animate({"margin-left": "-100%"}, 1200);
-                $(this).find("img").attr("src", "./images/rd/vsBtnOn.png");
-                $(this).siblings().find("img").attr("src", "./images/rd/vsBtnOff.png");
-            });
-        });
-    </script>
-    
-    <style>
-        #Mcon1 {
-            width: 100%;
-            height: auto;
-        }
-        .Mcon1In {
-            width: 100%;
-            height: auto;
-            margin: 10% auto;
-            overflow: hidden;
-        }
-        .MconTit1 {
-            text-align: center;
-            font-size: 4vmax;
-            color: #fff;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #fff;
-        }
-        .MconTit2 {
-            text-align: center;
-            font-size: 1.2vmax;
-            color: #fff;
-            font-family: 'Gothic A1', sans-serif;
-            padding: 2%;
-            box-sizing: border-box;
-            display: block;
-        }
-        
-        .Mcon1Vs {
-            width: 100%;
-            height: 60vw;
-            background-image: url("./images/rd/vsBg.png");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-        .Mcon1Vs ul {
-            width: 500%;
-            height: auto;
-        }
-        .Mcon1Vs ul:after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-        .Mcon1Vs ul li {
-            float: left;
-            width: 20%;
-            height: 60vw;
-            position: relative;
-        }
-        .Mcon1Vs ul li img {
-            display: block;
-            width: 20%;
-            height: auto;
-            position: absolute;
-            top: 75%;
-            left: 10%;
-            opacity: 0;
-        }
-        .Mcon1VsTit {
-            display: block;
-            color: #3f3f3f;
-            position: absolute;
-            top: 05%;
-            left: 15.5%;
-            text-align: left;
-            font-size: 1vmax;
-            font-weight: bold;
-            font-family: 'Gothic A1', sans-serif;
-            opacity: 0;
-        }
-        .Mcon1VsTit strong {
-            text-align: left;
-            font-size: 2vmax;
-            color: #fff;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #3f3f3f; 
-        }
-        .Mcon1VsTxt {
-            font-size: 0.5vmax;
-            color: #3f3f3f;
-            font-family: 'Gothic A1', sans-serif;
-            text-shadow: 1px 1px 20px #ccc; 
-            position: absolute;
-            right: -50%;
-            top: 90%;
-            opacity: 0;
-            transform: rotateY(1270deg);
-            transition: 1.5s;
-        }
-        .Mcon1VsTxt.on {
-            transform: rotateY(0deg);
-        }
-        .Mcon1Btn {
-            position: absolute;
-            width: 30%;
-            height: auto;
-            top: 55%;
-            left: 25%;
-        }
-        .Mcon1Btn:after {
-            content: " ";
-            display: block;
-            clear: both;
-        }
-        .Mcon1Btn button {
-            display: inline-block;
-            border: 0;
-            background: none;
-            width: 7.5%;
-            height: auto;
-            cursor: pointer;
-        }
-        .Mcon1Btn button img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        .Mcon1RBtn {
-            
-        }
-    </style>
-    
-    <script>
-     $(document).ready(function(){
-         $(".Mcon1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "50%"}, 1500);
-         $(".Mcon1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
-         $(".Mcon1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "80%", "right": "7.5%"}, 500, function(){
-             $(".Mcon1VsTxt").stop().addClass("on");
-         });
-         
-         $(".Mcon1LBtn").click(function(){
-             $(".Mcon1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
-             $(".Mcon1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
-             $(".Mcon1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
-             $(".Mcon1VsTxt").stop().removeClass("on");
-             
-             $(".Mcon1Vs ul").stop().not(":animated").animate({"margin-left": "-100%"}, 800, function(){
-                 $(".Mcon1Vs ul li").stop().eq(0).appendTo(".Mcon1Vs ul");
-                 $(".Mcon1Vs ul").stop().css("margin-left", "0%");
-
-                 $(".Mcon1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "50%"}, 1500);
-                 $(".Mcon1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
-                 $(".Mcon1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "80%", "right": "7.5%"}, 500, function(){
-             $(".Mcon1VsTxt").stop().addClass("on");
-         });
-                 
-             });
-         });
-         $(".Mcon1RBtn").click(function(){
-             $(".Mcon1VsTit").stop().css("opacity", "0").css("top", "5%").css("left", "15.5%");
-             $(".Mcon1Vs ul li img").stop().css("opacity", "0").css("top", "75%").css("left", "15%");
-             $(".Mcon1VsTxt").stop().css("opacity", "0").css("right", "-50%").css("top", "90%");
-             $(".Mcon1VsTxt").stop().removeClass("on");
-             
-             $(".Mcon1Vs ul li").stop().eq(4).prependTo(".Mcon1Vs ul");
-             $(".Mcon1Vs ul").stop().css("margin-left", "-100%");
-             $(".Mcon1Vs ul").stop().not(":animated").animate({"margin-left": "0%"}, 800);
-             
-             $(".Mcon1VsTit").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "25%", "left": "50%"}, 1500);
-                 $(".Mcon1Vs ul li img").stop().delay(500).not(":animated").animate({"opacity": "1", "top": "45%", "left": "30%"}, 1500);
-                 $(".Mcon1VsTxt").stop().delay(800).not(":animated").animate({"opacity": "1", "top": "80%", "right": "7.5%"}, 500, function(){
-             $(".Mcon1VsTxt").stop().addClass("on");
-         });
-         });
-     });
-    </script>
-    
-    
 </head>
 <body onload="initialize()">
    <div id="particles"></div>
@@ -1082,8 +771,7 @@
                         <a href="./public.html">PUBLIC EDU</a>
                     </li>
                     <li class="menuLst">
-                        <a href="./rd.html" style="background-color: #fff;
-            color: #3f3f3f;">R &amp; D</a>
+                        <a href="./rd.html">R &amp; D</a>
 
                     </li>
                     <li class="menuLst">
@@ -1091,7 +779,8 @@
   
                     </li>
                     <li class="menuLst">
-                        <a href="./social.html">SOCIAL CONTRIBUTION</a>
+                        <a href="./social.html" style="background-color: #fff;
+            color: #3f3f3f;">SOCIAL CONTRIBUTION</a>
 
                     </li>
                     <li class="menuLst">
@@ -1100,76 +789,83 @@
                 </ul>
            </div>
        </header>
-           
-        <figure id="vs">
-            <div class="vs">
+        
+        <div class="con" id="con1">
+            <figure id="vs">
                 <ul>
                     <li>
-                        <img src="./images/rd/vs1.png" alt="">
-                        <h2 class="vsTit1">IFT R &amp; D 개발</h2>
-                        <h2 class="vsTit2">4차 산업혁명 시대에 맞는 교육을 위한 개발</h2>
-                        <span class="vsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
+                        <img src="./images/social/vsImg1.png" alt="">
+                        <h2 class="vsTit1">로봇코딩컵</h2>
+                        <span class="vsTit2">ROCOCUP</span>
+                        <h2 class="vsTxt">대상을 전국으로 또한, 유치, 초, 중, 고 및 일반인을 대상으로<br>4대회, 11개 종목, 24개 부문으로 구성된 로봇코딩컵대회이다.</h2>
+                        <a href="" class="more">2019 대회신청하기</a>
                     </li>
                     <li>
-                        <img src="./images/rd/vs2.png" alt="">
-                        <h2 class="vsTit1">IFT R &amp; D 연구</h2>
-                        <h2 class="vsTit2">연구를 위한 투자</h2>
-                        <span class="vsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
+                        <img src="./images/social/vsImg2.png" alt="">
+                        <h2 class="vsTit1_L">코딩올림피아드</h2>
+                        <span class="vsTit2_L">Korea Olympiad Coding</span>
+                        <h2 class="vsTxt_L">초등,중등,고등에 걸쳐 폭넓은 연령대의 학생들이블록프로그램부터 텍스트 프로그램까지 단계를 밟아가며코딩 교육의 올바른 방향을 확인하고 컴퓨팅적 사고능력 향상에 도움이 되도록 진행하며, 2대회 6개 부문으로 나누어 있다.</h2>
+                        <a href="call:070-8802-3617" class="more_L">문의 : 070.8802.3617</a>
+                    </li>
+                    <li>
+                        <img src="./images/social/vsImg1.png" alt="">
+                        <h2 class="vsTit1">로봇융합페스티벌</h2>
+                        <span class="vsTit2">Robot fusion festival</span>
+                        <h2 class="vsTxt">창의적인 생각의 발달 시기인 유아 5세부터 7세를 위한 로봇과학 대회를 통하여 자연스럽게 기계공학 및 로봇과학의 흥미를 유발하고, 초등학교 저학년 학생들에게 로봇의 이론 및 동작 원리의 기초와 실습 교육으로 지속적인 발전 가능성이 있는 인재의 양성에 목적을 두며, 부모와 자녀가 함께 교육을 받고 경기에 참여하여 서로 소통하며 자녀의 관심사를 같이 체험한다.</h2>
+                        <a href="call:070-8802-3617" class="more">문의 : 070.8802.3617</a>
                     </li>
                 </ul>
-                <div class="vsBtnBox">
-                    <button class="vsBtn1"><img src="./images/rd/vsBtnOn.png" alt=""></button>
-                    <button class="vsBtn2"><img src="./images/rd/vsBtnOff.png" alt=""></button>
-                </div>
-                
+            </figure>
+            
+            <div class="con1Btn">
+                <ul>
+                    <li class="btn1"><button>
+                            <img src="./images/social/btn1.png" alt="">
+                            <h2 class="btnTit1"></h2>
+                            <span class="btnTxt"></span>
+                        </button></li>
+                    <li class="btn2"><button>
+                            <img src="./images/social/btn2.png" alt="">
+                            <h2 class="btnTit1"></h2>
+                            <span class="btnTxt"></span>
+                        </button></li>
+                    <li class="btn3"><button>
+                            <img src="./images/social/btn3.png" alt="">
+                            <h2 class="btnTit1"></h2>
+                            <span class="btnTxt"></span>
+                        </button></li>
+                </ul>
             </div>
-        </figure>
+        </div>   
            
-           <div class="con" id="con1">
-               <div class="con1In">
-                   <h2 class="conTit1">R &amp; D</h2>
-                    <h2 class="conTit2">Research &amp; Development</h2>
-                    
-                    <div class="con1Vs">
-                        <ul>
+        <div class="con" id="con2">
+            <div class="con2In">
+                <ul class="con2Box">
+                    <li class="con2BoxLst">
+                        <h2 class="conTit1">로봇코딩컵</h2>
+                        <h2 class="conTit2">ROCOCUP</h2>
+                    </li>
+                    <li class="con2BoxLst">
+                        <h2 class="conTit1">코딩올림피아드</h2>
+                        <h2 class="conTit2">Korea Olympiad Coding</h2>
+                        <ul class="c2Box_2Box">
                             <li>
-                                <img src="./images/rd/con1VsImg1.png" alt="">
-                                <span class="con1VsTit">1. 공교육에서 필요로 하는<br><strong>교육 콘텐츠 개발</strong></span>
-                                <h2 class="con1VsTxt">4차 산업혁명에 걸맞는 교육 콘텐츠를 기반으로<br>공교육에서 실천 가능한 콘텐츠를 개발합니다.</h2>
+                                <img src="./images/social/cln1.png" alt="">
                             </li>
                             <li>
-                                <img src="./images/rd/con1VsImg2.png" alt="">
-                                <span class="con1VsTit">2. 모든IT기술의 기초가 되는 코딩<br><strong>학습을 위한 기자재 개발</strong></span>
-                                <h2 class="con1VsTxt">코딩학습을 위한 기자재를 위해,<br>IFT만의 기술 코딩 학습 기자재를 개발합니다.</h2>
-                            </li>
-                            <li>
-                                <img src="./images/rd/con1VsImg3.png" alt="">
-                                <span class="con1VsTit">3. 융복합 인재의 양성을 위한<br><strong>국정 과제 연구</strong></span>
-                                <h2 class="con1VsTxt">IFT는 인재양성을 위해 국제 과제 연구를 통하여<br>융복합 인재를 양성합니다.</h2>
-                            </li>
-                            <li>
-                                <img src="./images/rd/con1VsImg4.png" alt="">
-                                <span class="con1VsTit">4. 메이커교육에 필요한<br><strong>교육 솔루션 연구</strong></span>
-                                <h2 class="con1VsTxt">IFT 메이커 교육에 필요한 교육 솔루션을 연구하고<br>교육에 대한 인식을 일깨워 줍니다.</h2>
-                            </li>
-                            <li>
-                                <img src="./images/rd/con1VsImg5.png" alt="">
-                                <span class="con1VsTit">5. 새로운 교육 트렌드를 연구 &amp; 개발하여<br><strong>IT기술과의 접목</strong></span>
-                                <h2 class="con1VsTxt">다양한 트렌드를 연구하여 해당 트렌드의 컨셉으로 개발하고<br>IT기술과의 접목을 통해 미래를 향해 갑니다.</h2>
+                                <img src="./images/social/epl1.png" alt="">
                             </li>
                         </ul>
-                        
-                        <div class="con1Btn">
-                            <button class="con1LBtn"><img src="./images/rd/lBtn.png" alt=""></button>
-                            <button class="con1RBtn"><img src="./images/rd/rBtn.png" alt=""></button>
-                        </div>
-                    </div>
-                    
-               </div>
-           </div>
+                    </li>
+                    <li class="con2BoxLst">
+                        <h2 class="conTit1">로봇융합페스티벌</h2>
+                        <h2 class="conTit2">Robot fusion festival</h2>
+                    </li>
+                </ul>
+            </div>
+        </div> 
             
-            
-        <footer id="ft">
+        <footer id="ft" style="z-index: 9999;">
                 <div class="ftIn">
                     
                     <div class="ftLeft">
@@ -1201,23 +897,23 @@
                         <ul>
                             <li>
                                 <span class="famTit">ABOUT US</span>
-                                <a href="./intro.html">인사말</a>
-                                <a href="./intro.html">회사소개</a>
-                                <a href="intro.html">안내말</a>
-                                <a href="intro.html">찾아오시는 길</a>
+                                <a href="">인사말</a>
+                                <a href="">회사소개</a>
+                                <a href="">안내말</a>
+                                <a href="">찾아오시는 길</a>
                             </li>
                             <li>
                                 <span class="famTit">FAMILLY SITE</span>
-                                <a href="https://www.kref.kr/">한국로봇연합회</a>
-                                <a href="https://www.facebook.com/1734220990233930/photos/">대전 가온누리</a>
-                                <a href="https://blog.naver.com/gaonnuri0628/221234887469">세종 가온누리</a>
-                                <a href="https://www.ubtrobot.com/">유비테크</a>
+                                <a href="">한국로봇연합회</a>
+                                <a href="">대전 가온누리</a>
+                                <a href="">세종 가온누리</a>
+                                <a href="">유비테크</a>
                             </li>
                             <li>
                                 <span class="famTit">CUSTOMER SUPPORT</span>
-                                <a href="mailto:rococup@naver.com?subject=문의의 제목을 입력해 주세요&body= 내용을 꼭 기입해 주시기 바랍니다.%0D%0A">1:1 문의</a>
-                                <a href="mailto:rococup@naver.com?subject=상담하는 분의 성함 또는 기업이름을 기입해주세요.&body= 상담자 연락처 : %0D%0A 상담가능 시간 : %0D%0A">상담 예약</a>
-                                <a href="mailto:rococup@naver.com">메일 보내기</a>
+                                <a href="">1:1 문의</a>
+                                <a href="">상담 예약</a>
+                                <a href="">메일 보내기</a>
                             </li>
                             <li>
                                 <span class="famTit">SITE REGULATIONS</span>
@@ -1235,7 +931,7 @@
             </footer>
     </div>
     
-    <div class="main" id="mobile" style="none">
+    <div class="main" id="mobile">
         <header id="Mhd">
         <div class="MhdIn">
             <a href="" class="Mlogo">
@@ -1284,73 +980,6 @@
             </div>
         </div>
      </header>
-       
-       <figure id="Mvs">
-            <div class="Mvs">
-                <ul>
-                    <li>
-                        <img src="./images/rd/vs1.png" alt="">
-                        <h2 class="MvsTit1">IFT R &amp; D 개발</h2>
-                        <h2 class="MvsTit2">4차 산업혁명 시대에 맞는 교육을 위한 개발</h2>
-                        <span class="MvsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
-                    </li>
-                    <li>
-                        <img src="./images/rd/vs2.png" alt="">
-                        <h2 class="MvsTit1">IFT R &amp; D 연구</h2>
-                        <h2 class="MvsTit2">연구를 위한 투자</h2>
-                        <span class="MvsTxt">㈜아이에프티는 4차 산업혁명 시대에 맞는 교육을 위해<br>개발과 연구를 위한 투자를 하고 있습니다.</span>
-                    </li>
-                </ul>
-                <div class="MvsBtnBox">
-                    <button class="MvsBtn1"><img src="./images/rd/vsBtnOn.png" alt=""></button>
-                    <button class="MvsBtn2"><img src="./images/rd/vsBtnOff.png" alt=""></button>
-                </div>
-                
-            </div>
-        </figure>
-        
-        <div class="con" id="Mcon1">
-               <div class="Mcon1In">
-                   <h2 class="MconTit1">R &amp; D</h2>
-                    <h2 class="MconTit2">Research &amp; Development</h2>
-                    
-                    <div class="Mcon1Vs">
-                        <ul>
-                            <li>
-                                <img src="./images/rd/con1VsImg1.png" alt="">
-                                <span class="Mcon1VsTit">1. 공교육에서 필요로 하는<br><strong>교육 콘텐츠 개발</strong></span>
-                                <h2 class="Mcon1VsTxt">4차 산업혁명에 걸맞는 교육 콘텐츠를 기반으로<br>공교육에서 실천 가능한 콘텐츠를 개발합니다.</h2>
-                            </li>
-                            <li>
-                                <img src="./images/rd/con1VsImg2.png" alt="">
-                                <span class="Mcon1VsTit">2. 모든IT기술의 기초가 되는 코딩<br><strong>학습을 위한 기자재 개발</strong></span>
-                                <h2 class="Mcon1VsTxt">코딩학습을 위한 기자재를 위해,<br>IFT만의 기술 코딩 학습 기자재를 개발합니다.</h2>
-                            </li>
-                            <li>
-                                <img src="./images/rd/con1VsImg3.png" alt="">
-                                <span class="Mcon1VsTit">3. 융복합 인재의 양성을 위한<br><strong>국정 과제 연구</strong></span>
-                                <h2 class="Mcon1VsTxt">IFT는 인재양성을 위해 국제 과제 연구를 통하여<br>융복합 인재를 양성합니다.</h2>
-                            </li>
-                            <li>
-                                <img src="./images/rd/con1VsImg4.png" alt="">
-                                <span class="Mcon1VsTit">4. 메이커교육에 필요한<br><strong>교육 솔루션 연구</strong></span>
-                                <h2 class="Mcon1VsTxt">IFT 메이커 교육에 필요한 교육 솔루션을 연구하고<br>교육에 대한 인식을 일깨워 줍니다.</h2>
-                            </li>
-                            <li>
-                                <img src="./images/rd/con1VsImg5.png" alt="">
-                                <span class="Mcon1VsTit">5. 새로운 교육 트렌드를 연구 &amp; 개발하여<br><strong>IT기술과의 접목</strong></span>
-                                <h2 class="Mcon1VsTxt">다양한 트렌드를 연구하여 해당 트렌드의 컨셉으로 개발하고<br>IT기술과의 접목을 통해 미래를 향해 갑니다.</h2>
-                            </li>
-                        </ul>
-                        
-                        <div class="Mcon1Btn">
-                            <button class="Mcon1LBtn"><img src="./images/rd/lBtn.png" alt=""></button>
-                            <button class="Mcon1RBtn"><img src="./images/rd/rBtn.png" alt=""></button>
-                        </div>
-                    </div>
-                    
-               </div>
-           </div>
         
         <footer id="Mft">
             <div class="MftIn">
