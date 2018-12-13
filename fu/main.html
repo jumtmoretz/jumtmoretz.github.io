@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="IFT, 기술, 교육, 무한, 메이커스페이스, 가온누리, 퍼블릭에듀">
+    <meta name="Description" content="Global Education Company - EduTech">
+    <!--[if IE]>
+    <<script src="http://html5shiv.googlecode.com/svn/truk/html5.js>
+    </script>
+    <![endif]-->
+
+    <!-- Firefox, opera (Chrome and safari say thanks but no thanks) -->
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <title>:: IFT ::</title>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    <!-- 폰트링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Text+Me+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amethysta" rel="stylesheet">
+    
+    <!-- 기본 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+            max-width:1920px;
+            background-color: #000;
+            font-family: 'Gothic A1', sans-serif;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        .con {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+    <style>
+        #con1 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .con1In {
+            
+        }
+        .con1In h2 {
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 3px 13px #fff;
+            position: absolute;
+            display: none;
+            z-index: 9999;
+        }
+        .con1Tit1 {
+            font-size: 4vw;
+            top: 20%;
+            left: 50%;
+        }
+        .con1Tit2 {
+            font-size: 3vw;
+            top: 10%;
+            right: 30%;
+        }
+        .con1Tit3 {
+            font-size: 7vw;
+            bottom: 40%;
+            right: 70%;
+        }
+        .con1Tit4 {
+            font-size: 2vw;
+            top: 55%;
+            left: 10%;
+        }
+        .con1Tit5 {
+            font-size: 9vw;
+            top: 70%;
+            left: 55%;
+        }
+        .con1Tit6 {
+            font-size: 7vw;
+            bottom: 10%;
+            right: 10%;
+        }
+        .con1Tit7 {
+            font-size: 5vw;
+            bottom: 15%;
+            right: 25%;
+        }
+        .con1Tit8 {
+            font-size: 4vw;
+            top: 17%;
+            left: 43%;
+        }
+        .con1Tit9 {
+            font-size: 8.5vw;
+            top: 33%;
+            left: 33%;
+        }
+        .con1Tit10 {
+            font-size: 2vw;
+            top: 50%;
+            left: 0%;
+            text-align: center;
+            width: 100%;
+        }
+        .con1Tit11 {
+            font-size: 10vw;
+            width: 100%;
+            top: 40%;
+            left: 0%;
+            text-align: center;
+        }
+    </style>
+    
+    <style>
+        .video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            opacity: 0;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            $(".con1Tit1").fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit2").delay(1800).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit3").delay(3600).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit4").delay(5400).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit5").delay(7200).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit6").delay(9000).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit7").delay(10800).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit8").delay(12600).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit9").delay(14400).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".con1Tit10").delay(16000).fadeIn(1500, function(){
+                $(this).fadeOut(1500);
+            });
+            $(".video").delay(18000).not(":animated").animate({"opacity": "1"}, 1500);
+        });
+    </script>
+    
+    
+</head>
+<body>
+    <div class="main">
+        <div class="con" id="con1">
+            <div class="con1In">
+                <h2 class="con1Tit1">현재</h2>
+                <h2 class="con1Tit2">과거</h2>
+                <h2 class="con1Tit3">성장</h2>
+                <h2 class="con1Tit4">전통</h2>
+                <h2 class="con1Tit5">교육</h2>
+                <h2 class="con1Tit6">코딩</h2>
+                <h2 class="con1Tit7">혁신</h2>
+                <h2 class="con1Tit8">기술</h2>
+                <h2 class="con1Tit9">로봇</h2>
+                <h2 class="con1Tit10">그리고</h2>
+                <video src="./images/video/fu.mp4" autoplay class="video"></video>
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
